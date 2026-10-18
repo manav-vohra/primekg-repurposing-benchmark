@@ -1,0 +1,3424 @@
+{
+  "registry_version": "1.0",
+  "benchmark": {
+    "id": "P1_TRACK_A_PRIMEKG_V0",
+    "candidate_count": 7957,
+    "primary_disease_count": 738,
+    "primary_clean_truth_pairs": 8368,
+    "folds": 8,
+    "split_seed": 42,
+    "evaluator_version": "1.1_tiesafe",
+    "masking_protocol": "CANONICAL_1HOP",
+    "raw_edge_rows": 8100498,
+    "global_clean_pairs": 9177,
+    "therapeutic_directed_rows_removed": 85262,
+    "nontherapeutic_directed_triples": 8015236,
+    "e3_entities": 129307,
+    "e3_relations": 28,
+    "fold_clean_counts": [
+      6856,
+      6828,
+      6990,
+      7119,
+      6871,
+      7183,
+      7091,
+      6827
+    ]
+  },
+  "data_root_default": "artifacts/frozen",
+  "data_root_environment": "PRIMEKG_DATA_ROOT",
+  "axis_fingerprints": {
+    "candidates": {
+      "sha256": "99cb3d5768ca203306737926c30a2890c326a6c286815b0013662ec0e86a0d63",
+      "length": 7957,
+      "origin": "derived_from_hash_verified_frozen_artifact"
+    },
+    "diseases": {
+      "sha256": "04aec4bee6cf0168346d9261d3dcf303692a0a92fd9eb6da75ab94bc4c660a73",
+      "length": 738,
+      "origin": "derived_from_hash_verified_frozen_artifact"
+    },
+    "entities": {
+      "sha256": "e205ec1d6f4597bc1270991f9ac6c4b674b099e4a8b4107a84d767bdcd54af75",
+      "length": 129307,
+      "origin": "derived_from_hash_verified_frozen_artifact"
+    },
+    "relations": {
+      "sha256": "ddeb639a0c2d3189d3ccb69d0f42bd7278f53e72658b411d7d6f4d7149859190",
+      "length": 28,
+      "origin": "derived_from_hash_verified_frozen_artifact"
+    }
+  },
+  "artifacts": [
+    {
+      "artifact_id": "audits/p1_leakage_benchmark_contract_v1.csv",
+      "filename": "p1_leakage_benchmark_contract_v1.csv",
+      "semantic_role": "audit_or_fidelity_evidence",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "4a2bc95529e5c9c865d1ae39acca2850667d8d25ec3120285b5e47063d19c966",
+      "expected_size": 710,
+      "logical_path": "audits/p1_leakage_benchmark_contract_v1.csv",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "property",
+          "value",
+          "verification"
+        ]
+      },
+      "expected_rows": 7,
+      "consumers": []
+    },
+    {
+      "artifact_id": "audits/p1_leakage_information_contract_matrix_v1.csv",
+      "filename": "p1_leakage_information_contract_matrix_v1.csv",
+      "semantic_role": "audit_or_fidelity_evidence",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "4b06d13b50070b0ff4fb623e527fc2b7dbe53836cd39a727af2afcfedacee57b",
+      "expected_size": 5897,
+      "logical_path": "audits/p1_leakage_information_contract_matrix_v1.csv",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "component",
+          "stage",
+          "allowed_information",
+          "prohibited_information",
+          "leakage_control",
+          "verification_artifact",
+          "verified_status",
+          "claim_scope"
+        ]
+      },
+      "expected_rows": 13,
+      "consumers": []
+    },
+    {
+      "artifact_id": "audits/p1_leakage_provenance_artifact_integrity_v1.csv",
+      "filename": "p1_leakage_provenance_artifact_integrity_v1.csv",
+      "semantic_role": "audit_or_fidelity_evidence",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "26bbfa4702fd849c597c0c1234a610bc0074e7e6efab1718dbf8fdc839792f5a",
+      "expected_size": 2770,
+      "logical_path": "audits/p1_leakage_provenance_artifact_integrity_v1.csv",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "artifact_role",
+          "filename",
+          "bytes",
+          "sha256"
+        ]
+      },
+      "expected_rows": 23,
+      "consumers": []
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "filename": "p1_oracle_gap_uncertainty_v1.json",
+      "semantic_role": "audit_or_fidelity_evidence",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "bb762c3c6d55403269013b5e3cb597ec6e00f84228aae525f0e5c2772a84ba6a",
+      "expected_size": 1328,
+      "logical_path": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_winner_counts_v1.csv",
+      "filename": "p1_oracle_gap_winner_counts_v1.csv",
+      "semantic_role": "audit_or_fidelity_evidence",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "5a4356348120516af0d40898cef3b820ed5e01f366c3ab46c13525063c6fa424",
+      "expected_size": 152,
+      "logical_path": "audits/p1_oracle_gap_winner_counts_v1.csv",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "winner",
+          "n",
+          "fraction"
+        ]
+      },
+      "expected_rows": 5,
+      "consumers": []
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_fidelity_v1.csv",
+      "filename": "p1_protocol_e4_canonical_reimplementation_fidelity_v1.csv",
+      "semantic_role": "audit_or_fidelity_evidence",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "abd65da200c67eb3ee5de918a87b11f727b86067655f0afa101bc91197b07c96",
+      "expected_size": 605,
+      "logical_path": "audits/p1_protocol_e4_canonical_reimplementation_fidelity_v1.csv",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "original_expected_E4_R50",
+          "fresh_expected_E4_R50",
+          "macro_delta",
+          "macro_abs_delta",
+          "expected_disease_utility_spearman",
+          "spearman_p",
+          "fresh_seed_macro_std",
+          "prior_E1_E2_E3_VBS",
+          "original_four_expert_VBS",
+          "fresh_four_expert_VBS",
+          "four_expert_VBS_delta",
+          "fresh_E4_incremental_oracle_gain",
+          "original_strict_E4_wins",
+          "fresh_strict_E4_wins",
+          "E4_strict_win_set_jaccard",
+          "fidelity_pass"
+        ]
+      },
+      "expected_rows": 1,
+      "consumers": []
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "filename": "p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "semantic_role": "audit_or_fidelity_evidence",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "ba1a23d9f851cb03edfb4e2ff77367621b67702102ffa0fd647d5854ec7e921f",
+      "expected_size": 2531,
+      "logical_path": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_seed_summary_v1.csv",
+      "filename": "p1_protocol_e4_canonical_reimplementation_seed_summary_v1.csv",
+      "semantic_role": "audit_or_fidelity_evidence",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "9e250e0f97d7b5770efed2f7502490698b4e4eed08b505d94492b68a50d3370e",
+      "expected_size": 264,
+      "logical_path": "audits/p1_protocol_e4_canonical_reimplementation_seed_summary_v1.csv",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "seed",
+          "macro_R50",
+          "applicable_diseases",
+          "mean_fold_runtime_sec",
+          "mean_final_loss"
+        ]
+      },
+      "expected_rows": 3,
+      "consumers": []
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "filename": "p1_protocol_e4_forward_reproduction_v1.json",
+      "semantic_role": "audit_or_fidelity_evidence",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "5fc02dd78a183602d900a828a593868e30027c3067d65789a130d11c7bd5775e",
+      "expected_size": 2589,
+      "logical_path": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "benchmark/P1_V0_EXPERIMENTAL_CONSTITUTION.md",
+      "filename": "P1_V0_EXPERIMENTAL_CONSTITUTION.md",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "fd95d713039b6439ae7de30ab8d119e212797bbca8259b93b480b64e7295e022",
+      "expected_size": 3640,
+      "logical_path": "benchmark/P1_V0_EXPERIMENTAL_CONSTITUTION.md",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "benchmark/P1_V0_FINAL_EMPIRICAL_INTERPRETATION.md",
+      "filename": "P1_V0_FINAL_EMPIRICAL_INTERPRETATION.md",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "e19061b45253f44944ebe06e47c03ed8edb0bb50132e9d3391575819b20d5af9",
+      "expected_size": 2114,
+      "logical_path": "benchmark/P1_V0_FINAL_EMPIRICAL_INTERPRETATION.md",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "benchmark/p1_e3_complex_corpus_manifest.json",
+      "filename": "p1_e3_complex_corpus_manifest.json",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "36e7d2f620b25056bb5564d589e4a396c2a7fe591600c6af2cd122127145ceb8",
+      "expected_size": 2211,
+      "logical_path": "benchmark/p1_e3_complex_corpus_manifest.json",
+      "location": "bundled_local",
+      "producer": "Cell 19B",
+      "dependencies": [
+        "benchmark/p1_e3_complex_entities.csv",
+        "benchmark/p1_e3_complex_relations.csv",
+        "recovered_contracts/p1_e3_complex_fold_label_manifest.csv",
+        "external/p1_e3_complex_base_nonther_triples.npz",
+        "external/p1_e3_complex_clean_indication_triples.npz"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe"
+      },
+      "consumers": [
+        "external/p1_e3_complex_seed0_base_pretrain.pt",
+        "external/p1_e3_complex_seed0_scores.npz",
+        "external/p1_e3_complex_seed0_training_log.csv",
+        "external/p1_e3_complex_seed1_base_pretrain.pt",
+        "external/p1_e3_complex_seed1_scores.npz",
+        "external/p1_e3_complex_seed1_training_log.csv",
+        "external/p1_e3_complex_seed2_base_pretrain.pt",
+        "external/p1_e3_complex_seed2_scores.npz",
+        "external/p1_e3_complex_seed2_training_log.csv",
+        "external/p1_e4_rgcn_seed0_fold0.pt",
+        "external/p1_e4_rgcn_seed0_fold1.pt",
+        "external/p1_e4_rgcn_seed0_fold2.pt",
+        "external/p1_e4_rgcn_seed0_fold3.pt",
+        "external/p1_e4_rgcn_seed0_fold4.pt",
+        "external/p1_e4_rgcn_seed0_fold5.pt",
+        "external/p1_e4_rgcn_seed0_fold6.pt",
+        "external/p1_e4_rgcn_seed0_fold7.pt",
+        "external/p1_e4_rgcn_seed0_scores.npz",
+        "external/p1_e4_rgcn_seed0_training_log.csv",
+        "external/p1_e4_rgcn_seed1_fold0.pt",
+        "external/p1_e4_rgcn_seed1_fold1.pt",
+        "external/p1_e4_rgcn_seed1_fold2.pt",
+        "external/p1_e4_rgcn_seed1_fold3.pt",
+        "external/p1_e4_rgcn_seed1_fold4.pt",
+        "external/p1_e4_rgcn_seed1_fold5.pt",
+        "external/p1_e4_rgcn_seed1_fold6.pt",
+        "external/p1_e4_rgcn_seed1_fold7.pt",
+        "external/p1_e4_rgcn_seed1_scores.npz",
+        "external/p1_e4_rgcn_seed1_training_log.csv",
+        "external/p1_e4_rgcn_seed2_fold0.pt",
+        "external/p1_e4_rgcn_seed2_fold1.pt",
+        "external/p1_e4_rgcn_seed2_fold2.pt",
+        "external/p1_e4_rgcn_seed2_fold3.pt",
+        "external/p1_e4_rgcn_seed2_fold4.pt",
+        "external/p1_e4_rgcn_seed2_fold5.pt",
+        "external/p1_e4_rgcn_seed2_fold6.pt",
+        "external/p1_e4_rgcn_seed2_fold7.pt",
+        "external/p1_e4_rgcn_seed2_scores.npz",
+        "external/p1_e4_rgcn_seed2_training_log.csv",
+        "recovered_contracts/p1_e4_rgcn_seed0_metadata.json",
+        "recovered_contracts/p1_e4_rgcn_seed1_metadata.json",
+        "recovered_contracts/p1_e4_rgcn_seed2_metadata.json",
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv"
+      ]
+    },
+    {
+      "artifact_id": "benchmark/p1_e3_complex_entities.csv",
+      "filename": "p1_e3_complex_entities.csv",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "4602c6e372d8db30463c5e5dae418632ce742de9255e305809c1d99829ca8fa3",
+      "expected_size": 6178950,
+      "logical_path": "benchmark/p1_e3_complex_entities.csv",
+      "location": "bundled_local",
+      "producer": "Cell 19B",
+      "dependencies": [
+        "raw/kg.csv"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "entity_index",
+          "entity_key",
+          "entity_type",
+          "entity_id"
+        ]
+      },
+      "expected_rows": 129307,
+      "axis": {
+        "name": "entities",
+        "column": "entity_key",
+        "expected_sha256": "e205ec1d6f4597bc1270991f9ac6c4b674b099e4a8b4107a84d767bdcd54af75",
+        "origin": "derived_from_hash_verified_frozen_artifact"
+      },
+      "consumers": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ]
+    },
+    {
+      "artifact_id": "benchmark/p1_e3_complex_relations.csv",
+      "filename": "p1_e3_complex_relations.csv",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "591c5fe76d4122369574972525f6b5e82128d8e975264f6cfdce6178b223caba",
+      "expected_size": 797,
+      "logical_path": "benchmark/p1_e3_complex_relations.csv",
+      "location": "bundled_local",
+      "producer": "Cell 19B",
+      "dependencies": [
+        "raw/kg.csv"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "relation_index",
+          "relation_name",
+          "base_nontherapeutic_row_count"
+        ]
+      },
+      "expected_rows": 28,
+      "axis": {
+        "name": "relations",
+        "column": "relation_name",
+        "expected_sha256": "ddeb639a0c2d3189d3ccb69d0f42bd7278f53e72658b411d7d6f4d7149859190",
+        "origin": "derived_from_hash_verified_frozen_artifact"
+      },
+      "consumers": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ]
+    },
+    {
+      "artifact_id": "benchmark/p1_p15_execution_blueprint_v1.txt",
+      "filename": "p1_p15_execution_blueprint_v1.txt",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "83670a56f0544ac2f92eb28972353be435058a2f84d1dbdb1358716632b5631e",
+      "expected_size": 85241,
+      "logical_path": "benchmark/p1_p15_execution_blueprint_v1.txt",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_benchmark_manifest.json",
+      "filename": "p1_v0_benchmark_manifest.json",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "86b9f4f65fcc981eec8a188779d884e852815da01d9ce9b6a6733868d8a38f53",
+      "expected_size": 3984,
+      "logical_path": "benchmark/p1_v0_benchmark_manifest.json",
+      "location": "bundled_local",
+      "producer": "Cell 13",
+      "dependencies": [
+        "benchmark/p1_v0_candidate_drugs.csv",
+        "benchmark/p1_v0_primary_diseases.csv",
+        "benchmark/p1_v0_primary_truth.csv",
+        "benchmark/p1_v0_primary_eval_roles.csv",
+        "benchmark/p1_v0_k8_quarantine_manifest.csv",
+        "benchmark/p1_v0_fold_summary.csv"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "oof_protocol.k": 8,
+        "oof_protocol.seed": 42
+      },
+      "consumers": [
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json"
+      ]
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_candidate_drugs.csv",
+      "filename": "p1_v0_candidate_drugs.csv",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "dfe7275c60b6b75b2a8fa45c017c7675e3e438d6b59722f91517ff78862c2776",
+      "expected_size": 404924,
+      "logical_path": "benchmark/p1_v0_candidate_drugs.csv",
+      "location": "bundled_local",
+      "producer": "Cell 9",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "drug_id",
+          "drug_name",
+          "has_nontherapeutic_evidence",
+          "gene_protein_neighbor_count",
+          "effect_phenotype_neighbor_count",
+          "has_drug_drug_evidence"
+        ]
+      },
+      "expected_rows": 7957,
+      "axis": {
+        "name": "candidates",
+        "column": "drug_id",
+        "expected_sha256": "99cb3d5768ca203306737926c30a2890c326a6c286815b0013662ec0e86a0d63",
+        "origin": "derived_from_hash_verified_frozen_artifact"
+      },
+      "consumers": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "external/p1_e1_weighted_gene_cosine_scores.npz",
+        "external/p1_e2_disease_profile_label_transfer_scores.npz",
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv"
+      ]
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+      "filename": "p1_v0_evaluator_config_v1_1_tiesafe.json",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "13b255e6679dfa8cd2a8af1f00d7905f72503c2e0f6de57968da0d964aa6fe08",
+      "expected_size": 1602,
+      "logical_path": "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+      "location": "bundled_local",
+      "producer": "Cell 16",
+      "dependencies": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe"
+      },
+      "consumers": [
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv"
+      ]
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_fold_summary.csv",
+      "filename": "p1_v0_fold_summary.csv",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "d50d830b87aebdc81731437de6204cca25e442054dca27d687a6feadfe462912",
+      "expected_size": 733,
+      "logical_path": "benchmark/p1_v0_fold_summary.csv",
+      "location": "bundled_local",
+      "producer": "Cell 12",
+      "dependencies": [
+        "benchmark/p1_v0_k8_quarantine_manifest.csv"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "fold",
+          "target_diseases",
+          "buffer_diseases",
+          "hidden_diseases_total",
+          "clean_training_pairs_remaining",
+          "clean_training_fraction_remaining",
+          "therapeutic_training_pairs_remaining",
+          "therapeutic_training_fraction_remaining",
+          "direct_ontology_leaks"
+        ]
+      },
+      "expected_rows": 8,
+      "consumers": [
+        "benchmark/p1_v0_benchmark_manifest.json"
+      ]
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_k8_quarantine_manifest.csv",
+      "filename": "p1_v0_k8_quarantine_manifest.csv",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "d5aaaaac34cc78b7a38084c374d9c340a002de638aafd85ae650ad7d2d71a1d8",
+      "expected_size": 40018,
+      "logical_path": "benchmark/p1_v0_k8_quarantine_manifest.csv",
+      "location": "bundled_local",
+      "producer": "Cell 12",
+      "dependencies": [
+        "benchmark/p1_v0_primary_diseases.csv"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "fold",
+          "disease_id",
+          "role",
+          "hide_all_therapeutic_relations"
+        ]
+      },
+      "expected_rows": 1648,
+      "consumers": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_fold_summary.csv",
+        "external/p1_e3_complex_base_nonther_triples.npz",
+        "external/p1_e3_complex_clean_indication_triples.npz",
+        "recovered_contracts/p1_e3_complex_fold_label_manifest.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv"
+      ]
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_primary_diseases.csv",
+      "filename": "p1_v0_primary_diseases.csv",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "722eec938337a73e7867d384af509d3302bf27d133b665238b76b91ec50d7932",
+      "expected_size": 45899,
+      "logical_path": "benchmark/p1_v0_primary_diseases.csv",
+      "location": "bundled_local",
+      "producer": "Cell 13",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "disease_id",
+          "CLEAN_INDICATION",
+          "AMBIGUOUS_INDICATION",
+          "CONTRAINDICATION_ONLY",
+          "OFFLABEL_ONLY",
+          "CONFLICTING_NONINDICATION",
+          "disease_name",
+          "observed_therapeutic_pairs",
+          "unobserved_candidates",
+          "primary_ignore_count",
+          "primary_scored_candidate_count",
+          "oof_fold"
+        ]
+      },
+      "expected_rows": 738,
+      "axis": {
+        "name": "diseases",
+        "column": "disease_id",
+        "expected_sha256": "04aec4bee6cf0168346d9261d3dcf303692a0a92fd9eb6da75ab94bc4c660a73",
+        "origin": "derived_from_hash_verified_frozen_artifact"
+      },
+      "consumers": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_k8_quarantine_manifest.csv",
+        "benchmark/p1_v0_primary_eval_roles.csv",
+        "benchmark/p1_v0_primary_truth.csv",
+        "external/p1_e1_weighted_gene_cosine_scores.npz",
+        "external/p1_e2_disease_profile_label_transfer_scores.npz",
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv"
+      ]
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_primary_eval_roles.csv",
+      "filename": "p1_v0_primary_eval_roles.csv",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "c51481941ea30b861e538678dbd4df78fddafeedd91a77ece2de40c157255564",
+      "expected_size": 1454075,
+      "logical_path": "benchmark/p1_v0_primary_eval_roles.csv",
+      "location": "bundled_local",
+      "producer": "Cell 13",
+      "dependencies": [
+        "benchmark/p1_v0_primary_diseases.csv",
+        "benchmark/therapeutic_pair_evaluation_roles.csv"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "drug_id",
+          "disease_id",
+          "labels",
+          "evaluation_role"
+        ]
+      },
+      "expected_rows": 23584,
+      "consumers": [
+        "benchmark/p1_v0_benchmark_manifest.json"
+      ]
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_primary_truth.csv",
+      "filename": "p1_v0_primary_truth.csv",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "e17dc6f289f2d467a693d9941f18caf38a36ef11d870f7fc1ebec71953a25b45",
+      "expected_size": 442709,
+      "logical_path": "benchmark/p1_v0_primary_truth.csv",
+      "location": "bundled_local",
+      "producer": "Cell 13",
+      "dependencies": [
+        "benchmark/p1_v0_primary_diseases.csv",
+        "benchmark/therapeutic_pair_evaluation_roles.csv"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "disease_id",
+          "drug_id",
+          "labels",
+          "evaluation_role"
+        ]
+      },
+      "expected_rows": 8368,
+      "consumers": [
+        "benchmark/p1_v0_benchmark_manifest.json"
+      ]
+    },
+    {
+      "artifact_id": "benchmark/primekg_graph_census.json",
+      "filename": "primekg_graph_census.json",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "66e1b413015ac32d008f2e5c61c2337a74b1d4068a79ea1b41f52b0e8bd8c96b",
+      "expected_size": 2094,
+      "logical_path": "benchmark/primekg_graph_census.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "benchmark/therapeutic_pair_evaluation_roles.csv",
+      "filename": "therapeutic_pair_evaluation_roles.csv",
+      "semantic_role": "benchmark_contract_or_artifact",
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT",
+      "expected_sha256": "380d24772a1b6e3039335a9ad3dec3de134d7bf3a9a0478ecb95f56fe4c3f5ea",
+      "expected_size": 2612320,
+      "logical_path": "benchmark/therapeutic_pair_evaluation_roles.csv",
+      "location": "bundled_local",
+      "producer": "Cell 11",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "drug_id",
+          "disease_id",
+          "labels",
+          "evaluation_role"
+        ]
+      },
+      "expected_rows": 42383,
+      "consumers": [
+        "benchmark/p1_v0_primary_eval_roles.csv",
+        "benchmark/p1_v0_primary_truth.csv",
+        "recovered_contracts/p1_e3_complex_fold_label_manifest.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv"
+      ]
+    },
+    {
+      "artifact_id": "external/p1_e1_e2_e3_expected_oracle.csv",
+      "filename": "p1_e1_e2_e3_expected_oracle.csv",
+      "semantic_role": "historical aggregate reference output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "logical_path": "external/p1_e1_e2_e3_expected_oracle.csv",
+      "location": "unlocated_historical_output",
+      "producer": "Cell 21",
+      "dependencies": [
+        "external/p1_e3_complex_expected_utility.csv",
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv"
+      ],
+      "required_for": [],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "disease_id"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "notes": "Historical source names the output; final frozen oracle survives, but this separate file is not bundled.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e1_e2_preliminary_oracle.csv",
+      "filename": "p1_e1_e2_preliminary_oracle.csv",
+      "semantic_role": "historical aggregate reference output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "logical_path": "external/p1_e1_e2_preliminary_oracle.csv",
+      "location": "unlocated_historical_output",
+      "producer": "Cell 17",
+      "dependencies": [
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv"
+      ],
+      "required_for": [],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "disease_id"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "notes": "Historical source names the output; final frozen oracle survives, but this separate file is not bundled.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e1_weighted_gene_cosine_scores.npz",
+      "filename": "p1_e1_weighted_gene_cosine_scores.npz",
+      "semantic_role": "historical deterministic expert score tensor",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "recovery_time_observed_sha256": "77857ea09a9031611a98cbfc4aa902c665aeb64edf9bcc2b8f789498d1f3b02f",
+      "recovery_time_observed_size": 912904,
+      "hash_classification": "RECOVERY_TIME_OBSERVED",
+      "logical_path": "external/p1_e1_weighted_gene_cosine_scores.npz",
+      "location": "bundled_recovered",
+      "external_id": "google-drive:1f7KkO8y_39NvdOzB5s3LmqRNEPtusD_h",
+      "producer": "Cell 14",
+      "dependencies": [
+        "benchmark/p1_v0_candidate_drugs.csv",
+        "benchmark/p1_v0_primary_diseases.csv"
+      ],
+      "required_for": [],
+      "schema": {
+        "type": "npz_score",
+        "required_arrays": [
+          "scores",
+          "disease_ids",
+          "drug_ids"
+        ],
+        "expected_shape": [
+          738,
+          7957
+        ],
+        "disease_axis": "diseases",
+        "candidate_axis": "candidates"
+      },
+      "notes": "Recovered from connected Drive during Gate 4. The observed hash is recovery-time evidence only; no historical hash survives.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e2_disease_profile_label_transfer_scores.npz",
+      "filename": "p1_e2_disease_profile_label_transfer_scores.npz",
+      "semantic_role": "historical deterministic expert score tensor",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "recovery_time_observed_sha256": "5b17c06e7e31f0e1b4dc3d63dcc3aaf0e1537b8c5c6c7bce6f1b8283a3a10eab",
+      "recovery_time_observed_size": 1374036,
+      "hash_classification": "RECOVERY_TIME_OBSERVED",
+      "logical_path": "external/p1_e2_disease_profile_label_transfer_scores.npz",
+      "location": "bundled_recovered",
+      "external_id": "google-drive:1IKJ-8P7qUdM6-i86v8VKq-70n3bkSRiR",
+      "producer": "Cell 17",
+      "dependencies": [
+        "benchmark/p1_v0_candidate_drugs.csv",
+        "benchmark/p1_v0_primary_diseases.csv"
+      ],
+      "required_for": [],
+      "schema": {
+        "type": "npz_score",
+        "required_arrays": [
+          "scores",
+          "disease_ids",
+          "drug_ids"
+        ],
+        "expected_shape": [
+          738,
+          7957
+        ],
+        "disease_axis": "diseases",
+        "candidate_axis": "candidates"
+      },
+      "notes": "Recovered from connected Drive during Gate 5. The observed hash is recovery-time evidence only; no historical hash survives.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_base_nonther_triples.npz",
+      "filename": "p1_e3_complex_base_nonther_triples.npz",
+      "semantic_role": "E3 corpus",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED",
+      "expected_sha256": "4b13562268f237b4217002279338a721e9c6b9c30fa178d29883066848fd733b",
+      "expected_size": 80153110,
+      "logical_path": "external/p1_e3_complex_base_nonther_triples.npz",
+      "location": "external_not_bundled",
+      "external_id": "1Unhg5qi0mAoAtS0H6M8V4aTkPLDppdW6",
+      "producer": "Cell 19B",
+      "dependencies": [
+        "raw/kg.csv",
+        "benchmark/p1_v0_k8_quarantine_manifest.csv"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ]
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_clean_indication_triples.npz",
+      "filename": "p1_e3_complex_clean_indication_triples.npz",
+      "semantic_role": "E3 corpus",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED",
+      "expected_sha256": "06573916aa538640949c4fceb79acb4455856aaf2038cd44df5c54675a30c0b3",
+      "expected_size": 21127780,
+      "logical_path": "external/p1_e3_complex_clean_indication_triples.npz",
+      "location": "external_not_bundled",
+      "external_id": "1lcklDhHQFAhAOxi2Qc7iqwVCN1VlC5MN",
+      "producer": "Cell 19B",
+      "dependencies": [
+        "raw/kg.csv",
+        "benchmark/p1_v0_k8_quarantine_manifest.csv"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ]
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_expected_utility.csv",
+      "filename": "p1_e3_complex_expected_utility.csv",
+      "semantic_role": "historical aggregate reference output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "logical_path": "external/p1_e3_complex_expected_utility.csv",
+      "location": "unlocated_historical_output",
+      "producer": "Cell 21",
+      "dependencies": [
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv"
+      ],
+      "required_for": [],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "disease_id"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "notes": "Historical source names the output; final frozen oracle survives, but this separate file is not bundled.",
+      "consumers": [
+        "external/p1_e1_e2_e3_expected_oracle.csv"
+      ]
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed0_base_pretrain.pt",
+      "filename": "p1_e3_complex_seed0_base_pretrain.pt",
+      "semantic_role": "E3 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 66222433,
+      "logical_path": "external/p1_e3_complex_seed0_base_pretrain.pt",
+      "location": "external_not_bundled",
+      "external_id": "1Ev_eMyAq-hQtvYgCAGIV0fkGw4UV_py7",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed0_scores.npz",
+      "filename": "p1_e3_complex_seed0_scores.npz",
+      "semantic_role": "E3 scores",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED",
+      "expected_sha256": null,
+      "expected_size": 20977038,
+      "logical_path": "external/p1_e3_complex_seed0_scores.npz",
+      "location": "external_not_bundled",
+      "external_id": "1QN4KxE4L5H_nixEi0zEFHc37PjqOWj4p",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "npz_score",
+        "required_arrays": [
+          "scores",
+          "disease_ids",
+          "drug_ids"
+        ],
+        "expected_shape": [
+          738,
+          7957
+        ],
+        "disease_axis": "diseases",
+        "candidate_axis": "candidates"
+      },
+      "consumers": [
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv"
+      ]
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed0_training_log.csv",
+      "filename": "p1_e3_complex_seed0_training_log.csv",
+      "semantic_role": "e3_complex seed 0 training log",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "logical_path": "external/p1_e3_complex_seed0_training_log.csv",
+      "location": "unlocated_historical_output",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [],
+      "notes": "Filename appears in historical source; no supplied file hash or Drive locator.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed1_base_pretrain.pt",
+      "filename": "p1_e3_complex_seed1_base_pretrain.pt",
+      "semantic_role": "E3 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 66222433,
+      "logical_path": "external/p1_e3_complex_seed1_base_pretrain.pt",
+      "location": "external_not_bundled",
+      "external_id": "1sQ9DO0Jpxj6NVleuKEqOw7NJrsl_VUJ3",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed1_scores.npz",
+      "filename": "p1_e3_complex_seed1_scores.npz",
+      "semantic_role": "E3 scores",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED",
+      "expected_sha256": null,
+      "expected_size": 20858395,
+      "logical_path": "external/p1_e3_complex_seed1_scores.npz",
+      "location": "external_not_bundled",
+      "external_id": "19vkBSKisMdcqmnQgkoc8g4q5VKQuT55M",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "npz_score",
+        "required_arrays": [
+          "scores",
+          "disease_ids",
+          "drug_ids"
+        ],
+        "expected_shape": [
+          738,
+          7957
+        ],
+        "disease_axis": "diseases",
+        "candidate_axis": "candidates"
+      },
+      "consumers": [
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv"
+      ]
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed1_training_log.csv",
+      "filename": "p1_e3_complex_seed1_training_log.csv",
+      "semantic_role": "e3_complex seed 1 training log",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "logical_path": "external/p1_e3_complex_seed1_training_log.csv",
+      "location": "unlocated_historical_output",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [],
+      "notes": "Filename appears in historical source; no supplied file hash or Drive locator.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed2_base_pretrain.pt",
+      "filename": "p1_e3_complex_seed2_base_pretrain.pt",
+      "semantic_role": "E3 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 66222433,
+      "logical_path": "external/p1_e3_complex_seed2_base_pretrain.pt",
+      "location": "external_not_bundled",
+      "external_id": "1Oiqa6dUxzMdvUiRzyxmmj6Dj04TMHIYf",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed2_scores.npz",
+      "filename": "p1_e3_complex_seed2_scores.npz",
+      "semantic_role": "E3 scores",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED",
+      "expected_sha256": null,
+      "expected_size": 20929137,
+      "logical_path": "external/p1_e3_complex_seed2_scores.npz",
+      "location": "external_not_bundled",
+      "external_id": "1hmbIzS6CtoEvJS4qyKmjV7ZDqWnKG6ev",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "npz_score",
+        "required_arrays": [
+          "scores",
+          "disease_ids",
+          "drug_ids"
+        ],
+        "expected_shape": [
+          738,
+          7957
+        ],
+        "disease_axis": "diseases",
+        "candidate_axis": "candidates"
+      },
+      "consumers": [
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv"
+      ]
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed2_training_log.csv",
+      "filename": "p1_e3_complex_seed2_training_log.csv",
+      "semantic_role": "e3_complex seed 2 training log",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "logical_path": "external/p1_e3_complex_seed2_training_log.csv",
+      "location": "unlocated_historical_output",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [],
+      "notes": "Filename appears in historical source; no supplied file hash or Drive locator.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_expected_utility.csv",
+      "filename": "p1_e4_rgcn_expected_utility.csv",
+      "semantic_role": "historical aggregate reference output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "logical_path": "external/p1_e4_rgcn_expected_utility.csv",
+      "location": "unlocated_historical_output",
+      "producer": "Cell 25",
+      "dependencies": [
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv"
+      ],
+      "required_for": [],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "disease_id"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "notes": "Historical source names the output; final frozen oracle survives, but this separate file is not bundled.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold0.pt",
+      "filename": "p1_e4_rgcn_seed0_fold0.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed0_fold0.pt",
+      "location": "external_not_bundled",
+      "external_id": "1-_Mk8VcL4FwaPe4wTQRumaWSaDx0FUIC",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold1.pt",
+      "filename": "p1_e4_rgcn_seed0_fold1.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed0_fold1.pt",
+      "location": "external_not_bundled",
+      "external_id": "16UfxAUKl3fyMmvcIc3DXzAqax_ajUgMt",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold2.pt",
+      "filename": "p1_e4_rgcn_seed0_fold2.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed0_fold2.pt",
+      "location": "external_not_bundled",
+      "external_id": "1y8-Dk0GZtJqTfwnkDEvXt-IvX_oJjTGr",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold3.pt",
+      "filename": "p1_e4_rgcn_seed0_fold3.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed0_fold3.pt",
+      "location": "external_not_bundled",
+      "external_id": "1XWaP7an9x0Vt1UzGtJjzKiF_eR1Js_Tw",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold4.pt",
+      "filename": "p1_e4_rgcn_seed0_fold4.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed0_fold4.pt",
+      "location": "external_not_bundled",
+      "external_id": "1oJ_9E4M1bGGqyT1D7ptEnbyBzNnzTe7Y",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold5.pt",
+      "filename": "p1_e4_rgcn_seed0_fold5.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed0_fold5.pt",
+      "location": "external_not_bundled",
+      "external_id": "1SQp9FUNtTVsIsvLkkrSofmR9MXd66Wuc",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold6.pt",
+      "filename": "p1_e4_rgcn_seed0_fold6.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed0_fold6.pt",
+      "location": "external_not_bundled",
+      "external_id": "1UaHR996X5K5xaA93fHzbPwmA0o5EeGnA",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold7.pt",
+      "filename": "p1_e4_rgcn_seed0_fold7.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed0_fold7.pt",
+      "location": "external_not_bundled",
+      "external_id": "19D2T4OwN7FH3xq8ABwWeB5EyPq7-MoAh",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_scores.npz",
+      "filename": "p1_e4_rgcn_seed0_scores.npz",
+      "semantic_role": "E4 scores",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED",
+      "expected_sha256": null,
+      "expected_size": 20672428,
+      "logical_path": "external/p1_e4_rgcn_seed0_scores.npz",
+      "location": "external_not_bundled",
+      "external_id": "1b2zN84ROyaKXSc0OLUFH7ErDnVwo4mhG",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "npz_score",
+        "required_arrays": [
+          "scores",
+          "disease_ids",
+          "drug_ids"
+        ],
+        "expected_shape": [
+          738,
+          7957
+        ],
+        "disease_axis": "diseases",
+        "candidate_axis": "candidates"
+      },
+      "consumers": [
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv"
+      ]
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_training_log.csv",
+      "filename": "p1_e4_rgcn_seed0_training_log.csv",
+      "semantic_role": "e4_rgcn seed 0 training log",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "logical_path": "external/p1_e4_rgcn_seed0_training_log.csv",
+      "location": "unlocated_historical_output",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [],
+      "notes": "Filename appears in historical source; no supplied file hash or Drive locator.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold0.pt",
+      "filename": "p1_e4_rgcn_seed1_fold0.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed1_fold0.pt",
+      "location": "external_not_bundled",
+      "external_id": "1G8e2D0FoK_EHjhpVps-lF4PmQzXLQZ8V",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold1.pt",
+      "filename": "p1_e4_rgcn_seed1_fold1.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed1_fold1.pt",
+      "location": "external_not_bundled",
+      "external_id": "1TON222MvNWt4KumP4d6QI1j4GHlIZZYo",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold2.pt",
+      "filename": "p1_e4_rgcn_seed1_fold2.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed1_fold2.pt",
+      "location": "external_not_bundled",
+      "external_id": "1Sbt18Ylo9ovB2Myabz8d8dO6wWZ-yjiS",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold3.pt",
+      "filename": "p1_e4_rgcn_seed1_fold3.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed1_fold3.pt",
+      "location": "external_not_bundled",
+      "external_id": "107lnt-HaveHVeVUA9XX2KUlb7WXVL4qx",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold4.pt",
+      "filename": "p1_e4_rgcn_seed1_fold4.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed1_fold4.pt",
+      "location": "external_not_bundled",
+      "external_id": "1XTAuqfZwJDnK3mEg6zRywjSp_IQzN6LI",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold5.pt",
+      "filename": "p1_e4_rgcn_seed1_fold5.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed1_fold5.pt",
+      "location": "external_not_bundled",
+      "external_id": "1qlSmqks9KKTdE9jNshI_N6Qo3ubgEVY2",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold6.pt",
+      "filename": "p1_e4_rgcn_seed1_fold6.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed1_fold6.pt",
+      "location": "external_not_bundled",
+      "external_id": "1lmoKVxnzWn-NuFQTaHmwxXAB5YU5iiCe",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold7.pt",
+      "filename": "p1_e4_rgcn_seed1_fold7.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed1_fold7.pt",
+      "location": "external_not_bundled",
+      "external_id": "1cf39VQYvKEZ7h58MlF2BlRa2Sd0TQxgG",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_scores.npz",
+      "filename": "p1_e4_rgcn_seed1_scores.npz",
+      "semantic_role": "E4 scores",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED",
+      "expected_sha256": null,
+      "expected_size": 20823927,
+      "logical_path": "external/p1_e4_rgcn_seed1_scores.npz",
+      "location": "external_not_bundled",
+      "external_id": "1niSYcppKaDT_C8GUkbQBtJeA-co9Fo-f",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "npz_score",
+        "required_arrays": [
+          "scores",
+          "disease_ids",
+          "drug_ids"
+        ],
+        "expected_shape": [
+          738,
+          7957
+        ],
+        "disease_axis": "diseases",
+        "candidate_axis": "candidates"
+      },
+      "consumers": [
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv"
+      ]
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_training_log.csv",
+      "filename": "p1_e4_rgcn_seed1_training_log.csv",
+      "semantic_role": "e4_rgcn seed 1 training log",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "logical_path": "external/p1_e4_rgcn_seed1_training_log.csv",
+      "location": "unlocated_historical_output",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [],
+      "notes": "Filename appears in historical source; no supplied file hash or Drive locator.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold0.pt",
+      "filename": "p1_e4_rgcn_seed2_fold0.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed2_fold0.pt",
+      "location": "external_not_bundled",
+      "external_id": "1Q5X1XAPI_9B68DNyclrgHVbRBEgbfAj-",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold1.pt",
+      "filename": "p1_e4_rgcn_seed2_fold1.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed2_fold1.pt",
+      "location": "external_not_bundled",
+      "external_id": "1zb24-7BePamvXlfuMbU1NgpvdfUy6XIk",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold2.pt",
+      "filename": "p1_e4_rgcn_seed2_fold2.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed2_fold2.pt",
+      "location": "external_not_bundled",
+      "external_id": "1yMHKtRgtp1GlrAnYZGS6BetTFjS5Ist8",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold3.pt",
+      "filename": "p1_e4_rgcn_seed2_fold3.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed2_fold3.pt",
+      "location": "external_not_bundled",
+      "external_id": "1aKM07OaqVZLg9fypU6twDZowoPBskCYG",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold4.pt",
+      "filename": "p1_e4_rgcn_seed2_fold4.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed2_fold4.pt",
+      "location": "external_not_bundled",
+      "external_id": "1r_Xsy7iWt-gr7E7MZYNMaek81QZikgT-",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold5.pt",
+      "filename": "p1_e4_rgcn_seed2_fold5.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed2_fold5.pt",
+      "location": "external_not_bundled",
+      "external_id": "12SJKCvkjUE5JBeVfoFrNl7P55Nbu6Py0",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold6.pt",
+      "filename": "p1_e4_rgcn_seed2_fold6.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed2_fold6.pt",
+      "location": "external_not_bundled",
+      "external_id": "174KTtigur3koDBoYwHPI7z8h1ApNAZJs",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold7.pt",
+      "filename": "p1_e4_rgcn_seed2_fold7.pt",
+      "semantic_role": "E4 checkpoints",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 33288693,
+      "logical_path": "external/p1_e4_rgcn_seed2_fold7.pt",
+      "location": "external_not_bundled",
+      "external_id": "1wmMaLTDbh1rFhEs7yiFraPD4WZ9TlZiU",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "consumers": []
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_scores.npz",
+      "filename": "p1_e4_rgcn_seed2_scores.npz",
+      "semantic_role": "E4 scores",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED",
+      "expected_sha256": null,
+      "expected_size": 20942746,
+      "logical_path": "external/p1_e4_rgcn_seed2_scores.npz",
+      "location": "external_not_bundled",
+      "external_id": "1nicx4uhdrbfY6AwVo_CRZNZ4oyDcBmYn",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "npz_score",
+        "required_arrays": [
+          "scores",
+          "disease_ids",
+          "drug_ids"
+        ],
+        "expected_shape": [
+          738,
+          7957
+        ],
+        "disease_axis": "diseases",
+        "candidate_axis": "candidates"
+      },
+      "consumers": [
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv"
+      ]
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_training_log.csv",
+      "filename": "p1_e4_rgcn_seed2_training_log.csv",
+      "semantic_role": "e4_rgcn seed 2 training log",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": null,
+      "logical_path": "external/p1_e4_rgcn_seed2_training_log.csv",
+      "location": "unlocated_historical_output",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [],
+      "notes": "Filename appears in historical source; no supplied file hash or Drive locator.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell02_primekg_graph_census_1950d94ac298",
+      "filename": "cell02_primekg_graph_census.py",
+      "semantic_role": "CELL 2 — PrimeKG graph census",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "1950d94ac298f18e95060efebb59415ee037f579f7a4f0324f51d00b0b70b0f6",
+      "expected_size": 8401,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell02_primekg_graph_census.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell03_therapeutic_edge_label_audit_fae778030239",
+      "filename": "cell03_therapeutic_edge_label_audit.py",
+      "semantic_role": "CELL 3 — Therapeutic edge / label audit",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "fae7780302390fd4ca7147cef2f44a294cc3a6ab103d81cae41e7ccfc3170b31",
+      "expected_size": 11159,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell03_therapeutic_edge_label_audit.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell04_txgnn_vs_p1_label_pool_audit_7e7f45e01511",
+      "filename": "cell04_txgnn_vs_p1_label_pool_audit.py",
+      "semantic_role": "CELL 4 — TxGNN complex_disease vs P1 label-pool audit",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "7e7f45e01511c81b6753f9aa6f8411bddacffd9ad2e3478904844dc6c336335f",
+      "expected_size": 10811,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell04_txgnn_vs_p1_label_pool_audit.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell05_zero_shot_connectivity_audit_2fbb0f4b38db",
+      "filename": "cell05_zero_shot_connectivity_audit.py",
+      "semantic_role": "CELL 5 — Zero-shot disease connectivity audit",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "2fbb0f4b38db8470343ef7b51fab981c7ac7a5c8b86f1dd405cdee8599a7aecb",
+      "expected_size": 16801,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell05_zero_shot_connectivity_audit.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell06_ontology_shortcut_audit_f2be621d3375",
+      "filename": "cell06_ontology_shortcut_audit.py",
+      "semantic_role": "CELL 6 — Ontology shortcut + mechanistic evidence audit",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "f2be621d337586629320539827b3f1ca8879e8c2845e54223bca98d62a80d2a7",
+      "expected_size": 16790,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell06_ontology_shortcut_audit.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell07_ontology_family_structure_audit_7beea6efbe31",
+      "filename": "cell07_ontology_family_structure_audit.py",
+      "semantic_role": "CELL 7 — Ontology family structure audit",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "7beea6efbe31286eaa2d784a3f525e24dfd21aa395f763c584f8670f17fb7ee5",
+      "expected_size": 17771,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell07_ontology_family_structure_audit.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell08_local_quarantine_feasibility_40b94197b1b2",
+      "filename": "cell08_local_quarantine_feasibility.py",
+      "semantic_role": "CELL 8 — Local ontology quarantine feasibility",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "40b94197b1b276c11a6ca42ceb489fae79ca7cb36672c657bd9e50cdf2e1b1cf",
+      "expected_size": 15700,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell08_local_quarantine_feasibility.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell09_drug_candidate_universe_audit_f0b3d7c00869",
+      "filename": "cell09_drug_candidate_universe_audit.py",
+      "semantic_role": "CELL 9 — Drug candidate universe audit",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "f0b3d7c008690fe76841980bcca5ea4bb5aeb4ed627a61441995e3ac61ee3713",
+      "expected_size": 21969,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell09_drug_candidate_universe_audit.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell10_candidate_universe_label_policy_sensitivity_898de8b1aed2",
+      "filename": "cell10_candidate_universe_label_policy_sensitivity.py",
+      "semantic_role": "CELL 10 — Candidate universe + label-policy sensitivity",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "898de8b1aed2f6ec4c79baffd73e6ef5bc2e36c274c3efdcd2e3154894ad9436",
+      "expected_size": 15770,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell10_candidate_universe_label_policy_sensitivity.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell11_primary_evaluation_label_role_audit_ff040fc33dd9",
+      "filename": "cell11_primary_evaluation_label_role_audit.py",
+      "semantic_role": "CELL 11 — Primary evaluation label-role audit",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "ff040fc33dd9fa5c3fa3915330ea08bf792290751ed610ca0dbed5ea8de6fdce",
+      "expected_size": 15492,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell11_primary_evaluation_label_role_audit.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell12_oof_split_quarantine_design_audit_560df1ebebc0",
+      "filename": "cell12_oof_split_quarantine_design_audit.py",
+      "semantic_role": "CELL 12 — OOF split + quarantine design audit",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "560df1ebebc01dc5a06c21761fb73b6498b88b97601a4a476ea78b4d4509bfe8",
+      "expected_size": 24468,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell12_oof_split_quarantine_design_audit.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell13_freeze_p1_track_a_v0_benchmark_19a1bc9bec09",
+      "filename": "cell13_freeze_p1_track_a_v0_benchmark.py",
+      "semantic_role": "CELL 13 — Freeze P1 Track A v0 benchmark",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "19a1bc9bec09868df63e1e155190db0d544132b20b671893f9bc507423f0c5f5",
+      "expected_size": 27019,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell13_freeze_p1_track_a_v0_benchmark.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell16_freeze_tiesafe_evaluator_ca0d03b9999b",
+      "filename": "cell16_freeze_tiesafe_evaluator.py",
+      "semantic_role": "CELL 16 — Freeze tie-safe evaluator + re-score E1",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "ca0d03b9999ba81129b1aba1f87b5cab34da954579d68a4c6f91376289c97ae3",
+      "expected_size": 29133,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/benchmark/cell16_freeze_tiesafe_evaluator.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell19A_e3_corpus_provenance_reconciliation_5c0499aa4dc3",
+      "filename": "cell19A_e3_corpus_provenance_reconciliation.py",
+      "semantic_role": "CELL 19A — E3 corpus provenance reconciliation",
+      "provenance_class": "HISTORICAL_FORENSIC_RECONCILIATION",
+      "expected_sha256": "5c0499aa4dc3a0e47652c7e57bc5d94e28fd194d48efbd02c9d643de6b6ad09d",
+      "expected_size": 15421,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/e3_corpus/cell19A_e3_corpus_provenance_reconciliation.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell19B_e3_corpus_truncation_repair_and_freeze_f2a2af19cbf5",
+      "filename": "cell19B_e3_corpus_truncation_repair_and_freeze.py",
+      "semantic_role": "CELL 19B — Repair Cell 19 ID truncation + finish E3 freeze",
+      "provenance_class": "HISTORICAL_CORRECTIVE_SOURCE",
+      "expected_sha256": "f2a2af19cbf5f84f88f9bb4d3b833a9f01892811e24140e92c0f0f480c874187",
+      "expected_size": 18042,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/e3_corpus/cell19B_e3_corpus_truncation_repair_and_freeze.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "historical_cell/cell19_e3_corpus_construction_initial_2b140c6482b7",
+      "filename": "cell19_e3_corpus_construction_initial.py",
+      "semantic_role": "CELL 19 — E3 ComplEx corpus construction / freeze",
+      "provenance_class": "HISTORICAL_SOURCE_WITH_DIAGNOSED_DEFECT",
+      "expected_sha256": "2b140c6482b7bd32a0c61354b0a005cb622bc255405f33a784ded122fd829012",
+      "expected_size": 24797,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/historical_cells/e3_corpus/cell19_e3_corpus_construction_initial.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "notebook/P1_Benchmark_Feasibility_PRE_RECOVERY_RECONSTRUCTED.ipynb",
+      "filename": "P1_Benchmark_Feasibility_PRE_RECOVERY_RECONSTRUCTED.ipynb",
+      "semantic_role": "historical notebook provenance representation",
+      "provenance_class": "RECONSTRUCTED_HISTORICAL_SNAPSHOT",
+      "expected_sha256": "11c535824da41595a87afb9e0cc95d85b3305d855e6ed818118d6d9aebae3091",
+      "expected_size": 10295455,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/notebooks/P1_Benchmark_Feasibility_PRE_RECOVERY_RECONSTRUCTED.ipynb",
+      "producer": "recovery package",
+      "dependencies": [],
+      "required_for": [],
+      "notes": "Reconstructed snapshot is not byte-identical to a historical Drive revision.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb",
+      "filename": "P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb",
+      "semantic_role": "historical notebook provenance representation",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "704d8ea1cef1dae7cdd058462e73f89eac60355d0f4e6b1b0d41500560b2a200",
+      "expected_size": 10514341,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_historical_notebook_recovery/notebooks/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb",
+      "producer": "recovery package",
+      "dependencies": [],
+      "required_for": [],
+      "notes": "Includes appended recovery cells at indices 128-130.",
+      "consumers": []
+    },
+    {
+      "artifact_id": "raw/kg.csv",
+      "filename": "kg.csv",
+      "semantic_role": "canonical raw PrimeKG graph",
+      "provenance_class": "RAW_EXTERNAL_INPUT",
+      "expected_sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69",
+      "expected_size": 981751236,
+      "logical_path": "raw/kg.csv",
+      "location": "external_not_bundled",
+      "external_id": "1qf9L5435qyFAVEttKnb-246FRovixysP",
+      "producer": "historical notebook Cells 1/1B-1E retrieval and validation",
+      "dependencies": [],
+      "required_for": [
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "relation",
+          "x_id",
+          "x_type",
+          "y_id",
+          "y_type"
+        ]
+      },
+      "expected_rows": 8100498,
+      "consumers": [
+        "benchmark/p1_e3_complex_entities.csv",
+        "benchmark/p1_e3_complex_relations.csv",
+        "external/p1_e3_complex_base_nonther_triples.npz",
+        "external/p1_e3_complex_clean_indication_triples.npz",
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv"
+      ]
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_e3_complex_fold_label_manifest.csv",
+      "filename": "p1_e3_complex_fold_label_manifest.csv",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "f612dee4afbdfa2654f41e31b2f8610cdbf45b60a6f39631ecdf89f46043aa71",
+      "expected_size": 379,
+      "logical_path": "recovered_contracts/p1_e3_complex_fold_label_manifest.csv",
+      "location": "bundled_local",
+      "producer": "Cell 19B",
+      "dependencies": [
+        "benchmark/p1_v0_k8_quarantine_manifest.csv",
+        "benchmark/therapeutic_pair_evaluation_roles.csv"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "fold",
+          "target_diseases",
+          "hidden_diseases_total",
+          "legal_clean_indication_pairs",
+          "hidden_clean_indication_pairs",
+          "expected_legal_pairs",
+          "delta",
+          "direct_hidden_label_leaks"
+        ]
+      },
+      "expected_rows": 8,
+      "consumers": [
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ]
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_e4_rgcn_seed0_metadata.json",
+      "filename": "p1_e4_rgcn_seed0_metadata.json",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "aa58e6f73a3e671fb5d79d444c857380af33a7b0e254a902efc86dacde45eca1",
+      "expected_size": 1490,
+      "logical_path": "recovered_contracts/p1_e4_rgcn_seed0_metadata.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E4_RGCN_LINK_PREDICTION",
+        "seed": 0
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_e4_rgcn_seed1_metadata.json",
+      "filename": "p1_e4_rgcn_seed1_metadata.json",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "347996002a033ea7cbcb62559ad7b8d86b0642bcf6943fd0d30008bf82b33880",
+      "expected_size": 788,
+      "logical_path": "recovered_contracts/p1_e4_rgcn_seed1_metadata.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E4_RGCN_LINK_PREDICTION",
+        "seed": 1
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_e4_rgcn_seed2_metadata.json",
+      "filename": "p1_e4_rgcn_seed2_metadata.json",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "453f8691a00731e7b52d9a933371aac70e8cc15d6c3d7d4f7744bef8a24edfa8",
+      "expected_size": 788,
+      "logical_path": "recovered_contracts/p1_e4_rgcn_seed2_metadata.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv",
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E4_RGCN_LINK_PREDICTION",
+        "seed": 2
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_observability_result_summary.csv",
+      "filename": "p1_observability_result_summary.csv",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "f58e53bb2d8d9dcd024e14178f57ff30bd52d861ad171a82e40a02f63e039eee",
+      "expected_size": 623,
+      "logical_path": "recovered_contracts/p1_observability_result_summary.csv",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "stage",
+          "state",
+          "policy",
+          "macro_R50",
+          "gain_vs_SBS",
+          "oracle_gap_recovered",
+          "status"
+        ]
+      },
+      "expected_rows": 5,
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_remeasurement_requirements_v1.csv",
+      "filename": "p1_p15_cost_remeasurement_requirements_v1.csv",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "1f694a0d79018eaf8f590b48f4800ba4f936d8d74c3bc0dcb293a6d2af53a736",
+      "expected_size": 804,
+      "logical_path": "recovered_contracts/p1_p15_cost_remeasurement_requirements_v1.csv",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "expert",
+          "controlled_warm_marginal_timing_required",
+          "controlled_cold_invocation_timing_required",
+          "existing_runtime_context_available",
+          "existing_potential_inference_column",
+          "accepted_primary_gateA_cost_yet",
+          "reason"
+        ]
+      },
+      "expected_rows": 4,
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "filename": "p1_p15_cost_timing_audit_v1.json",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "c45e75d054bc9e8eec74c36749e5f0bb9a6140d49fb678a1a5493332beccb52a",
+      "expected_size": 1446,
+      "logical_path": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_existing_runtime_evidence_v1.csv",
+      "filename": "p1_p15_existing_runtime_evidence_v1.csv",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "fda7b8865074414630d40e39ff4f878aee7baa56228113296af4d15dc7dcd64f",
+      "expected_size": 3092,
+      "logical_path": "recovered_contracts/p1_p15_existing_runtime_evidence_v1.csv",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "expert",
+          "source_file",
+          "runtime_column",
+          "classification",
+          "n_rows",
+          "n_unique",
+          "min",
+          "median",
+          "max"
+        ]
+      },
+      "expected_rows": 20,
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_constitution_v1.json",
+      "filename": "p1_p15_gateA_constitution_v1.json",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "503a68768e305ae8b7b5e7e04cb6e9f1c91f6eda6af1fc46276924cd830c57fe",
+      "expected_size": 1505,
+      "logical_path": "recovered_contracts/p1_p15_gateA_constitution_v1.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_expected_utility_matrix_v1.csv",
+      "filename": "p1_p15_gateA_expected_utility_matrix_v1.csv",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "79e5e044cc0087973f2dbf889898552237171a816b487b103525fe0d5f6f96eb",
+      "expected_size": 53340,
+      "logical_path": "recovered_contracts/p1_p15_gateA_expected_utility_matrix_v1.csv",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "disease_id",
+          "E1_R50",
+          "E2_R50",
+          "E3_expected_R50",
+          "E4_expected_R50",
+          "E1_applicable",
+          "E2_applicable",
+          "E3_applicable",
+          "E4_applicable"
+        ]
+      },
+      "expected_rows": 738,
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "filename": "p1_p15_gateA_summary_v1.json",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "2b01570ffd6da4c741942d08c4ed124cd48f92c1d02dc5da625078d41d2fe4fe",
+      "expected_size": 891,
+      "logical_path": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_constitution_v1.json",
+      "filename": "p1_p15_gateB_constitution_v1.json",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "feb6d6b34b06ebfbfec1a77a1d7b7f8ff31c5c1ceaa18149307d8ead3924253f",
+      "expected_size": 8990,
+      "logical_path": "recovered_contracts/p1_p15_gateB_constitution_v1.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "filename": "p1_p15_gateB_development_gate_v1.json",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "46b40eccee5245cca10704dc4f7ea6b40281ed421a9896eedf72b73d12fbacc9",
+      "expected_size": 1783,
+      "logical_path": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_p0_action_predictability_v1.csv",
+      "filename": "p1_p15_gateB_p0_action_predictability_v1.csv",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "6bbd4bc3a73974f71e9438bbb396ce23de67479f00da91c2880d646c3d99a12d",
+      "expected_size": 310,
+      "logical_path": "recovered_contracts/p1_p15_gateB_p0_action_predictability_v1.csv",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "action",
+          "applicable_n",
+          "OOF_spearman",
+          "OOF_MAE",
+          "OOF_RMSE",
+          "selected_escalations",
+          "selected_positive_delta_precision"
+        ]
+      },
+      "expected_rows": 3,
+      "consumers": []
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_primary_metric_policy.json",
+      "filename": "p1_primary_metric_policy.json",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "e394ff95f71347c539193ad59159c1f74ce3c647f8254b00e688c12fd0c6f3af",
+      "expected_size": 739,
+      "logical_path": "recovered_contracts/p1_primary_metric_policy.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "consumers": [
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json"
+      ]
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "filename": "p1_static_routing_closure.json",
+      "semantic_role": "recovered frozen contract or metadata",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT",
+      "expected_sha256": "46581036bf8ae98212474d298c20947e2b6d5ca8f1f4908be23d539458c8cfcc",
+      "expected_size": 2029,
+      "logical_path": "recovered_contracts/p1_static_routing_closure.json",
+      "location": "bundled_local",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv",
+      "filename": "p1_e1_e2_e3_e4_expected_oracle.csv",
+      "semantic_role": "frozen_reference_result",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "40385a848f91799aff64776c9834a4f050ddd32e3fce3e186f4f94e9362d51fb",
+      "expected_size": 95790,
+      "logical_path": "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv",
+      "location": "bundled_local",
+      "producer": "Cell 25",
+      "dependencies": [
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "disease_id",
+          "E1_expected_R50",
+          "E2_expected_R50",
+          "E3_expected_R50",
+          "seed0_R50",
+          "seed1_R50",
+          "seed2_R50",
+          "E4_expected_R50",
+          "E4_seed_std_R50",
+          "E4_seed_range_R50",
+          "prior_VBS",
+          "VBS_with_E4",
+          "E4_expected_advantage",
+          "E4_seed_win_count_vs_prior_best"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "consumers": []
+    },
+    {
+      "artifact_id": "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+      "filename": "p1_e1_expert_matrix_v1_1_tiesafe.csv",
+      "semantic_role": "frozen_reference_result",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "3d008a1d12cf00b43356b7b81d5e92fd1bf998b9d77a7718a50a8404b5e32acd",
+      "expected_size": 433464,
+      "logical_path": "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+      "location": "bundled_local",
+      "producer": "Cell 14 / Cell 16",
+      "dependencies": [
+        "raw/kg.csv",
+        "benchmark/p1_v0_candidate_drugs.csv",
+        "benchmark/p1_v0_primary_diseases.csv",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "benchmark_id",
+          "expert_id",
+          "expert_version",
+          "expert_family",
+          "seed",
+          "deterministic",
+          "protocol",
+          "fold",
+          "disease_id",
+          "disease_name",
+          "uncertainty_available",
+          "uncertainty_semantics",
+          "primary_utility_name",
+          "status",
+          "applicable",
+          "disease_gene_count",
+          "nonzero_candidate_count",
+          "candidate_score_coverage",
+          "n_clean_positives",
+          "n_ignored_candidates",
+          "n_contraindications",
+          "n_scored_candidates",
+          "legacy_MRR",
+          "legacy_first_hit_rank",
+          "legacy_first_contra_rank",
+          "legacy_Recall@10",
+          "legacy_Hit@10",
+          "legacy_Contra@10",
+          "legacy_ContraRate@10",
+          "legacy_Recall@50",
+          "legacy_Hit@50",
+          "legacy_Contra@50",
+          "legacy_ContraRate@50",
+          "legacy_Recall@100",
+          "legacy_Hit@100",
+          "legacy_Contra@100",
+          "legacy_ContraRate@100",
+          "legacy_primary_utility",
+          "shared_graph_extract_runtime_sec",
+          "shared_score_runtime_sec",
+          "evaluation_runtime_sec",
+          "total_runtime_sec",
+          "amortized_runtime_sec_per_disease",
+          "MRR",
+          "first_hit_rank",
+          "first_contra_rank",
+          "Recall@10",
+          "Hit@10",
+          "Contra@10",
+          "ContraRate@10",
+          "Recall@50",
+          "Hit@50",
+          "Contra@50",
+          "ContraRate@50",
+          "Recall@100",
+          "Hit@100",
+          "Contra@100",
+          "ContraRate@100",
+          "evaluator_version",
+          "tie_policy",
+          "primary_utility"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E1_WEIGHTED_GENE_COSINE",
+        "seed": "0"
+      },
+      "consumers": [
+        "external/p1_e1_e2_e3_expected_oracle.csv",
+        "external/p1_e1_e2_preliminary_oracle.csv",
+        "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv"
+      ]
+    },
+    {
+      "artifact_id": "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+      "filename": "p1_e2_expert_matrix_v1_1_tiesafe.csv",
+      "semantic_role": "frozen_reference_result",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "5a9165046780af6979aef0e41d7266db806900738d83a3eb24579fdfb141cbcf",
+      "expected_size": 361795,
+      "logical_path": "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+      "location": "bundled_local",
+      "producer": "Cell 17",
+      "dependencies": [
+        "raw/kg.csv",
+        "benchmark/p1_v0_candidate_drugs.csv",
+        "benchmark/p1_v0_primary_diseases.csv",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "benchmark/p1_v0_k8_quarantine_manifest.csv",
+        "benchmark/therapeutic_pair_evaluation_roles.csv"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "benchmark_id",
+          "evaluator_version",
+          "expert_id",
+          "expert_version",
+          "expert_family",
+          "seed",
+          "deterministic",
+          "protocol",
+          "fold",
+          "disease_id",
+          "disease_name",
+          "status",
+          "applicable",
+          "disease_feature_count",
+          "similar_training_disease_count",
+          "similarity_mass",
+          "nonzero_candidate_count",
+          "candidate_score_coverage",
+          "n_clean_positives",
+          "n_ignored_candidates",
+          "n_contraindications",
+          "n_scored_candidates",
+          "uncertainty_available",
+          "uncertainty_semantics",
+          "primary_utility_name",
+          "MRR",
+          "first_hit_rank",
+          "first_contra_rank",
+          "Recall@10",
+          "Hit@10",
+          "Contra@10",
+          "ContraRate@10",
+          "Recall@50",
+          "Hit@50",
+          "Contra@50",
+          "ContraRate@50",
+          "Recall@100",
+          "Hit@100",
+          "Contra@100",
+          "ContraRate@100",
+          "primary_utility",
+          "shared_graph_extract_runtime_sec",
+          "shared_similarity_runtime_sec",
+          "shared_score_runtime_sec",
+          "evaluation_runtime_sec",
+          "total_runtime_sec",
+          "amortized_runtime_sec_per_disease"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E2_DISEASE_PROFILE_LABEL_TRANSFER",
+        "seed": "0"
+      },
+      "consumers": [
+        "external/p1_e1_e2_e3_expected_oracle.csv",
+        "external/p1_e1_e2_preliminary_oracle.csv",
+        "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv"
+      ]
+    },
+    {
+      "artifact_id": "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+      "filename": "p1_e3_complex_seed0_expert_matrix.csv",
+      "semantic_role": "frozen_reference_result",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "9fd3f3138e659ce5928b28406e52161fc3cedfc4b4352e2462227ddd47425e36",
+      "expected_size": 386265,
+      "logical_path": "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+      "location": "bundled_local",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e3_complex_seed0_scores.npz"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "benchmark_id",
+          "evaluator_version",
+          "expert_id",
+          "expert_version",
+          "expert_family",
+          "seed",
+          "deterministic",
+          "protocol",
+          "fold",
+          "disease_id",
+          "disease_name",
+          "status",
+          "applicable",
+          "has_nontherapeutic_kg_context",
+          "score_std",
+          "score_range",
+          "n_clean_positives",
+          "n_ignored_candidates",
+          "n_contraindications",
+          "n_scored_candidates",
+          "training_clean_pairs_fold",
+          "fold_training_runtime_sec",
+          "fold_final_training_loss",
+          "uncertainty_available",
+          "uncertainty_semantics",
+          "primary_utility_name",
+          "MRR",
+          "first_hit_rank",
+          "first_contra_rank",
+          "Recall@10",
+          "Hit@10",
+          "Contra@10",
+          "ContraRate@10",
+          "Recall@50",
+          "Hit@50",
+          "Contra@50",
+          "ContraRate@50",
+          "Recall@100",
+          "Hit@100",
+          "Contra@100",
+          "ContraRate@100",
+          "primary_utility",
+          "shared_base_pretrain_runtime_sec",
+          "total_seed0_training_runtime_sec",
+          "evaluation_runtime_sec",
+          "amortized_runtime_sec_per_disease"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E3_COMPLEX_KGE",
+        "seed": "0"
+      },
+      "consumers": [
+        "external/p1_e3_complex_expected_utility.csv",
+        "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv"
+      ]
+    },
+    {
+      "artifact_id": "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+      "filename": "p1_e3_complex_seed1_expert_matrix.csv",
+      "semantic_role": "frozen_reference_result",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "33bd8180345dfd08f92ec33d06efcc08d8ecb0514051fb92948fc30e11aafe2e",
+      "expected_size": 211430,
+      "logical_path": "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+      "location": "bundled_local",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e3_complex_seed1_scores.npz"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "benchmark_id",
+          "evaluator_version",
+          "expert_id",
+          "expert_version",
+          "expert_family",
+          "seed",
+          "fold",
+          "disease_id",
+          "disease_name",
+          "status",
+          "applicable",
+          "training_clean_pairs_fold",
+          "fold_training_runtime_sec",
+          "fold_final_training_loss",
+          "primary_utility_name",
+          "MRR",
+          "first_hit_rank",
+          "first_contra_rank",
+          "Recall@10",
+          "Hit@10",
+          "Contra@10",
+          "ContraRate@10",
+          "Recall@50",
+          "Hit@50",
+          "Contra@50",
+          "ContraRate@50",
+          "Recall@100",
+          "Hit@100",
+          "Contra@100",
+          "ContraRate@100",
+          "primary_utility"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E3_COMPLEX_KGE",
+        "seed": "1"
+      },
+      "consumers": [
+        "external/p1_e3_complex_expected_utility.csv",
+        "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv"
+      ]
+    },
+    {
+      "artifact_id": "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+      "filename": "p1_e3_complex_seed2_expert_matrix.csv",
+      "semantic_role": "frozen_reference_result",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "a113c98f95a26fd96ed713355c877723308f03d504c1ea001fdde779600312f8",
+      "expected_size": 209883,
+      "logical_path": "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+      "location": "bundled_local",
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e3_complex_seed2_scores.npz"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "benchmark_id",
+          "evaluator_version",
+          "expert_id",
+          "expert_version",
+          "expert_family",
+          "seed",
+          "fold",
+          "disease_id",
+          "disease_name",
+          "status",
+          "applicable",
+          "training_clean_pairs_fold",
+          "fold_training_runtime_sec",
+          "fold_final_training_loss",
+          "primary_utility_name",
+          "MRR",
+          "first_hit_rank",
+          "first_contra_rank",
+          "Recall@10",
+          "Hit@10",
+          "Contra@10",
+          "ContraRate@10",
+          "Recall@50",
+          "Hit@50",
+          "Contra@50",
+          "ContraRate@50",
+          "Recall@100",
+          "Hit@100",
+          "Contra@100",
+          "ContraRate@100",
+          "primary_utility"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E3_COMPLEX_KGE",
+        "seed": "2"
+      },
+      "consumers": [
+        "external/p1_e3_complex_expected_utility.csv",
+        "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv"
+      ]
+    },
+    {
+      "artifact_id": "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+      "filename": "p1_e4_rgcn_seed0_expert_matrix.csv",
+      "semantic_role": "frozen_reference_result",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "a006c394fb676b0c1625e4dc60d71bc095f01af6acc9ccc8501ff0eaa9c8eb6d",
+      "expected_size": 245668,
+      "logical_path": "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+      "location": "bundled_local",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e4_rgcn_seed0_scores.npz"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "benchmark_id",
+          "evaluator_version",
+          "expert_id",
+          "expert_version",
+          "expert_family",
+          "seed",
+          "fold",
+          "disease_id",
+          "disease_name",
+          "status",
+          "applicable",
+          "nontherapeutic_degree",
+          "training_clean_pairs_fold",
+          "fold_training_runtime_sec",
+          "fold_inference_runtime_sec",
+          "fold_final_loss",
+          "score_std",
+          "primary_utility_name",
+          "MRR",
+          "first_hit_rank",
+          "first_contra_rank",
+          "Recall@10",
+          "Hit@10",
+          "Contra@10",
+          "ContraRate@10",
+          "Recall@50",
+          "Hit@50",
+          "Contra@50",
+          "ContraRate@50",
+          "Recall@100",
+          "Hit@100",
+          "Contra@100",
+          "ContraRate@100",
+          "primary_utility"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E4_RGCN_LINK_PREDICTION",
+        "seed": "0"
+      },
+      "consumers": [
+        "external/p1_e4_rgcn_expected_utility.csv",
+        "recovered_contracts/p1_e4_rgcn_seed0_metadata.json",
+        "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv"
+      ]
+    },
+    {
+      "artifact_id": "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+      "filename": "p1_e4_rgcn_seed1_expert_matrix.csv",
+      "semantic_role": "frozen_reference_result",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "ce87a944241ad6290ed6545ef119ac4416a5c0bd8d063074f0913bd8a3a6dfe6",
+      "expected_size": 185058,
+      "logical_path": "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+      "location": "bundled_local",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e4_rgcn_seed1_scores.npz"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "benchmark_id",
+          "evaluator_version",
+          "expert_id",
+          "expert_version",
+          "expert_family",
+          "seed",
+          "fold",
+          "disease_id",
+          "disease_name",
+          "status",
+          "applicable",
+          "nontherapeutic_degree",
+          "primary_utility_name",
+          "MRR",
+          "first_hit_rank",
+          "first_contra_rank",
+          "Recall@10",
+          "Hit@10",
+          "Contra@10",
+          "ContraRate@10",
+          "Recall@50",
+          "Hit@50",
+          "Contra@50",
+          "ContraRate@50",
+          "Recall@100",
+          "Hit@100",
+          "Contra@100",
+          "ContraRate@100",
+          "primary_utility"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E4_RGCN_LINK_PREDICTION",
+        "seed": "1"
+      },
+      "consumers": [
+        "external/p1_e4_rgcn_expected_utility.csv",
+        "recovered_contracts/p1_e4_rgcn_seed1_metadata.json",
+        "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv"
+      ]
+    },
+    {
+      "artifact_id": "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv",
+      "filename": "p1_e4_rgcn_seed2_expert_matrix.csv",
+      "semantic_role": "frozen_reference_result",
+      "provenance_class": "FROZEN_REFERENCE_RESULT",
+      "expected_sha256": "4203b835aefe746ba9300ee06d45ce4b59c1d9a684331633e736aa797a1e01af",
+      "expected_size": 184842,
+      "logical_path": "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv",
+      "location": "bundled_local",
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e4_rgcn_seed2_scores.npz"
+      ],
+      "required_for": [
+        "REFERENCE",
+        "FULL_LOCAL"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "benchmark_id",
+          "evaluator_version",
+          "expert_id",
+          "expert_version",
+          "expert_family",
+          "seed",
+          "fold",
+          "disease_id",
+          "disease_name",
+          "status",
+          "applicable",
+          "nontherapeutic_degree",
+          "primary_utility_name",
+          "MRR",
+          "first_hit_rank",
+          "first_contra_rank",
+          "Recall@10",
+          "Hit@10",
+          "Contra@10",
+          "ContraRate@10",
+          "Recall@50",
+          "Hit@50",
+          "Contra@50",
+          "ContraRate@50",
+          "Recall@100",
+          "Hit@100",
+          "Contra@100",
+          "ContraRate@100",
+          "primary_utility"
+        ]
+      },
+      "expected_rows": 738,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E4_RGCN_LINK_PREDICTION",
+        "seed": "2"
+      },
+      "consumers": [
+        "external/p1_e4_rgcn_expected_utility.csv",
+        "recovered_contracts/p1_e4_rgcn_seed2_metadata.json",
+        "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv"
+      ]
+    },
+    {
+      "artifact_id": "source/authoritative/E1_authoritative.py",
+      "filename": "E1_authoritative.py",
+      "semantic_role": "historical expert source",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "b4dc0191fc66b6f0f3927c40bd4cc375ba20ce6e99e82e085bdb5684ed1f0900",
+      "expected_size": 38022,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_codex_ingest/source/authoritative/E1_authoritative.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "source/authoritative/E2_authoritative.py",
+      "filename": "E2_authoritative.py",
+      "semantic_role": "historical expert source",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "96607e0eacc774e9f788499bf3481a3e34bb557906eaaf68cd4586dd1c01fe2f",
+      "expected_size": 46343,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_codex_ingest/source/authoritative/E2_authoritative.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "source/authoritative/E3_authoritative.py",
+      "filename": "E3_authoritative.py",
+      "semantic_role": "historical expert source",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "14712fef0cd629bda08dee271e15dde77175379281c0099f3b513a9540c1648c",
+      "expected_size": 66666,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_codex_ingest/source/authoritative/E3_authoritative.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "source/authoritative/E3_seed12_support.py",
+      "filename": "E3_seed12_support.py",
+      "semantic_role": "historical expert source",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "af61b4148f33029883e6e2acf425915c32091a0916259f1ad8e639662ba56224",
+      "expected_size": 62218,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_codex_ingest/source/authoritative/E3_seed12_support.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "source/authoritative/E4_authoritative.py",
+      "filename": "E4_authoritative.py",
+      "semantic_role": "historical expert source",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "a476b743fe8d813c73e2acedb9cf1c9c09459411fe0914776e02db731a0965cc",
+      "expected_size": 38031,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_codex_ingest/source/authoritative/E4_authoritative.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "source/authoritative/E4_training_seed0.py",
+      "filename": "E4_training_seed0.py",
+      "semantic_role": "historical expert source",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "d6f8b3b38f681c0bb453d8a5fc295d5f01ef8b45e3293ec1d1e255807cc11680",
+      "expected_size": 54016,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_codex_ingest/source/authoritative/E4_training_seed0.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    },
+    {
+      "artifact_id": "source/authoritative/E4_training_seed12.py",
+      "filename": "E4_training_seed12.py",
+      "semantic_role": "historical expert source",
+      "provenance_class": "HISTORICAL_SOURCE",
+      "expected_sha256": "46975170f3751cca81db631080469b277ddbb22d85de2d62439bbb1129cb3d3f",
+      "expected_size": 59613,
+      "logical_path": null,
+      "location": "source_archive_entry",
+      "archive_entry": "primekg_codex_ingest/source/authoritative/E4_training_seed12.py",
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "required_for": [],
+      "consumers": []
+    }
+  ]
+}

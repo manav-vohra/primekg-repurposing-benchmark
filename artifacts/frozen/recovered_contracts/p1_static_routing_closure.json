@@ -1,0 +1,47 @@
+{
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+  "status": "STATIC_ROUTING_DEVELOPMENT_CLOSED",
+  "primary_metric": "expected tie-safe Recall@50",
+  "portfolio": [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+  ],
+  "SBS_expert": "E2",
+  "SBS": 0.6292107026825583,
+  "VBS": 0.681351211065284,
+  "oracle_gap": 0.05214050838272566,
+  "feature_v1": {
+    "predictor_count": 41,
+    "absolute_argmax_result": "FAIL",
+    "absolute_ridge_gain_vs_SBS": -0.0028768207072048,
+    "absolute_hgb_gain_vs_SBS": -0.0049108244458665,
+    "conservative_delta_result": "FAIL",
+    "conservative_delta_gain_vs_SBS": 0.0,
+    "conservative_delta_switches": 0
+  },
+  "feature_v2": {
+    "predictor_count": 68,
+    "new_predictor_count": 27,
+    "matrix_sha256": "2f189dd61deacfd1176fb24cc56f55390f3b66c8691de55246e06fcdb999ce3f",
+    "single_preregistered_gate": "FAIL",
+    "safe_gain_vs_SBS": 0.0,
+    "oracle_gap_recovered": 0.0,
+    "switches": 0
+  },
+  "scientific_result": "The retained expert portfolio exhibits a substantial disease-conditional oracle opportunity, but neither preregistered low-cost static feature state supported reliable profitable deviation from the globally best expert E2 under the tested nested routing policies.",
+  "supported_claim": "Stable expert complementarity does not imply cheaply recoverable expert applicability under this leakage-resistant disease-cold-start benchmark.",
+  "unsupported_claims": [
+    "routing is impossible",
+    "graph features never predict model performance",
+    "expert applicability regions do not exist",
+    "richer representations cannot work",
+    "costed probing cannot work"
+  ],
+  "feature_v3_allowed": false,
+  "additional_static_router_search_allowed": false,
+  "final_meta_heldout_router_test_required": false,
+  "reason_no_final_router_test": "No preregistered development policy cleared the routing gate.",
+  "optional_followup_not_part_of_static_P1": "P1.5 costed probing / landmarking to test whether additional low-cost computation makes expert applicability observable."
+}

@@ -1,0 +1,524 @@
+{
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+  "status": "PASS",
+  "raw_input": {
+    "artifact_id": "raw/kg.csv",
+    "logical_path": "raw/kg.csv",
+    "path": "C:\\Users\\abort\\Downloads\\kg.csv",
+    "expected_sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69",
+    "observed_sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69",
+    "status": "VERIFIED"
+  },
+  "reconstruction": {
+    "census": {
+      "directed_rows": 8100498,
+      "reciprocal_conceptual_relations": 4050249,
+      "entities": 129307,
+      "raw_typed_entity_keys": 129312,
+      "raw_untyped_entity_ids": 90067,
+      "nodes_by_type": {
+        "drug": 7957,
+        "gene/protein": 27610,
+        "disease": 17080,
+        "biological_process": 28642,
+        "cellular_component": 4176,
+        "effect/phenotype": 15311,
+        "molecular_function": 11169,
+        "anatomy": 14033,
+        "exposure": 818,
+        "pathway": 2516
+      },
+      "relation_counts": {
+        "protein_protein": 642150,
+        "drug_drug": 2672628,
+        "contraindication": 61350,
+        "drug_protein": 51306,
+        "indication": 18776,
+        "off-label use": 5136,
+        "disease_phenotype_positive": 300634,
+        "disease_protein": 160822,
+        "drug_effect": 129568,
+        "bioprocess_bioprocess": 105772,
+        "disease_disease": 64388,
+        "phenotype_phenotype": 37472,
+        "molfunc_protein": 139060,
+        "molfunc_molfunc": 27148,
+        "cellcomp_cellcomp": 9690,
+        "phenotype_protein": 6660,
+        "disease_phenotype_negative": 2386,
+        "anatomy_protein_present": 3036406,
+        "bioprocess_protein": 289610,
+        "cellcomp_protein": 166804,
+        "pathway_protein": 85292,
+        "anatomy_anatomy": 28064,
+        "pathway_pathway": 5070,
+        "exposure_disease": 4608,
+        "exposure_exposure": 4140,
+        "exposure_bioprocess": 3250,
+        "exposure_protein": 2424,
+        "exposure_molfunc": 90,
+        "exposure_cellcomp": 20,
+        "anatomy_protein_absent": 39774
+      },
+      "retained_nontherapeutic_relation_types": 27
+    },
+    "therapeutic_directed_rows": {
+      "indication": 18776,
+      "contraindication": 61350,
+      "off-label use": 5136
+    },
+    "therapeutic_canonical_pairs": {
+      "contraindication": 30675,
+      "indication": 9388,
+      "off-label use": 2568
+    },
+    "global_role_counts": {
+      "CONTRAINDICATION_ONLY": 30552,
+      "CLEAN_INDICATION": 9177,
+      "OFFLABEL_ONLY": 2407,
+      "AMBIGUOUS_INDICATION": 211,
+      "CONFLICTING_NONINDICATION": 36
+    },
+    "candidate_universes": {
+      "U0": 7957,
+      "U1": 7828,
+      "U2": 6282
+    },
+    "primary_diseases": 738,
+    "primary_truth": 8368,
+    "fold_sizes": [
+      93,
+      93,
+      92,
+      92,
+      92,
+      92,
+      92,
+      92
+    ],
+    "buffer_sizes": [
+      109,
+      125,
+      83,
+      118,
+      110,
+      99,
+      120,
+      146
+    ],
+    "legal_clean_counts": [
+      6856,
+      6828,
+      6990,
+      7119,
+      6871,
+      7183,
+      7091,
+      6827
+    ],
+    "tested_direct_ontology_edges": 1074,
+    "surviving_direct_ontology_edges": 0
+  },
+  "count_checks": [
+    {
+      "field": "directed_rows",
+      "expected": 8100498,
+      "observed": 8100498,
+      "pass": true
+    },
+    {
+      "field": "reciprocal_conceptual_relations",
+      "expected": 4050249,
+      "observed": 4050249,
+      "pass": true
+    },
+    {
+      "field": "entities",
+      "expected": 129307,
+      "observed": 129307,
+      "pass": true
+    },
+    {
+      "field": "relation_counts",
+      "expected": {
+        "anatomy_protein_present": 3036406,
+        "drug_drug": 2672628,
+        "protein_protein": 642150,
+        "disease_phenotype_positive": 300634,
+        "bioprocess_protein": 289610,
+        "cellcomp_protein": 166804,
+        "disease_protein": 160822,
+        "molfunc_protein": 139060,
+        "drug_effect": 129568,
+        "bioprocess_bioprocess": 105772,
+        "pathway_protein": 85292,
+        "disease_disease": 64388,
+        "contraindication": 61350,
+        "drug_protein": 51306,
+        "anatomy_protein_absent": 39774,
+        "phenotype_phenotype": 37472,
+        "anatomy_anatomy": 28064,
+        "molfunc_molfunc": 27148,
+        "indication": 18776,
+        "cellcomp_cellcomp": 9690,
+        "phenotype_protein": 6660,
+        "off-label use": 5136,
+        "pathway_pathway": 5070,
+        "exposure_disease": 4608,
+        "exposure_exposure": 4140,
+        "exposure_bioprocess": 3250,
+        "exposure_protein": 2424,
+        "disease_phenotype_negative": 2386,
+        "exposure_molfunc": 90,
+        "exposure_cellcomp": 20
+      },
+      "observed": {
+        "protein_protein": 642150,
+        "drug_drug": 2672628,
+        "contraindication": 61350,
+        "drug_protein": 51306,
+        "indication": 18776,
+        "off-label use": 5136,
+        "disease_phenotype_positive": 300634,
+        "disease_protein": 160822,
+        "drug_effect": 129568,
+        "bioprocess_bioprocess": 105772,
+        "disease_disease": 64388,
+        "phenotype_phenotype": 37472,
+        "molfunc_protein": 139060,
+        "molfunc_molfunc": 27148,
+        "cellcomp_cellcomp": 9690,
+        "phenotype_protein": 6660,
+        "disease_phenotype_negative": 2386,
+        "anatomy_protein_present": 3036406,
+        "bioprocess_protein": 289610,
+        "cellcomp_protein": 166804,
+        "pathway_protein": 85292,
+        "anatomy_anatomy": 28064,
+        "pathway_pathway": 5070,
+        "exposure_disease": 4608,
+        "exposure_exposure": 4140,
+        "exposure_bioprocess": 3250,
+        "exposure_protein": 2424,
+        "exposure_molfunc": 90,
+        "exposure_cellcomp": 20,
+        "anatomy_protein_absent": 39774
+      },
+      "pass": true
+    },
+    {
+      "field": "nodes_by_type",
+      "expected": {
+        "anatomy": 14033,
+        "biological_process": 28642,
+        "cellular_component": 4176,
+        "disease": 17080,
+        "drug": 7957,
+        "effect/phenotype": 15311,
+        "exposure": 818,
+        "gene/protein": 27610,
+        "molecular_function": 11169,
+        "pathway": 2516
+      },
+      "observed": {
+        "drug": 7957,
+        "gene/protein": 27610,
+        "disease": 17080,
+        "biological_process": 28642,
+        "cellular_component": 4176,
+        "effect/phenotype": 15311,
+        "molecular_function": 11169,
+        "anatomy": 14033,
+        "exposure": 818,
+        "pathway": 2516
+      },
+      "pass": true
+    },
+    {
+      "field": "nontherapeutic_relation_types",
+      "expected": 27,
+      "observed": 27,
+      "pass": true
+    },
+    {
+      "field": "global_clean_pairs",
+      "expected": 9177,
+      "observed": 9177,
+      "pass": true
+    },
+    {
+      "field": "candidate_U0",
+      "expected": 7957,
+      "observed": 7957,
+      "pass": true
+    },
+    {
+      "field": "candidate_U1",
+      "expected": 7828,
+      "observed": 7828,
+      "pass": true
+    },
+    {
+      "field": "candidate_U2",
+      "expected": 6282,
+      "observed": 6282,
+      "pass": true
+    },
+    {
+      "field": "primary_diseases",
+      "expected": 738,
+      "observed": 738,
+      "pass": true
+    },
+    {
+      "field": "primary_truth",
+      "expected": 8368,
+      "observed": 8368,
+      "pass": true
+    },
+    {
+      "field": "fold_sizes",
+      "expected": [
+        93,
+        93,
+        92,
+        92,
+        92,
+        92,
+        92,
+        92
+      ],
+      "observed": [
+        93,
+        93,
+        92,
+        92,
+        92,
+        92,
+        92,
+        92
+      ],
+      "pass": true
+    },
+    {
+      "field": "legal_clean_counts",
+      "expected": [
+        6856,
+        6828,
+        6990,
+        7119,
+        6871,
+        7183,
+        7091,
+        6827
+      ],
+      "observed": [
+        6856,
+        6828,
+        6990,
+        7119,
+        6871,
+        7183,
+        7091,
+        6827
+      ],
+      "pass": true
+    },
+    {
+      "field": "direct_ontology_leaks",
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    {
+      "field": "therapeutic_directed_rows",
+      "expected": {
+        "indication": 18776,
+        "contraindication": 61350,
+        "off-label use": 5136
+      },
+      "observed": {
+        "indication": 18776,
+        "contraindication": 61350,
+        "off-label use": 5136
+      },
+      "pass": true
+    },
+    {
+      "field": "therapeutic_canonical_pairs",
+      "expected": {
+        "indication": 9388,
+        "contraindication": 30675,
+        "off-label use": 2568
+      },
+      "observed": {
+        "contraindication": 30675,
+        "indication": 9388,
+        "off-label use": 2568
+      },
+      "pass": true
+    },
+    {
+      "field": "role_CLEAN_INDICATION",
+      "expected": 9177,
+      "observed": 9177,
+      "pass": true
+    },
+    {
+      "field": "role_CONTRAINDICATION_ONLY",
+      "expected": 30552,
+      "observed": 30552,
+      "pass": true
+    },
+    {
+      "field": "role_OFFLABEL_ONLY",
+      "expected": 2407,
+      "observed": 2407,
+      "pass": true
+    },
+    {
+      "field": "role_AMBIGUOUS_INDICATION",
+      "expected": 211,
+      "observed": 211,
+      "pass": true
+    },
+    {
+      "field": "role_CONFLICTING_NONINDICATION",
+      "expected": 36,
+      "observed": 36,
+      "pass": true
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": "p1_v0_candidate_drugs.csv",
+      "expected_sha256": "dfe7275c60b6b75b2a8fa45c017c7675e3e438d6b59722f91517ff78862c2776",
+      "generated_sha256": "dfe7275c60b6b75b2a8fa45c017c7675e3e438d6b59722f91517ff78862c2776",
+      "hash_equivalence": true,
+      "expected_rows": 7957,
+      "generated_rows": 7957,
+      "schema_match": true,
+      "ordered_keys_match": true,
+      "first_ordered_mismatch": null,
+      "unordered_content_equivalence": true,
+      "semantic_equivalence": true,
+      "classification": "EXACT"
+    },
+    {
+      "artifact": "p1_v0_primary_diseases.csv",
+      "expected_sha256": "722eec938337a73e7867d384af509d3302bf27d133b665238b76b91ec50d7932",
+      "generated_sha256": "722eec938337a73e7867d384af509d3302bf27d133b665238b76b91ec50d7932",
+      "hash_equivalence": true,
+      "expected_rows": 738,
+      "generated_rows": 738,
+      "schema_match": true,
+      "ordered_keys_match": true,
+      "first_ordered_mismatch": null,
+      "unordered_content_equivalence": true,
+      "semantic_equivalence": true,
+      "classification": "EXACT"
+    },
+    {
+      "artifact": "p1_v0_primary_eval_roles.csv",
+      "expected_sha256": "c51481941ea30b861e538678dbd4df78fddafeedd91a77ece2de40c157255564",
+      "generated_sha256": "c51481941ea30b861e538678dbd4df78fddafeedd91a77ece2de40c157255564",
+      "hash_equivalence": true,
+      "expected_rows": 23584,
+      "generated_rows": 23584,
+      "schema_match": true,
+      "ordered_keys_match": true,
+      "first_ordered_mismatch": null,
+      "unordered_content_equivalence": true,
+      "semantic_equivalence": true,
+      "classification": "EXACT"
+    },
+    {
+      "artifact": "p1_v0_primary_truth.csv",
+      "expected_sha256": "e17dc6f289f2d467a693d9941f18caf38a36ef11d870f7fc1ebec71953a25b45",
+      "generated_sha256": "e17dc6f289f2d467a693d9941f18caf38a36ef11d870f7fc1ebec71953a25b45",
+      "hash_equivalence": true,
+      "expected_rows": 8368,
+      "generated_rows": 8368,
+      "schema_match": true,
+      "ordered_keys_match": true,
+      "first_ordered_mismatch": null,
+      "unordered_content_equivalence": true,
+      "semantic_equivalence": true,
+      "classification": "EXACT"
+    },
+    {
+      "artifact": "p1_v0_k8_quarantine_manifest.csv",
+      "expected_sha256": "d5aaaaac34cc78b7a38084c374d9c340a002de638aafd85ae650ad7d2d71a1d8",
+      "generated_sha256": "d5aaaaac34cc78b7a38084c374d9c340a002de638aafd85ae650ad7d2d71a1d8",
+      "hash_equivalence": true,
+      "expected_rows": 1648,
+      "generated_rows": 1648,
+      "schema_match": true,
+      "ordered_keys_match": true,
+      "first_ordered_mismatch": null,
+      "unordered_content_equivalence": true,
+      "semantic_equivalence": true,
+      "classification": "EXACT"
+    },
+    {
+      "artifact": "p1_v0_fold_summary.csv",
+      "expected_sha256": "d50d830b87aebdc81731437de6204cca25e442054dca27d687a6feadfe462912",
+      "generated_sha256": "d50d830b87aebdc81731437de6204cca25e442054dca27d687a6feadfe462912",
+      "hash_equivalence": true,
+      "expected_rows": 8,
+      "generated_rows": 8,
+      "schema_match": true,
+      "ordered_keys_match": true,
+      "first_ordered_mismatch": null,
+      "unordered_content_equivalence": true,
+      "semantic_equivalence": true,
+      "classification": "EXACT"
+    },
+    {
+      "artifact": "p1_v0_benchmark_manifest.json",
+      "expected_sha256": "86b9f4f65fcc981eec8a188779d884e852815da01d9ce9b6a6733868d8a38f53",
+      "generated_sha256": "e393a66ac7d0ce9a9afa83ad635eaa849f3578acfadd2f70d64d719b9c463ca7",
+      "hash_equivalence": false,
+      "scientific_field_matches": {
+        "benchmark_id": true,
+        "benchmark_version": true,
+        "status": true,
+        "track": true,
+        "graph": true,
+        "task": true,
+        "label_policy": true,
+        "oof_protocol": true,
+        "primary_metrics": true,
+        "safety_metrics": true,
+        "secondary_diagnostics": true,
+        "important_metric_semantics": true
+      },
+      "semantic_equivalence": true,
+      "provenance_differences": {
+        "software_environment": {
+          "expected": {
+            "python": "3.13.15",
+            "pandas": "2.2.3",
+            "numpy": "2.1.3"
+          },
+          "generated": {
+            "python": "3.12.14",
+            "pandas": "3.0.1",
+            "numpy": "2.3.5"
+          }
+        }
+      },
+      "historical_environment_normalized_hash_equivalence": true,
+      "classification": "ENVIRONMENT_METADATA_ONLY_DIFFERENCE"
+    },
+    {
+      "artifact": "p1_primary_metric_policy.json",
+      "expected_sha256": "e394ff95f71347c539193ad59159c1f74ce3c647f8254b00e688c12fd0c6f3af",
+      "generated_sha256": "e394ff95f71347c539193ad59159c1f74ce3c647f8254b00e688c12fd0c6f3af",
+      "hash_equivalence": true,
+      "semantic_equivalence": true,
+      "classification": "EXACT"
+    }
+  ],
+  "generated_output_dir": "C:\\Users\\abort\\Documents\\Codex\\2026-10-05\\files-mentioned-by-the-user-primekg\\artifacts\\generated\\benchmark_reconstruction"
+}

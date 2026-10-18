@@ -1,0 +1,50 @@
+{
+  "status": "P1_ORACLE_GAP_UNCERTAINTY_FROZEN",
+  "frozen_full_cohort_semantics": "FIXED_ZERO_ALL_EXPERTS",
+  "population_n": 738,
+  "no_applicable_expert_n": 2,
+  "applicability_counts": {
+    "E1": 504,
+    "E2": 712,
+    "E3": 736,
+    "E4": 736
+  },
+  "SBS": "E2",
+  "SBS_R50": 0.6292107026825583,
+  "VBS_R50": 0.681351211065284,
+  "oracle_gap": 0.05214050838272566,
+  "relative_gap_vs_E2": 0.08286653129139628,
+  "paired_bootstrap": {
+    "reps": 10000,
+    "full_738_CI": [
+      0.040873353304364146,
+      0.06424715370226272
+    ],
+    "E2_applicable_712_CI": [
+      0.030531448636360755,
+      0.05097190434045231
+    ]
+  },
+  "winner_counts": {
+    "E1": 39,
+    "E2": 442,
+    "E3": 38,
+    "E4": 56,
+    "TIE": 163
+  },
+  "E2_applicable_n": 712,
+  "E2_unavailable_n": 26,
+  "E2_applicable_gap": 0.040321348593792654,
+  "E2_applicable_share_full_gap": 0.7460766011703898,
+  "median_E2_regret": 0.0,
+  "p90_E2_regret": 0.16314332452497826,
+  "fraction_E2_regret_gt_zero": 0.1842818428184282,
+  "fraction_E2_regret_ge_0_05": 0.14634146341463414,
+  "fraction_E2_regret_ge_0_10": 0.12059620596205962,
+  "median_best_second_fixed_margin": 0.1803412756652733,
+  "applicable_only_margin_n": 736,
+  "META_TEST_membership_loaded": false,
+  "new_model_fit": false,
+  "new_experiment": false,
+  "frozen_P1_modified": false
+}

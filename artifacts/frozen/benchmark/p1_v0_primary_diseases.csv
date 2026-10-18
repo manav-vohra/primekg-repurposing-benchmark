@@ -1,0 +1,739 @@
+disease_id,CLEAN_INDICATION,AMBIGUOUS_INDICATION,CONTRAINDICATION_ONLY,OFFLABEL_ONLY,CONFLICTING_NONINDICATION,disease_name,observed_therapeutic_pairs,unobserved_candidates,primary_ignore_count,primary_scored_candidate_count,oof_fold
+10198,3,0,6,1,0,Wernicke-Korsakoff syndrome,10,7947,1,7956,0
+10679,4,0,7,1,0,Duchenne muscular dystrophy,12,7945,1,7956,0
+10811,9,0,170,2,0,benign prostatic hyperplasia (disease),181,7776,2,7955,0
+11381,3,0,0,0,0,dominant beta-thalassemia,3,7954,0,7957,0
+11401,7,0,2,0,0,Alzheimer disease without neurofibrillary tangles,9,7948,0,7957,0
+11438,34,0,0,2,0,acne (disease),36,7921,2,7955,0
+11486_12279_19950_20121_23595_18281,4,0,7,1,0,muscular dystrophy,12,7945,1,7956,0
+11849,17,0,0,7,0,psoriatic arthritis,24,7933,7,7950,0
+11918,19,0,11,4,0,anxiety,34,7923,4,7953,0
+1209,6,0,9,0,0,common wart,15,7942,0,7957,0
+13108_7190_12318_12934_12935_12936_13109,21,0,0,1,0,"leukemia, lymphocytic, susceptibility to",22,7935,1,7956,0
+1336,15,0,55,3,0,familial hyperlipidemia,73,7884,3,7954,0
+1409,25,0,73,2,0,esophagitis (disease),100,7857,2,7955,0
+14143_11531_14693_13186_8104_12371_14691_13379_12690_32786_12547_32839_33669_18997,3,0,0,2,0,Noonan syndrome,5,7952,2,7955,0
+15254,3,0,0,0,0,schistosomiasis,3,7954,0,7957,0
+15447,3,0,0,0,0,differentiated thyroid carcinoma,3,7954,0,7957,0
+15614_6565,11,0,10,0,0,dermatitis herpetiformis,21,7936,0,7957,0
+15667,17,0,0,4,0,unclassified acute myeloid leukemia,21,7936,4,7953,0
+15760_18908_15759,19,0,0,0,0,non-Hodgkin lymphoma,19,7938,0,7957,0
+15808,14,0,2,6,0,folliculotropic mycosis fungoides,22,7935,6,7951,0
+15898,8,1,0,0,0,adrenogenital syndrome,9,7948,1,7956,0
+16249,15,0,26,8,0,hereditary site-specific ovarian cancer syndrome,49,7908,8,7949,0
+1701,3,0,0,13,0,gastrointestinal anthrax,16,7941,13,7944,0
+17145,3,0,0,0,0,beta-thalassemia and related diseases,3,7954,0,7957,0
+17210,10,0,0,1,0,infectious anterior uveitis,11,7946,1,7956,0
+17600,4,0,0,0,0,hairy cell leukemia variant,4,7953,0,7957,0
+18077,4,0,0,5,0,tularemia,9,7948,5,7952,0
+18183_5970,33,0,0,0,0,staphylococcal pneumonia,33,7924,0,7957,0
+18321,22,0,1,0,0,atypical juvenile parkinsonism,23,7934,0,7957,0
+18513,5,0,1,1,0,squamous cell carcinoma of colon,7,7950,1,7956,0
+18626,4,1,0,3,0,paratyphoid fever,8,7949,4,7953,0
+1875,7,0,0,0,0,epicondylitis,7,7950,0,7957,0
+18874_4643,17,0,1,4,0,myeloid leukemia,22,7935,4,7953,0
+19121,7,0,3,3,0,pneumocystosis,13,7944,3,7954,0
+19165_88_15791_15714,3,0,0,3,0,precocious puberty,6,7951,3,7954,0
+19338,9,0,54,0,0,sarcoidosis,63,7894,0,7957,0
+19360,8,0,0,0,0,rickettsialpox,8,7949,0,7957,0
+19457,17,0,0,4,0,therapy related acute myeloid leukemia and myelodysplastic syndrome,21,7936,4,7953,0
+20108_16450_19532,9,0,4,0,0,autoimmune hemolytic anemia,13,7944,0,7957,0
+20320,17,0,0,4,0,acute myeloblastic leukemia with maturation,21,7936,4,7953,0
+2087,4,0,0,0,0,peritoneum cancer,4,7953,0,7957,0
+20989,5,0,31,2,0,hereditary persistence of fetal hemoglobin,38,7919,2,7955,0
+22687_4742,7,0,27,0,0,cerebellar degeneration,34,7923,0,7957,0
+24343,11,0,0,2,0,pityriasis simplex,13,7944,2,7955,0
+2571,7,0,7,5,0,primary central nervous system lymphoma,19,7938,5,7952,0
+2691,4,0,21,1,0,liver cancer,26,7931,1,7956,0
+2970,15,0,10,2,0,ciliary body disease,27,7930,2,7955,0
+2974,3,0,14,3,0,cervical cancer,20,7937,3,7954,0
+3014_4514,16,0,0,2,0,rhinitis,18,7939,2,7955,0
+40797,4,0,0,11,0,obsolete vascular headache,15,7942,11,7946,0
+4215,3,0,0,9,0,cutaneous anthrax,12,7945,9,7948,0
+45011,3,0,0,1,0,keratinization disease,4,7953,1,7956,0
+4522,13,0,2,0,0,peritonitis,15,7942,0,7957,0
+4849,16,0,55,0,0,pulmonary emphysema,71,7886,0,7957,0
+4855,9,2,0,0,0,tenosynovitis,11,7946,2,7955,0
+4964,4,0,0,0,0,"peripheral T-cell lymphoma, not otherwise specified",4,7953,0,7957,0
+5009,22,2,92,0,0,congestive heart failure,116,7841,2,7955,0
+5015,53,0,343,0,0,diabetes mellitus (disease),396,7561,0,7957,0
+5295,6,0,61,1,0,intermittent vascular claudication,68,7889,1,7956,0
+5301,13,0,2,0,0,multiple sclerosis,15,7942,0,7957,0
+5311,7,0,74,0,0,atherosclerosis,81,7876,0,7957,0
+5387_19852_19851,6,0,0,0,0,primary ovarian failure,6,7951,0,7957,0
+5433,3,0,6,1,0,alcohol withdrawal,10,7947,1,7956,0
+5542,7,0,20,11,0,acute coronary syndrome,38,7919,11,7946,0
+5601,15,0,26,8,0,ovarian mucinous adenocarcinoma,49,7908,8,7949,0
+5644,5,0,0,0,0,amebiasis,5,7952,0,7957,0
+5654_5655,6,0,0,0,0,ascaridiasis,6,7951,0,7957,0
+5709,67,0,1,0,0,common cold,68,7889,0,7957,0
+5758,6,0,1,0,0,eunuchism,7,7950,0,7957,0
+5834,14,3,0,6,0,lymphogranuloma venereum,23,7934,9,7948,0
+5842_2186_1122,7,0,0,0,0,maxillary sinusitis,7,7950,0,7957,0
+5888,11,0,0,1,0,ornithosis,12,7945,1,7956,0
+5942,7,0,27,0,0,Reye syndrome,34,7923,0,7957,0
+5972,49,0,0,0,0,streptococcal pneumonia,49,7908,0,7957,0
+5984,24,0,0,1,0,tinea pedis,25,7932,1,7956,0
+6021,5,0,12,2,0,Prinzmetal angina,19,7938,2,7955,0
+6361,3,0,4,0,0,penile fibromatosis,7,7950,0,7957,0
+6547,26,0,9,2,0,exanthem (disease),37,7920,2,7955,0
+6563,6,0,0,0,0,inverted follicular keratosis,6,7951,0,7957,0
+6670,9,0,0,0,0,bacterial meningitis,9,7948,0,7957,0
+6753,4,0,0,2,0,Escherichia coli meningitis,6,7951,2,7955,0
+6816,60,2,0,4,0,arthropathy,66,7891,6,7951,0
+6955,9,0,0,0,0,rheumatic heart disease,9,7948,0,7957,0
+7015,9,0,0,0,0,viral meningitis,9,7948,0,7957,0
+744,3,0,0,0,0,lung abscess (disease),3,7954,0,7957,0
+7448,22,0,0,0,0,familial dermatographia,22,7935,0,7957,0
+7958_17896,3,0,0,0,0,familial thyroid carcinoma,3,7954,0,7957,0
+8114_1158,5,0,24,2,0,obsessive-compulsive disorder,31,7926,2,7955,0
+8159,29,3,46,4,0,postmenopausal osteoporosis,82,7875,7,7950,0
+8315,6,0,19,0,0,prostate cancer,25,7932,0,7957,0
+8433,3,0,0,8,0,small cell lung carcinoma,11,7946,8,7949,0
+920,3,0,30,0,0,duodenum cancer,33,7924,0,7957,0
+940,13,0,0,0,0,trypanosomiasis,13,7944,0,7957,0
+1056,6,0,5,1,0,gastric cancer,12,7945,1,7956,1
+1080,26,0,0,1,0,acute gonococcal cervicitis,27,7930,1,7956,1
+11123_12919_7454_5147_10861_10862_10863_10864_10950_11016_11033_11068_11167_11168_11302_11572_12422_12920_12921_12961_13078,4,0,23,0,0,type 1 diabetes mellitus,27,7930,0,7957,1
+11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088,8,0,56,0,0,Alzheimer disease,64,7893,0,7957,1
+1195,9,0,0,2,0,spotted fever,11,7946,2,7955,1
+1249,11,0,0,1,0,trachoma,12,7945,1,7956,1
+12672,3,0,21,0,0,cholelithiasis,24,7933,0,7957,1
+1358,6,0,28,0,0,bronchial disease,34,7923,0,7957,1
+13652_12179_8062_21107,9,0,5,6,0,narcolepsy,20,7937,6,7951,1
+1442,30,0,163,4,0,dysthymic disorder,197,7760,4,7953,1
+15531_17025_18310_17036_17029,19,0,0,1,0,Langerhans cell histiocytosis,20,7937,1,7956,1
+15574,20,0,0,2,0,chronic cutaneous lupus erythematosus,22,7935,2,7955,1
+15787_15788,14,0,7,0,0,symptomatic form of hemophilia in female carriers,21,7936,0,7957,1
+16248,15,0,26,8,0,familial ovarian cancer,49,7908,8,7949,1
+16487,3,0,0,0,0,beta-thalassemia intermedia,3,7954,0,7957,1
+1673,5,6,58,8,0,diarrheal disease,77,7880,14,7943,1
+1725,3,0,4,0,0,balanitis xerotica obliterans,7,7950,0,7957,1
+17327,15,0,26,8,0,primary non-gestational choriocarcinoma of ovary,49,7908,8,7949,1
+17346,6,0,0,5,0,Epstein-Barr virus-positive diffuse large B-cell lymphoma of the elderly,11,7946,5,7952,1
+17596,6,0,0,5,0,diffuse large B-cell lymphoma of the central nervous system,11,7946,5,7952,1
+17895,3,0,0,0,0,familial papillary or follicular thyroid carcinoma,3,7954,0,7957,1
+18168_19033_18167,12,0,0,0,0,cutis verticis gyrata,12,7945,0,7957,1
+18479_19847_23601_60783,8,1,71,0,0,congenital adrenal hyperplasia,80,7877,1,7956,1
+18912,4,0,6,2,0,Cushing syndrome,12,7945,2,7955,1
+19028,7,0,0,0,0,amoebiasis due to Entamoeba histolytica,7,7950,0,7957,1
+19065,3,0,1,0,0,amyloidosis (disease),4,7953,0,7957,1
+1928,6,0,1,17,0,suppurative cholangitis,24,7933,17,7940,1
+19340,3,0,1,2,0,scleroderma (disease),6,7951,2,7955,1
+19359,8,0,0,0,0,Rocky mountain spotted fever,8,7949,0,7957,1
+19633,8,0,0,2,0,relapsing fever,10,7947,2,7955,1
+2022,8,0,2,0,0,disease of orbital region,10,7947,0,7957,1
+2026,7,0,3,0,0,candidiasis,10,7947,0,7957,1
+20542,15,0,26,8,0,malignant Sertoli-Leydig cell tumor of ovary,49,7908,8,7949,1
+2108,3,0,0,0,0,thyroid cancer,3,7954,0,7957,1
+2181,10,0,7,5,0,exostosis,22,7935,5,7952,1
+2279,3,0,29,0,0,iron metabolism disease,32,7925,0,7957,1
+2406,15,8,30,5,2,dermatitis,60,7897,15,7942,1
+2471,12,0,0,2,0,bursitis,14,7943,2,7955,1
+3001,4,0,0,4,0,seminoma,8,7949,4,7953,1
+30602,5,0,0,0,0,Klebsiella pneumonia,5,7952,0,7957,1
+3482,3,0,0,0,0,Pediculus humanus corporis infestation,3,7954,0,7957,1
+3781_5607_18597,33,0,16,5,0,bronchitis,54,7903,5,7952,1
+4,10,0,113,0,0,adrenocortical insufficiency,123,7834,0,7957,1
+41879,5,0,0,0,0,staphylococcus aureus pneumonia,5,7952,0,7957,1
+42233,6,0,0,0,0,disseminated candidiasis,6,7951,0,7957,1
+43905_2572_1255_3479_43919,12,0,0,0,0,pneumonitis,12,7945,0,7957,1
+45031,4,0,6,0,0,infectious diarrheal disease,10,7947,0,7957,1
+4652,34,0,0,4,0,bacterial pneumonia,38,7919,4,7953,1
+4765,42,0,79,5,0,intrinsic asthma,126,7831,5,7952,1
+4773,12,0,3,1,0,iridocyclitis (disease),16,7941,1,7956,1
+4822,6,0,1,1,0,bronchiectasis,8,7949,1,7956,1
+4845,4,0,2,2,0,aphthous stomatitis,8,7949,2,7955,1
+4926_1610_4925,3,0,0,2,0,dacryocystitis,5,7952,2,7955,1
+4980,25,7,9,4,0,atopic eczema,45,7912,11,7946,1
+4985_693_24613_1866,7,7,30,8,5,bipolar disorder,57,7900,20,7937,1
+4992,3,0,16,0,0,cancer,19,7938,0,7957,1
+5002,7,0,68,7,0,chronic obstructive pulmonary disease,82,7875,7,7950,1
+5109,33,0,3,0,0,HIV infectious disease,36,7921,0,7957,1
+5191,10,0,0,1,0,metastatic melanoma,11,7946,1,7956,1
+5263,24,0,0,1,0,unipolar depression,25,7932,1,7956,1
+5264,4,0,22,2,0,transient ischemic attack (disease),28,7929,2,7955,1
+5279,15,0,37,0,0,pulmonary embolism (disease),52,7905,0,7957,1
+5280,6,0,0,0,0,prostatitis (disease),6,7951,0,7957,1
+5298,29,3,46,4,0,osteoporosis,82,7875,7,7950,1
+5302,11,0,1,7,0,"attention deficit hyperactivity disorder, inattentive type",19,7938,7,7950,1
+5306_20655,23,0,0,9,0,ankylosing spondylitis,32,7925,9,7948,1
+5338,30,0,46,0,0,open-angle glaucoma,76,7881,0,7957,1
+5354,23,0,16,0,0,chronic hepatitis C virus infection,39,7918,0,7957,1
+5364,4,0,193,6,0,Graves disease,203,7754,6,7951,1
+5382,7,0,1,0,0,bone Paget disease,8,7949,0,7957,1
+5468,7,0,199,2,0,hypotensive disorder,208,7749,2,7955,1
+5504_1479,3,0,0,1,0,diphtheria,4,7953,1,7956,1
+5627,5,0,0,9,0,head and neck cancer,14,7943,9,7948,1
+5664,3,0,0,0,0,bartonellosis,3,7954,0,7957,1
+5945,19,0,0,0,0,rhinoscleroma,19,7938,0,7957,1
+5961,14,0,0,5,0,sinusitis,19,7938,5,7952,1
+5992,11,0,0,1,0,trichinosis,12,7945,1,7956,1
+6014,10,0,1,0,0,vulvovaginal candidiasis,11,7946,0,7957,1
+6032,3,0,0,0,0,cystitis,3,7954,0,7957,1
+6045,15,0,26,8,0,ovarian clear cell adenocarcinoma,49,7908,8,7949,1
+6624,9,0,1,0,0,overactive bladder (disease),10,7947,0,7957,1
+7018,8,0,1,0,0,vulvitis,9,7948,0,7957,1
+7126_8468_24512_13192,23,0,0,9,0,"spondyloarthropathy, susceptibility to",32,7925,9,7948,1
+7179,8,0,6,0,0,autoimmune disease,14,7943,0,7957,1
+7243,4,0,0,4,0,Burkitt lymphoma,8,7949,4,7953,1
+8170,15,0,26,8,0,ovarian cancer,49,7908,8,7949,1
+831,3,0,6,0,0,thrombotic disease,9,7948,0,7957,1
+8679_11112_14779_11056_8680_8683_6058,3,0,0,1,0,Wilms tumor,4,7953,1,7956,1
+916,5,0,6,0,0,intestinal infectious disease,11,7946,0,7957,1
+9294_13291_10598_13091_10362_9868_9295_9293_9290_9291_2413_2412,3,0,60,4,0,glycogen storage disease,67,7890,4,7953,1
+9412,4,0,2,0,0,scurvy,6,7951,0,7957,1
+9688_18325,4,0,122,3,0,myasthenia gravis,129,7828,3,7954,1
+9891,5,0,2,3,0,acquired polycythemia vera,10,7947,3,7954,1
+10274_10108,4,0,0,4,0,testicular germ cell tumor,8,7949,4,7953,2
+10632_33369_33371_10472_14477_32598_10396_32768_33361_13389_14859_14392_33373_32752_32657_14593_32663_14947_13388_14377_32808_14895_30059_13387_32880_33363_32678_13989_33366_10375_13277_33362_14917_14921_14933_14942_30054_14607_14595_14133_33370_14201_32918_14949_32813_14533_14598_10246_33368_15025_14371_54845_14360_13056_13801_14718_14719_32812_32858_30072_14505_14199_14003_14328_15000_33367_33372_15002_12245_30856_32710_32725_33364_33365_14868_29138_32822_12812_32895_14625_34106_33374_100079_14916_14647_100062_25353,3,0,0,8,0,developmental and epileptic encephalopathy,11,7946,8,7949,2
+1068,3,1,16,1,0,osteomalacia (disease),21,7936,2,7955,2
+1103,5,0,0,0,0,giardiasis,5,7952,0,7957,2
+11285_13406_12767_12540_7932_14189_3004_5150_5417_14207_12659_14266_13420_13409_12419_13416_12674_100114,7,0,0,0,0,macular degeneration,7,7950,0,7957,2
+11292,31,0,4,4,0,"dermatitis, atopic",39,7918,4,7953,2
+11578,3,0,0,0,0,familial papillary thyroid carcinoma with renal papillary neoplasia,3,7954,0,7957,2
+11751,7,0,68,7,0,"COPD, severe early onset",82,7875,7,7950,2
+11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167,27,0,45,0,0,Parkinson disease,72,7885,0,7957,2
+1191_24302_24303,3,0,0,3,0,hirudiniasis,6,7951,3,7954,2
+12048,23,1,0,2,0,endogenous depression,26,7931,3,7954,2
+1247,4,0,0,1,0,social phobia,5,7952,1,7956,2
+1265,9,0,76,0,0,schizophreniform disorder,85,7872,0,7957,2
+1356,12,0,2,0,0,iron deficiency anemia,14,7943,0,7957,2
+15165,17,0,0,4,0,acute myeloid leukemia and myelodysplastic syndromes related to topoisomerase type 2 inhibitor,21,7936,4,7953,2
+1548,3,0,67,0,0,hepatic coma,70,7887,0,7957,2
+15810,4,0,0,0,0,primary cutaneous CD4+ small/medium-sized pleomorphic T-cell lymphoma,4,7953,0,7957,2
+15811,4,0,0,0,0,primary cutaneous aggressive epidermotropic CD8+ T-cell lymphoma,4,7953,0,7957,2
+16430,8,0,10,2,0,Balo concentric sclerosis,20,7937,2,7955,2
+1648,7,0,0,0,0,esophageal candidiasis,7,7950,0,7957,2
+16532,12,0,0,0,0,Lennox-Gastaut syndrome,12,7945,0,7957,2
+16595,5,0,0,13,0,inhalational anthrax,18,7939,13,7944,2
+1711,3,0,67,0,0,hepatic encephalopathy,70,7887,0,7957,2
+1780,11,0,1,3,0,premature ejaculation (disease),15,7942,3,7954,2
+18229,9,0,1,0,0,Stevens-Johnson syndrome,10,7947,0,7957,2
+18544_10247,8,0,10,4,0,X-linked adrenoleukodystrophy,22,7935,4,7953,2
+18645,6,0,1,17,0,IgG4-related sclerosing cholangitis,24,7933,17,7940,2
+18854,7,0,3,0,0,acquired purpura fulminans,10,7947,0,7957,2
+18876_6430,25,0,0,1,0,mantle cell lymphoma,26,7931,1,7956,2
+19186,9,0,0,0,0,Q fever,9,7948,0,7957,2
+19345,7,0,5,0,0,shigellosis,12,7945,0,7957,2
+19624_15055_15056,12,0,22,0,0,acquired angioedema,34,7923,0,7957,2
+19975,5,0,0,0,0,pellagra,5,7952,0,7957,2
+20124,4,0,123,3,0,neuromuscular junction disease,130,7827,3,7954,2
+20512,22,0,0,1,0,precursor T-cell acute lymphoblastic leukemia,23,7934,1,7956,2
+20538,15,0,26,8,0,malignant dysgerminomatous germ cell tumor of ovary,49,7908,8,7949,2
+20541,15,0,26,8,0,maligant granulosa cell tumor of ovary,49,7908,8,7949,2
+21251,3,0,33,6,0,endometrium neoplasm,42,7915,6,7951,2
+22430,3,0,0,0,0,persistent fetal circulation syndrome,3,7954,0,7957,2
+2258,74,0,4,0,0,pharyngitis,78,7879,0,7957,2
+2303_6948_6951_2089_41093_1630_1633_2088,3,0,31,0,0,retinal artery occlusion,34,7923,0,7957,2
+23122,4,0,0,0,0,familial prostate carcinoma,4,7953,0,7957,2
+233,8,0,0,0,0,Japanese spotted fever,8,7949,0,7957,2
+24313,47,0,0,1,0,staphylococcal infection,48,7909,1,7956,2
+2447,3,0,30,5,0,endometrial carcinoma (disease),38,7919,5,7952,2
+2776,12,0,0,3,0,external ear disease,15,7942,3,7954,2
+313,4,0,33,2,0,hypophosphatemia (disease),39,7918,2,7955,2
+3795,15,0,26,8,0,ovarian small cell carcinoma,49,7908,8,7949,2
+41052,5,0,0,0,0,postherpetic neuralgia,5,7952,0,7957,2
+4379,7,0,64,0,0,female breast carcinoma,71,7886,0,7957,2
+4525,5,0,0,0,0,scabies,5,7952,0,7957,2
+4632,21,0,0,2,0,obsolete Hodgkin's granuloma,23,7934,2,7955,2
+4784,42,0,79,5,0,allergic asthma,126,7831,5,7952,2
+4795_1051,13,0,0,3,0,otitis externa,16,7941,3,7954,2
+4854,4,1,0,0,0,ophthalmia neonatorum,5,7952,1,7956,2
+4857,10,0,7,5,0,tendinitis,22,7935,5,7952,2
+5001_4966,3,0,61,0,0,gastritis,64,7893,0,7957,2
+5025_6669,9,0,12,5,0,endocarditis,26,7931,5,7952,2
+5044,103,0,307,2,0,hypertensive disorder,412,7545,2,7955,2
+5062,20,0,7,0,0,lymphoma,27,7930,0,7957,2
+5101,11,0,96,4,0,ulcerative colitis (disease),111,7846,4,7953,2
+5252,7,0,39,0,0,heart failure,46,7911,0,7957,2
+5297,6,0,1,0,0,urethritis (disease),7,7950,0,7957,2
+5318,4,0,2,1,0,canker sore,7,7950,1,7956,2
+5386,5,0,62,1,0,peripheral arterial disease,68,7889,1,7956,2
+5401,5,0,1,1,0,colonic neoplasm,7,7950,1,7956,2
+5412,11,0,13,4,0,duodenal ulcer (disease),28,7929,4,7953,2
+5546,5,0,3,8,0,fibromyalgia,16,7941,8,7949,2
+5609,3,0,5,0,0,herpes zoster,8,7949,0,7957,2
+5636,3,0,0,1,0,adenosarcoma,4,7953,1,7956,2
+5647,6,0,9,0,0,anogenital human papillomavirus infection,15,7942,0,7957,2
+5706,4,1,1,1,0,coccidioidomycosis,7,7950,2,7955,2
+5867,18,0,0,6,0,Mycoplasma pneumoniae pneumonia,24,7933,6,7951,2
+5920,11,0,0,0,0,Plasmodium falciparum malaria,11,7946,0,7957,2
+5952,3,0,0,0,0,scarlet fever,3,7954,0,7957,2
+5982,23,0,0,1,0,tinea infection,24,7933,1,7956,2
+6474,3,0,0,0,0,transitional cell carcinoma,3,7954,0,7957,2
+6554,20,0,0,1,0,granuloma annulare,21,7936,1,7956,2
+6592,16,1,17,1,2,parapsoriasis,37,7920,4,7953,2
+6604,11,1,0,11,0,rosacea,23,7934,12,7945,2
+6676_24182_24183,5,0,2,0,0,beriberi,7,7950,0,7957,2
+6684,9,0,5,0,0,brain edema,14,7943,0,7957,2
+6946,3,0,1,3,0,renal osteodystrophy,7,7950,3,7954,2
+7079_2491_4938_2046_5367_5689_4456_5186,5,4,239,1,0,substance abuse/dependence,249,7708,5,7952,2
+7743,11,0,1,7,0,attention deficit-hyperactivity disorder,19,7938,7,7950,2
+7915,13,0,86,3,0,systemic lupus erythematosus (disease),102,7855,3,7954,2
+8243,7,0,27,0,0,Pick disease,34,7923,0,7957,2
+8558_19098,11,0,1,0,0,autoimmune thrombocytopenic,12,7945,0,7957,2
+8731,8,0,71,0,0,familial adrenal hypoplasia with absent pituitary luteinizing hormone,79,7878,0,7957,2
+9266_9265_9267_18150,7,0,0,0,0,Gaucher disease,7,7950,0,7957,2
+9691_15821_45071,14,0,2,6,0,mycosis fungoides and variants,22,7935,6,7951,2
+9693,17,0,4,8,0,plasma cell myeloma,29,7928,8,7949,2
+10138,4,0,193,6,0,thyrotoxicosis,203,7754,6,7951,3
+10888,11,0,21,2,0,endometriosis of uterus,34,7923,2,7955,3
+11122,20,0,86,2,0,obesity disorder,108,7849,2,7955,3
+11129_9277_5041,4,0,93,0,0,glaucoma,97,7860,0,7957,3
+1126,17,0,49,5,0,gastric ulcer (disease),71,7886,5,7952,3
+11876_10826,10,0,1,1,0,absence epilepsy,12,7945,1,7956,3
+12268,33,0,3,0,0,AIDS,36,7921,0,7957,3
+12883,7,0,0,1,0,acute promyelocytic leukemia,8,7949,1,7956,3
+1315,9,0,2,7,0,neurocirculatory asthenia,18,7939,7,7950,3
+1316,7,0,0,3,0,streptococcal meningitis,10,7947,3,7954,3
+1410,9,0,0,0,0,postmenopausal atrophic vaginitis,9,7948,0,7957,3
+14231,22,0,1,0,0,juvenile onset Parkinson disease 19A,23,7934,0,7957,3
+1461,23,0,0,1,0,tinea corporis,24,7933,1,7956,3
+1466,4,0,0,0,0,punctate epithelial keratoconjunctivitis,4,7953,0,7957,3
+15166,17,0,0,4,0,acute myeloid leukemia with t(8;21)(q22;q22) translocation,21,7936,4,7953,3
+15274,9,0,0,0,0,chronic beryllium disease,9,7948,0,7957,3
+15812,4,0,0,0,0,primary cutaneous gamma/delta-positive T-cell lymphoma,4,7953,0,7957,3
+16096,15,0,26,8,0,malignant non-dysgerminomatous germ cell tumor of ovary,49,7908,8,7949,3
+16158,9,0,10,3,0,narcolepsy-cataplexy syndrome,22,7935,3,7954,3
+1639,12,0,2,0,0,deficiency anemia,14,7943,0,7957,3
+1713,9,0,7,3,0,inherited aplastic anemia,19,7938,3,7954,3
+18059_5373,8,0,1,1,0,meningococcal infection,10,7947,1,7956,3
+18172,15,0,26,8,0,malignant sex cord stromal tumor of ovary,49,7908,8,7949,3
+18180,3,0,0,0,0,staphylococcal scarlet fever,3,7954,0,7957,3
+18182,3,0,0,0,0,bullous impetigo,3,7954,0,7957,3
+18533,3,0,0,0,0,undifferentiated carcinoma of liver and intrahepatic biliary tract,3,7954,0,7957,3
+18534,3,0,0,0,0,squamous cell carcinoma of liver and intrahepatic biliary tract,3,7954,0,7957,3
+18944,5,0,0,0,0,gestational trophoblastic neoplasm,5,7952,0,7957,3
+19004_24675,3,0,0,1,0,kidney Wilms tumor,4,7953,1,7956,3
+19085,4,0,0,0,0,vernal keratoconjunctivitis,4,7953,0,7957,3
+19402_16486,3,0,0,0,0,beta thalassemia,3,7954,0,7957,3
+1951,5,0,0,0,0,Norwegian scabies,5,7952,0,7957,3
+20513,4,0,0,4,0,spermatocytic seminoma,8,7949,4,7953,3
+20671,11,0,109,2,0,obsolete susceptibility to ischemic stroke,122,7835,2,7955,3
+21146,17,0,1,0,0,headache disorder,18,7939,0,7957,3
+21158_1125,4,0,0,0,0,gonococcal epididymo-orchitis,4,7953,0,7957,3
+21178,4,0,42,0,0,injury,46,7911,0,7957,3
+21187_11237_11470,14,0,44,3,0,hyperlipidemia,61,7896,3,7954,3
+2125,7,0,0,2,0,status epilepticus,9,7948,2,7955,3
+2277,7,0,74,0,0,arteriosclerosis disorder,81,7876,0,7957,3
+2289,15,0,10,2,0,iris disease,27,7930,2,7955,3
+24355,10,0,1,0,0,respiratory tract infectious disease,11,7946,0,7957,3
+24472,3,0,0,2,0,boutonneuse fever,5,7952,2,7955,3
+24574,3,0,25,0,0,von Willebrand disease (hereditary or acquired),28,7929,0,7957,3
+40732,9,0,0,0,0,Pseudomonas aeruginosa infectious disease,9,7948,0,7957,3
+42458,8,0,0,1,0,Trichinella spiralis infectious disease,9,7948,1,7956,3
+4264,19,0,0,0,0,acute gonococcal endometritis,19,7938,0,7957,3
+43455,14,0,51,0,0,humoral hypercalcemia of malignancy,65,7892,0,7957,3
+4638,26,0,7,2,0,lymphosarcoma,35,7922,2,7955,3
+4670_5282_19561,20,0,0,2,0,lupus erythematosus,22,7935,2,7955,3
+482,5,0,25,0,0,focal hand dystonia,30,7927,0,7957,3
+4868,3,0,35,0,0,biliary tract disease,38,7919,0,7957,3
+4948_872_4963_20511_4947_814,31,2,0,2,0,acute lymphoblastic/lymphocytic leukemia,35,7922,4,7953,3
+4950,6,0,5,1,0,gastric carcinoma,12,7945,1,7956,3
+4981,14,0,14,21,0,atrial fibrillation (disease),49,7908,21,7936,3
+4989,7,0,0,2,0,breast carcinoma,9,7948,2,7955,3
+5052,9,0,2,7,0,irritable bowel syndrome,18,7939,7,7950,3
+5093,14,0,8,0,0,skin disease,22,7935,0,7957,3
+5223,17,0,0,4,0,acute myeloid leukemia with minimal differentiation,21,7936,4,7953,3
+5231,23,0,18,0,0,hepatitis C virus infection,41,7916,0,7957,3
+5249,20,0,5,0,0,pneumonia,25,7932,0,7957,3
+5299,4,0,9,1,0,brain ischemia,14,7943,1,7956,3
+5314,9,0,0,0,0,relapsing-remitting multiple sclerosis,9,7948,0,7957,3
+5328,8,0,2,0,0,eye disease,10,7947,0,7957,3
+5384,15,0,0,2,0,partial epilepsy,17,7940,2,7955,3
+5498,4,0,0,4,0,botulism,8,7949,4,7953,3
+5520,3,1,16,1,0,rickets (disease),21,7936,2,7955,3
+5532,16,0,6,8,0,Crohn's colitis,30,7927,8,7949,3
+5657_240,5,1,1,1,0,aspergillosis,8,7949,2,7955,3
+5672,3,0,0,1,0,blastomycosis,4,7953,1,7956,3
+5683,9,0,0,2,0,brucellosis,11,7946,2,7955,3
+5828,4,0,0,1,0,listeriosis,5,7952,1,7956,3
+6047,5,0,0,3,0,pancreatic adenocarcinoma,8,7949,3,7954,3
+6244,5,0,0,0,0,HER2 positive breast carcinoma,5,7952,0,7957,3
+6507,3,0,29,0,0,hereditary hemochromatosis,32,7925,0,7957,3
+6570,19,0,0,2,0,lichen disease,21,7936,2,7955,3
+6608_6609,29,4,1,1,0,seborrheic dermatitis,35,7922,5,7952,3
+6760,9,0,4,0,0,fetal erythroblastosis,13,7944,0,7957,3
+6793,5,0,0,0,0,hyperpituitarism,5,7952,0,7957,3
+6865,15,3,0,6,0,necrotizing ulcerative gingivitis,24,7933,9,7948,3
+6891,9,0,0,0,0,partial motor epilepsy,9,7948,0,7957,3
+6898,10,0,7,5,0,periarthritis,22,7935,5,7952,3
+6909,3,0,0,0,0,pituitary dwarfism,3,7954,0,7957,3
+6921,9,0,0,3,0,Actinomycetales infectious disease,12,7945,3,7954,3
+7186,25,0,73,2,0,gastroesophageal reflux disease,100,7857,2,7955,3
+7950,5,0,0,8,0,mastocytosis,13,7944,8,7949,3
+8015,6,0,0,0,0,motion sickness,6,7951,0,7957,3
+8228,3,0,2,0,0,pernicious anemia,5,7952,0,7957,3
+8303,3,0,0,3,0,familial male-limited precocious puberty,6,7951,3,7954,3
+9348,21,0,0,2,0,classic Hodgkin lymphoma,23,7934,2,7955,3
+9394,7,0,1,0,0,juvenile Paget disease,8,7949,0,7957,3
+9830,22,0,1,0,0,parkinsonian-pyramidal syndrome,23,7934,0,7957,3
+10200,3,0,29,0,0,Wilson disease,32,7925,0,7957,4
+1039,8,0,0,0,0,tonsillitis,8,7949,0,7957,4
+1040,41,0,0,0,0,nasopharyngitis,41,7916,0,7957,4
+10482,22,0,1,0,0,X-linked parkinsonism-spasticity syndrome,23,7934,0,7957,4
+11057,13,0,131,2,0,cerebrovascular disorder,146,7811,2,7955,4
+11728,5,0,25,0,0,blepharospasm,30,7927,0,7957,4
+11786_5324_24332,85,2,3,0,0,allergic rhinitis,90,7867,2,7955,4
+11962,3,0,33,6,0,endometrial cancer,42,7915,6,7951,4
+12526_15053_19623_15054,17,0,23,0,0,hereditary angioedema,40,7917,0,7957,4
+12552_8234_8082_7540_19003_17169,3,0,2,8,0,multiple endocrine neoplasia,13,7944,8,7949,4
+12819,8,0,345,0,0,diabetic ketoacidosis,353,7604,0,7957,4
+1340,3,0,30,0,0,heart cancer,33,7924,0,7957,4
+13433_18646_18647,6,0,3,17,0,sclerosing cholangitis,26,7931,17,7940,4
+14412_7761_7762_18473_37748,6,0,25,0,0,hyperlipoproteinemia,31,7926,0,7957,4
+15057,12,0,22,0,0,renin-angiotensin-aldosterone system-blocker-induced angioedema,34,7923,0,7957,4
+15290_1440,3,0,0,0,0,neurotrophic keratopathy,3,7954,0,7957,4
+15766,3,0,0,2,0,cholera,5,7952,2,7955,4
+16093,15,0,26,8,0,borderline epithelial tumor of ovary,49,7908,8,7949,4
+16586,5,0,0,8,0,systemic mastocytosis,13,7944,8,7949,4
+16848_8538,3,0,0,5,0,temporal arteritis,8,7949,5,7952,4
+17137,3,0,0,0,0,onchocerciasis,3,7954,0,7957,4
+17894,17,0,0,4,0,acute myeloid leukemia with CEBPA somatic mutations,21,7936,4,7953,4
+1794,6,0,0,0,0,Pthirus pubis infestation,6,7951,0,7957,4
+1797,14,3,0,6,0,chancroid,23,7934,9,7948,4
+18048,9,0,11,0,0,heparin-induced thrombocytopenia (disease),20,7937,0,7957,4
+1827,4,1,1,1,0,white piedra,7,7950,2,7955,4
+18324,4,0,122,3,0,adult-onset myasthenia gravis,129,7828,3,7954,4
+18328,6,0,1,0,0,homozygous familial hypercholesterolemia,7,7950,0,7957,4
+18434,17,0,0,4,0,acute myeloid leukemia with t(9;11)(p22;q23),21,7936,4,7953,4
+18435,17,0,0,4,0,acute myeloid leukemia with inv3(p21;q26.2) or t(3;3)(p21;q26.2),21,7936,4,7953,4
+18615,5,0,0,0,0,hemicrania continua,5,7952,0,7957,4
+1868_1744_1742_1864,4,0,153,4,0,angle-closure glaucoma,161,7796,4,7953,4
+18935,4,0,0,0,0,hairy cell leukemia,4,7953,0,7957,4
+19013,12,0,22,0,0,non-histaminic angioedema,34,7923,0,7957,4
+19122_5749_44972_15927_4806_17363,13,0,4,0,0,eosinophilic pneumonia,17,7940,0,7957,4
+19147,3,0,0,3,0,myiasis,6,7951,3,7954,4
+19438,3,0,1,0,0,AL amyloidosis,4,7953,0,7957,4
+19558_4706,20,0,0,2,0,discoid lupus erythematosus,22,7935,2,7955,4
+19725,13,0,86,3,0,pediatric systemic lupus erythematosus,102,7855,3,7954,4
+19801_15128_43370,9,0,73,0,0,adrenal insufficiency,82,7875,0,7957,4
+20283_6651,15,0,13,2,0,uveitis,30,7927,2,7955,4
+2083,12,0,0,3,0,Richter syndrome,15,7942,3,7954,4
+20920,21,0,0,0,0,escherichia coli infection,21,7936,0,7957,4
+21085,6,0,5,1,0,gastric neoplasm,12,7945,1,7956,4
+21100,9,0,0,2,0,breast neoplasm,11,7946,2,7955,4
+2234,8,0,1,0,0,vaginitis (disease),9,7948,0,7957,4
+2350,10,0,9,0,0,familial nephrotic syndrome,19,7938,0,7957,4
+3019,7,0,165,1,0,potassium deficiency disease,173,7784,1,7956,4
+3471,8,0,0,0,0,Pediculus humanus capitis infestation,8,7949,0,7957,4
+4095,25,0,0,1,0,B-cell neoplasm,26,7931,1,7956,4
+41448,6,0,0,0,0,metastasis from malignant tumor of colon,6,7951,0,7957,4
+44070,7,0,0,0,0,candidemia,7,7950,0,7957,4
+44211_44212_44213,9,0,0,1,0,idiopathic urticaria,10,7947,1,7956,4
+4577,6,0,4,2,0,corneal ulcer,12,7945,2,7955,4
+4592,3,0,0,0,0,impetigo,3,7954,0,7957,4
+4626,21,0,0,2,0,Hodgkin's paragranuloma,23,7934,2,7955,4
+4903_3085_1465_33821,8,0,5,0,0,keratitis,13,7944,0,7957,4
+4974,3,0,30,0,0,adrenal gland pheochromocytoma,33,7924,0,7957,4
+4979,39,1,127,3,1,asthma,171,7786,5,7952,4
+50,4,0,35,0,0,isolated congenital growth hormone deficiency,39,7918,0,7957,4
+5027,21,2,310,2,0,epilepsy,335,7622,4,7953,4
+5095_43377,24,0,0,8,0,spondyloarthropathy,32,7925,8,7949,4
+5098,11,0,108,2,0,stroke disorder,121,7836,2,7955,4
+5133,11,0,21,2,0,endometriosis (disease),34,7923,2,7955,4
+5173,14,0,8,0,0,actinic keratosis (disease),22,7935,0,7957,4
+5247,49,0,1,0,0,urinary tract infection (disease),50,7907,0,7957,4
+5347,13,0,68,1,0,hypertriglyceridemia (disease),82,7875,1,7956,4
+5485,9,0,76,0,0,psychotic disorder,85,7872,0,7957,4
+5619,4,1,0,3,0,typhoid fever,8,7949,4,7953,4
+5692,12,0,0,0,0,cat-scratch disease,12,7945,0,7957,4
+5746,14,1,0,0,0,enterobiasis,15,7942,1,7956,4
+607,26,0,0,6,0,primary cutaneous T-cell non-Hodgkin lymphoma,32,7925,6,7951,4
+6115,3,0,0,0,0,"blast phase chronic myelogenous leukemia, BCR-ABL1 positive",3,7954,0,7957,4
+6468,3,0,0,0,0,thyroid gland undifferentiated (anaplastic) carcinoma,3,7954,0,7957,4
+6589,24,0,2,1,0,occupational dermatitis,27,7930,1,7956,4
+6661,4,0,2,0,0,ascorbic acid deficiency,6,7951,0,7957,4
+6698,3,0,21,0,0,cholecystolithiasis,24,7933,0,7957,4
+6716,9,0,214,9,0,coronary thrombosis,232,7725,9,7948,4
+6896,25,0,73,2,0,peptic esophagitis,100,7857,2,7955,4
+6913,4,0,0,0,0,pneumococcal meningitis,4,7953,0,7957,4
+6939_1110,8,0,0,0,0,pyelonephritis,8,7949,0,7957,4
+6981,9,0,12,5,0,subacute bacterial endocarditis,26,7931,5,7952,4
+7019,8,0,1,0,0,vulvovaginitis,9,7948,0,7957,4
+7078_12911_12912_8749_11301_19992_16165_1220,5,0,3,0,0,hypoparathyroidism,8,7949,0,7957,4
+7256_18902_16216_3243,4,0,21,1,0,hepatocellular carcinoma,26,7931,1,7956,4
+7648_5017,6,0,5,1,0,diffuse gastric adenocarcinoma,12,7945,1,7956,4
+7690,3,0,0,3,0,aromatase excess syndrome,6,7951,3,7954,4
+8231,3,0,4,0,0,Peyronie disease,7,7950,0,7957,4
+8733,8,0,71,0,0,familial glucocorticoid deficiency,79,7878,0,7957,4
+9047,5,0,0,1,0,cryptorchidism (disease),6,7951,1,7956,4
+9960_12845_33643_11471_12831_12875_12941_13153_8617_54849_5265_12832_12610_12840_11087_11521_11661_11699_11700_11701_12040_12829_12837_12838_12841_12852_12886_12887_12940_12973_13012,19,3,120,7,0,inflammatory bowel disease,149,7808,10,7947,4
+9971,7,0,4,8,0,newborn respiratory distress syndrome,19,7938,8,7949,4
+10120_8555_14837_8556_30867_14536_12775_10743_2049_4680,3,0,209,0,0,thrombocytopenia,212,7745,0,7957,5
+10264,8,0,71,0,0,X-linked adrenal hypoplasia congenita,79,7878,0,7957,5
+10311,4,0,7,1,0,Becker muscular dystrophy,12,7945,1,7956,5
+10481,36,0,24,7,0,angioedema,67,7890,7,7950,5
+11393_17773_32766,5,0,4,1,0,hypoalphalipoproteinemia,10,7947,1,7956,5
+11429_19433,25,0,0,8,0,juvenile idiopathic arthritis,33,7924,8,7949,5
+11719,4,0,0,0,0,gastrointestinal stromal tumor,4,7953,0,7957,5
+1196,14,0,1,3,0,psychologic dyspareunia,18,7939,3,7954,5
+13600,36,0,22,4,0,insomnia (disease),62,7895,4,7953,5
+14394_13217_32668_12529_32669_44309_12937_13216_13964_12938_12925_7110_14245_12924_60662_32670_44310_12939_15253_11636,9,0,7,3,0,Diamond-Blackfan anemia,19,7938,3,7954,5
+15599_4768_25431,8,0,5,0,0,keratoconjunctivitis,13,7944,0,7957,5
+15809,14,0,2,6,0,localized pagetoid reticulosis,22,7935,6,7951,5
+16022,5,0,1,2,0,early myoclonic encephalopathy,8,7949,2,7955,5
+16168,3,0,0,0,0,cryopyrin-associated periodic syndrome,3,7954,0,7957,5
+16426,3,0,0,0,0,fusariosis,3,7954,0,7957,5
+1732,3,0,0,0,0,trigonitis,3,7954,0,7957,5
+18055,3,0,0,0,0,pediatric hepatocellular carcinoma,3,7954,0,7957,5
+18078,3,0,0,0,0,soft tissue sarcoma,3,7954,0,7957,5
+18312,4,1,1,1,0,histoplasmosis,7,7950,2,7955,5
+18368,4,0,0,0,0,primary peritoneal serous/papillary carcinoma,4,7953,0,7957,5
+18369,15,0,26,8,0,immature ovarian teratoma,49,7908,8,7949,5
+18433,17,0,0,4,0,acute myeloid leukemia with t(6;9)(p23;q34),21,7936,4,7953,5
+18437,17,0,0,4,0,acute myeloid leukemia with NPM1 somatic mutations,21,7936,4,7953,5
+18905_17601_6117_6268_6428,6,0,0,5,0,diffuse large B-cell lymphoma,11,7946,5,7952,5
+1932,5,0,0,0,0,obsolete atrophic vulva,5,7952,0,7957,5
+19444,8,0,0,1,0,Trichinellosis,9,7948,1,7956,5
+19562,3,0,1,2,0,localized scleroderma,6,7951,2,7955,5
+19565,3,0,25,0,0,hereditary von Willebrand disease,28,7929,0,7957,5
+20323,6,0,0,5,0,primary mediastinal large B-cell lymphoma,11,7946,5,7952,5
+20324,6,0,0,5,0,intravascular large B-cell lymphoma,11,7946,5,7952,5
+20543,15,0,26,8,0,"theca steroid-producing cell malignant tumor of ovary, not further specified",49,7908,8,7949,5
+21072,3,0,30,0,0,sympathetic paraganglioma,33,7924,0,7957,5
+2154,5,0,0,0,0,trichomoniasis,5,7952,0,7957,5
+2177,11,0,0,3,0,hyperinsulinism (disease),14,7943,3,7954,5
+2203,24,0,64,1,0,constipation disorder,89,7868,1,7956,5
+2268,17,0,0,2,0,dyspepsia,19,7938,2,7955,5
+2307_1853_2306,12,0,0,5,0,blepharoconjunctivitis,17,7940,5,7952,5
+2309_2308,61,1,0,1,0,papillary conjunctivitis,63,7894,2,7955,5
+24570_7767_6964_1530_1741_10837_16166_12406_21132,3,0,65,0,0,hyperparathyroidism,68,7889,0,7957,5
+265,12,0,0,0,0,aspiration pneumonia (disease),12,7945,0,7957,5
+2885,9,1,0,2,0,erythrasma,12,7945,3,7954,5
+3699,5,0,0,1,0,phobic disorder,6,7951,1,7956,5
+41086,5,0,0,0,0,mixed anxiety and depressive disorder,5,7952,0,7957,5
+4126,9,0,0,0,0,thyroiditis (disease),9,7948,0,7957,5
+4277,21,0,0,0,0,gonorrhea,21,7936,0,7957,5
+43519,4,0,3,0,0,burn,7,7950,0,7957,5
+43789,9,0,0,0,0,serum sickness,9,7948,0,7957,5
+4389,5,0,0,0,0,mite infestation,5,7952,0,7957,5
+4497_6718_5976_2897_2896,11,0,0,0,0,syphilis,11,7946,0,7957,5
+4949,17,0,0,2,0,neoplasm of mature B-cells,19,7938,2,7955,5
+5005,11,0,0,0,0,clear cell renal carcinoma,11,7946,0,7957,5
+5011_5535,16,0,6,8,0,Crohn disease,30,7927,8,7949,5
+5068,9,0,214,9,0,myocardial infarction (disease),232,7725,9,7948,5
+5084,9,0,76,0,0,mental disorder,85,7872,0,7957,5
+5086,11,0,0,0,0,renal cell carcinoma (disease),11,7946,0,7957,5
+5100,3,0,1,2,0,systemic sclerosis,6,7951,2,7955,5
+5136,16,0,0,6,0,malaria,22,7935,6,7951,5
+5178_6629_5416_6630_6631_6632,37,0,0,1,0,osteoarthritis,38,7919,1,7956,5
+5224,17,0,0,4,0,acute myeloblastic leukemia without maturation,21,7936,4,7953,5
+5233,21,0,0,7,0,non-small cell lung carcinoma (disease),28,7929,7,7950,5
+5294,5,0,61,1,0,peripheral vascular disease,67,7890,1,7956,5
+5348,3,0,0,0,0,keloid,3,7954,0,7957,5
+5366,9,0,17,0,0,chronic hepatitis B virus infection,26,7931,0,7957,5
+5377,10,0,9,0,0,nephrotic syndrome,19,7938,0,7957,5
+5379,30,1,163,4,0,neurotic disorder,198,7759,5,7952,5
+5391,5,0,0,2,0,restless legs syndrome,7,7950,2,7955,5
+5393,21,0,90,4,0,gout,115,7842,4,7953,5
+5398,5,0,0,9,0,upper aerodigestive tract neoplasm,14,7943,9,7948,5
+5459,4,0,0,0,0,human African trypanosomiasis,4,7953,0,7957,5
+5531,5,0,4,0,0,morphine dependence,9,7948,0,7957,5
+5642,61,1,0,1,0,atopic conjunctivitis,63,7894,2,7955,5
+5669,4,1,1,1,0,black piedra,7,7950,2,7955,5
+5777,9,0,0,3,0,granuloma inguinale,12,7945,3,7954,5
+5812,9,0,0,0,0,influenza,9,7948,0,7957,5
+5825,14,3,0,6,0,leptospirosis,23,7934,9,7948,5
+5848,6,0,0,0,0,miliary tuberculosis,6,7951,0,7957,5
+6004,85,2,3,0,0,vasomotor rhinitis,90,7867,2,7955,5
+6019,14,3,0,6,0,yaws,23,7934,9,7948,5
+6502,7,0,4,8,0,acute respiratory distress syndrome,19,7938,8,7949,5
+6545_44719,9,0,0,0,0,erythema multiforme,9,7948,0,7957,5
+6640,3,0,6,2,0,adrenal gland hyperfunction,11,7946,2,7955,5
+6862,3,0,0,8,0,myofascial pain syndrome,11,7946,8,7949,5
+6874,3,0,35,0,0,obstructive jaundice,38,7919,0,7957,5
+6956,3,0,0,0,0,Rickettsiosis,3,7954,0,7957,5
+7440_10648_12685_694_12881_12319_12642_12686_12877_12882,5,0,35,1,2,major affective disorder,43,7914,3,7954,5
+7759,14,0,3,0,0,"hyperlipidemia, familial combined, LPL related",17,7940,0,7957,5
+7847,3,0,0,0,0,keloid formation,3,7954,0,7957,5
+8143_7704_11923_12893_12894_12568,37,0,0,1,0,osteoarthritis susceptibility,38,7919,1,7956,5
+8233,3,0,30,0,0,phaeochromocytoma,33,7924,0,7957,5
+8383,68,0,6,3,0,rheumatoid arthritis,77,7880,3,7954,5
+948,13,0,5,0,0,xerophthalmia,18,7939,0,7957,5
+9934,3,0,0,0,0,congenital alveolar capillary dysplasia,3,7954,0,7957,5
+10150_4958_5096_6082_500_514,4,0,1,0,0,squamous cell carcinoma,5,7952,0,7957,6
+10604_10602_15720_15719_18660_15721_15715_15716_15717,14,0,65,0,0,hemophilia,79,7878,0,7957,6
+10674_9659_9660_9661_11093_9662_16316_16315_18937_18938_1586_19249_19302_17171_17172,5,0,0,0,0,mucopolysaccharidosis,5,7952,0,7957,6
+10709,22,0,1,0,0,early-onset parkinsonism-intellectual disability syndrome,23,7934,0,7957,6
+1119,6,0,1,0,0,premature menopause,7,7950,0,7957,6
+11508,19,0,0,0,0,"lymphoma, non-Hodgkin, familial",19,7938,0,7957,6
+1198,9,0,0,0,0,acquired thrombocytopenia,9,7948,0,7957,6
+11989_5446,3,0,0,2,0,leishmaniasis,5,7952,2,7955,6
+11996,10,0,0,1,0,"chronic myelogenous leukemia, BCR-ABL1 positive",11,7946,1,7956,6
+12004_15075_5034_5075_24622_6467,3,0,0,0,0,thyroid gland carcinoma,3,7954,0,7957,6
+1214_6668_2314_5808_4811,23,2,1,4,0,conjunctivitis,30,7927,6,7951,6
+1245,12,0,2,0,0,microcytic anemia,14,7943,0,7957,6
+1266,3,0,0,3,0,erysipelas,6,7951,3,7954,6
+13855,9,0,0,0,0,"influenza, severe, susceptibility to",9,7948,0,7957,6
+15277,4,0,2,0,0,medullary thyroid gland carcinoma,6,7951,0,7957,6
+15288,3,0,32,0,0,herpes simplex virus keratitis,35,7922,0,7957,6
+15683,4,0,0,0,0,primary malignant peritoneal tumor,4,7953,0,7957,6
+15758,30,1,1,8,1,primary cutaneous T-cell lymphoma,41,7916,10,7947,6
+1628,6,0,0,2,0,tinea unguium,8,7949,2,7955,6
+17255,15,0,10,2,0,panuveitis (disease),27,7930,2,7955,6
+17337,8,0,71,0,0,inherited isolated adrenal insufficiency due to partial CYP11A1 deficiency,79,7878,0,7957,6
+17347,6,0,0,5,0,plasmablastic lymphoma,11,7946,5,7952,6
+17636,22,0,1,0,0,hemiparkinsonism-hemiatrophy syndrome,23,7934,0,7957,6
+1807,14,0,3,0,0,obsolete familial combined hyperlipidemia,17,7940,0,7957,6
+18171,15,0,26,8,0,malignant germ cell tumor of ovary,49,7908,8,7949,6
+18193_6448,4,0,0,4,0,testicular teratoma,8,7949,4,7953,6
+18256,17,0,0,4,0,acute myeloid leukemia with t(8;16)(p11;p13) translocation,21,7936,4,7953,6
+18532,3,0,0,0,0,adenocarcinoma of liver and intrahepatic biliary tract,3,7954,0,7957,6
+18613,3,0,1,0,0,AH amyloidosis,4,7953,0,7957,6
+18754,3,0,0,0,0,cyanide poisoning,3,7954,0,7957,6
+19050_4781_44348_44349,13,0,215,9,0,hemoglobinopathy,237,7720,9,7948,6
+19154,6,0,1,0,0,androgen insensitivity syndrome,7,7950,0,7957,6
+1945,8,0,0,0,0,postencephalitic Parkinson disease,8,7949,0,7957,6
+19476,4,0,0,0,0,primary cutaneous peripheral T-cell lymphoma not otherwise specified,4,7953,0,7957,6
+19610,11,0,0,3,0,Zollinger-Ellison syndrome,14,7943,3,7954,6
+19933,5,0,0,0,0,acromegaly,5,7952,0,7957,6
+1999_5149,4,0,12,1,0,pulmonary hypertension,17,7940,1,7956,6
+2009_12050_12100,24,0,0,1,0,major depressive disorder,25,7932,1,7956,6
+20696,3,0,15,0,0,vitamin B12 deficiency,18,7939,0,7957,6
+21095,12,0,45,0,0,parkinsonian disorder,57,7900,0,7957,6
+21117,6,0,0,0,0,lung neoplasm,6,7951,0,7957,6
+21680,39,0,0,0,0,streptococcal infection,39,7918,0,7957,6
+2400,9,2,0,0,0,synovitis (disease),11,7946,2,7955,6
+24298,9,0,1,0,0,vitamin deficiency disorder,10,7947,0,7957,6
+24330,17,0,0,1,0,infectious otitis media,18,7939,1,7956,6
+24412,6,0,0,0,0,Peptostreptococcus infectious disease,6,7951,0,7957,6
+2527,6,0,0,0,0,keratoacanthoma,6,7951,0,7957,6
+25598,13,0,0,0,0,pneumonia caused by chlamydia,13,7944,0,7957,6
+2752,15,0,26,8,0,ovarian adenocarcinoma,49,7908,8,7949,6
+2817,3,0,30,0,0,adrenal gland cancer,33,7924,0,7957,6
+33946,4,0,17,0,0,hereditary angioedema with C1Inh deficiency,21,7936,0,7957,6
+3669,4,0,0,4,0,testicular seminoma,8,7949,4,7953,6
+3996,5,0,24,0,0,basal ganglia disease,29,7928,0,7957,6
+41095,6,0,0,0,0,malignant otitis externa caused by Pseudomonas aeruginosa,6,7951,0,7957,6
+41526,4,0,0,1,0,pregnancy disorder with abortive outcome,5,7952,1,7956,6
+43300,5,1,0,0,0,actinic cheilitis,6,7951,1,7956,6
+4471,25,0,0,3,0,bacterial arthritis,28,7929,3,7954,6
+4872_4873,10,0,14,0,0,hemorrhoid,24,7933,0,7957,6
+4952,21,0,0,2,0,Hodgkins lymphoma,23,7934,2,7955,6
+5055,5,0,0,3,0,Kaposi's sarcoma (disease),8,7949,3,7954,6
+5090_13498_8414_10897_33312_10943_11552_14092_12054_11960_11280_11294_11295_11298_11307_11498_12879_13089_13506,35,0,17,0,0,schizophrenia,52,7905,0,7957,6
+5277,24,0,35,4,0,migraine disorder,63,7894,4,7953,6
+5316,8,0,1,0,0,bacterial vaginosis,9,7948,0,7957,6
+5362,8,0,1,3,0,erectile dysfunction (disease),12,7945,3,7954,6
+5385,3,0,1,0,0,vascular disease,4,7953,0,7957,6
+5480,24,0,2,1,0,contact dermatitis,27,7930,1,7956,6
+5492,27,0,2,7,0,urticaria (disease),36,7921,7,7950,6
+5538,8,0,3,0,0,proctitis,11,7946,0,7957,6
+5545,45,0,0,0,0,staphylococcus aureus infection,45,7912,0,7957,6
+5571,5,0,3,3,0,polycythemia (disease),11,7946,3,7954,6
+5575,5,0,1,1,0,colorectal cancer,7,7950,1,7956,6
+5615,5,0,2,3,0,plasmacytoma,10,7947,3,7954,6
+5915,15,0,0,2,0,pityriasis versicolor,17,7940,2,7955,6
+6003,3,0,30,5,0,uterine corpus cancer,38,7919,5,7952,6
+6335,15,0,26,8,0,ovarian endometrioid adenocarcinoma,49,7908,8,7949,6
+6383,6,0,0,5,0,"primary cutaneous diffuse large B-cell lymphoma, Leg type",11,7946,5,7952,6
+6585,19,0,0,2,0,neurodermatitis,21,7936,2,7955,6
+6594,11,0,1,1,0,pemphigus,13,7944,1,7956,6
+6699,3,0,21,0,0,choledocholithiasis,24,7933,0,7957,6
+6733,4,10,9,0,0,dry eye syndrome,23,7934,10,7947,6
+6809,3,0,0,1,0,intracranial embolism,4,7953,1,7956,6
+6814,7,0,10,1,0,iritis (disease),18,7939,1,7956,6
+745,6,0,1,1,0,cardiac arrest,8,7949,1,7956,6
+809,7,0,3,0,0,purpura fulminans,10,7947,0,7957,6
+8294,3,0,12,0,0,acute intermittent porphyria,15,7942,0,7957,6
+8300,3,0,0,2,0,Prader-Willi syndrome,5,7952,2,7955,6
+879,10,0,0,2,0,cutaneous candidiasis,12,7945,2,7955,6
+8903,27,0,0,7,0,lung cancer,34,7923,7,7950,6
+9061,10,0,9,0,0,cystic fibrosis,19,7938,0,7957,6
+9410,10,0,113,0,0,Addison disease,123,7834,0,7957,6
+9421,6,0,1,0,0,"hypogonadism, male",7,7950,0,7957,6
+956,3,0,30,0,0,small intestine cancer,33,7924,0,7957,6
+11845_12441_11851_11847_8000_12440_11850_12715_100246_13344_12210_12303_12331,24,0,35,4,0,"migraine with or without aura, susceptibility to",63,7894,4,7953,7
+1200_1134_15512_5080_100078,102,1,307,2,0,hypertension,412,7545,3,7954,7
+1226,16,0,1,6,0,acute contagious conjunctivitis,23,7934,6,7951,7
+1239,5,0,0,0,0,anemia of prematurity,5,7952,0,7957,7
+1243_1242,7,0,3,0,0,disseminated intravascular coagulation,10,7947,0,7957,7
+1246,9,0,0,0,0,typhus,9,7948,0,7957,7
+13517,3,0,0,0,0,beta-thalassemia HBB/LCRB,3,7954,0,7957,7
+1357_387,12,0,2,0,0,hypochromic anemia,14,7943,0,7957,7
+1386,7,0,0,1,0,visual epilepsy,8,7949,1,7956,7
+1405,20,0,0,1,0,dermatophytosis of groin and perianal area,21,7936,1,7956,7
+15129_15130,8,0,71,0,0,chronic primary adrenal insufficiency,79,7878,0,7957,7
+15529,5,0,0,0,0,paroxysmal Hemicrania,5,7952,0,7957,7
+15686,4,0,0,0,0,primary peritoneal carcinoma (disease),4,7953,0,7957,7
+15924,11,0,0,0,0,pulmonary arterial hypertension,11,7946,0,7957,7
+1627,3,0,28,0,0,dementia (disease),31,7926,0,7957,7
+1657,3,0,37,1,0,brain cancer,41,7916,1,7956,7
+17256_17257,10,0,0,1,0,idiopathic uveitis,11,7946,1,7956,7
+17597,6,0,0,5,0,T-cell/histiocyte rich large B cell lymphoma,11,7946,5,7952,7
+1770,10,0,0,3,0,gastrin secretion abnormality,13,7944,3,7954,7
+17893,17,0,0,4,0,inherited acute myeloid leukemia,21,7936,4,7953,7
+18031,14,0,2,6,0,granulomatous slack skin disease,22,7935,6,7951,7
+18068,5,0,0,1,0,trisomy 13,6,7951,1,7956,7
+18184,6,0,5,1,0,gastric linitis plastica,12,7945,1,7956,7
+18225,6,0,0,5,0,ALK-positive large B-cell lymphoma,11,7946,5,7952,7
+18364,3,0,0,0,0,malignant epithelial tumor of ovary,3,7954,0,7957,7
+18466,22,0,1,0,0,hereditary late onset Parkinson disease,23,7934,0,7957,7
+1860,7,0,15,0,0,folic acid deficiency anemia,22,7935,0,7957,7
+18881,3,0,3,3,0,myelodysplastic syndrome,9,7948,3,7954,7
+18906,17,0,0,2,0,follicular lymphoma,19,7938,2,7955,7
+18956,6,0,1,1,0,idiopathic bronchiectasis,8,7949,1,7956,7
+19095,3,0,0,12,0,plague,15,7942,12,7945,7
+19182,20,0,86,2,0,monogenic obesity,108,7849,2,7955,7
+19373,4,0,0,0,0,desmoplastic small round cell tumor,4,7953,0,7957,7
+1966_1817,4,0,153,4,0,closed-angle glaucoma,161,7796,4,7953,7
+20329,21,0,0,2,0,"classic Hodgkin lymphoma, lymphocyte-rich type",23,7934,2,7955,7
+21063,5,0,1,1,0,malignant colon neoplasm,7,7950,1,7956,7
+2144,8,0,54,0,0,obsolete hyperuricemia (disease),62,7895,0,7957,7
+2313,61,1,0,1,0,vernal conjunctivitis,63,7894,2,7955,7
+2317,4,0,9,0,0,central nervous system origin vertigo,13,7944,0,7957,7
+24279_4265_918,10,0,0,0,0,endometritis,10,7947,0,7957,7
+24294_24295,9,0,0,2,0,skin disease caused by infection,11,7946,2,7955,7
+24612,13,0,8,2,0,manic bipolar affective disorder,23,7934,2,7955,7
+2508,11,0,0,6,0,gingivitis,17,7940,6,7951,7
+2602,8,0,10,2,0,central nervous system disease,20,7937,2,7955,7
+2679,8,0,109,2,0,cerebral infarction,119,7838,2,7955,7
+32920,24,0,0,8,0,juvenile arthritis due to defect in LACC1,32,7925,8,7949,7
+3582,17,0,26,8,0,hereditary breast ovarian cancer syndrome,51,7906,8,7949,7
+3792,15,0,26,8,0,ovarian carcinosarcoma,49,7908,8,7949,7
+4247,36,0,143,1,0,peptic ulcer disease,180,7777,1,7956,7
+430,4,0,0,0,0,mature T-cell and NK-cell non-Hodgkin lymphoma,4,7953,0,7957,7
+43233,9,0,6,0,0,exfoliative dermatitis,15,7942,0,7957,7
+43537,5,0,0,0,0,cluster headache syndrome,5,7952,0,7957,7
+43653,3,0,0,0,0,herpes labialis,3,7954,0,7957,7
+4425,4,0,193,6,0,hyperthyroidism,203,7754,6,7951,7
+4789_1929_1930_1931,6,0,1,17,0,cholangitis,24,7933,17,7940,7
+4802,13,0,4,0,0,pulmonary eosinophilia,17,7940,0,7957,7
+4967,21,0,1,1,0,acute lymphoblastic leukemia (disease),23,7934,1,7956,7
+5016,3,0,4,12,0,diabetic nephropathy,19,7938,12,7945,7
+5072,4,0,1,4,0,neuroblastoma,9,7948,4,7953,7
+5083,16,1,17,1,2,psoriasis,37,7920,4,7953,7
+5089,4,0,0,0,0,sarcoma,4,7953,0,7957,7
+5105_5012,4,0,9,0,0,melanoma,13,7944,0,7957,7
+5119,13,3,0,10,0,anthrax infection,26,7931,13,7944,7
+5131,3,0,14,3,0,cervical carcinoma,20,7937,3,7954,7
+5148,49,0,20,0,0,type 2 diabetes mellitus,69,7888,0,7957,7
+5159,6,0,19,0,0,prostate carcinoma,25,7932,0,7957,7
+5447,4,0,0,4,0,testicular cancer,8,7949,4,7953,7
+5477,4,2,39,2,0,ventricular tachycardia,47,7910,4,7953,7
+5487,9,0,76,0,0,schizoaffective disorder,85,7872,0,7957,7
+5530,5,0,4,0,0,opiate dependence,9,7948,0,7957,7
+5549,11,0,0,0,0,renal cell adenocarcinoma,11,7946,0,7957,7
+5555,4,0,0,0,0,cycloplegia,4,7953,0,7957,7
+5631,9,1,0,2,0,actinomycosis,12,7945,3,7954,7
+5744,15,4,26,8,0,yolk sac tumor,53,7904,12,7945,7
+5754,8,0,0,2,0,epilepsy with generalized tonic-clonic seizures,10,7947,2,7955,7
+5886,7,0,3,0,0,oral candidiasis,10,7947,0,7957,7
+5921,7,0,0,4,0,Plasmodium vivax malaria,11,7946,4,7953,7
+5968,4,1,1,3,0,sporotrichosis,9,7948,4,7953,7
+5989_5697,3,0,0,3,0,toxoplasmosis,6,7951,3,7954,7
+6052,15,0,6,8,0,pulmonary tuberculosis,29,7928,8,7949,7
+6210_891,3,0,0,0,0,fibrolamellar hepatocellular carcinoma,3,7954,0,7957,7
+6579,6,0,0,0,0,melanoacanthoma,6,7951,0,7957,7
+6642,3,0,35,1,0,alcohol withdrawal delirium,39,7918,1,7956,7
+6652_3678_1090_3672_3673_3676_3677_3679_6803,9,0,214,9,0,myocardial infarction,232,7725,9,7948,7
+6823,5,0,0,1,0,Klinefelter syndrome,6,7951,1,7956,7
+6835,10,0,10,0,1,lipoid nephrosis,21,7936,1,7956,7
+6875,22,0,84,2,0,ocular hypertension,108,7849,2,7955,7
+705,12,0,131,8,0,Clostridium difficile colitis,151,7806,8,7949,7
+7763,11,0,0,0,0,nonpapillary renal cell carcinoma,11,7946,0,7957,7
+8187_2050_5618_5451_5371_100081_5383_1942_1098_3265_11924_12384,46,10,173,4,2,anxiety disorder,235,7722,16,7941,7
+8420,39,1,7,0,0,seborrheic keratosis,47,7910,1,7956,7
+9100,4,0,23,0,0,IDDM 1,27,7930,0,7957,7

@@ -1,0 +1,4 @@
+disease_id,drug_id,evaluation_role
+X,D1,CLEAN_INDICATION
+X,D2,CLEAN_INDICATION
+Y,D2,CLEAN_INDICATION

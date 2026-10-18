@@ -1,0 +1,334 @@
+{
+  "gate": "PHASE_2_GATE_5",
+  "scope": "E2_DISEASE_PROFILE_LABEL_TRANSFER exact score/applicability/metric reproduction only",
+  "expert_id": "E2_DISEASE_PROFILE_LABEL_TRANSFER",
+  "expert_version": "1.0",
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+  "masking_protocol": "CANONICAL_1HOP",
+  "evaluator_version": "1.1_tiesafe",
+  "historical_source_reference": "Cell 17 / source/authoritative/E2_authoritative.py",
+  "historical_source_sha256": "96607e0eacc774e9f788499bf3481a3e34bb557906eaaf68cd4586dd1c01fe2f",
+  "clean_implementation_commit": null,
+  "clean_implementation_commit_state": "UNAVAILABLE_NOT_GIT_CHECKOUT",
+  "input_primekg_sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69",
+  "candidate_count": 7957,
+  "disease_count": 738,
+  "applicable_count": 712,
+  "abstention_count": 26,
+  "historical_score_archive": {
+    "artifact_id": "external/p1_e2_disease_profile_label_transfer_scores.npz",
+    "observed_sha256": "5b17c06e7e31f0e1b4dc3d63dcc3aaf0e1537b8c5c6c7bce6f1b8283a3a10eab",
+    "observed_size": 1374036,
+    "hash_classification": "RECOVERY_TIME_OBSERVED",
+    "historical_hash_verified": false,
+    "schema_arrays": [
+      "scores",
+      "disease_ids",
+      "drug_ids"
+    ]
+  },
+  "score_equivalence": {
+    "shape": [
+      738,
+      7957
+    ],
+    "dtype_clean": "float32",
+    "dtype_historical": "float32",
+    "scores_compared": 5872266,
+    "candidate_axis_identity": true,
+    "disease_axis_identity": true,
+    "max_absolute_difference": 0.0,
+    "mean_absolute_difference": 0.0,
+    "unequal_value_count": 0,
+    "nan_difference_count": 0,
+    "bitwise_identical": true
+  },
+  "evaluator_equivalence": {
+    "disease_rows": 738,
+    "applicable_count_clean": 712,
+    "applicable_count_frozen": 712,
+    "applicability_agreement_count": 738,
+    "applicability_exact": true,
+    "max_absolute_difference_by_metric": {
+      "MRR": 0.0,
+      "first_hit_rank": 0.0,
+      "first_contra_rank": 0.0,
+      "Recall@10": 0.0,
+      "Hit@10": 2.220446049250313e-16,
+      "Contra@10": 0.0,
+      "ContraRate@10": 0.0,
+      "Recall@50": 0.0,
+      "Hit@50": 7.563394355258879e-16,
+      "Contra@50": 0.0,
+      "ContraRate@50": 0.0,
+      "Recall@100": 0.0,
+      "Hit@100": 1.0755285551056204e-15,
+      "Contra@100": 0.0,
+      "ContraRate@100": 0.0,
+      "primary_utility": 0.0
+    },
+    "max_absolute_disease_level_difference": 1.0755285551056204e-15,
+    "first_mismatches": [
+      {
+        "disease_id": "2087",
+        "field": "Hit@50",
+        "frozen": 0.018998272069537588,
+        "clean": 0.018998272069537525,
+        "difference": 6.245004513516506e-17
+      },
+      {
+        "disease_id": "2087",
+        "field": "Hit@100",
+        "frozen": 0.04358202006990165,
+        "clean": 0.04358202006990097,
+        "difference": 6.800116025829084e-16
+      },
+      {
+        "disease_id": "6021",
+        "field": "Hit@10",
+        "frozen": 0.005646158887191602,
+        "clean": 0.005646158887191666,
+        "difference": 6.331740687315346e-17
+      },
+      {
+        "disease_id": "6021",
+        "field": "Hit@50",
+        "frozen": 0.03043249363475367,
+        "clean": 0.0304324936347542,
+        "difference": 5.273559366969494e-16
+      },
+      {
+        "disease_id": "6021",
+        "field": "Hit@100",
+        "frozen": 0.060717719569762095,
+        "clean": 0.060717719569762796,
+        "difference": 7.008282842946301e-16
+      },
+      {
+        "disease_id": "1358",
+        "field": "Hit@10",
+        "frozen": 0.3158536585365854,
+        "clean": 0.31585365853658565,
+        "difference": 2.220446049250313e-16
+      },
+      {
+        "disease_id": "30602",
+        "field": "Hit@10",
+        "frozen": 0.0006290890790135883,
+        "clean": 0.0006290890790136006,
+        "difference": 1.22514845490862e-17
+      },
+      {
+        "disease_id": "30602",
+        "field": "Hit@50",
+        "frozen": 0.025534276892766175,
+        "clean": 0.025534276892766106,
+        "difference": 6.938893903907228e-17
+      },
+      {
+        "disease_id": "30602",
+        "field": "Hit@100",
+        "frozen": 0.05596489900413168,
+        "clean": 0.05596489900413193,
+        "difference": 2.498001805406602e-16
+      },
+      {
+        "disease_id": "3781_5607_18597",
+        "field": "Hit@10",
+        "frozen": 0.5384615384615384,
+        "clean": 0.5384615384615385,
+        "difference": 1.1102230246251565e-16
+      },
+      {
+        "disease_id": "41879",
+        "field": "Hit@10",
+        "frozen": 0.48814229249011853,
+        "clean": 0.4881422924901184,
+        "difference": 1.1102230246251565e-16
+      },
+      {
+        "disease_id": "45031",
+        "field": "Hit@50",
+        "frozen": 0.01255004564519427,
+        "clean": 0.012550045645194352,
+        "difference": 8.153200337090993e-17
+      },
+      {
+        "disease_id": "45031",
+        "field": "Hit@100",
+        "frozen": 0.03729538517893896,
+        "clean": 0.0372953851789386,
+        "difference": 3.608224830031759e-16
+      },
+      {
+        "disease_id": "1247",
+        "field": "Hit@100",
+        "frozen": 0.3137254901960785,
+        "clean": 0.31372549019607854,
+        "difference": 5.551115123125783e-17
+      },
+      {
+        "disease_id": "4379",
+        "field": "Hit@10",
+        "frozen": 0.007021035279662121,
+        "clean": 0.007021035279662247,
+        "difference": 1.2576745200831851e-16
+      },
+      {
+        "disease_id": "4379",
+        "field": "Hit@50",
+        "frozen": 0.04149602083815434,
+        "clean": 0.04149602083815451,
+        "difference": 1.734723475976807e-16
+      },
+      {
+        "disease_id": "4379",
+        "field": "Hit@100",
+        "frozen": 0.0831428494239397,
+        "clean": 0.08314284942393979,
+        "difference": 9.71445146547012e-17
+      },
+      {
+        "disease_id": "5546",
+        "field": "Hit@100",
+        "frozen": 0.012646859177756792,
+        "clean": 0.012646859177756542,
+        "difference": 2.498001805406602e-16
+      },
+      {
+        "disease_id": "5647",
+        "field": "Hit@50",
+        "frozen": 0.012059401602510535,
+        "clean": 0.012059401602510511,
+        "difference": 2.42861286636753e-17
+      },
+      {
+        "disease_id": "5647",
+        "field": "Hit@100",
+        "frozen": 0.048966810519956966,
+        "clean": 0.04896681051995677,
+        "difference": 1.942890293094024e-16
+      }
+    ],
+    "macro_recall50_clean": 0.6292107026825583,
+    "macro_recall50_frozen": 0.6292107026825583,
+    "macro_recall50_absolute_difference": 0.0,
+    "historical_archive_gate3_status": "PASS",
+    "historical_archive_gate3_max_absolute_difference": 1.0755285551056204e-15,
+    "evaluator_configuration_gate1_status": "PARTIAL"
+  },
+  "determinism": {
+    "repeated_profile_construction_bitwise_identical": true,
+    "repeated_similarity_bitwise_identical": true,
+    "repeated_score_computation_bitwise_identical": true,
+    "repeated_applicability_identical": true,
+    "stochastic": false,
+    "scientific_seed_required": false
+  },
+  "test_verification": {
+    "command": "python -m unittest discover -s tests -v",
+    "tests_run": 135,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "runtime_seconds": 79.709,
+    "status": "PASS"
+  },
+  "overall_status": "PASS",
+  "clean_implementation_file_sha256": {
+    "src/primekg_repurposing/experts/e2_disease_transfer.py": "c269dc04ed1446fe145fea1fc8aa774fa63caaa0cacef2f1b2cb7e37c1a4ae5c",
+    "src/primekg_repurposing/gate5.py": "1a8dc0efe6ad3dfe6b20c0fdcea518400e998fde4155364cf7b99a0409916edb",
+    "src/primekg_repurposing/score_archive.py": "83d867437a851e7496084e15b55e7bb9facec0a7a53a51dca51613a06891933e"
+  },
+  "input_primekg_size": 981751236,
+  "runtime_seconds": {
+    "graph_profile_extraction": 11.53581140001188,
+    "first_profile_and_similarity": 0.6442293000000063,
+    "repeat_profile_and_similarity": 0.3110247000004165,
+    "first_fold_scoring": 0.17257870000321418,
+    "repeat_fold_scoring": 0.18062249998911284,
+    "total": 12.84426660000463
+  },
+  "status_counts": {
+    "ABSTAIN_NO_NONTHERAPEUTIC_PROFILE": 2,
+    "ABSTAIN_NO_SIMILAR_TRAINING_DISEASE": 24,
+    "OK": 712
+  },
+  "fold_legal_clean_counts": [
+    6856,
+    6828,
+    6990,
+    7119,
+    6871,
+    7183,
+    7091,
+    6827
+  ],
+  "fold_legal_clean_counts_expected": [
+    6856,
+    6828,
+    6990,
+    7119,
+    6871,
+    7183,
+    7091,
+    6827
+  ],
+  "feature_space_summary": {
+    "all_diseases_in_idf_corpus": 17070,
+    "features": 36545,
+    "unique_disease_feature_pairs": 298613,
+    "relevant_primary_or_label_diseases": 1362,
+    "global_clean_training_pairs": 9177,
+    "global_label_diseases": 1362,
+    "similarity_shape": [
+      738,
+      1362
+    ],
+    "nonzero_similarities": 166912
+  },
+  "relation_types_used": [
+    "disease_disease",
+    "disease_phenotype_negative",
+    "disease_phenotype_positive",
+    "disease_protein",
+    "exposure_disease"
+  ],
+  "tfidf_configuration": {
+    "term_frequency": "binary presence after pair deduplication",
+    "document_count": "all PrimeKG diseases with at least one incident nontherapeutic feature",
+    "idf": "ln((1 + N_all_diseases) / (1 + document_frequency)) + 1",
+    "idf_dtype": "float32",
+    "normalization": "L2",
+    "matrix": "SciPy CSR float32",
+    "similarity": "full cosine; no threshold and no top-k truncation",
+    "feature_token": "relation|neighbor_type|neighbor_id",
+    "direction_encoded": false,
+    "ontology_features_included": "disease_disease|disease|neighbor_id"
+  },
+  "label_transfer_configuration": {
+    "positive_role": "CLEAN_INDICATION only",
+    "legal_source": "Gate-2 benchmark.mask(fold).legal_clean_pairs",
+    "target_and_buffer_labels_excluded_before_transfer": true,
+    "formula": "sum_j(sim(q,j) * clean_label(j,drug)) / sum_j(sim(q,j))",
+    "knn_cutoff": null,
+    "score_dtype": "float32"
+  },
+  "applicability_rule": [
+    "ABSTAIN_NO_NONTHERAPEUTIC_PROFILE when query feature count is zero",
+    "ABSTAIN_NO_SIMILAR_TRAINING_DISEASE when legal similarity nnz is zero or mass <= 0",
+    "ABSTAIN_NO_TRANSFERABLE_INDICATION when positive score coverage is zero",
+    "OK otherwise"
+  ],
+  "generated_score_archive": {
+    "logical_path": "artifacts/generated/e2/p1_e2_disease_profile_label_transfer_scores_clean.npz",
+    "sha256": "0f837410be72489af1599d2478956919cb4e66fa8f73590dc40c53dad0cb4d1b",
+    "size": 1374036
+  },
+  "numeric_acceptance": {
+    "score_requirement": "all stored float32 values exactly equal",
+    "metric_tolerance": 2e-15,
+    "macro_tolerance": 2e-16,
+    "metric_tolerance_basis": "CSV decimal round-trip of frozen Cell-17 metrics; scores are bitwise exact"
+  }
+}

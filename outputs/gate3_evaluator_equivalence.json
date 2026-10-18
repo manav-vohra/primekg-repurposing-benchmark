@@ -1,0 +1,330 @@
+{
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+  "evaluator_version": "1.1_tiesafe",
+  "status": "PASS",
+  "candidate_axis_verified": true,
+  "metric_policy": {
+    "candidate_universe": "all_7957_primekg_drugbank_drugs",
+    "primary_positive": "CLEAN_INDICATION",
+    "ignored_primary_roles": [
+      "AMBIGUOUS_INDICATION",
+      "OFFLABEL_ONLY",
+      "CONFLICTING_NONINDICATION"
+    ],
+    "scored_but_not_true_negative_roles": [
+      "CONTRAINDICATION_ONLY",
+      "UNOBSERVED"
+    ],
+    "primary_metrics": [
+      "Recall@K",
+      "Hit@K",
+      "MRR",
+      "first_hit_rank"
+    ],
+    "safety_metric_family": [
+      "Contraindication@K",
+      "contraindication_intrusion_rate"
+    ],
+    "secondary_diagnostic_metrics": [
+      "AUPRC",
+      "AUROC"
+    ],
+    "important_note": "Unobserved pairs are unlabeled, not true negatives. Contraindications remain rankable candidates but are tracked separately as explicit safety evidence."
+  },
+  "fixture_checks": {
+    "status": "PASS",
+    "checks": {
+      "single_positive_four_way_tie_expected_rank": true,
+      "single_positive_four_way_tie_mrr": true,
+      "two_positive_half_block_hit": true,
+      "enumerated_1positives_Recall@1": true,
+      "enumerated_1positives_Hit@1": true,
+      "enumerated_1positives_Recall@2": true,
+      "enumerated_1positives_Hit@2": true,
+      "enumerated_1positives_Recall@4": true,
+      "enumerated_1positives_Hit@4": true,
+      "enumerated_1positives_first_hit": true,
+      "enumerated_1positives_MRR": true,
+      "enumerated_2positives_Recall@1": true,
+      "enumerated_2positives_Hit@1": true,
+      "enumerated_2positives_Recall@2": true,
+      "enumerated_2positives_Hit@2": true,
+      "enumerated_2positives_Recall@4": true,
+      "enumerated_2positives_Hit@4": true,
+      "enumerated_2positives_first_hit": true,
+      "enumerated_2positives_MRR": true
+    },
+    "permutations_enumerated": 48
+  },
+  "archives_tested": [
+    {
+      "score_artifact_id": "external/p1_e3_complex_seed0_scores.npz",
+      "score_path": "work\\gate3_scores\\p1_e3_complex_seed0_scores.npz",
+      "score_observed_sha256": "c85f1e68436e24d7da51cf5a6a0617abadcc858fea5a01492de9b2c8befc731c",
+      "score_registry_sha256_status": "UNKNOWN_HASH",
+      "score_registry_size_verified": true,
+      "reference_matrix_artifact_id": "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+      "reference_matrix_sha256_verified": true,
+      "candidate_axis_verified": true,
+      "disease_axis_verified": true,
+      "applicability_source": "frozen expert matrix status/applicable metadata (no separate upstream status archive)",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "disease_rows": 738,
+      "numeric_tolerance": 1e-12,
+      "max_absolute_difference_by_metric": {
+        "MRR": 0.0,
+        "first_hit_rank": 0.0,
+        "first_contra_rank": 0.0,
+        "Recall@10": 0.0,
+        "Hit@10": 0.0,
+        "Contra@10": 0.0,
+        "ContraRate@10": 0.0,
+        "Recall@50": 0.0,
+        "Hit@50": 0.0,
+        "Contra@50": 0.0,
+        "ContraRate@50": 0.0,
+        "Recall@100": 0.0,
+        "Hit@100": 0.0,
+        "Contra@100": 0.0,
+        "ContraRate@100": 0.0,
+        "primary_utility": 0.0
+      },
+      "max_absolute_difference": 0.0,
+      "first_mismatches": [],
+      "macro_recall50_computed": 0.2918345167963524,
+      "macro_recall50_frozen_matrix": 0.2918345167963524,
+      "macro_recall50_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "score_artifact_id": "external/p1_e3_complex_seed1_scores.npz",
+      "score_path": "work\\gate3_scores\\p1_e3_complex_seed1_scores.npz",
+      "score_observed_sha256": "8f9835fbeb7d79c0944705aaaf50414b757d28fa8307a38a4aae9ed5ac774fe7",
+      "score_registry_sha256_status": "UNKNOWN_HASH",
+      "score_registry_size_verified": true,
+      "reference_matrix_artifact_id": "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+      "reference_matrix_sha256_verified": true,
+      "candidate_axis_verified": true,
+      "disease_axis_verified": true,
+      "applicability_source": "frozen expert matrix status/applicable metadata (no separate upstream status archive)",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "disease_rows": 738,
+      "numeric_tolerance": 1e-12,
+      "max_absolute_difference_by_metric": {
+        "MRR": 0.0,
+        "first_hit_rank": 0.0,
+        "first_contra_rank": 0.0,
+        "Recall@10": 0.0,
+        "Hit@10": 0.0,
+        "Contra@10": 0.0,
+        "ContraRate@10": 0.0,
+        "Recall@50": 0.0,
+        "Hit@50": 0.0,
+        "Contra@50": 0.0,
+        "ContraRate@50": 0.0,
+        "Recall@100": 0.0,
+        "Hit@100": 0.0,
+        "Contra@100": 0.0,
+        "ContraRate@100": 0.0,
+        "primary_utility": 0.0
+      },
+      "max_absolute_difference": 0.0,
+      "first_mismatches": [],
+      "macro_recall50_computed": 0.30365612615190174,
+      "macro_recall50_frozen_matrix": 0.30365612615190174,
+      "macro_recall50_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "score_artifact_id": "external/p1_e3_complex_seed2_scores.npz",
+      "score_path": "work\\gate3_scores\\p1_e3_complex_seed2_scores.npz",
+      "score_observed_sha256": "028c299a3356ef628365bcdb3a00f12e2ceb56a166aa0f01a4c5ca01641b1007",
+      "score_registry_sha256_status": "UNKNOWN_HASH",
+      "score_registry_size_verified": true,
+      "reference_matrix_artifact_id": "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+      "reference_matrix_sha256_verified": true,
+      "candidate_axis_verified": true,
+      "disease_axis_verified": true,
+      "applicability_source": "frozen expert matrix status/applicable metadata (no separate upstream status archive)",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "disease_rows": 738,
+      "numeric_tolerance": 1e-12,
+      "max_absolute_difference_by_metric": {
+        "MRR": 0.0,
+        "first_hit_rank": 0.0,
+        "first_contra_rank": 0.0,
+        "Recall@10": 0.0,
+        "Hit@10": 0.0,
+        "Contra@10": 0.0,
+        "ContraRate@10": 0.0,
+        "Recall@50": 0.0,
+        "Hit@50": 0.0,
+        "Contra@50": 0.0,
+        "ContraRate@50": 0.0,
+        "Recall@100": 0.0,
+        "Hit@100": 0.0,
+        "Contra@100": 0.0,
+        "ContraRate@100": 0.0,
+        "primary_utility": 0.0
+      },
+      "max_absolute_difference": 0.0,
+      "first_mismatches": [],
+      "macro_recall50_computed": 0.31921361850047364,
+      "macro_recall50_frozen_matrix": 0.31921361850047364,
+      "macro_recall50_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "score_artifact_id": "external/p1_e4_rgcn_seed0_scores.npz",
+      "score_path": "work\\gate3_scores\\p1_e4_rgcn_seed0_scores.npz",
+      "score_observed_sha256": "6f81dd9c263bfdc34f57414506c9605671f6f989cfba614728891f5edbaf1bb1",
+      "score_registry_sha256_status": "UNKNOWN_HASH",
+      "score_registry_size_verified": true,
+      "reference_matrix_artifact_id": "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+      "reference_matrix_sha256_verified": true,
+      "candidate_axis_verified": true,
+      "disease_axis_verified": true,
+      "applicability_source": "frozen expert matrix status/applicable metadata (no separate upstream status archive)",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "disease_rows": 738,
+      "numeric_tolerance": 1e-12,
+      "max_absolute_difference_by_metric": {
+        "MRR": 0.0,
+        "first_hit_rank": 0.0,
+        "first_contra_rank": 0.0,
+        "Recall@10": 0.0,
+        "Hit@10": 0.0,
+        "Contra@10": 0.0,
+        "ContraRate@10": 0.0,
+        "Recall@50": 0.0,
+        "Hit@50": 0.0,
+        "Contra@50": 0.0,
+        "ContraRate@50": 0.0,
+        "Recall@100": 0.0,
+        "Hit@100": 0.0,
+        "Contra@100": 0.0,
+        "ContraRate@100": 0.0,
+        "primary_utility": 0.0
+      },
+      "max_absolute_difference": 0.0,
+      "first_mismatches": [],
+      "macro_recall50_computed": 0.26732620252612416,
+      "macro_recall50_frozen_matrix": 0.26732620252612416,
+      "macro_recall50_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "score_artifact_id": "external/p1_e4_rgcn_seed1_scores.npz",
+      "score_path": "work\\gate3_scores\\p1_e4_rgcn_seed1_scores.npz",
+      "score_observed_sha256": "83cfb603d193914bdb01fa801240a9f1d1e007acc08ba376b316ed13492e4185",
+      "score_registry_sha256_status": "UNKNOWN_HASH",
+      "score_registry_size_verified": true,
+      "reference_matrix_artifact_id": "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+      "reference_matrix_sha256_verified": true,
+      "candidate_axis_verified": true,
+      "disease_axis_verified": true,
+      "applicability_source": "frozen expert matrix status/applicable metadata (no separate upstream status archive)",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "disease_rows": 738,
+      "numeric_tolerance": 1e-12,
+      "max_absolute_difference_by_metric": {
+        "MRR": 0.0,
+        "first_hit_rank": 0.0,
+        "first_contra_rank": 0.0,
+        "Recall@10": 0.0,
+        "Hit@10": 0.0,
+        "Contra@10": 0.0,
+        "ContraRate@10": 0.0,
+        "Recall@50": 0.0,
+        "Hit@50": 0.0,
+        "Contra@50": 0.0,
+        "ContraRate@50": 0.0,
+        "Recall@100": 0.0,
+        "Hit@100": 0.0,
+        "Contra@100": 0.0,
+        "ContraRate@100": 0.0,
+        "primary_utility": 0.0
+      },
+      "max_absolute_difference": 0.0,
+      "first_mismatches": [],
+      "macro_recall50_computed": 0.27047611523025084,
+      "macro_recall50_frozen_matrix": 0.27047611523025084,
+      "macro_recall50_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "score_artifact_id": "external/p1_e4_rgcn_seed2_scores.npz",
+      "score_path": "work\\gate3_scores\\p1_e4_rgcn_seed2_scores.npz",
+      "score_observed_sha256": "a036ee6fb1252a118adc42e475fa1b15e6a2c8ec35f06dc9cc021a3a87d9a2a8",
+      "score_registry_sha256_status": "UNKNOWN_HASH",
+      "score_registry_size_verified": true,
+      "reference_matrix_artifact_id": "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv",
+      "reference_matrix_sha256_verified": true,
+      "candidate_axis_verified": true,
+      "disease_axis_verified": true,
+      "applicability_source": "frozen expert matrix status/applicable metadata (no separate upstream status archive)",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "disease_rows": 738,
+      "numeric_tolerance": 1e-12,
+      "max_absolute_difference_by_metric": {
+        "MRR": 0.0,
+        "first_hit_rank": 0.0,
+        "first_contra_rank": 0.0,
+        "Recall@10": 0.0,
+        "Hit@10": 0.0,
+        "Contra@10": 0.0,
+        "ContraRate@10": 0.0,
+        "Recall@50": 0.0,
+        "Hit@50": 0.0,
+        "Contra@50": 0.0,
+        "ContraRate@50": 0.0,
+        "Recall@100": 0.0,
+        "Hit@100": 0.0,
+        "Contra@100": 0.0,
+        "ContraRate@100": 0.0,
+        "primary_utility": 0.0
+      },
+      "max_absolute_difference": 0.0,
+      "first_mismatches": [],
+      "macro_recall50_computed": 0.2711909420806408,
+      "macro_recall50_frozen_matrix": 0.2711909420806408,
+      "macro_recall50_absolute_difference": 0.0,
+      "status": "PASS"
+    }
+  ],
+  "unavailable_score_archives": [
+    {
+      "artifact_id": "external/p1_e1_weighted_gene_cosine_scores.npz",
+      "state": "REGISTERED_EXTERNAL_NOT_LOCAL"
+    },
+    {
+      "artifact_id": "external/p1_e2_disease_profile_label_transfer_scores.npz",
+      "state": "REGISTERED_EXTERNAL_NOT_LOCAL"
+    }
+  ],
+  "disease_axis_verified": true,
+  "k_values": [
+    10,
+    50,
+    100
+  ],
+  "gate1_reference_overall": "PARTIAL"
+}

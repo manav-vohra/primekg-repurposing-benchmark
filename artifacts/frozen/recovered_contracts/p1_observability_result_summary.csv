@@ -1,0 +1,6 @@
+stage,state,policy,macro_R50,gain_vs_SBS,oracle_gap_recovered,status
+SBS,no routing,E2,0.6292107026825583,0.0,0.0,BASELINE
+Oracle,true expert utilities known,VBS,0.681351211065284,0.05214050838272566,1.0,UPPER_BOUND
+Static Feature v1 — naive,41 one-hop pre-label descriptors,absolute-utility argmax Ridge,0.6263338819753533,-0.0028768207072048,-0.055174389288425,FAIL
+Static Feature v1 — safe,41 one-hop pre-label descriptors,nested direct-delta Ridge,0.6292107026825583,0.0,0.0,FAIL
+Static Feature v2 — safe,68 preregistered multiscale pre-label descriptors,nested direct-delta Ridge,0.6292107026825583,0.0,0.0,FAIL

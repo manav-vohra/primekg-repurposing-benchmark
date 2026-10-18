@@ -1,0 +1,57 @@
+{
+  "expert_planned": "E3_COMPLEX_KGE",
+  "corpus_version": "1.0",
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+  "evaluator_version": "1.1_tiesafe",
+  "construction_note": "Cell 19 initial fold audit failed because clean disease IDs were stored in fixed-width NumPy U128 arrays. Composite disease IDs longer than 128 characters were silently truncated. Cell 19A verified all frozen artifacts and supervision were intact. Cell 19B rebuilt ID arrays with inferred string width.",
+  "id_integrity": {
+    "max_clean_disease_id_length": 523,
+    "clean_disease_ids_over_128": 25,
+    "max_clean_drug_id_length": 7,
+    "clean_drug_ids_over_128": 0,
+    "fixed_width_truncation": false
+  },
+  "base_graph": {
+    "source": "PrimeKG frozen kg.csv",
+    "therapeutic_relations_removed": [
+      "contraindication",
+      "indication",
+      "off-label use"
+    ],
+    "nontherapeutic_directed_triples": 8015236,
+    "therapeutic_directed_rows_removed": 85262
+  },
+  "supervision": {
+    "relation": "clean_indication",
+    "direction": "drug -> disease",
+    "global_clean_pairs": 9177,
+    "quarantine": "all CLEAN_INDICATION edges removed for frozen target + buffer diseases"
+  },
+  "entities": 129307,
+  "relations": 28,
+  "candidate_drugs": 7957,
+  "primary_diseases": 738,
+  "entity_key": "<entity_type>::<entity_id>",
+  "fold_training_clean_pairs": {
+    "0": 6856,
+    "1": 6828,
+    "2": 6990,
+    "3": 7119,
+    "4": 6871,
+    "5": 7183,
+    "6": 7091,
+    "7": 6827
+  },
+  "direct_hidden_label_leakage": 0,
+  "runtime_seconds_from_cell19": {
+    "pass1_vocabulary": 19.169689893722534,
+    "pass2_encoding": 19.606902837753296
+  },
+  "artifact_hashes": {
+    "p1_e3_complex_entities.csv": "4602c6e372d8db30463c5e5dae418632ce742de9255e305809c1d99829ca8fa3",
+    "p1_e3_complex_relations.csv": "591c5fe76d4122369574972525f6b5e82128d8e975264f6cfdce6178b223caba",
+    "p1_e3_complex_base_nonther_triples.npz": "4b13562268f237b4217002279338a721e9c6b9c30fa178d29883066848fd733b",
+    "p1_e3_complex_clean_indication_triples.npz": "06573916aa538640949c4fceb79acb4455856aaf2038cd44df5c54675a30c0b3",
+    "p1_e3_complex_fold_label_manifest.csv": "f612dee4afbdfa2654f41e31b2f8610cdbf45b60a6f39631ecdf89f46043aa71"
+  }
+}

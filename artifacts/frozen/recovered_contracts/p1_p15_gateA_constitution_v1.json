@@ -1,0 +1,60 @@
+{
+  "status": "FROZEN_BEFORE_GATE_A_ORACLE_CALCULATION",
+  "benchmark": "P1_TRACK_A_PRIMEKG_V0",
+  "primary_quality": "disease_level_tiesafe_Recall@50",
+  "primary_cost": "warm_marginal_score_plus_rank_wall_median_sec",
+  "expert_order": [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+  ],
+  "stochastic_expert_utility": "disease-level arithmetic mean across frozen seeds 0/1/2",
+  "applicability": "explicit frozen expert applicability; known before invocation; unavailable expert cannot be selected and incurs zero invocation cost",
+  "cascade": "one default expert followed by at most one additional expert; escalation replaces final ranking",
+  "lambda_objective": "mean Recall@50 - lambda * mean marginal seconds",
+  "lambda_grid": {
+    "zero_included": true,
+    "positive_min": 0.01,
+    "positive_max": 10000.0,
+    "positive_points": 1201,
+    "spacing": "log10"
+  },
+  "lambda_anchors": [
+    0.0,
+    1.0,
+    5.0,
+    10.0,
+    25.0,
+    50.0,
+    100.0,
+    250.0,
+    500.0,
+    1000.0,
+    2500.0,
+    10000.0
+  ],
+  "budget_multipliers_relative_to_E2": [
+    1.0,
+    1.25,
+    1.5,
+    2.0,
+    3.0,
+    5.0
+  ],
+  "neural_cost_multipliers": [
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "tie_breaking": [
+    "highest net utility",
+    "lower marginal cost",
+    "earlier frozen action order"
+  ],
+  "gate_interpretation": "characterize oracle economic headroom first; do not train probes until Gate A is interpreted",
+  "new_training": false,
+  "new_selector": false,
+  "gate_B": false
+}

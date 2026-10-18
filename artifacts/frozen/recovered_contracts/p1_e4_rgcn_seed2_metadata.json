@@ -1,0 +1,28 @@
+{
+  "expert_id": "E4_RGCN_LINK_PREDICTION",
+  "expert_version": "1.0",
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+  "evaluator_version": "1.1_tiesafe",
+  "seed": 2,
+  "corpus_manifest_sha256": "36e7d2f620b25056bb5564d589e4a396c2a7fe591600c6af2cd122127145ceb8",
+  "hidden_dimension": 64,
+  "layers": 2,
+  "basis_count": 4,
+  "dropout": 0.1,
+  "epochs_per_fold": 60,
+  "learning_rate": 0.001,
+  "negatives_per_positive": 16,
+  "gradient_clip": 5.0,
+  "macro_recall50": 0.2711909420806408,
+  "runtime_sec": 129.1943278312683,
+  "fold_final_loss": {
+    "0": 0.45583438873291016,
+    "1": 0.44759202003479004,
+    "2": 0.4446914792060852,
+    "3": 0.45166969299316406,
+    "4": 0.45795896649360657,
+    "5": 0.45801296830177307,
+    "6": 0.4585523009300232,
+    "7": 0.41780173778533936
+  }
+}

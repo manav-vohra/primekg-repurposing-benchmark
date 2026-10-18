@@ -1,0 +1,19 @@
+name: Artifact, benchmark, and evaluator validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e '.[reconstruct]'
+      - run: python -m unittest discover -s tests -v
+      - run: primekg-repurpose validate --tier smoke
+      - run: primekg-repurpose validate --tier reference
+      - run: primekg-repurpose validate --tier reference --benchmark-semantics

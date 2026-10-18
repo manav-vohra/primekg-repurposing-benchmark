@@ -1,0 +1,28 @@
+{
+  "candidate_universe": "all_7957_primekg_drugbank_drugs",
+  "primary_positive": "CLEAN_INDICATION",
+  "ignored_primary_roles": [
+    "AMBIGUOUS_INDICATION",
+    "OFFLABEL_ONLY",
+    "CONFLICTING_NONINDICATION"
+  ],
+  "scored_but_not_true_negative_roles": [
+    "CONTRAINDICATION_ONLY",
+    "UNOBSERVED"
+  ],
+  "primary_metrics": [
+    "Recall@K",
+    "Hit@K",
+    "MRR",
+    "first_hit_rank"
+  ],
+  "safety_metric_family": [
+    "Contraindication@K",
+    "contraindication_intrusion_rate"
+  ],
+  "secondary_diagnostic_metrics": [
+    "AUPRC",
+    "AUROC"
+  ],
+  "important_note": "Unobserved pairs are unlabeled, not true negatives. Contraindications remain rankable candidates but are tracked separately as explicit safety evidence."
+}

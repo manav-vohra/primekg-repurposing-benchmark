@@ -1,0 +1,247 @@
+{
+  "status": "P1_5_GATE_B_CONSTITUTION_FROZEN",
+  "benchmark": "P1_TRACK_A_PRIMEKG_V0",
+  "gate_A_source": "p1_p15_gateA_interpretation_v1.json",
+  "gate_A_source_sha256": "f8c38f5773199f65b466fd9490ddcafc7bb7784f7af859364794b18e76ee26a3",
+  "default_expert": "E2",
+  "primary_population": {
+    "definition": "explicit E2-applicable diseases",
+    "n": 712,
+    "E2_inapplicable_excluded_from_learned_primary": 26
+  },
+  "meta_evaluation": {
+    "final_holdout_n": 142,
+    "development_n": 570,
+    "final_holdout_fraction": 0.199438202247191,
+    "assignment": "SHA256 disease_id only; outcome independent",
+    "holdout_salt": "P1_5_GATEB_FINAL_META_HOLDOUT_V1",
+    "outer_folds": 5,
+    "outer_fold_size": 114,
+    "outer_salt": "P1_5_GATEB_DEVELOPMENT_OUTER_V1",
+    "inner_folds_per_outer_train": 4,
+    "inner_fold_size": 114,
+    "final_holdout_must_remain_unopened": true
+  },
+  "information_tiers": {
+    "P0_E2_POSTCOMPUTE": {
+      "role": "primary zero-incremental-cost dynamic state",
+      "feature_count": 6,
+      "features": [
+        "e2_score_std",
+        "e2_top1_z",
+        "e2_top10_mean_z",
+        "e2_top50_mean_z",
+        "e2_top1_minus_top50_mean_z",
+        "e2_top50_range_z"
+      ],
+      "incremental_probe_cost_sec": 0.0
+    },
+    "P1_E2_PLUS_E1_SCORE_PROBE": {
+      "role": "one bounded purchased diagnostic computation",
+      "feature_count_total": 11,
+      "features": [
+        "e2_score_std",
+        "e2_top1_z",
+        "e2_top10_mean_z",
+        "e2_top50_mean_z",
+        "e2_top1_minus_top50_mean_z",
+        "e2_top50_range_z",
+        "e1_available",
+        "e1_score_std",
+        "e1_top1_z",
+        "e1_e2top50_mean_z",
+        "e1_e2_pearson"
+      ],
+      "E1_probe_cost_sec_when_available": 0.0001918539999999,
+      "E1_probe_expected_mean_cost_sec": 0.00013580676404487303,
+      "E1_probe_availability_rate": 0.7078651685393258
+    }
+  },
+  "raw_score_probe_rule": "Use raw 7957-candidate score vectors only. No evaluator ignore-role masks, contraindication labels, off-label labels, held-out truth, Recall@K, or oracle identity may enter a probe feature.",
+  "target": {
+    "type": "DIRECT_PAIRWISE_DELTA",
+    "targets": [
+      {
+        "action": "E1",
+        "target": "delta_R50_E1_vs_E2",
+        "formula": "R50_E1 - R50_E2",
+        "training_rows": "outer-training rows where E1 applicable"
+      },
+      {
+        "action": "E3",
+        "target": "delta_R50_E3_vs_E2",
+        "formula": "expected_R50_E3 - R50_E2",
+        "training_rows": "outer-training rows where E3 applicable"
+      },
+      {
+        "action": "E4",
+        "target": "delta_R50_E4_vs_E2",
+        "formula": "expected_R50_E4 - R50_E2",
+        "training_rows": "outer-training rows where E4 applicable"
+      }
+    ],
+    "formula": "Delta_m = R_m - R_E2",
+    "generic_best_expert_classification": false,
+    "absolute_utility_prediction": false,
+    "costs": "known deterministic action costs are combined with predicted deltas at policy evaluation"
+  },
+  "primary_model": {
+    "name": "DIRECT_RIDGE",
+    "provenance": "p1_router_feature_v2_gate_preregistration.json",
+    "provenance_sha256": "3304dd07808e4a0f5cd1268340ac498620c596ffe01dc76337f61b8e1b16dbbe",
+    "rule": "Reuse exact frozen static-v2 DIRECT_RIDGE implementation/hyperparameters. No expansion, retuning or alternate alpha search.",
+    "preprocessing": "fit all scaling/imputation inside each training partition only"
+  },
+  "secondary_model": {
+    "name": "HGB",
+    "status": "DIAGNOSTIC_ONLY",
+    "rule": "May be reproduced only with exact previously frozen configuration. Cannot rescue a failed DIRECT_RIDGE primary Gate-B verdict."
+  },
+  "threshold_grid": [
+    0.0,
+    0.001,
+    0.002,
+    0.003,
+    0.005,
+    0.0075,
+    0.01,
+    0.015,
+    0.02
+  ],
+  "threshold_selection": {
+    "location": "inner OOF predictions only",
+    "objective": "maximize mean R50 among policies satisfying the active cost budget",
+    "tie_break": [
+      "within one SE choose lower mean cost",
+      "then larger threshold",
+      "then E2-only behavior"
+    ]
+  },
+  "budget": {
+    "baseline_E2_per_query_sec": 0.00043459175,
+    "primary_multiple": 1.5,
+    "primary_sec": 0.000651887625,
+    "secondary_tight_multiple": 1.25,
+    "secondary_tight_sec": 0.0005432396875
+  },
+  "cost_semantics": {
+    "E2_default": {
+      "cost_sec": 0.00043459175,
+      "charged": "every Gate-B disease"
+    },
+    "P0_probe": {
+      "cost_sec": 0.0,
+      "reason": "all P0 summaries derive from the already-run E2 default score vector"
+    },
+    "P1_E1_probe": {
+      "cost_sec_when_available": 0.0001918539999999,
+      "charged": "every Gate-B disease with explicit E1 applicability, regardless of final action",
+      "cost_when_unavailable": 0.0
+    },
+    "P0_escalate_E1": {
+      "incremental_cost_sec": 0.0003081645
+    },
+    "P1_escalate_E1": {
+      "incremental_cost_after_probe_sec": 0.000116396,
+      "reason": "E1 score vector already computed by probe"
+    },
+    "escalate_E3": {
+      "incremental_cost_sec": 0.00097609075
+    },
+    "escalate_E4": {
+      "incremental_cost_sec": 0.00090532075
+    },
+    "stop_E2": {
+      "incremental_action_cost_sec": 0.0
+    }
+  },
+  "development_pass_requirements": [
+    "mean R50 > E2",
+    "paired bootstrap 95CI lower > 0",
+    "mean cost <= 1.50x E2",
+    "at least 3 of 5 outer folds nonnegative",
+    "no single fold >50% aggregate positive gain",
+    "at least 5 escalations",
+    "total switch utility positive",
+    "beneficial switches > harmful switches",
+    "quality > mean matched-rate random baseline"
+  ],
+  "tier_selection": "Among passing P0/P1 DIRECT_RIDGE candidates, if within one SE of best quality choose the lower-cost/lower-information tier; otherwise choose higher development OOF quality.",
+  "no_development_pass": "STOP P1.5 learned routing. Do not inspect final meta-holdout.",
+  "final_primary_endpoint": "single selected policy vs E2 on untouched 142-disease meta-holdout under mean cost <=1.50x E2",
+  "final_success_requirements": [
+    "mean delta R50 > 0",
+    "paired bootstrap 95CI lower > 0",
+    "mean cost <= 1.50x E2",
+    "positive total switch utility",
+    "beneficial switches > harmful switches",
+    "quality > matched-rate random mean",
+    "quality >= frozen static-v2 policy"
+  ],
+  "final_retry_allowed": false,
+  "static_v2_baseline": {
+    "prediction_artifact": "p1_router_feature_v2_gate_predictions.csv",
+    "prediction_sha256": "44ba368b5e670c16669cbeed7e4f62b7ec13335e30ee71230b5835ed0e104b0a",
+    "gate_artifact": "p1_router_feature_v2_gate.json",
+    "gate_sha256": "c8ac993ea974d1804aa789ee8f95a718579021a0a7dadc46fdd4350c508d38d8"
+  },
+  "baselines": [
+    {
+      "baseline": "E2_ONLY",
+      "role": "primary fixed baseline",
+      "cost_match": "exact"
+    },
+    {
+      "baseline": "STATIC_FEATURE_V2_DIRECT_RIDGE",
+      "role": "frozen pre-probe observability baseline; use existing predictions only",
+      "cost_match": "quality comparator; historical static feature cost not re-estimated here"
+    },
+    {
+      "baseline": "MATCHED_RATE_RANDOM_ESCALATION",
+      "role": "tests whether learned targeting is better than randomly spending the same escalation budget",
+      "cost_match": "match probe tier, escalation rate and action mix; 1000 deterministic random replicates"
+    },
+    {
+      "baseline": "COST_MATCHED_FIXED_E1",
+      "role": "fixed-action schedule",
+      "cost_match": "outcome-independent SHA256 disease ordering; escalate as many diseases as fit policy mean cost"
+    },
+    {
+      "baseline": "COST_MATCHED_FIXED_E3",
+      "role": "fixed-action schedule",
+      "cost_match": "outcome-independent SHA256 disease ordering; escalate as many diseases as fit policy mean cost"
+    },
+    {
+      "baseline": "COST_MATCHED_FIXED_E4",
+      "role": "fixed-action schedule",
+      "cost_match": "outcome-independent SHA256 disease ordering; escalate as many diseases as fit policy mean cost"
+    },
+    {
+      "baseline": "E2_PLUS_E3_ALL",
+      "role": "high-cost contextual cascade baseline",
+      "cost_match": "not necessarily within primary budget"
+    },
+    {
+      "baseline": "E2_PLUS_E4_ALL",
+      "role": "high-cost contextual cascade baseline",
+      "cost_match": "not necessarily within primary budget"
+    },
+    {
+      "baseline": "RUN_ALL",
+      "role": "upper-compute contextual baseline",
+      "cost_match": "not expected to satisfy primary budget"
+    },
+    {
+      "baseline": "BUDGET_MATCHED_ORACLE",
+      "role": "upper bound on recoverable quality at identical budget",
+      "cost_match": "exact supported oracle frontier"
+    }
+  ],
+  "new_expert": false,
+  "new_selector_family": false,
+  "probe_features_computed": false,
+  "selector_training_started": false,
+  "final_holdout_inspected": false,
+  "frozen_P1_modified": false,
+  "next": "Construct P0/P1 probe feature matrix exactly from frozen score archives and verify feature/cost contracts before any selector fitting."
+}

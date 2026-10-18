@@ -1,0 +1,182 @@
+{
+  "manifest_version": "1.0",
+  "audit_date": "2026-10-05",
+  "scope": "primekg_codex_ingest.zip",
+  "reconciliation_2026_10_05": {
+    "active_scope": ["primekg_codex_ingest.zip", "primekg_phase2_supplement.zip", "primekg_historical_notebook_recovery.zip"],
+    "package_sha256": {
+      "primekg_phase2_supplement.zip": "26425e7003163d73c470afad839ff534b13d4d9172a054360cfaa1502f1d2159",
+      "primekg_historical_notebook_recovery.zip": "863a46f1be6d4651a922faaf5b248e3518a845909049b6fdca4ebe342f8b7379"
+    },
+    "notebook_identity": {
+      "drive_id": "1kZEsfWCypL5yvNHMw8o1QNMmowbMsxh4",
+      "drive_title": "hgt-sde ",
+      "internal_identity": "P1_Benchmark_Feasibility.ipynb",
+      "CURRENT_RECOVERED_NOTEBOOK": {"cells": 131, "bytes": 10514341, "sha256_prefix": "704d8ea1", "historical_research_cells": "0-127", "recovery_cells": "128-130"},
+      "RECONSTRUCTED_PRE_RECOVERY_SNAPSHOT": {"cells": 128, "bytes": 10295455, "sha256_prefix": "11c53582", "byte_identical_historical_revision": false, "recorded_revision_bytes": 10295449},
+      "HISTORICAL_SOURCE_CELLS": {"hash_verified": true, "source_intact": true}
+    },
+    "new_historical_producers": [
+      {"stage": "retrieval_validation", "cells": ["1", "1B", "1C", "1D", "1E"], "classification": "HISTORICAL_SOURCE_RECOVERED"},
+      {"stage": "benchmark_construction", "cells": ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"], "classification": "HISTORICAL_SOURCE_RECOVERED"},
+      {"stage": "tie_safe_evaluator", "cells": ["16"], "sha256": "ca0d03...97ae3", "classification": "HISTORICAL_SOURCE_RECOVERED"},
+      {"stage": "e3_corpus_initial", "cells": ["19"], "sha256": "2b140c...9012", "classification": "HISTORICAL_SOURCE_WITH_DIAGNOSED_DEFECT"},
+      {"stage": "e3_corpus_forensic", "cells": ["19A"], "sha256": "5c0499...d09d", "classification": "HISTORICAL_FORENSIC_RECONCILIATION"},
+      {"stage": "e3_corpus_final", "cells": ["19B"], "sha256": "f2a2af...74187", "classification": "HISTORICAL_CORRECTIVE_SOURCE"},
+      {"stage": "routing_actionability", "cells": ["27-34", "56-72"], "classification": "HISTORICAL_SOURCE_RECOVERED"}
+    ],
+    "byte_identical_notebook_cells": {"14": "E1", "17": "E2", "20": "E3_seed0", "21": "E3_seed12", "24": "E4_seed0", "25": "E4_seed12", "43": "E4_forward_forensic"},
+    "external_object_rule": "Objects indexed by Drive ID and size but absent locally are FOUND_EXTERNAL_NOT_BUNDLED, not MISSING."
+  },
+  "classification_rule": "Authority is accepted only from the supplied Phase-1 request, bundle classification, exact hashes, and explicit source/output references. Recovered candidates remain non-authoritative unless byte-identical to a named authoritative file.",
+  "sources": [
+    {
+      "filename": "source/authoritative/E1_authoritative.py",
+      "bytes": 38022,
+      "sha256": "b4dc0191fc66b6f0f3927c40bd4cc375ba20ce6e99e82e085bdb5684ed1f0900",
+      "provenance_classification": "authoritative_historical_source",
+      "historical_notebook_cell": "P1_Benchmark_Feasibility.ipynb Cell 14",
+      "scientific_role": "E1 weighted disease/drug gene-profile cosine scoring and embedded legacy/tie-safe evaluation",
+      "direct_inputs": ["kg.csv", "p1_v0_benchmark_manifest.json", "p1_v0_candidate_drugs.csv", "p1_v0_primary_diseases.csv", "p1_v0_primary_eval_roles.csv", "p1_v0_primary_truth.csv"],
+      "direct_outputs": ["p1_e1_weighted_gene_cosine_scores.npz", "p1_e1_expert_matrix.csv", "p1_e1_metadata.json", "p1_v0_evaluator_config.json"],
+      "dependent_downstream_files": ["p1_e1_expert_matrix_v1_1_tiesafe.csv", "p1_e1_e2_preliminary_oracle.csv", "p1_e1_e2_preliminary_oracle.json", "p1_e1_e2_e3_expected_oracle.csv", "p1_e1_e2_e3_e4_expected_oracle.csv"],
+      "known_configuration": {"expert_id": "E1_WEIGHTED_GENE_COSINE", "deterministic": true, "seed": 0, "k_values": [10, 50, 100], "primary_utility": "Recall@50"},
+      "unresolved_assumptions": ["The bundled reference matrix has a v1.1 tie-safe suffix while the source declares an unsuffixed matrix output; the intervening tie-safe regeneration step is not separately bundled."]
+    },
+    {
+      "filename": "source/authoritative/E2_authoritative.py",
+      "bytes": 46343,
+      "sha256": "96607e0eacc774e9f788499bf3481a3e34bb557906eaaf68cd4586dd1c01fe2f",
+      "provenance_classification": "authoritative_historical_source",
+      "historical_notebook_cell": "P1_Benchmark_Feasibility.ipynb Cell 17",
+      "scientific_role": "E2 nontherapeutic disease-profile TF-IDF cosine similarity, fold-legal CLEAN label transfer, tie-safe evaluation, and E1/E2 preliminary oracle",
+      "direct_inputs": ["kg.csv", "p1_v0_candidate_drugs.csv", "p1_v0_primary_diseases.csv", "therapeutic_pair_evaluation_roles.csv", "p1_v0_primary_eval_roles.csv", "p1_v0_k8_quarantine_manifest.csv", "p1_v0_evaluator_config_v1_1_tiesafe.json", "p1_e1_expert_matrix_v1_1_tiesafe.csv"],
+      "direct_outputs": ["p1_e2_disease_profile_label_transfer_scores.npz", "p1_e2_expert_matrix_v1_1_tiesafe.csv", "p1_e2_metadata.json", "p1_e1_e2_preliminary_oracle.csv", "p1_e1_e2_preliminary_oracle.json"],
+      "dependent_downstream_files": ["p1_e1_e2_e3_expected_oracle.csv", "p1_e1_e2_e3_e4_expected_oracle.csv", "candidate-universe and protocol-robustness analyses"],
+      "known_configuration": {"expert_id": "E2_DISEASE_PROFILE_LABEL_TRANSFER", "deterministic": true, "seed": 0, "k_values": [10, 50, 100], "similarity": "binary TF-IDF cosine", "knn_cutoff": null},
+      "unresolved_assumptions": ["Construction logic for therapeutic_pair_evaluation_roles.csv and the quarantine manifest is absent."]
+    },
+    {
+      "filename": "source/authoritative/E3_authoritative.py",
+      "bytes": 66666,
+      "sha256": "14712fef0cd629bda08dee271e15dde77175379281c0099f3b513a9540c1648c",
+      "provenance_classification": "authoritative_historical_source",
+      "historical_notebook_cell": "P1_Benchmark_Feasibility.ipynb Cell 20",
+      "scientific_role": "E3 ComplEx seed-0 Stage-A nontherapeutic pretraining, fold-specific CLEAN-indication training, scoring, evaluation, and three-expert oracle",
+      "direct_inputs": ["p1_e3_complex_entities.csv", "p1_e3_complex_relations.csv", "p1_e3_complex_base_nonther_triples.npz", "p1_e3_complex_clean_indication_triples.npz", "p1_e3_complex_corpus_manifest.json", "p1_v0_k8_quarantine_manifest.csv", "p1_v0_primary_diseases.csv", "p1_v0_primary_eval_roles.csv", "p1_v0_candidate_drugs.csv", "p1_v0_evaluator_config_v1_1_tiesafe.json", "p1_e1_expert_matrix_v1_1_tiesafe.csv", "p1_e2_expert_matrix_v1_1_tiesafe.csv"],
+      "direct_outputs": ["p1_e3_complex_seed0_base_pretrain.pt", "p1_e3_complex_seed0_scores.npz", "p1_e3_complex_seed0_expert_matrix.csv", "p1_e3_complex_seed0_training_log.csv", "p1_e3_complex_seed0_metadata.json", "p1_e1_e2_e3_seed0_oracle.csv", "p1_e1_e2_e3_seed0_oracle.json"],
+      "dependent_downstream_files": ["E3 seeds 1-2 outputs", "p1_e3_complex_expected_utility.csv", "p1_e1_e2_e3_expected_oracle.csv", "p1_e1_e2_e3_e4_expected_oracle.csv"],
+      "known_configuration": {"seed": 0, "complex_dim": 64, "base_epochs": 2, "base_batch_size": 131072, "base_learning_rates": {"entity": 0.01, "relation": 0.01}, "fold_epochs": 80, "fold_batch_size": 2048, "fold_learning_rates": {"entity": 0.002, "relation": 0.01}, "negatives_per_positive": 16, "fold_clean_pair_counts": [6856, 6828, 6990, 7119, 6871, 7183, 7091, 6827]},
+      "unresolved_assumptions": ["Exact hardware, CUDA, PyTorch, and deterministic-kernel environment that produced the frozen result is not recorded in the bundle.", "Encoded corpus-producing Cell 19 is absent."]
+    },
+    {
+      "filename": "source/authoritative/E3_seed12_support.py",
+      "bytes": 62218,
+      "sha256": "af61b4148f33029883e6e2acf425915c32091a0916259f1ad8e639662ba56224",
+      "provenance_classification": "authoritative_historical_source",
+      "historical_notebook_cell": "P1_Benchmark_Feasibility.ipynb Cell 21",
+      "scientific_role": "E3 seeds 1 and 2 training, per-disease seed-level evaluation, stability, expected utility, and expected three-expert oracle",
+      "direct_inputs": ["same E3 corpus and benchmark inputs as Cell 20", "p1_e3_complex_seed0_expert_matrix.csv", "p1_e1_expert_matrix_v1_1_tiesafe.csv", "p1_e2_expert_matrix_v1_1_tiesafe.csv"],
+      "direct_outputs": ["p1_e3_complex_seed{1,2}_base_pretrain.pt", "p1_e3_complex_seed{1,2}_scores.npz", "p1_e3_complex_seed{1,2}_expert_matrix.csv", "p1_e3_complex_seed{1,2}_training_log.csv", "p1_e3_complex_seed{1,2}_metadata.json", "p1_e3_complex_seed_stability_global.csv", "p1_e3_complex_seed_pairwise_stability.csv", "p1_e3_complex_expected_utility.csv", "p1_e1_e2_e3_expected_oracle.csv", "p1_e3_complex_seed_stability_summary.json"],
+      "dependent_downstream_files": ["E4 training inputs", "four-expert expected oracle and stability analyses"],
+      "known_configuration": {"seeds": [1, 2], "same_hyperparameters_as_cell_20": true, "expected_utility_aggregation": "mean per-disease utility across seeds"},
+      "unresolved_assumptions": ["Only the three expert matrices are bundled; checkpoints, score tensors, logs, metadata, and aggregate E3 outputs are absent."]
+    },
+    {
+      "filename": "source/authoritative/E4_training_seed0.py",
+      "bytes": 54016,
+      "sha256": "d6f8b3b38f681c0bb453d8a5fc295d5f01ef8b45e3293ec1d1e255807cc11680",
+      "provenance_classification": "authoritative_historical_source",
+      "historical_notebook_cell": "P1_Benchmark_Feasibility.ipynb Cell 24",
+      "scientific_role": "Original E4 R-GCN seed-0 training, fold scoring/evaluation, checkpoints, and seed-0 four-expert oracle",
+      "direct_inputs": ["E3 entity/relation/corpus artifacts", "p1_e4_rgcn_feasibility.json", "p1_v0_k8_quarantine_manifest.csv", "p1_v0_primary_diseases.csv", "p1_v0_primary_eval_roles.csv", "p1_v0_candidate_drugs.csv", "p1_v0_evaluator_config_v1_1_tiesafe.json", "p1_e1_e2_e3_expected_oracle.csv"],
+      "direct_outputs": ["p1_e4_rgcn_seed0_fold{0..7}.pt", "p1_e4_rgcn_seed0_scores.npz", "p1_e4_rgcn_seed0_expert_matrix.csv", "p1_e4_rgcn_seed0_training_log.csv", "p1_e1_e2_e3_e4_seed0_oracle.csv", "p1_e4_rgcn_seed0_metadata.json"],
+      "dependent_downstream_files": ["E4 seeds 1-2 outputs", "E4 expected utility", "four-expert expected oracle", "E4 forward-recovery audits"],
+      "known_configuration": {"seed": 0, "layers": 2, "hidden_dim": 64, "bases": 4, "nontherapeutic_relations": 27, "dropout": 0.1, "epochs": 60, "learning_rate": 0.001, "negatives_per_positive": 16, "gradient_clip": 5.0},
+      "unresolved_assumptions": ["p1_e4_rgcn_feasibility.json is absent.", "Frozen checkpoint and score artifacts are absent from the bundle.", "Original raw-logit forward pass has not been exactly recovered within its MAE gate."]
+    },
+    {
+      "filename": "source/authoritative/E4_training_seed12.py",
+      "bytes": 59613,
+      "sha256": "46975170f3751cca81db631080469b277ddbb22d85de2d62439bbb1129cb3d3f",
+      "provenance_classification": "authoritative_historical_source",
+      "historical_notebook_cell": "P1_Benchmark_Feasibility.ipynb Cell 25",
+      "scientific_role": "Original E4 seeds 1 and 2 training, stability, disease-level expected utility, and expected four-expert oracle",
+      "direct_inputs": ["same E4 corpus and benchmark inputs as Cell 24", "p1_e4_rgcn_seed0_expert_matrix.csv", "p1_e1_e2_e3_expected_oracle.csv"],
+      "direct_outputs": ["p1_e4_rgcn_seed{1,2}_fold{0..7}.pt", "p1_e4_rgcn_seed{1,2}_scores.npz", "p1_e4_rgcn_seed{1,2}_expert_matrix.csv", "p1_e4_rgcn_seed{1,2}_training_log.csv", "p1_e4_rgcn_seed{1,2}_metadata.json", "p1_e4_rgcn_seed_stability_global.csv", "p1_e4_rgcn_seed_pairwise_stability.csv", "p1_e4_rgcn_expected_utility.csv", "p1_e1_e2_e3_e4_expected_oracle.csv", "p1_e4_rgcn_seed_stability_summary.json"],
+      "dependent_downstream_files": ["portfolio, robustness, SBS/VBS, routing, and actionability analyses"],
+      "known_configuration": {"seeds": [1, 2], "same_hyperparameters_as_cell_24": true, "expected_utility_aggregation": "mean per-disease utility across seeds"},
+      "unresolved_assumptions": ["Only the seed expert matrices and final expected-oracle table are bundled; most direct outputs are absent."]
+    },
+    {
+      "filename": "source/authoritative/E4_authoritative.py",
+      "bytes": 38031,
+      "sha256": "a476b743fe8d813c73e2acedb9cf1c9c09459411fe0914776e02db731a0965cc",
+      "provenance_classification": "authoritative_historical_source",
+      "historical_notebook_cell": "P1_Benchmark_Feasibility.ipynb Cell 43",
+      "scientific_role": "E4 seed-0/fold-0 forward-pass forensic recovery; establishes architectural and decoder conventions but fails the exact raw-logit MAE gate",
+      "direct_inputs": ["p1_protocol_e4_checkpoint_recovery_v1.json", "p1_e4_rgcn_seed0_fold0.pt", "p1_e4_rgcn_seed0_scores.npz", "p1_v0_primary_diseases.csv", "p1_v0_candidate_drugs.csv", "p1_e3_complex_entities.csv", "p1_e3_complex_relations.csv", "p1_e3_complex_base_nonther_triples.npz"],
+      "direct_outputs": ["p1_protocol_e4_forward_variant_preregistration_v1.json", "p1_protocol_e4_forward_variant_results_v1.csv", "p1_protocol_e4_forward_reproduction_v1.json"],
+      "dependent_downstream_files": ["Cells 44-47 numerical forensics", "canonical E4 reimplementation fidelity audit"],
+      "known_configuration": {"recovered_variant": {"relation_transform": "RIGHT", "layer1_activation": "RELU", "layer2_activation": "NONE", "decoder_orientation": "DRUG_M_DISEASE", "aggregation": "incoming relation-specific mean"}, "forward_gate_status": "FAIL", "mean_absolute_error": 0.0002270696211583591},
+      "unresolved_assumptions": ["The referenced checkpoint-recovery JSON, checkpoint, score tensor, preregistration, and variant table are absent.", "Exact numerical serialization/forward boundary remains unresolved."]
+    },
+    {
+      "filename": "source/recovered/E1_candidate0_b4dc0191fc66b6f0.py", "bytes": 38022, "sha256": "b4dc0191fc66b6f0f3927c40bd4cc375ba20ce6e99e82e085bdb5684ed1f0900", "provenance_classification": "recovered_duplicate_of_authoritative", "historical_notebook_cell": "Cell 14", "scientific_role": "Byte-identical recovered copy of E1_authoritative.py", "direct_inputs": ["same as authoritative E1"], "direct_outputs": ["same as authoritative E1"], "dependent_downstream_files": [], "known_configuration": {"byte_identical_to": "source/authoritative/E1_authoritative.py"}, "unresolved_assumptions": []
+    },
+    {
+      "filename": "source/recovered/E2_candidate0_96607e0eacc774e9.py", "bytes": 46343, "sha256": "96607e0eacc774e9f788499bf3481a3e34bb557906eaaf68cd4586dd1c01fe2f", "provenance_classification": "recovered_duplicate_of_authoritative", "historical_notebook_cell": "Cell 17", "scientific_role": "Byte-identical recovered copy of E2_authoritative.py", "direct_inputs": ["same as authoritative E2"], "direct_outputs": ["same as authoritative E2"], "dependent_downstream_files": [], "known_configuration": {"byte_identical_to": "source/authoritative/E2_authoritative.py"}, "unresolved_assumptions": []
+    },
+    {
+      "filename": "source/recovered/E2_candidate1_a04faf54c2a586bf.py", "bytes": 38773, "sha256": "a04faf54c2a586bf623bd8c5550e5967711492da30022ae2b3cf5364db37f782", "provenance_classification": "recovered_source_candidate_non_authoritative", "historical_notebook_cell": "Cell 18", "scientific_role": "E2 ontology-dependence ablation audit", "direct_inputs": ["kg.csv", "E2/benchmark artifacts"], "direct_outputs": ["p1_e2_no_ontology_audit_matrix.csv", "p1_e2_ontology_dependence.csv", "p1_e2_ontology_dependence_summary.json"], "dependent_downstream_files": [], "known_configuration": {"benchmark_change": false}, "unresolved_assumptions": ["Outputs are not bundled; authority not established."]
+    },
+    {
+      "filename": "source/recovered/E2_candidate2_e55a329f70bdef59.py", "bytes": 30143, "sha256": "e55a329f70bdef59e3b72f7c503a016a8c7fc8cd6afa296c1559c7e6b307e029", "provenance_classification": "recovered_source_candidate_non_authoritative", "historical_notebook_cell": "Cell 27", "scientific_role": "Four-expert portfolio freeze and cross-metric stability", "direct_inputs": ["eight expert matrices"], "direct_outputs": ["p1_v0_four_expert_portfolio_manifest.json", "p1_four_expert_expected_metric_matrix.csv", "p1_four_expert_metric_oracle_summary.csv", "p1_four_expert_metric_winners.csv", "p1_four_expert_metric_winner_stability.csv", "p1_four_expert_metric_utility_correlations.csv", "p1_four_expert_cross_metric_win_frequency.csv", "p1_four_expert_metric_stability_summary.json"], "dependent_downstream_files": ["aggregate analysis and routing"], "known_configuration": {"primary_metric": "Recall@50", "seed_aggregation": "disease-level utility"}, "unresolved_assumptions": ["Outputs are not bundled; source authority not established."]
+    },
+    {
+      "filename": "source/recovered/E2_candidate3_55200552dd357064.py", "bytes": 38392, "sha256": "55200552dd3570645200ba3d89f0249758a07b38e213cd9c42e50ba7efdc4a74", "provenance_classification": "recovered_failed_or_superseded_source_candidate", "historical_notebook_cell": "Cell 36", "scientific_role": "Initial candidate-universe robustness evaluation; stopped because U0 failed frozen reproduction", "direct_inputs": ["saved score tensors", "candidate-universe membership", "benchmark evaluation artifacts"], "direct_outputs": ["candidate-universe robustness result family"], "dependent_downstream_files": ["corrected Cell 36"], "known_configuration": {"status": "failed_hard_U0_reproduction_audit"}, "unresolved_assumptions": ["Do not treat its outputs as canonical."]
+    },
+    {
+      "filename": "source/recovered/E2_candidate4_8d8d0a2cbf5cd79e.py", "bytes": 8497, "sha256": "8d8d0a2cbf5cd79ea90cab0e362fbc170f06e4f671b042a6a312ccdd5abb4bdc", "provenance_classification": "recovered_forensic_source_candidate", "historical_notebook_cell": "Cell 36A", "scientific_role": "Score/evaluator alignment forensic that localized E3 seed-0 disease 40797 applicability mismatch", "direct_inputs": ["eight score/matrix artifacts", "candidate and disease tables"], "direct_outputs": ["interactive forensic observations; no declared frozen file"], "dependent_downstream_files": ["corrected Cell 36"], "known_configuration": {"key_finding": "score presence does not imply applicability"}, "unresolved_assumptions": ["Companion Cell 36B is referenced but absent."]
+    },
+    {
+      "filename": "source/recovered/E2_candidate5_03b123ca3ed0c33c.py", "bytes": 47732, "sha256": "03b123ca3ed0c33ccbdc8fc4a4333a70f83c4a4005b17dfafdfb1e9b99ecea0c", "provenance_classification": "recovered_source_candidate_non_authoritative", "historical_notebook_cell": "Corrected Cell 36", "scientific_role": "Candidate-universe robustness with frozen applicability applied before ranking", "direct_inputs": ["saved scores", "frozen expert matrices", "candidate-universe membership", "benchmark evaluator artifacts"], "direct_outputs": ["p1_candidate_universe_evaluator_correction_v1.json", "candidate-universe robustness result family"], "dependent_downstream_files": ["robustness interpretation"], "known_configuration": {"U0_exact_reproduction_required": true}, "unresolved_assumptions": ["Outputs are not bundled; authority not established."]
+    },
+    {
+      "filename": "source/recovered/E2_candidate6_c4afd8230f49e4aa.py", "bytes": 38710, "sha256": "c4afd8230f49e4aa9a900122d0b7e262eca08dd0930f38af6c323022106cf6af", "provenance_classification": "recovered_source_candidate_non_authoritative", "historical_notebook_cell": "Cell 38", "scientific_role": "E2 masking-protocol robustness for TARGET_ONLY, CANONICAL_1HOP, STRICT_2HOP", "direct_inputs": ["kg.csv", "protocol quarantine artifacts", "benchmark evaluator artifacts"], "direct_outputs": ["E2 protocol robustness outputs referenced by source"], "dependent_downstream_files": ["multi-expert protocol robustness"], "known_configuration": {"protocols": ["P_TARGET_ONLY", "P_CANONICAL_1HOP", "P_STRICT_2HOP"]}, "unresolved_assumptions": ["Protocol quarantine construction source and outputs are absent."]
+    },
+    {
+      "filename": "source/recovered/E3_candidate0_14712fef0cd629bd.py", "bytes": 66666, "sha256": "14712fef0cd629bda08dee271e15dde77175379281c0099f3b513a9540c1648c", "provenance_classification": "recovered_duplicate_of_authoritative", "historical_notebook_cell": "Cell 20", "scientific_role": "Byte-identical recovered copy of E3_authoritative.py", "direct_inputs": ["same as authoritative E3 seed 0"], "direct_outputs": ["same as authoritative E3 seed 0"], "dependent_downstream_files": [], "known_configuration": {"byte_identical_to": "source/authoritative/E3_authoritative.py"}, "unresolved_assumptions": []
+    },
+    {
+      "filename": "source/recovered/E3_candidate1_af61b4148f330298.py", "bytes": 62218, "sha256": "af61b4148f33029883e6e2acf425915c32091a0916259f1ad8e639662ba56224", "provenance_classification": "recovered_duplicate_of_authoritative", "historical_notebook_cell": "Cell 21", "scientific_role": "Byte-identical recovered copy of E3_seed12_support.py", "direct_inputs": ["same as authoritative E3 seeds 1-2"], "direct_outputs": ["same as authoritative E3 seeds 1-2"], "dependent_downstream_files": [], "known_configuration": {"byte_identical_to": "source/authoritative/E3_seed12_support.py"}, "unresolved_assumptions": []
+    },
+    {
+      "filename": "source/recovered/E3_candidate2_6658591c16b37c0f.py", "bytes": 62586, "sha256": "6658591c16b37c0fdb4fc56f0544bc5e99ab7b64e13d1380f8213276e706624d", "provenance_classification": "recovered_source_candidate_non_authoritative", "historical_notebook_cell": "Cell 40", "scientific_role": "E3 three-protocol robustness training using a recovered training contract", "direct_inputs": ["E3 corpus", "base checkpoints", "protocol quarantine artifacts", "benchmark evaluator artifacts"], "direct_outputs": ["p1_protocol_e3_result.json", "p1_protocol_e3_canonical_rerun_fidelity.csv", "p1_protocol_e3_seed_summary.csv", "p1_protocol_e3_summary.csv", "p1_protocol_e3_training_log.csv", "p1_protocol_e3_fold_summary.csv"], "dependent_downstream_files": ["multi-expert protocol robustness"], "known_configuration": {"protocols": ["P_TARGET_ONLY", "P_CANONICAL_1HOP", "P_STRICT_2HOP"], "fold_epochs": 80, "seeds": [0, 1, 2]}, "unresolved_assumptions": ["Several declared training-contract/preregistration inputs and all outputs are absent."]
+    },
+    {
+      "filename": "source/recovered/E4_candidate0_d6f8b3b38f681c0b.py", "bytes": 54016, "sha256": "d6f8b3b38f681c0bb453d8a5fc295d5f01ef8b45e3293ec1d1e255807cc11680", "provenance_classification": "recovered_duplicate_of_authoritative", "historical_notebook_cell": "Cell 24", "scientific_role": "Byte-identical recovered copy of E4_training_seed0.py", "direct_inputs": ["same as authoritative E4 seed 0"], "direct_outputs": ["same as authoritative E4 seed 0"], "dependent_downstream_files": [], "known_configuration": {"byte_identical_to": "source/authoritative/E4_training_seed0.py"}, "unresolved_assumptions": []
+    },
+    {
+      "filename": "source/recovered/E4_candidate1_46975170f3751cca.py", "bytes": 59613, "sha256": "46975170f3751cca81db631080469b277ddbb22d85de2d62439bbb1129cb3d3f", "provenance_classification": "recovered_duplicate_of_authoritative", "historical_notebook_cell": "Cell 25", "scientific_role": "Byte-identical recovered copy of E4_training_seed12.py", "direct_inputs": ["same as authoritative E4 seeds 1-2"], "direct_outputs": ["same as authoritative E4 seeds 1-2"], "dependent_downstream_files": [], "known_configuration": {"byte_identical_to": "source/authoritative/E4_training_seed12.py"}, "unresolved_assumptions": []
+    },
+    {
+      "filename": "source/recovered/E4_candidate2_a476b743fe8d813c.py", "bytes": 38031, "sha256": "a476b743fe8d813c73e2acedb9cf1c9c09459411fe0914776e02db731a0965cc", "provenance_classification": "recovered_duplicate_of_authoritative", "historical_notebook_cell": "Cell 43", "scientific_role": "Byte-identical recovered copy of E4_authoritative.py", "direct_inputs": ["same as authoritative E4 forward forensic"], "direct_outputs": ["same as authoritative E4 forward forensic"], "dependent_downstream_files": [], "known_configuration": {"byte_identical_to": "source/authoritative/E4_authoritative.py"}, "unresolved_assumptions": []
+    },
+    {
+      "filename": "source/recovered/E4_candidate3_6e60ae95f08873c5.py", "bytes": 32315, "sha256": "6e60ae95f08873c59045b973930c5f611083783ec40b43d9b4b0c6fc52de4aa8", "provenance_classification": "recovered_forensic_source_candidate", "historical_notebook_cell": "Cell 44", "scientific_role": "E4 numerical aggregation-kernel forensic", "direct_inputs": ["E4 checkpoint/scores", "E3 nontherapeutic corpus"], "direct_outputs": ["p1_protocol_e4_numerical_kernel_preregistration_v1.json", "p1_protocol_e4_numerical_kernel_diagnostics_v1.csv", "p1_protocol_e4_numerical_kernel_result_v1.json"], "dependent_downstream_files": ["Cell 45"], "known_configuration": {"architecture_fixed": true}, "unresolved_assumptions": ["Inputs and outputs are absent; source authority not established."]
+    },
+    {
+      "filename": "source/recovered/E4_candidate4_9df3f08b29615750.py", "bytes": 31304, "sha256": "9df3f08b2961575007a6d3716d289a747437b3d7c67b7893ddb45d9020a607ca", "provenance_classification": "recovered_forensic_source_candidate", "historical_notebook_cell": "Cell 45", "scientific_role": "E4 decoder arithmetic forensic", "direct_inputs": ["E4 checkpoint/scores", "Cell 44 result"], "direct_outputs": ["p1_protocol_e4_decoder_arithmetic_preregistration_v1.json", "p1_protocol_e4_decoder_arithmetic_diagnostics_v1.csv", "p1_protocol_e4_decoder_arithmetic_result_v1.json"], "dependent_downstream_files": ["Cell 46"], "known_configuration": {"architecture_fixed": true}, "unresolved_assumptions": ["Inputs and outputs are absent; source authority not established."]
+    },
+    {
+      "filename": "source/recovered/E4_candidate5_9a517c991ec09d70.py", "bytes": 32713, "sha256": "9a517c991ec09d70cb187189bdc1b1c0bdbcb67ef1a01b363c1f47e98c42582e", "provenance_classification": "recovered_superseded_forensic_source_candidate", "historical_notebook_cell": "Initial Cell 46", "scientific_role": "E4 CUDA float32/TF32 precision forensic using a mixed legacy/new PyTorch API", "direct_inputs": ["E4 checkpoint/scores", "Cell 45 result"], "direct_outputs": ["p1_protocol_e4_precision_*_v1"], "dependent_downstream_files": ["corrected Cell 46"], "known_configuration": {"status": "superseded_due_to_PyTorch_API_mismatch"}, "unresolved_assumptions": ["Do not migrate as canonical implementation."]
+    },
+    {
+      "filename": "source/recovered/E4_candidate6_c25cafd282ee1294.py", "bytes": 35023, "sha256": "c25cafd282ee129401816a2b14e6dcd52adf63e01fc49ea2e41412ad87cc7df1", "provenance_classification": "recovered_forensic_source_candidate", "historical_notebook_cell": "Corrected Cell 46", "scientific_role": "E4 CUDA precision forensic using PyTorch >=2.9 precision API", "direct_inputs": ["E4 checkpoint/scores", "Cell 45 result"], "direct_outputs": ["p1_protocol_e4_precision_preregistration_v2.json", "p1_protocol_e4_precision_diagnostics_v2.csv", "p1_protocol_e4_precision_result_v2.json"], "dependent_downstream_files": ["Cell 47"], "known_configuration": {"precision_variants": ["IEEE_FP32", "TF32"]}, "unresolved_assumptions": ["Outputs are absent; source authority not established."]
+    },
+    {
+      "filename": "source/recovered/E4_candidate7_761e1b87e19c56be.py", "bytes": 35740, "sha256": "761e1b87e19c56be721ad0e9d53cb5a63754b89f7971d4440c81710f855f97fe", "provenance_classification": "recovered_forensic_source_candidate", "historical_notebook_cell": "Cell 47", "scientific_role": "E4 basis-contraction and layer-composition arithmetic forensic", "direct_inputs": ["E4 checkpoint/scores", "Cell 46 result"], "direct_outputs": ["p1_protocol_e4_layer_arithmetic_preregistration_v1.json", "p1_protocol_e4_layer_arithmetic_diagnostics_v1.csv", "p1_protocol_e4_layer_arithmetic_result_v1.json"], "dependent_downstream_files": ["UNKNOWN"], "known_configuration": {"architecture_fixed": true}, "unresolved_assumptions": ["Outputs are absent; final exact-logit recovery status beyond the bundled Cell-43 FAIL is UNKNOWN."]
+    }
+  ]
+}

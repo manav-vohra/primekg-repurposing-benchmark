@@ -1,0 +1,3947 @@
+
+====================================================================================================
+E1
+====================================================================================================
+source_file: /content/drive/MyDrive/P1/PrimeKG/p1_p15_authoritative_source/E1_authoritative.py
+sha256: b4dc0191fc66b6f0f3927c40bd4cc375ba20ce6e99e82e085bdb5684ed1f0900
+source_lines: 2385
+
+TOP-LEVEL DEFINITIONS
+[
+  {
+    "type": "FUNCTION",
+    "name": "sha256_file",
+    "line_start": 231,
+    "line_end": 256
+  },
+  {
+    "type": "FUNCTION",
+    "name": "evaluate_disease",
+    "line_start": 1178,
+    "line_end": 1601
+  }
+]
+
+EXECUTION-RELEVANT SOURCE EXCERPTS
+
+--- lines 6-12 ---
+0006: # FIRST ACTUAL P1 EXPERT
+0007: #
+0008: # Expert:
+0009: #     E1_WEIGHTED_GENE_COSINE
+0010: #
+0011: # Family:
+0012: #     transparent_network
+
+--- lines 21-27 ---
+0021: #     off-label use
+0022: #     therapeutic training labels of any kind
+0023: #
+0024: # SCORE
+0025: # -----
+0026: #
+0027: # Let G_d = genes/proteins connected to disease d.
+
+--- lines 33-50 ---
+0033: #         1 /
+0034: #         log2(
+0035: #             2
+0036: #             + drug_degree(g)
+0037: #             + disease_degree(g)
+0038: #         )
+0039: #
+0040: # Expert score:
+0041: #
+0042: #                sum_{g shared} w_g
+0043: #     S(d,r) = -------------------------
+0044: #              sqrt(sum_{g in Gd} w_g)
+0045: #              sqrt(sum_{g in Gr} w_g)
+0046: #
+0047: # This is weighted cosine similarity over direct
+0048: # disease-gene and drug-gene biological evidence.
+0049: #
+0050: # ------------------------------------------------------------
+
+--- lines 74-93 ---
+0074: # Contraindications and unobserved candidates remain rankable.
+0075: #
+0076: # Tie policy:
+0077: #     descending score
+0078: #     then ascending DrugBank ID
+0079: #
+0080: # Explicit non-applicability:
+0081: #     if no disease-gene evidence OR no candidate obtains
+0082: #     a positive score, expert status = ABSTAIN.
+0083: #
+0084: # Abstention receives primary utility = 0.
+0085: #
+0086: # ------------------------------------------------------------
+0087: # OUTPUTS
+0088: # ------------------------------------------------------------
+0089: #
+0090: # 1. p1_e1_weighted_gene_cosine_scores.npz
+0091: # 2. p1_e1_expert_matrix.csv
+0092: # 3. p1_e1_metadata.json
+0093: # 4. p1_v0_evaluator_config.json
+
+--- lines 108-114 ---
+0108: import numpy as np
+0109: import pandas as pd
+0110: 
+0111: from scipy.sparse import csr_matrix
+0112: 
+0113: 
+0114: # ------------------------------------------------------------
+
+--- lines 177-183 ---
+0177: 
+0178: print("=" * 78)
+0179: print("P1 — CELL 14")
+0180: print("EXPERT INTERFACE + E1 WEIGHTED GENE COSINE")
+0181: print("=" * 78)
+0182: 
+0183: 
+
+--- lines 186-192 ---
+0186: # ------------------------------------------------------------
+0187: 
+0188: EXPERT_ID = (
+0189:     "E1_WEIGHTED_GENE_COSINE"
+0190: )
+0191: 
+0192: EXPERT_VERSION = (
+
+--- lines 849-855 ---
+0849:     ] += 1
+0850: 
+0851: 
+0852: gene_weights = np.zeros(
+0853:     N_GENES,
+0854:     dtype=np.float32,
+0855: )
+
+--- lines 872-878 ---
+0872:     )
+0873: 
+0874: 
+0875:     gene_weights[
+0876:         col
+0877:     ] = (
+0878:         1.0
+
+--- lines 886-892 ---
+0886: 
+0887: 
+0888: # ------------------------------------------------------------
+0889: # 11. Drug-gene sparse matrix
+0890: # ------------------------------------------------------------
+0891: 
+0892: drug_rows = []
+
+--- lines 938-944 ---
+0938: 
+0939: 
+0940: # ------------------------------------------------------------
+0941: # 12. Disease-gene sparse matrix
+0942: # ------------------------------------------------------------
+0943: 
+0944: disease_rows = []
+
+--- lines 990-1008 ---
+0990: 
+0991: 
+0992: # ------------------------------------------------------------
+0993: # 13. Weighted cosine scoring
+0994: # ------------------------------------------------------------
+0995: 
+0996: score_start = time.time()
+0997: 
+0998: 
+0999: # Numerator:
+1000: #
+1001: # disease * gene_weight * drug^T
+1002: 
+1003: weighted_disease = (
+1004:     disease_gene_matrix.multiply(
+1005:         gene_weights.reshape(
+1006:             1,
+1007:             -1,
+1008:         )
+
+--- lines 1019-1025 ---
+1019: )
+1020: 
+1021: 
+1022: # Disease norms.
+1023: disease_weight_sum = np.asarray(
+1024:     weighted_disease.sum(
+1025:         axis=1
+
+--- lines 1029-1045 ---
+1029: )
+1030: 
+1031: 
+1032: disease_norm = np.sqrt(
+1033:     disease_weight_sum
+1034: ).astype(
+1035:     np.float32
+1036: )
+1037: 
+1038: 
+1039: # Drug norms.
+1040: weighted_drug = (
+1041:     drug_gene_matrix.multiply(
+1042:         gene_weights.reshape(
+1043:             1,
+1044:             -1,
+1045:         )
+
+--- lines 1056-1082 ---
+1056: )
+1057: 
+1058: 
+1059: drug_norm = np.sqrt(
+1060:     drug_weight_sum
+1061: ).astype(
+1062:     np.float32
+1063: )
+1064: 
+1065: 
+1066: denominator = (
+1067:     disease_norm[
+1068:         :,
+1069:         None,
+1070:     ]
+1071:     *
+1072:     drug_norm[
+1073:         None,
+1074:         :,
+1075:     ]
+1076: )
+1077: 
+1078: 
+1079: scores = np.divide(
+1080:     numerator,
+1081:     denominator,
+1082:     out=np.zeros_like(
+
+--- lines 1089-1129 ---
+1089: )
+1090: 
+1091: 
+1092: score_runtime = (
+1093:     time.time()
+1094:     -
+1095:     score_start
+1096: )
+1097: 
+1098: 
+1099: assert scores.shape == (
+1100:     738,
+1101:     7957,
+1102: )
+1103: 
+1104: 
+1105: assert np.isfinite(
+1106:     scores
+1107: ).all()
+1108: 
+1109: 
+1110: print(
+1111:     "\nScore matrix constructed:"
+1112: )
+1113: 
+1114: print(
+1115:     "  shape:",
+1116:     scores.shape
+1117: )
+1118: 
+1119: print(
+1120:     "  dtype:",
+1121:     scores.dtype
+1122: )
+1123: 
+1124: print(
+1125:     f"  scoring runtime: "
+1126:     f"{score_runtime:.3f} sec"
+1127: )
+1128: 
+1129: 
+
+--- lines 1177-1183 ---
+1177: 
+1178: def evaluate_disease(
+1179:     disease_id,
+1180:     score_vector,
+1181: ):
+1182: 
+1183:     # ------------------------------------------
+
+--- lines 1247-1253 ---
+1247: 
+1248:     nonzero_candidates = int(
+1249:         (
+1250:             score_vector > 0
+1251:         ).sum()
+1252:     )
+1253: 
+
+--- lines 1274-1280 ---
+1274:             "nonzero_candidate_count":
+1275:                 nonzero_candidates,
+1276: 
+1277:             "candidate_score_coverage":
+1278:                 (
+1279:                     nonzero_candidates
+1280:                     /
+
+--- lines 1298-1304 ---
+1298:                     contra_idx
+1299:                 ),
+1300: 
+1301:             "n_scored_candidates":
+1302:                 (
+1303:                     len(
+1304:                         DRUG_IDS
+
+--- lines 1362-1375 ---
+1362:     # ------------------------------------------
+1363:     # Deterministic ranking:
+1364:     #
+1365:     # primary key   -> descending score
+1366:     # secondary key -> ascending DrugBank ID
+1367:     # ------------------------------------------
+1368: 
+1369:     full_order = np.lexsort(
+1370:         (
+1371:             DRUG_IDS,
+1372:             -score_vector,
+1373:         )
+1374:     )
+1375: 
+
+--- lines 1492-1498 ---
+1492:         "nonzero_candidate_count":
+1493:             nonzero_candidates,
+1494: 
+1495:         "candidate_score_coverage":
+1496:             (
+1497:                 nonzero_candidates
+1498:                 /
+
+--- lines 1516-1522 ---
+1516:                 contra_idx
+1517:             ),
+1518: 
+1519:         "n_scored_candidates":
+1520:             len(
+1521:                 metric_order
+1522:             ),
+
+--- lines 1619-1625 ---
+1619: 
+1620:     result = evaluate_disease(
+1621:         disease_id,
+1622:         scores[
+1623:             disease_row
+1624:         ],
+1625:     )
+
+--- lines 1707-1713 ---
+1707: total_runtime = (
+1708:     extract_runtime
+1709:     +
+1710:     score_runtime
+1711:     +
+1712:     evaluation_runtime
+1713: )
+
+--- lines 1719-1726 ---
+1719: 
+1720: 
+1721: expert_matrix[
+1722:     "shared_score_runtime_sec"
+1723: ] = score_runtime
+1724: 
+1725: 
+1726: expert_matrix[
+
+--- lines 1858-1864 ---
+1858:         [
+1859:             "disease_gene_count",
+1860:             "nonzero_candidate_count",
+1861:             "candidate_score_coverage",
+1862:             "primary_utility",
+1863:         ]
+1864:     ].describe(
+
+--- lines 2017-2025 ---
+2017: # 22. Output paths
+2018: # ------------------------------------------------------------
+2019: 
+2020: SCORE_PATH = (
+2021:     BASE /
+2022:     "p1_e1_weighted_gene_cosine_scores.npz"
+2023: )
+2024: 
+2025: MATRIX_PATH = (
+
+--- lines 2039-2055 ---
+2039: 
+2040: 
+2041: # ------------------------------------------------------------
+2042: # 23. Save full canonical score artifact
+2043: # ------------------------------------------------------------
+2044: #
+2045: # Every expert should ultimately expose scores in the same
+2046: # canonical disease x candidate ordering.
+2047: # ------------------------------------------------------------
+2048: 
+2049: np.savez_compressed(
+2050:     SCORE_PATH,
+2051: 
+2052:     scores=scores,
+2053: 
+2054:     disease_ids=DISEASE_IDS,
+2055: 
+
+--- lines 2108-2114 ---
+2108: 
+2109:     "tie_policy":
+2110:         (
+2111:             "descending score; "
+2112:             "ascending DrugBank ID"
+2113:         ),
+2114: 
+
+--- lines 2185-2200 ---
+2185: 
+2186:     "scoring_formula":
+2187:         (
+2188:             "weighted cosine similarity over "
+2189:             "direct disease-gene and drug-gene "
+2190:             "binary neighborhoods"
+2191:         ),
+2192: 
+2193:     "gene_weight_formula":
+2194:         (
+2195:             "1 / log2(2 + "
+2196:             "drug_degree(g) + "
+2197:             "disease_degree(g))"
+2198:         ),
+2199: 
+2200:     "candidate_count":
+
+--- lines 2250-2257 ---
+2250:         "graph_extraction":
+2251:             extract_runtime,
+2252: 
+2253:         "score_matrix":
+2254:             score_runtime,
+2255: 
+2256:         "evaluation":
+2257:             evaluation_runtime,
+
+--- lines 2304-2310 ---
+2304: 
+2305: 
+2306: for path in [
+2307:     SCORE_PATH,
+2308:     MATRIX_PATH,
+2309:     METADATA_PATH,
+2310:     EVALUATOR_PATH,
+
+--- lines 2359-2365 ---
+2359: )
+2360: 
+2361: print(
+2362:     SCORE_PATH
+2363: )
+2364: 
+2365: print(
+
+====================================================================================================
+E2
+====================================================================================================
+source_file: /content/drive/MyDrive/P1/PrimeKG/p1_p15_authoritative_source/E2_authoritative.py
+sha256: 96607e0eacc774e9f788499bf3481a3e34bb557906eaaf68cd4586dd1c01fe2f
+source_lines: 3099
+
+TOP-LEVEL DEFINITIONS
+[
+  {
+    "type": "FUNCTION",
+    "name": "expected_first_rank_and_mrr",
+    "line_start": 1459,
+    "line_end": 1571
+  },
+  {
+    "type": "FUNCTION",
+    "name": "evaluate_tie_safe",
+    "line_start": 1578,
+    "line_end": 2041
+  }
+]
+
+EXECUTION-RELEVANT SOURCE EXCERPTS
+
+--- lines 1-11 ---
+0001: # ============================================================
+0002: # P1_Benchmark_Feasibility.ipynb
+0003: # CELL 17 — E2 disease-profile label transfer
+0004: # ============================================================
+0005: #
+0006: # EXPERT
+0007: # ------
+0008: # E2_DISEASE_PROFILE_LABEL_TRANSFER
+0009: #
+0010: # IDEA
+0011: # ----
+
+--- lines 38-76 ---
+0038: #
+0039: # Therapeutic relations are NEVER representation features.
+0040: #
+0041: # Features are binary TF-IDF weighted.
+0042: #
+0043: # Similarity:
+0044: #
+0045: #   cosine(TFIDF(disease_i), TFIDF(disease_j))
+0046: #
+0047: # ------------------------------------------------------------
+0048: # LABEL TRANSFER
+0049: # ------------------------------------------------------------
+0050: #
+0051: # Training labels:
+0052: #   CLEAN_INDICATION only
+0053: #
+0054: # For each P1 fold:
+0055: #
+0056: #   HIDE all therapeutic labels for:
+0057: #       TARGET diseases
+0058: #       +
+0059: #       BUFFER diseases
+0060: #
+0061: # exactly according to the frozen quarantine manifest.
+0062: #
+0063: # Candidate score:
+0064: #
+0065: #                 sum_j sim(q,j) * I(drug indicated for j)
+0066: #   score(q,drug)=---------------------------------------------
+0067: #                           sum_j sim(q,j)
+0068: #
+0069: # where j ranges only over LEGAL training diseases.
+0070: #
+0071: # No KNN hyperparameter.
+0072: # No supervised tuning.
+0073: # No use of target labels.
+0074: #
+0075: # ------------------------------------------------------------
+0076: # EVALUATION
+
+--- lines 86-92 ---
+0086: # OUTPUTS
+0087: # ------------------------------------------------------------
+0088: #
+0089: # p1_e2_disease_profile_label_transfer_scores.npz
+0090: # p1_e2_expert_matrix_v1_1_tiesafe.csv
+0091: # p1_e2_metadata.json
+0092: #
+
+--- lines 105-111 ---
+0105: import numpy as np
+0106: import pandas as pd
+0107: 
+0108: from scipy.sparse import (
+0109:     csr_matrix,
+0110:     diags,
+0111: )
+
+--- lines 185-191 ---
+0185: 
+0186: print("=" * 78)
+0187: print("P1 — CELL 17")
+0188: print("E2 DISEASE-PROFILE LABEL TRANSFER")
+0189: print("=" * 78)
+0190: 
+0191: 
+
+--- lines 234-248 ---
+0234: # ------------------------------------------------------------
+0235: 
+0236: EXPERT_ID = (
+0237:     "E2_DISEASE_PROFILE_LABEL_TRANSFER"
+0238: )
+0239: 
+0240: EXPERT_VERSION = (
+0241:     "1.0"
+0242: )
+0243: 
+0244: EXPERT_FAMILY = (
+0245:     "nonparametric_label_transfer"
+0246: )
+0247: 
+0248: EXPERT_SEED = 0
+
+--- lines 387-393 ---
+0387: 
+0388: 
+0389: # ------------------------------------------------------------
+0390: # 6. Global CLEAN indication training labels
+0391: # ------------------------------------------------------------
+0392: 
+0393: clean_global = (
+
+--- lines 415-421 ---
+0415: ].copy()
+0416: 
+0417: 
+0418: LABEL_DISEASE_IDS = np.array(
+0419:     sorted(
+0420:         clean_global[
+0421:             "disease_id"
+
+--- lines 427-443 ---
+0427: )
+0428: 
+0429: 
+0430: label_disease_index = {
+0431:     disease_id: i
+0432:     for i, disease_id
+0433:     in enumerate(
+0434:         LABEL_DISEASE_IDS
+0435:     )
+0436: }
+0437: 
+0438: 
+0439: print(
+0440:     "\nGlobal CLEAN indication labels:"
+0441: )
+0442: 
+0443: print(
+
+--- lines 446-458 ---
+0446: )
+0447: 
+0448: print(
+0449:     f"  label-bearing diseases: "
+0450:     f"{len(LABEL_DISEASE_IDS):,}"
+0451: )
+0452: 
+0453: 
+0454: # ------------------------------------------------------------
+0455: # 7. Build CLEAN indication sparse label matrix
+0456: #
+0457: # rows:
+0458: #   indication-bearing diseases
+
+--- lines 461-469 ---
+0461: #   all 7,957 drugs
+0462: # ------------------------------------------------------------
+0463: 
+0464: label_rows = []
+0465: 
+0466: label_cols = []
+0467: 
+0468: 
+0469: for row in clean_global.itertuples(
+
+--- lines 479-514 ---
+0479:     )
+0480: 
+0481: 
+0482:     label_rows.append(
+0483:         label_disease_index[
+0484:             disease_id
+0485:         ]
+0486:     )
+0487: 
+0488: 
+0489:     label_cols.append(
+0490:         drug_index[
+0491:             drug_id
+0492:         ]
+0493:     )
+0494: 
+0495: 
+0496: label_matrix = csr_matrix(
+0497:     (
+0498:         np.ones(
+0499:             len(
+0500:                 label_rows
+0501:             ),
+0502:             dtype=np.float32,
+0503:         ),
+0504:         (
+0505:             label_rows,
+0506:             label_cols,
+0507:         ),
+0508:     ),
+0509:     shape=(
+0510:         len(
+0511:             LABEL_DISEASE_IDS
+0512:         ),
+0513:         len(
+0514:             DRUG_IDS
+
+--- lines 519-525 ---
+0519: 
+0520: 
+0521: assert (
+0522:     label_matrix.nnz
+0523:     ==
+0524:     len(
+0525:         clean_global
+
+--- lines 536-548 ---
+0536: #   relation | neighbor_type | neighbor_id
+0537: #
+0538: # We collect disease-feature pairs over ALL PrimeKG diseases
+0539: # so IDF is determined without therapeutic labels.
+0540: # ------------------------------------------------------------
+0541: 
+0542: THERAPEUTIC_RELATIONS = {
+0543:     "indication",
+0544:     "contraindication",
+0545:     "off-label use",
+0546: }
+0547: 
+0548: 
+
+--- lines 769-775 ---
+0769: 
+0770: 
+0771: # ------------------------------------------------------------
+0772: # 10. IDF over ALL diseases
+0773: # ------------------------------------------------------------
+0774: 
+0775: ALL_DISEASE_IDS = np.array(
+
+--- lines 811-817 ---
+0811: )
+0812: 
+0813: 
+0814: idf = (
+0815:     np.log(
+0816:         (
+0817:             1.0
+
+--- lines 833-853 ---
+0833: 
+0834: 
+0835: # ------------------------------------------------------------
+0836: # 11. Build relevant disease TF-IDF matrix
+0837: # ------------------------------------------------------------
+0838: #
+0839: # Relevant diseases are:
+0840: #
+0841: #   - all primary evaluation diseases
+0842: #   - all diseases carrying CLEAN indication labels
+0843: # ------------------------------------------------------------
+0844: 
+0845: RELEVANT_DISEASE_IDS = np.array(
+0846:     sorted(
+0847:         PRIMARY_DISEASE_SET
+0848:         |
+0849:         set(
+0850:             LABEL_DISEASE_IDS
+0851:         )
+0852:     ),
+0853:     dtype=str,
+
+--- lines 903-915 ---
+0903: 
+0904: 
+0905:     values.append(
+0906:         idf[
+0907:             feature_col
+0908:         ]
+0909:     )
+0910: 
+0911: 
+0912: tfidf_matrix = csr_matrix(
+0913:     (
+0914:         np.asarray(
+0915:             values,
+
+--- lines 931-943 ---
+0931: 
+0932: 
+0933: # ------------------------------------------------------------
+0934: # 12. L2 normalize disease profiles
+0935: # ------------------------------------------------------------
+0936: 
+0937: row_sq_sum = np.asarray(
+0938:     tfidf_matrix
+0939:     .multiply(
+0940:         tfidf_matrix
+0941:     )
+0942:     .sum(
+0943:         axis=1
+
+--- lines 974-990 ---
+0974: )
+0975: 
+0976: 
+0977: normalized_profiles = (
+0978:     diags(
+0979:         inverse_norm
+0980:     )
+0981:     @
+0982:     tfidf_matrix
+0983: ).tocsr()
+0984: 
+0985: 
+0986: # ------------------------------------------------------------
+0987: # 13. Query and label disease profile matrices
+0988: # ------------------------------------------------------------
+0989: 
+0990: primary_profile_rows = np.array(
+
+--- lines 999-1023 ---
+0999: )
+1000: 
+1001: 
+1002: label_profile_rows = np.array(
+1003:     [
+1004:         relevant_index[
+1005:             disease_id
+1006:         ]
+1007:         for disease_id in
+1008:         LABEL_DISEASE_IDS
+1009:     ],
+1010:     dtype=int,
+1011: )
+1012: 
+1013: 
+1014: query_profiles = normalized_profiles[
+1015:     primary_profile_rows
+1016: ]
+1017: 
+1018: 
+1019: label_profiles = normalized_profiles[
+1020:     label_profile_rows
+1021: ]
+1022: 
+1023: 
+
+--- lines 1027-1069 ---
+1027: 
+1028: 
+1029: # ------------------------------------------------------------
+1030: # 14. Disease-to-disease cosine similarity
+1031: # ------------------------------------------------------------
+1032: 
+1033: similarity_start = time.time()
+1034: 
+1035: 
+1036: similarity = (
+1037:     query_profiles
+1038:     @
+1039:     label_profiles.T
+1040: ).tocsr()
+1041: 
+1042: 
+1043: similarity_runtime = (
+1044:     time.time()
+1045:     -
+1046:     similarity_start
+1047: )
+1048: 
+1049: 
+1050: print(
+1051:     "\nSimilarity matrix:"
+1052: )
+1053: 
+1054: print(
+1055:     "  shape:",
+1056:     similarity.shape
+1057: )
+1058: 
+1059: print(
+1060:     "  nonzero similarities:",
+1061:     f"{similarity.nnz:,}"
+1062: )
+1063: 
+1064: print(
+1065:     f"  runtime: "
+1066:     f"{similarity_runtime:.3f} sec"
+1067: )
+1068: 
+1069: 
+
+--- lines 1092-1104 ---
+1092: 
+1093: 
+1094: # ------------------------------------------------------------
+1095: # 16. Score E2 fold by fold
+1096: # ------------------------------------------------------------
+1097: 
+1098: score_start = time.time()
+1099: 
+1100: 
+1101: e2_scores = np.zeros(
+1102:     (
+1103:         len(
+1104:             DISEASE_IDS
+
+--- lines 1115-1125 ---
+1115: 
+1116: similar_training_count = {}
+1117: 
+1118: similarity_mass_by_disease = {}
+1119: 
+1120: candidate_score_coverage = {}
+1121: 
+1122: training_label_pairs_by_fold = {}
+1123: 
+1124: 
+1125: for fold in range(
+
+--- lines 1140-1159 ---
+1140:     ]
+1141: 
+1142: 
+1143:     allowed_label_mask = np.array(
+1144:         [
+1145:             disease_id
+1146:             not in hidden
+1147: 
+1148:             for disease_id in
+1149:             LABEL_DISEASE_IDS
+1150:         ],
+1151:         dtype=bool,
+1152:     )
+1153: 
+1154: 
+1155:     allowed_label_rows = np.flatnonzero(
+1156:         allowed_label_mask
+1157:     )
+1158: 
+1159: 
+
+--- lines 1162-1169 ---
+1162:     # ------------------------------------------
+1163: 
+1164:     allowed_diseases = set(
+1165:         LABEL_DISEASE_IDS[
+1166:             allowed_label_rows
+1167:         ]
+1168:     )
+1169: 
+
+--- lines 1175-1212 ---
+1175:     ) == set()
+1176: 
+1177: 
+1178:     train_labels_fold = label_matrix[
+1179:         allowed_label_rows
+1180:     ]
+1181: 
+1182: 
+1183:     training_label_pairs_by_fold[
+1184:         fold
+1185:     ] = int(
+1186:         train_labels_fold.nnz
+1187:     )
+1188: 
+1189: 
+1190:     sim_fold = similarity[
+1191:         query_rows
+1192:     ][
+1193:         :,
+1194:         allowed_label_rows
+1195:     ]
+1196: 
+1197: 
+1198:     # ------------------------------------------
+1199:     # Similarity-weighted indication transfer
+1200:     # ------------------------------------------
+1201: 
+1202:     weighted_votes = (
+1203:         sim_fold
+1204:         @
+1205:         train_labels_fold
+1206:     )
+1207: 
+1208: 
+1209:     fold_scores = (
+1210:         weighted_votes
+1211:         .toarray()
+1212:         .astype(
+
+--- lines 1216-1229 ---
+1216: 
+1217: 
+1218:     # ------------------------------------------
+1219:     # Normalize by similarity mass.
+1220:     #
+1221:     # This does not alter candidate ranking
+1222:     # within a disease, but gives scores a
+1223:     # clearer weighted-prevalence meaning.
+1224:     # ------------------------------------------
+1225: 
+1226:     similarity_mass = np.asarray(
+1227:         sim_fold.sum(
+1228:             axis=1
+1229:         )
+
+--- lines 1235-1257 ---
+1235: 
+1236: 
+1237:     valid_mass = (
+1238:         similarity_mass > 0
+1239:     )
+1240: 
+1241: 
+1242:     fold_scores[
+1243:         valid_mass
+1244:     ] /= (
+1245:         similarity_mass[
+1246:             valid_mass,
+1247:             None,
+1248:         ]
+1249:     )
+1250: 
+1251: 
+1252:     e2_scores[
+1253:         query_rows
+1254:     ] = fold_scores
+1255: 
+1256: 
+1257:     # ------------------------------------------
+
+--- lines 1280-1294 ---
+1280: 
+1281: 
+1282:         mass = float(
+1283:             similarity_mass[
+1284:                 local_row
+1285:             ]
+1286:         )
+1287: 
+1288: 
+1289:         coverage = int(
+1290:             (
+1291:                 fold_scores[
+1292:                     local_row
+1293:                 ] > 0
+1294:             ).sum()
+
+--- lines 1300-1311 ---
+1300:         ] = n_similar
+1301: 
+1302: 
+1303:         similarity_mass_by_disease[
+1304:             disease_id
+1305:         ] = mass
+1306: 
+1307: 
+1308:         candidate_score_coverage[
+1309:             disease_id
+1310:         ] = coverage
+1311: 
+
+--- lines 1352-1379 ---
+1352:     print(
+1353:         f"Fold {fold} | "
+1354:         f"queries={len(query_rows):>3} | "
+1355:         f"legal label diseases="
+1356:         f"{len(allowed_label_rows):>4} | "
+1357:         f"training clean pairs="
+1358:         f"{train_labels_fold.nnz:>5,}"
+1359:     )
+1360: 
+1361: 
+1362: score_runtime = (
+1363:     time.time()
+1364:     -
+1365:     score_start
+1366: )
+1367: 
+1368: 
+1369: assert e2_scores.shape == (
+1370:     738,
+1371:     7957,
+1372: )
+1373: 
+1374: 
+1375: assert np.isfinite(
+1376:     e2_scores
+1377: ).all()
+1378: 
+1379: 
+
+--- lines 1383-1389 ---
+1383: 
+1384: IGNORED_ROLES = {
+1385:     "AMBIGUOUS_INDICATION",
+1386:     "OFFLABEL_ONLY",
+1387:     "CONFLICTING_NONINDICATION",
+1388: }
+1389: 
+
+--- lines 1577-1583 ---
+1577: 
+1578: def evaluate_tie_safe(
+1579:     disease_id,
+1580:     score_vector,
+1581: ):
+1582: 
+1583:     disease_id = str(
+
+--- lines 1693-1705 ---
+1693:     )
+1694: 
+1695: 
+1696:     eligible_scores = score_vector[
+1697:         eligible_idx
+1698:     ]
+1699: 
+1700: 
+1701:     order = np.argsort(
+1702:         -eligible_scores,
+1703:         kind="mergesort",
+1704:     )
+1705: 
+
+--- lines 1709-1715 ---
+1709:     ]
+1710: 
+1711: 
+1712:     ranked_scores = eligible_scores[
+1713:         order
+1714:     ]
+1715: 
+
+--- lines 1740-1750 ---
+1740:     block_starts = np.r_[
+1741:         0,
+1742:         np.flatnonzero(
+1743:             ranked_scores[
+1744:                 1:
+1745:             ]
+1746:             !=
+1747:             ranked_scores[
+1748:                 :-1
+1749:             ]
+1750:         )
+
+--- lines 2062-2068 ---
+2062: 
+2063:     metric_result = evaluate_tie_safe(
+2064:         disease_id,
+2065:         e2_scores[
+2066:             row_number
+2067:         ],
+2068:     )
+
+--- lines 2094-2100 ---
+2094:     )
+2095: 
+2096: 
+2097:     coverage = candidate_score_coverage[
+2098:         disease_id
+2099:     ]
+2100: 
+
+--- lines 2166-2174 ---
+2166:                 ]
+2167:             ),
+2168: 
+2169:         "similarity_mass":
+2170:             float(
+2171:                 similarity_mass_by_disease[
+2172:                     disease_id
+2173:                 ]
+2174:             ),
+
+--- lines 2178-2184 ---
+2178:                 coverage
+2179:             ),
+2180: 
+2181:         "candidate_score_coverage":
+2182:             float(
+2183:                 coverage
+2184:                 /
+
+--- lines 2196-2202 ---
+2196:         "n_contraindications":
+2197:             contra_count,
+2198: 
+2199:         "n_scored_candidates":
+2200:             (
+2201:                 len(
+2202:                     DRUG_IDS
+
+--- lines 2318-2326 ---
+2318: total_runtime = (
+2319:     extract_runtime
+2320:     +
+2321:     similarity_runtime
+2322:     +
+2323:     score_runtime
+2324:     +
+2325:     evaluation_runtime
+2326: )
+
+--- lines 2334-2349 ---
+2334: 
+2335: 
+2336: e2_matrix[
+2337:     "shared_similarity_runtime_sec"
+2338: ] = (
+2339:     similarity_runtime
+2340: )
+2341: 
+2342: 
+2343: e2_matrix[
+2344:     "shared_score_runtime_sec"
+2345: ] = (
+2346:     score_runtime
+2347: )
+2348: 
+2349: 
+
+--- lines 2774-2782 ---
+2774: # 27. Output paths
+2775: # ------------------------------------------------------------
+2776: 
+2777: SCORE_OUT = (
+2778:     BASE /
+2779:     "p1_e2_disease_profile_label_transfer_scores.npz"
+2780: )
+2781: 
+2782: MATRIX_OUT = (
+
+--- lines 2801-2816 ---
+2801: 
+2802: 
+2803: # ------------------------------------------------------------
+2804: # 28. Save score artifact
+2805: #
+2806: # Fixed-width Unicode ID arrays avoid Cell-14's object-array
+2807: # serialization issue.
+2808: # ------------------------------------------------------------
+2809: 
+2810: np.savez_compressed(
+2811:     SCORE_OUT,
+2812: 
+2813:     scores=e2_scores,
+2814: 
+2815:     disease_ids=np.asarray(
+2816:         DISEASE_IDS,
+
+--- lines 2863-2872 ---
+2863:     "seed":
+2864:         0,
+2865: 
+2866:     "uses_therapeutic_labels":
+2867:         True,
+2868: 
+2869:     "therapeutic_labels_used":
+2870:         [
+2871:             "CLEAN_INDICATION"
+2872:         ],
+
+--- lines 2876-2892 ---
+2876: 
+2877:     "representation":
+2878:         (
+2879:             "binary TF-IDF over all incident "
+2880:             "non-therapeutic disease features"
+2881:         ),
+2882: 
+2883:     "similarity":
+2884:         "cosine",
+2885: 
+2886:     "label_transfer":
+2887:         (
+2888:             "similarity-weighted CLEAN indication "
+2889:             "prevalence over legal training diseases"
+2890:         ),
+2891: 
+2892:     "knn_cutoff":
+
+--- lines 2913-2922 ---
+2913:             )
+2914:         ),
+2915: 
+2916:     "global_label_diseases":
+2917:         int(
+2918:             len(
+2919:                 LABEL_DISEASE_IDS
+2920:             )
+2921:         ),
+2922: 
+
+--- lines 2942-2952 ---
+2942:         "graph_profile_extraction":
+2943:             extract_runtime,
+2944: 
+2945:         "similarity":
+2946:             similarity_runtime,
+2947: 
+2948:         "fold_scoring":
+2949:             score_runtime,
+2950: 
+2951:         "evaluation":
+2952:             evaluation_runtime,
+
+--- lines 2972-2978 ---
+2972: oracle_summary = {
+2973: 
+2974:     "experts": [
+2975:         "E1_WEIGHTED_GENE_COSINE",
+2976:         EXPERT_ID,
+2977:     ],
+2978: 
+
+--- lines 3070-3076 ---
+3070: )
+3071: 
+3072: print(
+3073:     SCORE_OUT
+3074: )
+3075: 
+3076: print(
+
+====================================================================================================
+E3
+====================================================================================================
+source_file: /content/drive/MyDrive/P1/PrimeKG/p1_p15_authoritative_source/E3_authoritative.py
+sha256: 14712fef0cd629bda08dee271e15dde77175379281c0099f3b513a9540c1648c
+source_lines: 4361
+
+TOP-LEVEL DEFINITIONS
+[
+  {
+    "type": "FUNCTION",
+    "name": "sha256_file",
+    "line_start": 291,
+    "line_end": 316
+  },
+  {
+    "type": "CLASS",
+    "name": "ComplExModel",
+    "line_start": 844,
+    "line_end": 970
+  },
+  {
+    "type": "FUNCTION",
+    "name": "__init__",
+    "line_start": 848,
+    "line_end": 925
+  },
+  {
+    "type": "FUNCTION",
+    "name": "score",
+    "line_start": 928,
+    "line_end": 970
+  },
+  {
+    "type": "FUNCTION",
+    "name": "sample_same_type",
+    "line_start": 977,
+    "line_end": 1073
+  },
+  {
+    "type": "FUNCTION",
+    "name": "make_optimizers",
+    "line_start": 1080,
+    "line_end": 1107
+  },
+  {
+    "type": "FUNCTION",
+    "name": "sample_clean_head_corruptions",
+    "line_start": 1484,
+    "line_end": 1587
+  },
+  {
+    "type": "FUNCTION",
+    "name": "expected_first_rank_and_mrr",
+    "line_start": 1669,
+    "line_end": 1781
+  },
+  {
+    "type": "FUNCTION",
+    "name": "evaluate_tie_safe",
+    "line_start": 1816,
+    "line_end": 2279
+  }
+]
+
+EXECUTION-RELEVANT SOURCE EXCERPTS
+
+--- lines 27-46 ---
+0027: #   Replacement entity must have the SAME entity type as
+0028: #   the corrupted endpoint.
+0029: #
+0030: # Stage B — fold-specific CLEAN_INDICATION training
+0031: #
+0032: #   Start every fold from the exact same seed-0 pretrained
+0033: #   label-free checkpoint.
+0034: #
+0035: #   Use ONLY legal CLEAN_INDICATION pairs for that fold.
+0036: #
+0037: #   Target + quarantine-buffer indication labels are absent.
+0038: #
+0039: #   Because the evaluation task ranks drugs for a disease,
+0040: #   fold-specific corruptions replace the DRUG head only.
+0041: #
+0042: #   These are contrastive corruptions for optimization;
+0043: #   they are NOT interpreted as biological true negatives.
+0044: #
+0045: # ------------------------------------------------------------
+0046: # ZERO-SHOT GUARANTEE
+
+--- lines 54-60 ---
+0054: #
+0055: #   clean-indication supervision
+0056: #
+0057: # during its evaluation fold.
+0058: #
+0059: # ------------------------------------------------------------
+0060: # FIXED HYPERPARAMETERS
+
+--- lines 69-75 ---
+0069: #   entity SparseAdam LR:       0.01
+0070: #   relation Adam LR:           0.01
+0071: #
+0072: # Fold indication training:
+0073: #   epochs:                     80
+0074: #   positive batch size:        2,048
+0075: #   drug corruptions / positive:16
+
+--- lines 97-103 ---
+0097: # OUTPUTS
+0098: # ------------------------------------------------------------
+0099: #
+0100: # p1_e3_complex_seed0_scores.npz
+0101: # p1_e3_complex_seed0_expert_matrix.csv
+0102: # p1_e3_complex_seed0_training_log.csv
+0103: # p1_e3_complex_seed0_metadata.json
+
+--- lines 177-185 ---
+0177:     "p1_v0_primary_eval_roles.csv"
+0178: )
+0179: 
+0180: CANDIDATE_PATH = (
+0181:     BASE /
+0182:     "p1_v0_candidate_drugs.csv"
+0183: )
+0184: 
+0185: EVALUATOR_PATH = (
+
+--- lines 207-213 ---
+0207:     QUARANTINE_PATH,
+0208:     PRIMARY_DISEASE_PATH,
+0209:     PRIMARY_ROLE_PATH,
+0210:     CANDIDATE_PATH,
+0211:     EVALUATOR_PATH,
+0212:     E1_MATRIX_PATH,
+0213:     E2_MATRIX_PATH,
+
+--- lines 354-360 ---
+0354: )
+0355: 
+0356: 
+0357: EXPECTED_FOLD_COUNTS = {
+0358:     "0": 6856,
+0359:     "1": 6828,
+0360:     "2": 6990,
+
+--- lines 368-377 ---
+0368: 
+0369: assert (
+0370:     corpus_manifest[
+0371:         "fold_training_clean_pairs"
+0372:     ]
+0373:     ==
+0374:     EXPECTED_FOLD_COUNTS
+0375: )
+0376: 
+0377: 
+
+--- lines 574-581 ---
+0574: ].astype(str)
+0575: 
+0576: 
+0577: candidate_entity_indices = clean_artifact[
+0578:     "candidate_entity_indices"
+0579: ].astype(
+0580:     np.int32,
+0581:     copy=False,
+
+--- lines 603-609 ---
+0603: 
+0604: 
+0605: assert len(
+0606:     candidate_entity_indices
+0607: ) == 7957
+0608: 
+0609: 
+
+--- lines 640-646 ---
+0640:     primary_diseases
+0641:     .sort_values(
+0642:         [
+0643:             "oof_fold",
+0644:             "disease_id",
+0645:         ]
+0646:     )
+
+--- lines 665-680 ---
+0665: )
+0666: 
+0667: 
+0668: candidate_drugs = pd.read_csv(
+0669:     CANDIDATE_PATH,
+0670:     dtype={
+0671:         "drug_id": "string",
+0672:     },
+0673: )
+0674: 
+0675: 
+0676: candidate_drugs = (
+0677:     candidate_drugs
+0678:     .sort_values(
+0679:         "drug_id"
+0680:     )
+
+--- lines 685-691 ---
+0685: 
+0686: 
+0687: DRUG_IDS = (
+0688:     candidate_drugs[
+0689:         "drug_id"
+0690:     ]
+0691:     .astype(str)
+
+--- lines 841-847 ---
+0841: COMPLEX_DIM = 64
+0842: 
+0843: 
+0844: class ComplExModel(
+0845:     nn.Module
+0846: ):
+0847: 
+
+--- lines 860-887 ---
+0860:         )
+0861: 
+0862: 
+0863:         self.entity_re = nn.Embedding(
+0864:             n_entities,
+0865:             dim,
+0866:             sparse=True,
+0867:         )
+0868: 
+0869: 
+0870:         self.entity_im = nn.Embedding(
+0871:             n_entities,
+0872:             dim,
+0873:             sparse=True,
+0874:         )
+0875: 
+0876: 
+0877:         self.relation_re = nn.Embedding(
+0878:             n_relations,
+0879:             dim,
+0880:             sparse=False,
+0881:         )
+0882: 
+0883: 
+0884:         self.relation_im = nn.Embedding(
+0885:             n_relations,
+0886:             dim,
+0887:             sparse=False,
+
+--- lines 898-958 ---
+0898: 
+0899: 
+0900:         nn.init.uniform_(
+0901:             self.entity_re.weight,
+0902:             -bound,
+0903:             bound,
+0904:         )
+0905: 
+0906: 
+0907:         nn.init.uniform_(
+0908:             self.entity_im.weight,
+0909:             -bound,
+0910:             bound,
+0911:         )
+0912: 
+0913: 
+0914:         nn.init.uniform_(
+0915:             self.relation_re.weight,
+0916:             -bound,
+0917:             bound,
+0918:         )
+0919: 
+0920: 
+0921:         nn.init.uniform_(
+0922:             self.relation_im.weight,
+0923:             -bound,
+0924:             bound,
+0925:         )
+0926: 
+0927: 
+0928:     def score(
+0929:         self,
+0930:         h,
+0931:         r,
+0932:         t,
+0933:     ):
+0934: 
+0935:         hr = self.entity_re(
+0936:             h
+0937:         )
+0938: 
+0939:         hi = self.entity_im(
+0940:             h
+0941:         )
+0942: 
+0943:         rr = self.relation_re(
+0944:             r
+0945:         )
+0946: 
+0947:         ri = self.relation_im(
+0948:             r
+0949:         )
+0950: 
+0951:         tr = self.entity_re(
+0952:             t
+0953:         )
+0954: 
+0955:         ti = self.entity_im(
+0956:             t
+0957:         )
+0958: 
+
+--- lines 1074-1109 ---
+1074: 
+1075: 
+1076: # ============================================================
+1077: # 11. Optimizer constructor
+1078: # ============================================================
+1079: 
+1080: def make_optimizers(
+1081:     model,
+1082:     entity_lr,
+1083:     relation_lr,
+1084: ):
+1085: 
+1086:     entity_optimizer = torch.optim.SparseAdam(
+1087:         [
+1088:             model.entity_re.weight,
+1089:             model.entity_im.weight,
+1090:         ],
+1091:         lr=entity_lr,
+1092:     )
+1093: 
+1094: 
+1095:     relation_optimizer = torch.optim.Adam(
+1096:         [
+1097:             model.relation_re.weight,
+1098:             model.relation_im.weight,
+1099:         ],
+1100:         lr=relation_lr,
+1101:     )
+1102: 
+1103: 
+1104:     return (
+1105:         entity_optimizer,
+1106:         relation_optimizer,
+1107:     )
+1108: 
+1109: 
+
+--- lines 1130-1138 ---
+1130: 
+1131: 
+1132: (
+1133:     entity_optimizer,
+1134:     relation_optimizer,
+1135: ) = make_optimizers(
+1136:     model,
+1137:     entity_lr=BASE_ENTITY_LR,
+1138:     relation_lr=BASE_RELATION_LR,
+
+--- lines 1297-1332 ---
+1297:         )
+1298: 
+1299: 
+1300:         entity_optimizer.zero_grad(
+1301:             set_to_none=True
+1302:         )
+1303: 
+1304:         relation_optimizer.zero_grad(
+1305:             set_to_none=True
+1306:         )
+1307: 
+1308: 
+1309:         positive_score = model.score(
+1310:             h,
+1311:             r,
+1312:             t,
+1313:         )
+1314: 
+1315: 
+1316:         negative_score = model.score(
+1317:             neg_h,
+1318:             r,
+1319:             neg_t,
+1320:         )
+1321: 
+1322: 
+1323:         loss = (
+1324:             F.softplus(
+1325:                 -positive_score
+1326:             ).mean()
+1327:             +
+1328:             F.softplus(
+1329:                 negative_score
+1330:             ).mean()
+1331:         )
+1332: 
+
+--- lines 1336-1351 ---
+1336: 
+1337:         torch.nn.utils.clip_grad_norm_(
+1338:             [
+1339:                 model.relation_re.weight,
+1340:                 model.relation_im.weight,
+1341:             ],
+1342:             max_norm=5.0,
+1343:         )
+1344: 
+1345: 
+1346:         entity_optimizer.step()
+1347: 
+1348:         relation_optimizer.step()
+1349: 
+1350: 
+1351:         loss_sum += (
+
+--- lines 1381-1387 ---
+1381:             "stage":
+1382:                 "base_pretrain",
+1383: 
+1384:             "fold":
+1385:                 -1,
+1386: 
+1387:             "epoch":
+
+--- lines 1455-1463 ---
+1455: 
+1456: del model
+1457: 
+1458: del entity_optimizer
+1459: 
+1460: del relation_optimizer
+1461: 
+1462: gc.collect()
+1463: 
+
+--- lines 1475-1484 ---
+1475: 
+1476: 
+1477: # ============================================================
+1478: # 14. Fold-specific CLEAN indication corruption helper
+1479: # ============================================================
+1480: 
+1481: NEGATIVES_PER_POSITIVE = 16
+1482: 
+1483: 
+1484: def sample_clean_head_corruptions(
+
+--- lines 1505-1520 ---
+1505:     )
+1506: 
+1507: 
+1508:     negatives = (
+1509:         candidate_entity_indices[
+1510:             rng.integers(
+1511:                 0,
+1512:                 len(
+1513:                     candidate_entity_indices
+1514:                 ),
+1515:                 size=(
+1516:                     batch_size,
+1517:                     NEGATIVES_PER_POSITIVE,
+1518:                 ),
+1519:             )
+1520:         ]
+
+--- lines 1545-1551 ---
+1545:         ]
+1546: 
+1547: 
+1548:         block = negatives[
+1549:             row_idx
+1550:         ]
+1551: 
+
+--- lines 1560-1570 ---
+1560: 
+1561:             block[
+1562:                 bad
+1563:             ] = candidate_entity_indices[
+1564:                 rng.integers(
+1565:                     0,
+1566:                     len(
+1567:                         candidate_entity_indices
+1568:                     ),
+1569:                     size=int(
+1570:                         bad.sum()
+
+--- lines 1579-1590 ---
+1579:             )
+1580: 
+1581: 
+1582:         negatives[
+1583:             row_idx
+1584:         ] = block
+1585: 
+1586: 
+1587:     return negatives
+1588: 
+1589: 
+1590: # ============================================================
+
+--- lines 1815-1821 ---
+1815: 
+1816: def evaluate_tie_safe(
+1817:     disease_id,
+1818:     score_vector,
+1819:     status,
+1820: ):
+1821: 
+
+--- lines 1932-1944 ---
+1932:     )
+1933: 
+1934: 
+1935:     eligible_scores = score_vector[
+1936:         eligible_idx
+1937:     ]
+1938: 
+1939: 
+1940:     order = np.argsort(
+1941:         -eligible_scores,
+1942:         kind="mergesort",
+1943:     )
+1944: 
+
+--- lines 1948-1954 ---
+1948:     ]
+1949: 
+1950: 
+1951:     ranked_scores = eligible_scores[
+1952:         order
+1953:     ]
+1954: 
+
+--- lines 1985-1995 ---
+1985:     block_starts = np.r_[
+1986:         0,
+1987:         np.flatnonzero(
+1988:             ranked_scores[
+1989:                 1:
+1990:             ]
+1991:             !=
+1992:             ranked_scores[
+1993:                 :-1
+1994:             ]
+1995:         )
+
+--- lines 2280-2302 ---
+2280: 
+2281: 
+2282: # ============================================================
+2283: # 19. Fold training hyperparameters
+2284: # ============================================================
+2285: 
+2286: FOLD_EPOCHS = 80
+2287: 
+2288: FOLD_BATCH_SIZE = 2048
+2289: 
+2290: FOLD_ENTITY_LR = 0.002
+2291: 
+2292: FOLD_RELATION_LR = 0.01
+2293: 
+2294: 
+2295: # ============================================================
+2296: # 20. Output score matrix
+2297: # ============================================================
+2298: 
+2299: e3_scores = np.zeros(
+2300:     (
+2301:         738,
+2302:         7957,
+
+--- lines 2305-2332 ---
+2305: )
+2306: 
+2307: 
+2308: fold_training_runtime = {}
+2309: 
+2310: fold_final_loss = {}
+2311: 
+2312: training_logs = list(
+2313:     base_training_logs
+2314: )
+2315: 
+2316: 
+2317: # ============================================================
+2318: # 21. Train 8 fold-specific models
+2319: # ============================================================
+2320: 
+2321: print("\n" + "=" * 78)
+2322: print("STAGE B — FOLD-SPECIFIC CLEAN_INDICATION TRAINING")
+2323: print("=" * 78)
+2324: 
+2325: 
+2326: all_fold_start = time.time()
+2327: 
+2328: 
+2329: for fold in range(
+2330:     8
+2331: ):
+2332: 
+
+--- lines 2335-2341 ---
+2335:     )
+2336: 
+2337:     print(
+2338:         f"FOLD {fold}"
+2339:     )
+2340: 
+2341:     print(
+
+--- lines 2350-2357 ---
+2350:     hidden_diseases = set(
+2351:         quarantine.loc[
+2352:             quarantine[
+2353:                 "fold"
+2354:             ] == fold,
+2355:             "disease_id",
+2356:         ]
+2357:         .astype(str)
+
+--- lines 2383-2391 ---
+2383: 
+2384: 
+2385:     expected_pairs = int(
+2386:         EXPECTED_FOLD_COUNTS[
+2387:             str(
+2388:                 fold
+2389:             )
+2390:         ]
+2391:     )
+
+--- lines 2477-2501 ---
+2477: 
+2478: 
+2479:     (
+2480:         entity_optimizer,
+2481:         relation_optimizer,
+2482:     ) = make_optimizers(
+2483:         model,
+2484:         entity_lr=FOLD_ENTITY_LR,
+2485:         relation_lr=FOLD_RELATION_LR,
+2486:     )
+2487: 
+2488: 
+2489:     fold_rng = np.random.default_rng(
+2490:         10_000
+2491:         +
+2492:         SEED * 100
+2493:         +
+2494:         fold
+2495:     )
+2496: 
+2497: 
+2498:     fold_start = time.time()
+2499: 
+2500: 
+2501:     # --------------------------------------------------------
+
+--- lines 2504-2516 ---
+2504: 
+2505:     for epoch in range(
+2506:         1,
+2507:         FOLD_EPOCHS + 1,
+2508:     ):
+2509: 
+2510:         epoch_start = time.time()
+2511: 
+2512: 
+2513:         permutation = fold_rng.permutation(
+2514:             len(
+2515:                 legal_h
+2516:             )
+
+--- lines 2527-2540 ---
+2527:             len(
+2528:                 legal_h
+2529:             ),
+2530:             FOLD_BATCH_SIZE,
+2531:         ):
+2532: 
+2533:             idx = permutation[
+2534:                 start:
+2535:                 start
+2536:                 +
+2537:                 FOLD_BATCH_SIZE
+2538:             ]
+2539: 
+2540: 
+
+--- lines 2558-2564 ---
+2558:                     pos_h_np,
+2559:                     pos_t_np,
+2560:                     forbidden_by_tail,
+2561:                     fold_rng,
+2562:                 )
+2563:             )
+2564: 
+
+--- lines 2572-2578 ---
+2572: 
+2573:             neg_t_np = np.repeat(
+2574:                 pos_t_np,
+2575:                 NEGATIVES_PER_POSITIVE,
+2576:             )
+2577: 
+2578: 
+
+--- lines 2626-2662 ---
+2626:             )
+2627: 
+2628: 
+2629:             entity_optimizer.zero_grad(
+2630:                 set_to_none=True
+2631:             )
+2632: 
+2633: 
+2634:             relation_optimizer.zero_grad(
+2635:                 set_to_none=True
+2636:             )
+2637: 
+2638: 
+2639:             pos_score = model.score(
+2640:                 pos_h,
+2641:                 pos_r,
+2642:                 pos_t,
+2643:             )
+2644: 
+2645: 
+2646:             neg_score = model.score(
+2647:                 neg_h,
+2648:                 neg_r,
+2649:                 neg_t,
+2650:             )
+2651: 
+2652: 
+2653:             loss = (
+2654:                 F.softplus(
+2655:                     -pos_score
+2656:                 ).mean()
+2657:                 +
+2658:                 F.softplus(
+2659:                     neg_score
+2660:                 ).mean()
+2661:             )
+2662: 
+
+--- lines 2666-2681 ---
+2666: 
+2667:             torch.nn.utils.clip_grad_norm_(
+2668:                 [
+2669:                     model.relation_re.weight,
+2670:                     model.relation_im.weight,
+2671:                 ],
+2672:                 max_norm=5.0,
+2673:             )
+2674: 
+2675: 
+2676:             entity_optimizer.step()
+2677: 
+2678:             relation_optimizer.step()
+2679: 
+2680: 
+2681:             loss_sum += (
+
+--- lines 2711-2718 ---
+2711:                 "stage":
+2712:                     "clean_indication",
+2713: 
+2714:                 "fold":
+2715:                     fold,
+2716: 
+2717:                 "epoch":
+2718:                     epoch,
+
+--- lines 2736-2786 ---
+2736:             or
+2737:             epoch % 20 == 0
+2738:             or
+2739:             epoch == FOLD_EPOCHS
+2740:         ):
+2741: 
+2742:             print(
+2743:                 f"Epoch {epoch:03d}/{FOLD_EPOCHS} | "
+2744:                 f"loss={epoch_loss:.6f}"
+2745:             )
+2746: 
+2747: 
+2748:     fold_runtime = (
+2749:         time.time()
+2750:         -
+2751:         fold_start
+2752:     )
+2753: 
+2754: 
+2755:     fold_training_runtime[
+2756:         fold
+2757:     ] = fold_runtime
+2758: 
+2759: 
+2760:     fold_final_loss[
+2761:         fold
+2762:     ] = epoch_loss
+2763: 
+2764: 
+2765:     # --------------------------------------------------------
+2766:     # Score this fold's target diseases against ALL 7,957
+2767:     # candidate drugs.
+2768:     #
+2769:     # score(h, clean_indication, disease)
+2770:     # --------------------------------------------------------
+2771: 
+2772:     fold_query_rows = np.flatnonzero(
+2773:         primary_diseases[
+2774:             "oof_fold"
+2775:         ].to_numpy()
+2776:         ==
+2777:         fold
+2778:     )
+2779: 
+2780: 
+2781:     fold_disease_entity_idx = (
+2782:         primary_disease_entity_indices[
+2783:             fold_query_rows
+2784:         ]
+2785:     )
+2786: 
+
+--- lines 2790-2825 ---
+2790: 
+2791:     with torch.no_grad():
+2792: 
+2793:         candidate_idx_t = torch.as_tensor(
+2794:             candidate_entity_indices,
+2795:             dtype=torch.long,
+2796:             device=DEVICE,
+2797:         )
+2798: 
+2799: 
+2800:         disease_idx_t = torch.as_tensor(
+2801:             fold_disease_entity_idx,
+2802:             dtype=torch.long,
+2803:             device=DEVICE,
+2804:         )
+2805: 
+2806: 
+2807:         candidate_re = model.entity_re(
+2808:             candidate_idx_t
+2809:         )
+2810: 
+2811: 
+2812:         candidate_im = model.entity_im(
+2813:             candidate_idx_t
+2814:         )
+2815: 
+2816: 
+2817:         disease_re = model.entity_re(
+2818:             disease_idx_t
+2819:         )
+2820: 
+2821: 
+2822:         disease_im = model.entity_im(
+2823:             disease_idx_t
+2824:         )
+2825: 
+
+--- lines 2833-2851 ---
+2833:         )
+2834: 
+2835: 
+2836:         relation_re = model.relation_re(
+2837:             relation_idx_t
+2838:         )[0]
+2839: 
+2840: 
+2841:         relation_im = model.relation_im(
+2842:             relation_idx_t
+2843:         )[0]
+2844: 
+2845: 
+2846:         # For fixed relation r and disease tail t:
+2847:         #
+2848:         # score(h,r,t)
+2849:         # =
+2850:         # h_re dot (r_re*t_re + r_im*t_im)
+2851:         # +
+
+--- lines 2854-2891 ---
+2854:         query_re = (
+2855:             disease_re
+2856:             *
+2857:             relation_re
+2858:             +
+2859:             disease_im
+2860:             *
+2861:             relation_im
+2862:         )
+2863: 
+2864: 
+2865:         query_im = (
+2866:             disease_im
+2867:             *
+2868:             relation_re
+2869:             -
+2870:             disease_re
+2871:             *
+2872:             relation_im
+2873:         )
+2874: 
+2875: 
+2876:         fold_score_t = (
+2877:             candidate_re
+2878:             @
+2879:             query_re.T
+2880:             +
+2881:             candidate_im
+2882:             @
+2883:             query_im.T
+2884:         )
+2885: 
+2886: 
+2887:         fold_scores = (
+2888:             fold_score_t
+2889:             .T
+2890:             .float()
+2891:             .cpu()
+
+--- lines 2897-2943 ---
+2897:         )
+2898: 
+2899: 
+2900:     assert fold_scores.shape == (
+2901:         len(
+2902:             fold_query_rows
+2903:         ),
+2904:         7957,
+2905:     )
+2906: 
+2907: 
+2908:     assert np.isfinite(
+2909:         fold_scores
+2910:     ).all()
+2911: 
+2912: 
+2913:     e3_scores[
+2914:         fold_query_rows
+2915:     ] = fold_scores
+2916: 
+2917: 
+2918:     print(
+2919:         f"Fold {fold} training runtime: "
+2920:         f"{fold_runtime:.1f}s"
+2921:     )
+2922: 
+2923: 
+2924:     # --------------------------------------------------------
+2925:     # Cleanup fold model
+2926:     # --------------------------------------------------------
+2927: 
+2928:     del model
+2929:     del entity_optimizer
+2930:     del relation_optimizer
+2931: 
+2932:     gc.collect()
+2933: 
+2934:     torch.cuda.empty_cache()
+2935: 
+2936: 
+2937: all_fold_runtime = (
+2938:     time.time()
+2939:     -
+2940:     all_fold_start
+2941: )
+2942: 
+2943: 
+
+--- lines 2965-2975 ---
+2965:     )
+2966: 
+2967: 
+2968:     fold = int(
+2969:         primary_diseases.iloc[
+2970:             row_idx
+2971:         ][
+2972:             "oof_fold"
+2973:         ]
+2974:     )
+2975: 
+
+--- lines 2983-3005 ---
+2983:         )
+2984: 
+2985:     elif not np.isfinite(
+2986:         e3_scores[
+2987:             row_idx
+2988:         ]
+2989:     ).all():
+2990: 
+2991:         status = (
+2992:             "FAIL_NONFINITE_SCORE"
+2993:         )
+2994: 
+2995:     elif np.ptp(
+2996:         e3_scores[
+2997:             row_idx
+2998:         ]
+2999:     ) <= 1e-12:
+3000: 
+3001:         status = (
+3002:             "ABSTAIN_CONSTANT_SCORE"
+3003:         )
+3004: 
+3005:     else:
+
+--- lines 3009-3015 ---
+3009: 
+3010:     metrics = evaluate_tie_safe(
+3011:         disease_id=disease_id,
+3012:         score_vector=e3_scores[
+3013:             row_idx
+3014:         ],
+3015:         status=status,
+
+--- lines 3037-3057 ---
+3037:     )
+3038: 
+3039: 
+3040:     score_vector = e3_scores[
+3041:         row_idx
+3042:     ]
+3043: 
+3044: 
+3045:     score_std = float(
+3046:         np.std(
+3047:             score_vector
+3048:         )
+3049:     )
+3050: 
+3051: 
+3052:     score_range = float(
+3053:         np.ptp(
+3054:             score_vector
+3055:         )
+3056:     )
+3057: 
+
+--- lines 3081-3088 ---
+3081:         "protocol":
+3082:             "Track_A_controlled_information_parity",
+3083: 
+3084:         "fold":
+3085:             fold,
+3086: 
+3087:         "disease_id":
+3088:             disease_id,
+
+--- lines 3109-3156 ---
+3109:                 disease_id
+3110:             ],
+3111: 
+3112:         "score_std":
+3113:             score_std,
+3114: 
+3115:         "score_range":
+3116:             score_range,
+3117: 
+3118:         "n_clean_positives":
+3119:             truth_count,
+3120: 
+3121:         "n_ignored_candidates":
+3122:             ignored_count,
+3123: 
+3124:         "n_contraindications":
+3125:             contra_count,
+3126: 
+3127:         "n_scored_candidates":
+3128:             (
+3129:                 7957
+3130:                 -
+3131:                 ignored_count
+3132:             ),
+3133: 
+3134:         "training_clean_pairs_fold":
+3135:             int(
+3136:                 EXPECTED_FOLD_COUNTS[
+3137:                     str(
+3138:                         fold
+3139:                     )
+3140:                 ]
+3141:             ),
+3142: 
+3143:         "fold_training_runtime_sec":
+3144:             float(
+3145:                 fold_training_runtime[
+3146:                     fold
+3147:                 ]
+3148:             ),
+3149: 
+3150:         "fold_final_training_loss":
+3151:             float(
+3152:                 fold_final_loss[
+3153:                     fold
+3154:                 ]
+3155:             ),
+3156: 
+
+--- lines 3293-3299 ---
+3293: )
+3294: 
+3295: print(
+3296:     "Fold label leakage: 0"
+3297: )
+3298: 
+3299: 
+
+--- lines 3372-3384 ---
+3372: 
+3373: 
+3374: # ============================================================
+3375: # 25. Fold performance
+3376: # ============================================================
+3377: 
+3378: fold_performance = (
+3379:     e3_matrix
+3380:     .groupby(
+3381:         "fold"
+3382:     )
+3383:     .agg(
+3384:         diseases=(
+
+--- lines 3417-3428 ---
+3417:         ),
+3418: 
+3419:         training_runtime_sec=(
+3420:             "fold_training_runtime_sec",
+3421:             "first",
+3422:         ),
+3423: 
+3424:         final_training_loss=(
+3425:             "fold_final_training_loss",
+3426:             "first",
+3427:         ),
+3428:     )
+
+--- lines 3431-3442 ---
+3431: 
+3432: 
+3433: print("\n" + "=" * 78)
+3434: print("E3 PERFORMANCE BY OOF FOLD")
+3435: print("=" * 78)
+3436: 
+3437: 
+3438: display(
+3439:     fold_performance
+3440: )
+3441: 
+3442: 
+
+--- lines 3465-3471 ---
+3465:         [
+3466:             "disease_id",
+3467:             "disease_name",
+3468:             "fold",
+3469:             "Recall@50",
+3470:         ]
+3471:     ]
+
+--- lines 3598-3604 ---
+3598: # Strict best counts
+3599: # ------------------------------------------------------------
+3600: 
+3601: score_array = oracle[
+3602:     [
+3603:         "E1_R50",
+3604:         "E2_R50",
+
+--- lines 3607-3620 ---
+3607: ].to_numpy()
+3608: 
+3609: 
+3610: max_score = score_array.max(
+3611:     axis=1
+3612: )
+3613: 
+3614: 
+3615: winner_mask = np.isclose(
+3616:     score_array,
+3617:     max_score[
+3618:         :,
+3619:         None,
+3620:     ],
+
+--- lines 3781-3787 ---
+3781: )
+3782: 
+3783: print(
+3784:     f"  best-score ties: "
+3785:     f"{best_ties:,}"
+3786: )
+3787: 
+
+--- lines 3847-3853 ---
+3847:         ascending=False,
+3848:     )[
+3849:         [
+3850:             "fold",
+3851:             "disease_id",
+3852:             "disease_name",
+3853:             "E1_R50",
+
+--- lines 3868-3874 ---
+3868: TOTAL_TRAIN_RUNTIME = (
+3869:     base_pretrain_runtime
+3870:     +
+3871:     all_fold_runtime
+3872: )
+3873: 
+3874: 
+
+--- lines 3901-3907 ---
+3901:         base_pretrain_runtime
+3902:         +
+3903:         sum(
+3904:             fold_training_runtime.values()
+3905:         )
+3906:     )
+3907:     /
+
+--- lines 3913-3921 ---
+3913: # 29. Save artifacts
+3914: # ============================================================
+3915: 
+3916: SCORE_OUT = (
+3917:     BASE /
+3918:     "p1_e3_complex_seed0_scores.npz"
+3919: )
+3920: 
+3921: MATRIX_OUT = (
+
+--- lines 3945-3953 ---
+3945: 
+3946: 
+3947: np.savez_compressed(
+3948:     SCORE_OUT,
+3949: 
+3950:     scores=e3_scores,
+3951: 
+3952:     disease_ids=np.asarray(
+3953:         DISEASE_IDS,
+
+--- lines 4041-4085 ---
+4041:             base_pretrain_runtime,
+4042:     },
+4043: 
+4044:     "fold_training": {
+4045:         "epochs":
+4046:             FOLD_EPOCHS,
+4047: 
+4048:         "positive_batch_size":
+4049:             FOLD_BATCH_SIZE,
+4050: 
+4051:         "drug_corruptions_per_positive":
+4052:             NEGATIVES_PER_POSITIVE,
+4053: 
+4054:         "entity_lr":
+4055:             FOLD_ENTITY_LR,
+4056: 
+4057:         "relation_lr":
+4058:             FOLD_RELATION_LR,
+4059: 
+4060:         "negative_semantics":
+4061:             (
+4062:                 "contrastive corruptions only; "
+4063:                 "not declared biological true negatives"
+4064:             ),
+4065: 
+4066:         "target_and_buffer_labels_hidden":
+4067:             True,
+4068: 
+4069:         "legal_pairs_by_fold":
+4070:             EXPECTED_FOLD_COUNTS,
+4071: 
+4072:         "runtime_sec_by_fold": {
+4073:             str(
+4074:                 fold
+4075:             ):
+4076:                 float(
+4077:                     fold_training_runtime[
+4078:                         fold
+4079:                     ]
+4080:                 )
+4081: 
+4082:             for fold in range(
+4083:                 8
+4084:             )
+4085:         },
+
+--- lines 4134-4140 ---
+4134:         "strict_best_E3":
+4135:             strict_e3,
+4136: 
+4137:         "best_score_ties":
+4138:             best_ties,
+4139:     },
+4140: }
+
+--- lines 4224-4230 ---
+4224: 
+4225: 
+4226: for path in [
+4227:     SCORE_OUT,
+4228:     MATRIX_OUT,
+4229:     TRAINING_LOG_OUT,
+4230:     METADATA_OUT,
+
+--- lines 4323-4329 ---
+4323: )
+4324: 
+4325: print(
+4326:     SCORE_OUT
+4327: )
+4328: 
+4329: print(
+
+====================================================================================================
+E4
+====================================================================================================
+source_file: /content/drive/MyDrive/P1/PrimeKG/p1_p15_authoritative_source/E4_authoritative.py
+sha256: a476b743fe8d813c73e2acedb9cf1c9c09459411fe0914776e02db731a0965cc
+source_lines: 2518
+
+TOP-LEVEL DEFINITIONS
+[
+  {
+    "type": "FUNCTION",
+    "name": "sha256_file",
+    "line_start": 260,
+    "line_end": 290
+  },
+  {
+    "type": "FUNCTION",
+    "name": "json_safe",
+    "line_start": 293,
+    "line_end": 359
+  },
+  {
+    "type": "FUNCTION",
+    "name": "infer_column",
+    "line_start": 362,
+    "line_end": 378
+  },
+  {
+    "type": "FUNCTION",
+    "name": "relation_weight_stack",
+    "line_start": 1418,
+    "line_end": 1448
+  },
+  {
+    "type": "FUNCTION",
+    "name": "apply_activation",
+    "line_start": 1465,
+    "line_end": 1484
+  },
+  {
+    "type": "FUNCTION",
+    "name": "rgcn_layer",
+    "line_start": 1488,
+    "line_end": 1567
+  },
+  {
+    "type": "FUNCTION",
+    "name": "encode_variant",
+    "line_start": 1575,
+    "line_end": 1617
+  },
+  {
+    "type": "FUNCTION",
+    "name": "decode_fold0",
+    "line_start": 1641,
+    "line_end": 1703
+  },
+  {
+    "type": "FUNCTION",
+    "name": "topk_overlap_fraction",
+    "line_start": 1710,
+    "line_end": 1783
+  },
+  {
+    "type": "FUNCTION",
+    "name": "compare_scores",
+    "line_start": 1786,
+    "line_end": 1872
+  }
+]
+
+EXECUTION-RELEVANT SOURCE EXCERPTS
+
+--- lines 1-45 ---
+0001: # ============================================================
+0002: # P1_Benchmark_Feasibility.ipynb
+0003: # CELL 43 — E4 FORWARD-PASS REPRODUCTION
+0004: # ============================================================
+0005: #
+0006: # PURPOSE
+0007: # -------
+0008: # Recover the remaining operational semantics of the original
+0009: # E4 FULL_GRAPH_RGCN by reproducing SAVED scores from the
+0010: # original seed-0 / fold-0 checkpoint.
+0011: #
+0012: # Cell 42 recovered:
+0013: #
+0014: #   node_embedding.weight        (129307, 64)
+0015: #
+0016: #   layer1.bases                 (4, 64, 64)
+0017: #   layer1.coefficients          (27, 4)
+0018: #   layer1.bias                  (64,)
+0019: #   layer1.self_loop.weight      (64, 64)
+0020: #
+0021: #   layer2.bases                 (4, 64, 64)
+0022: #   layer2.coefficients          (27, 4)
+0023: #   layer2.bias                  (64,)
+0024: #   layer2.self_loop.weight      (64, 64)
+0025: #
+0026: #   clean_decoder                (64, 64)
+0027: #
+0028: # Metadata fixes:
+0029: #
+0030: #   - 2 layers
+0031: #   - hidden dimension 64
+0032: #   - 4 bases
+0033: #   - 27 nontherapeutic relations
+0034: #   - relation-specific mean aggregation
+0035: #   - dropout 0.1
+0036: #   - asymmetric bilinear decoder
+0037: #
+0038: # ------------------------------------------------------------
+0039: # REMAINING FORWARD CONVENTIONS TESTED HERE
+0040: # ------------------------------------------------------------
+0041: #
+0042: # relation transform:
+0043: #
+0044: #   RIGHT
+0045: #       aggregated_features @ W_r
+
+--- lines 49-60 ---
+0049: #       = aggregated_features @ W_r.T
+0050: #
+0051: # activation after layer 1:
+0052: #       NONE / RELU
+0053: #
+0054: # activation after layer 2:
+0055: #       NONE / RELU
+0056: #
+0057: # decoder orientation:
+0058: #
+0059: #   DRUG_M_DISEASE
+0060: #       drug @ M @ disease
+
+--- lines 64-80 ---
+0064: #
+0065: # Self-loop convention is fixed as nn.Linear semantics:
+0066: #
+0067: #       F.linear(x, self_loop.weight)
+0068: #
+0069: # because the checkpoint key is explicitly:
+0070: #
+0071: #       layer*.self_loop.weight
+0072: #
+0073: # ------------------------------------------------------------
+0074: # GRAPH AGGREGATION
+0075: # ------------------------------------------------------------
+0076: #
+0077: # For each relation r:
+0078: #
+0079: #   A_r[v,u] = 1 / |N_r(v)|
+0080: #
+
+--- lines 86-96 ---
+0086: #
+0087: #   A_r @ X
+0088: #
+0089: # is the relation-specific MEAN of incoming source-node
+0090: # representations.
+0091: #
+0092: # This is exactly the graph convention suggested by the
+0093: # original "relation-specific mean" metadata.
+0094: #
+0095: # ------------------------------------------------------------
+0096: # IMPORTANT
+
+--- lines 100-107 ---
+0100: # NO PROTOCOL PERFORMANCE.
+0101: # NO NEW HYPERPARAMETERS.
+0102: #
+0103: # We select the forward convention ONLY by agreement with
+0104: # already-saved original E4 scores.
+0105: #
+0106: # ============================================================
+0107: 
+
+--- lines 153-159 ---
+0153: 
+0154: print("=" * 78)
+0155: print("P1 — CELL 43")
+0156: print("E4 SAVED-CHECKPOINT FORWARD-PASS REPRODUCTION")
+0157: print("=" * 78)
+0158: 
+0159: 
+
+--- lines 181-189 ---
+0181: )
+0182: 
+0183: 
+0184: SAVED_SCORE_PATH = (
+0185:     BASE /
+0186:     "p1_e4_rgcn_seed0_scores.npz"
+0187: )
+0188: 
+0189: 
+
+--- lines 193-201 ---
+0193: )
+0194: 
+0195: 
+0196: CANDIDATE_PATH = (
+0197:     BASE /
+0198:     "p1_v0_candidate_drugs.csv"
+0199: )
+0200: 
+0201: 
+
+--- lines 205-213 ---
+0205: )
+0206: 
+0207: 
+0208: RELATION_PATH = (
+0209:     BASE /
+0210:     "p1_e3_complex_relations.csv"
+0211: )
+0212: 
+0213: 
+
+--- lines 219-248 ---
+0219: 
+0220: VARIANT_PREREG_OUT = (
+0221:     BASE /
+0222:     "p1_protocol_e4_forward_variant_preregistration_v1.json"
+0223: )
+0224: 
+0225: 
+0226: VARIANT_RESULTS_OUT = (
+0227:     BASE /
+0228:     "p1_protocol_e4_forward_variant_results_v1.csv"
+0229: )
+0230: 
+0231: 
+0232: FORWARD_RECOVERY_OUT = (
+0233:     BASE /
+0234:     "p1_protocol_e4_forward_reproduction_v1.json"
+0235: )
+0236: 
+0237: 
+0238: for path in [
+0239:     CELL42_PATH,
+0240:     CHECKPOINT_PATH,
+0241:     SAVED_SCORE_PATH,
+0242:     PRIMARY_PATH,
+0243:     CANDIDATE_PATH,
+0244:     ENTITY_PATH,
+0245:     RELATION_PATH,
+0246:     BASE_TRIPLES_PATH,
+0247: ]:
+0248: 
+
+--- lines 361-375 ---
+0361: 
+0362: def infer_column(
+0363:     columns,
+0364:     candidates,
+0365:     label,
+0366: ):
+0367: 
+0368:     for candidate in candidates:
+0369: 
+0370:         if candidate in columns:
+0371: 
+0372:             return candidate
+0373: 
+0374: 
+0375:     raise RuntimeError(
+
+--- lines 432-453 ---
+0432: 
+0433: 
+0434: # ============================================================
+0435: # 5. Freeze forward variants BEFORE score comparison
+0436: # ============================================================
+0437: 
+0438: RELATION_TRANSFORMS = [
+0439:     "RIGHT",
+0440:     "LINEAR",
+0441: ]
+0442: 
+0443: 
+0444: ACTIVATIONS = [
+0445:     "NONE",
+0446:     "RELU",
+0447: ]
+0448: 
+0449: 
+0450: DECODER_ORIENTATIONS = [
+0451:     "DRUG_M_DISEASE",
+0452:     "DRUG_MT_DISEASE",
+0453: ]
+
+--- lines 459-496 ---
+0459: variant_index = 0
+0460: 
+0461: 
+0462: for relation_transform in (
+0463:     RELATION_TRANSFORMS
+0464: ):
+0465: 
+0466:     for layer1_activation in (
+0467:         ACTIVATIONS
+0468:     ):
+0469: 
+0470:         for layer2_activation in (
+0471:             ACTIVATIONS
+0472:         ):
+0473: 
+0474:             for decoder_orientation in (
+0475:                 DECODER_ORIENTATIONS
+0476:             ):
+0477: 
+0478:                 VARIANTS.append(
+0479:                     {
+0480:                         "variant_id":
+0481:                             variant_index,
+0482: 
+0483:                         "relation_transform":
+0484:                             relation_transform,
+0485: 
+0486:                         "layer1_activation":
+0487:                             layer1_activation,
+0488: 
+0489:                         "layer2_activation":
+0490:                             layer2_activation,
+0491: 
+0492:                         "decoder_orientation":
+0493:                             decoder_orientation,
+0494:                     }
+0495:                 )
+0496: 
+
+--- lines 504-513 ---
+0504:         "P1_TRACK_A_PRIMEKG_V0",
+0505: 
+0506:     "experiment":
+0507:         "E4_FORWARD_REPRODUCTION",
+0508: 
+0509:     "status":
+0510:         "FROZEN_BEFORE_SAVED_SCORE_COMPARISON",
+0511: 
+0512:     "reference_checkpoint":
+0513:         CHECKPOINT_PATH.name,
+
+--- lines 517-537 ---
+0517:             CHECKPOINT_PATH
+0518:         ),
+0519: 
+0520:     "saved_score_artifact":
+0521:         SAVED_SCORE_PATH.name,
+0522: 
+0523:     "saved_score_sha256":
+0524:         sha256_file(
+0525:             SAVED_SCORE_PATH
+0526:         ),
+0527: 
+0528:     "graph_aggregation":
+0529:         (
+0530:             "incoming relation-specific mean "
+0531:             "over frozen nontherapeutic directed edges"
+0532:         ),
+0533: 
+0534:     "self_loop":
+0535:         "PyTorch nn.Linear convention: x @ W.T",
+0536: 
+0537:     "dropout_during_reproduction":
+
+--- lines 568-574 ---
+0568:     if prior_prereg != VARIANT_PREREG:
+0569: 
+0570:         raise RuntimeError(
+0571:             "Existing forward-variant preregistration "
+0572:             "differs. Refusing silent mutation."
+0573:         )
+0574: 
+
+--- lines 588-600 ---
+0588: 
+0589: 
+0590: print(
+0591:     f"Forward variants frozen: "
+0592:     f"{len(VARIANTS)}"
+0593: )
+0594: 
+0595: 
+0596: # ============================================================
+0597: # 6. Frozen disease / candidate ordering
+0598: # ============================================================
+0599: 
+0600: primary = pd.read_csv(
+
+--- lines 669-700 ---
+0669: ) == 93
+0670: 
+0671: 
+0672: candidate = pd.read_csv(
+0673:     CANDIDATE_PATH,
+0674:     dtype="string",
+0675: )
+0676: 
+0677: 
+0678: DRUG_COL = infer_column(
+0679:     candidate.columns,
+0680:     [
+0681:         "drug_id",
+0682:         "candidate_drug_id",
+0683:         "entity_id",
+0684:         "id",
+0685:     ],
+0686:     "candidate drug ID",
+0687: )
+0688: 
+0689: 
+0690: if "candidate_order" in (
+0691:     candidate.columns
+0692: ):
+0693: 
+0694:     candidate = (
+0695:         candidate
+0696:         .sort_values(
+0697:             "candidate_order"
+0698:         )
+0699:         .reset_index(
+0700:             drop=True
+
+--- lines 703-709 ---
+0703: 
+0704: 
+0705: DRUG_IDS = (
+0706:     candidate[
+0707:         DRUG_COL
+0708:     ]
+0709:     .astype(str)
+
+--- lines 799-805 ---
+0799: }
+0800: 
+0801: 
+0802: CANDIDATE_ENTITY_IDX = np.asarray(
+0803:     [
+0804:         entity_lookup[
+0805:             (
+
+--- lines 832-854 ---
+0832: 
+0833: 
+0834: print(
+0835:     "Frozen disease/candidate -> entity mapping: PASS"
+0836: )
+0837: 
+0838: 
+0839: # ============================================================
+0840: # 8. Load saved seed-0 scores
+0841: # ============================================================
+0842: 
+0843: saved_archive = np.load(
+0844:     SAVED_SCORE_PATH,
+0845:     allow_pickle=True,
+0846: )
+0847: 
+0848: 
+0849: SAVED_SCORES = np.asarray(
+0850:     saved_archive[
+0851:         "scores"
+0852:     ],
+0853:     dtype=np.float32,
+0854: )
+
+--- lines 873-879 ---
+0873: saved_archive.close()
+0874: 
+0875: 
+0876: assert SAVED_SCORES.shape == (
+0877:     738,
+0878:     7_957,
+0879: )
+
+--- lines 915-921 ---
+0915:     )
+0916: 
+0917: 
+0918:     SAVED_SCORES = SAVED_SCORES[
+0919:         row_order
+0920:     ]
+0921: 
+
+--- lines 955-997 ---
+0955:     )
+0956: 
+0957: 
+0958:     SAVED_SCORES = SAVED_SCORES[
+0959:         :,
+0960:         col_order
+0961:     ]
+0962: 
+0963: 
+0964: FOLD0_SAVED = SAVED_SCORES[
+0965:     FOLD0_ROWS
+0966: ]
+0967: 
+0968: 
+0969: print(
+0970:     "\nSaved seed-0 score artifact: VERIFIED"
+0971: )
+0972: 
+0973: print(
+0974:     f"Fold-0 score block: "
+0975:     f"{FOLD0_SAVED.shape}"
+0976: )
+0977: 
+0978: print(
+0979:     f"Saved fold-0 score mean: "
+0980:     f"{FOLD0_SAVED.mean():.6f}"
+0981: )
+0982: 
+0983: print(
+0984:     f"Saved fold-0 score std:  "
+0985:     f"{FOLD0_SAVED.std():.6f}"
+0986: )
+0987: 
+0988: print(
+0989:     f"Saved fold-0 score min:  "
+0990:     f"{FOLD0_SAVED.min():.6f}"
+0991: )
+0992: 
+0993: print(
+0994:     f"Saved fold-0 score max:  "
+0995:     f"{FOLD0_SAVED.max():.6f}"
+0996: )
+0997: 
+
+--- lines 1016-1033 ---
+1016: 
+1017: 
+1018: EXPECTED_KEYS = {
+1019:     "clean_decoder",
+1020:     "node_embedding.weight",
+1021: 
+1022:     "layer1.bases",
+1023:     "layer1.coefficients",
+1024:     "layer1.bias",
+1025:     "layer1.self_loop.weight",
+1026: 
+1027:     "layer2.bases",
+1028:     "layer2.coefficients",
+1029:     "layer2.bias",
+1030:     "layer2.self_loop.weight",
+1031: }
+1032: 
+1033: 
+
+--- lines 1074-1080 ---
+1074: 
+1075: 
+1076: RAW_REL = base[
+1077:     "relation"
+1078: ].astype(
+1079:     np.int64,
+1080:     copy=False,
+
+--- lines 1125-1136 ---
+1125: 
+1126: 
+1127: print("\n" + "=" * 78)
+1128: print("A. NONTHERAPEUTIC RELATION-ID AUDIT")
+1129: print("=" * 78)
+1130: 
+1131: 
+1132: print(
+1133:     "Raw relation IDs:"
+1134: )
+1135: 
+1136: print(
+
+--- lines 1143-1150 ---
+1143: #
+1144: # If the corpus is already 0..26 compact, identity mapping.
+1145: #
+1146: # Otherwise compact by ascending frozen relation index,
+1147: # corresponding to relation-table order with clean_indication
+1148: # excluded.
+1149: # ------------------------------------------------------------
+1150: 
+
+--- lines 1159-1165 ---
+1159:     REL_COMPACT = RAW_REL.copy()
+1160: 
+1161: 
+1162:     RELATION_MAPPING = {
+1163:         int(r):
+1164:             int(r)
+1165: 
+
+--- lines 1168-1189 ---
+1168:     }
+1169: 
+1170: 
+1171:     relation_mapping_mode = (
+1172:         "already_compact_identity"
+1173:     )
+1174: 
+1175: 
+1176: else:
+1177: 
+1178:     relations = pd.read_csv(
+1179:         RELATION_PATH
+1180:     )
+1181: 
+1182: 
+1183:     nonther_relations = (
+1184:         relations[
+1185:             relations[
+1186:                 "relation_name"
+1187:             ]
+1188:             .astype(str)
+1189:             .str.strip()
+
+--- lines 1192-1205 ---
+1192:             "clean_indication"
+1193:         ]
+1194:         .sort_values(
+1195:             "relation_index"
+1196:         )
+1197:     )
+1198: 
+1199: 
+1200:     table_raw_ids = (
+1201:         nonther_relations[
+1202:             "relation_index"
+1203:         ]
+1204:         .to_numpy(
+1205:             dtype=np.int64
+
+--- lines 1214-1225 ---
+1214:     ):
+1215: 
+1216:         raise RuntimeError(
+1217:             "Cannot reconcile E4 relation coefficient "
+1218:             "order with frozen relation vocabulary."
+1219:         )
+1220: 
+1221: 
+1222:     RELATION_MAPPING = {
+1223:         int(
+1224:             raw_id
+1225:         ):
+
+--- lines 1236-1242 ---
+1236: 
+1237:     REL_COMPACT = np.asarray(
+1238:         [
+1239:             RELATION_MAPPING[
+1240:                 int(
+1241:                     r
+1242:                 )
+
+--- lines 1249-1256 ---
+1249:     )
+1250: 
+1251: 
+1252:     relation_mapping_mode = (
+1253:         "relation_table_order_excluding_clean_indication"
+1254:     )
+1255: 
+1256: 
+
+--- lines 1270-1299 ---
+1270: )
+1271: 
+1272: print(
+1273:     relation_mapping_mode
+1274: )
+1275: 
+1276: 
+1277: # ============================================================
+1278: # 11. Build relation-specific MEAN adjacency tensors
+1279: # ============================================================
+1280: #
+1281: # A_r[dst, src] = 1 / indegree_r(dst)
+1282: #
+1283: # sparse.mm(A_r, X) therefore computes the mean source
+1284: # representation for each destination node under relation r.
+1285: #
+1286: # ============================================================
+1287: 
+1288: print("\n" + "=" * 78)
+1289: print("B. BUILD RELATION-SPECIFIC MEAN GRAPH")
+1290: print("=" * 78)
+1291: 
+1292: 
+1293: N_ENTITIES = 129_307
+1294: 
+1295: 
+1296: RELATION_ADJ = []
+1297: 
+1298: 
+1299: graph_start = time.time()
+
+--- lines 1364-1370 ---
+1364:     )
+1365: 
+1366: 
+1367:     adjacency = torch.sparse_coo_tensor(
+1368:         indices,
+1369:         values,
+1370:         size=(
+
+--- lines 1378-1393 ---
+1378: 
+1379:     # COO sparse.mm supports uncoalesced tensors, but
+1380:     # coalescing makes duplicate-edge semantics explicit.
+1381:     adjacency = adjacency.coalesce()
+1382: 
+1383: 
+1384:     RELATION_ADJ.append(
+1385:         adjacency
+1386:     )
+1387: 
+1388: 
+1389:     print(
+1390:         f"  relation {r:02d}: "
+1391:         f"{n_edges:>9,} edges"
+1392:     )
+1393: 
+
+--- lines 1402-1408 ---
+1402: 
+1403: 
+1404: print(
+1405:     "\nRelation-specific mean graph: READY"
+1406: )
+1407: 
+1408: print(
+
+--- lines 1415-1421 ---
+1415: # 12. Basis-weight reconstruction
+1416: # ============================================================
+1417: 
+1418: def relation_weight_stack(
+1419:     layer_prefix,
+1420: ):
+1421: 
+
+--- lines 1429-1437 ---
+1429:     ]
+1430: 
+1431: 
+1432:     # [relation, basis] x [basis, in, out]
+1433:     # -> [relation, in, out]
+1434:     weights = torch.einsum(
+1435:         "rb,bij->rij",
+1436:         coefficients,
+1437:         bases,
+
+--- lines 1448-1460 ---
+1448:     return weights
+1449: 
+1450: 
+1451: W1 = relation_weight_stack(
+1452:     "layer1"
+1453: )
+1454: 
+1455: 
+1456: W2 = relation_weight_stack(
+1457:     "layer2"
+1458: )
+1459: 
+1460: 
+
+--- lines 1472-1480 ---
+1472:         return x
+1473: 
+1474: 
+1475:     if activation == "RELU":
+1476: 
+1477:         return F.relu(
+1478:             x
+1479:         )
+1480: 
+
+--- lines 1489-1501 ---
+1489:     x,
+1490:     weights,
+1491:     layer_prefix,
+1492:     relation_transform,
+1493: ):
+1494: 
+1495:     # --------------------------------------------------------
+1496:     # Explicit self-loop.
+1497:     #
+1498:     # self_loop is known to have been an nn.Linear submodule
+1499:     # from the state_dict key structure, therefore:
+1500:     #
+1501:     #     F.linear(x, weight) = x @ weight.T
+
+--- lines 1504-1532 ---
+1504:     out = F.linear(
+1505:         x,
+1506:         STATE[
+1507:             f"{layer_prefix}.self_loop.weight"
+1508:         ],
+1509:         bias=None,
+1510:     )
+1511: 
+1512: 
+1513:     # --------------------------------------------------------
+1514:     # Relation-specific incoming means.
+1515:     # --------------------------------------------------------
+1516: 
+1517:     for r in range(
+1518:         27
+1519:     ):
+1520: 
+1521:         aggregated = torch.sparse.mm(
+1522:             RELATION_ADJ[
+1523:                 r
+1524:             ],
+1525:             x,
+1526:         )
+1527: 
+1528: 
+1529:         if relation_transform == "RIGHT":
+1530: 
+1531:             out.add_(
+1532:                 aggregated
+
+--- lines 1537-1543 ---
+1537:             )
+1538: 
+1539: 
+1540:         elif relation_transform == "LINEAR":
+1541: 
+1542:             out.add_(
+1543:                 F.linear(
+
+--- lines 1553-1559 ---
+1553:         else:
+1554: 
+1555:             raise ValueError(
+1556:                 relation_transform
+1557:             )
+1558: 
+1559: 
+
+--- lines 1568-1581 ---
+1568: 
+1569: 
+1570: # ============================================================
+1571: # 14. Forward encoder
+1572: # ============================================================
+1573: 
+1574: @torch.no_grad()
+1575: def encode_variant(
+1576:     relation_transform,
+1577:     layer1_activation,
+1578:     layer2_activation,
+1579: ):
+1580: 
+1581:     x = STATE[
+
+--- lines 1586-1599 ---
+1586:     h1 = rgcn_layer(
+1587:         x=x,
+1588:         weights=W1,
+1589:         layer_prefix="layer1",
+1590:         relation_transform=relation_transform,
+1591:     )
+1592: 
+1593: 
+1594:     h1 = apply_activation(
+1595:         h1,
+1596:         layer1_activation,
+1597:     )
+1598: 
+1599: 
+
+--- lines 1603-1628 ---
+1603:     h2 = rgcn_layer(
+1604:         x=h1,
+1605:         weights=W2,
+1606:         layer_prefix="layer2",
+1607:         relation_transform=relation_transform,
+1608:     )
+1609: 
+1610: 
+1611:     h2 = apply_activation(
+1612:         h2,
+1613:         layer2_activation,
+1614:     )
+1615: 
+1616: 
+1617:     return h2
+1618: 
+1619: 
+1620: # ============================================================
+1621: # 15. Decoder
+1622: # ============================================================
+1623: 
+1624: candidate_entity_tensor = torch.as_tensor(
+1625:     CANDIDATE_ENTITY_IDX,
+1626:     dtype=torch.long,
+1627:     device=DEVICE,
+1628: )
+
+--- lines 1644-1650 ---
+1644: ):
+1645: 
+1646:     drug_h = h[
+1647:         candidate_entity_tensor
+1648:     ]
+1649: 
+1650: 
+
+--- lines 1653-1660 ---
+1653:     ]
+1654: 
+1655: 
+1656:     decoder = STATE[
+1657:         "clean_decoder"
+1658:     ]
+1659: 
+1660: 
+
+--- lines 1663-1669 ---
+1663:         transformed_drug = (
+1664:             drug_h
+1665:             @
+1666:             decoder
+1667:         )
+1668: 
+1669: 
+
+--- lines 1672-1678 ---
+1672:         transformed_drug = (
+1673:             drug_h
+1674:             @
+1675:             decoder.T
+1676:         )
+1677: 
+1678: 
+
+--- lines 1684-1698 ---
+1684: 
+1685: 
+1686:     # [93, 64] @ [64, 7957]
+1687:     scores = (
+1688:         disease_h
+1689:         @
+1690:         transformed_drug.T
+1691:     )
+1692: 
+1693: 
+1694:     return (
+1695:         scores
+1696:         .detach()
+1697:         .cpu()
+1698:         .numpy()
+
+--- lines 1783-1789 ---
+1783:     )
+1784: 
+1785: 
+1786: def compare_scores(
+1787:     observed,
+1788:     reference,
+1789: ):
+
+--- lines 1877-1883 ---
+1877: # ============================================================
+1878: 
+1879: print("\n" + "=" * 78)
+1880: print("C. FORWARD-CONVENTION SEARCH")
+1881: print("=" * 78)
+1882: 
+1883: 
+
+--- lines 1886-1908 ---
+1886: 
+1887: # Encoder only needs to be recomputed for:
+1888: #
+1889: #   relation transform
+1890: #   layer1 activation
+1891: #   layer2 activation
+1892: #
+1893: # Decoder orientations can reuse the same embeddings.
+1894: 
+1895: encoder_variants = sorted(
+1896:     {
+1897:         (
+1898:             variant[
+1899:                 "relation_transform"
+1900:             ],
+1901:             variant[
+1902:                 "layer1_activation"
+1903:             ],
+1904:             variant[
+1905:                 "layer2_activation"
+1906:             ],
+1907:         )
+1908: 
+
+--- lines 1913-1921 ---
+1913: 
+1914: 
+1915: for (
+1916:     relation_transform,
+1917:     layer1_activation,
+1918:     layer2_activation,
+1919: ) in encoder_variants:
+1920: 
+1921:     print(
+
+--- lines 1927-1973 ---
+1927: 
+1928:     print(
+1929:         "Encoder:",
+1930:         relation_transform,
+1931:         "| L1:",
+1932:         layer1_activation,
+1933:         "| L2:",
+1934:         layer2_activation,
+1935:     )
+1936: 
+1937: 
+1938:     forward_start = time.time()
+1939: 
+1940: 
+1941:     h = encode_variant(
+1942:         relation_transform=
+1943:             relation_transform,
+1944: 
+1945:         layer1_activation=
+1946:             layer1_activation,
+1947: 
+1948:         layer2_activation=
+1949:             layer2_activation,
+1950:     )
+1951: 
+1952: 
+1953:     forward_runtime = (
+1954:         time.time()
+1955:         -
+1956:         forward_start
+1957:     )
+1958: 
+1959: 
+1960:     for decoder_orientation in (
+1961:         DECODER_ORIENTATIONS
+1962:     ):
+1963: 
+1964:         reconstructed = decode_fold0(
+1965:             h,
+1966:             decoder_orientation,
+1967:         )
+1968: 
+1969: 
+1970:         metrics = compare_scores(
+1971:             reconstructed,
+1972:             FOLD0_SAVED,
+1973:         )
+
+--- lines 1981-2011 ---
+1981: 
+1982:             if (
+1983:                 variant[
+1984:                     "relation_transform"
+1985:                 ]
+1986:                 ==
+1987:                 relation_transform
+1988: 
+1989:                 and
+1990:                 variant[
+1991:                     "layer1_activation"
+1992:                 ]
+1993:                 ==
+1994:                 layer1_activation
+1995: 
+1996:                 and
+1997:                 variant[
+1998:                     "layer2_activation"
+1999:                 ]
+2000:                 ==
+2001:                 layer2_activation
+2002: 
+2003:                 and
+2004:                 variant[
+2005:                     "decoder_orientation"
+2006:                 ]
+2007:                 ==
+2008:                 decoder_orientation
+2009:             )
+2010:         ]
+2011: 
+
+--- lines 2023-2029 ---
+2023:             **metrics,
+2024: 
+2025:             "encoder_runtime_sec":
+2026:                 forward_runtime,
+2027:         }
+2028: 
+2029: 
+
+--- lines 2033-2039 ---
+2033: 
+2034: 
+2035:         print(
+2036:             f"  decoder={decoder_orientation:<18} | "
+2037:             f"MAE={metrics['mean_abs_error']:.8g} | "
+2038:             f"MAX={metrics['max_abs_error']:.8g} | "
+2039:             f"r={metrics['pearson']:.9f} | "
+
+--- lines 2073-2079 ---
+2073: 
+2074: 
+2075: print("\n" + "=" * 78)
+2076: print("D. FORWARD VARIANTS RANKED BY SAVED-SCORE AGREEMENT")
+2077: print("=" * 78)
+2078: 
+2079: 
+
+--- lines 2097-2103 ---
+2097: 
+2098: 
+2099: print("\n" + "=" * 78)
+2100: print("E. BEST FORWARD RECONSTRUCTION")
+2101: print("=" * 78)
+2102: 
+2103: 
+
+--- lines 2150-2159 ---
+2150: 
+2151: 
+2152: # ============================================================
+2153: # 19. Strong score-reproduction gate
+2154: # ============================================================
+2155: #
+2156: # We expect the correct forward semantics to match raw saved
+2157: # logits extremely closely.
+2158: #
+2159: # Sparse GPU accumulation can introduce tiny floating-order
+
+--- lines 2249-2261 ---
+2249: }
+2250: 
+2251: 
+2252: FORWARD_REPRODUCTION_PASS = all(
+2253:     criteria.values()
+2254: )
+2255: 
+2256: 
+2257: print("\n" + "=" * 78)
+2258: print("F. FORWARD REPRODUCTION GATE")
+2259: print("=" * 78)
+2260: 
+2261: 
+
+--- lines 2276-2282 ---
+2276: print(
+2277:     "PASS"
+2278:     if
+2279:     FORWARD_REPRODUCTION_PASS
+2280:     else
+2281:     "FAIL"
+2282: )
+
+--- lines 2298-2310 ---
+2298:         "P1_TRACK_A_PRIMEKG_V0",
+2299: 
+2300:     "experiment":
+2301:         "E4_FORWARD_REPRODUCTION",
+2302: 
+2303:     "status":
+2304:         (
+2305:             "PASS"
+2306:             if
+2307:             FORWARD_REPRODUCTION_PASS
+2308:             else
+2309:             "FAIL"
+2310:         ),
+
+--- lines 2318-2341 ---
+2318:     "reference_checkpoint":
+2319:         CHECKPOINT_PATH.name,
+2320: 
+2321:     "saved_score_artifact":
+2322:         SAVED_SCORE_PATH.name,
+2323: 
+2324:     "fold0_diseases":
+2325:         93,
+2326: 
+2327:     "candidate_count":
+2328:         7_957,
+2329: 
+2330:     "relation_mapping_mode":
+2331:         relation_mapping_mode,
+2332: 
+2333:     "relation_mapping":
+2334:         RELATION_MAPPING,
+2335: 
+2336:     "graph_aggregation":
+2337:         (
+2338:             "incoming relation-specific mean"
+2339:         ),
+2340: 
+2341:     "best_variant":
+
+--- lines 2361-2367 ---
+2361: 
+2362:     "next":
+2363:         (
+2364:             "If PASS, freeze recovered E4 forward "
+2365:             "semantics and use that exact implementation "
+2366:             "for paired protocol-specific E4 retraining. "
+2367:             "If FAIL, continue forensic recovery; "
+
+--- lines 2371-2377 ---
+2371: 
+2372: 
+2373: with open(
+2374:     FORWARD_RECOVERY_OUT,
+2375:     "w",
+2376: ) as f:
+2377: 
+
+--- lines 2388-2394 ---
+2388: # 21. Cleanup
+2389: # ============================================================
+2390: 
+2391: del RELATION_ADJ
+2392: 
+2393: gc.collect()
+2394: 
+
+--- lines 2400-2406 ---
+2400: # ============================================================
+2401: 
+2402: print("\n" + "=" * 78)
+2403: print("CELL 43 COMPLETE — E4 FORWARD REPRODUCTION")
+2404: print("=" * 78)
+2405: 
+2406: 
+
+--- lines 2418-2445 ---
+2418: )
+2419: 
+2420: print(
+2421:     f"  relation transform: "
+2422:     f"{best['relation_transform']}"
+2423: )
+2424: 
+2425: print(
+2426:     f"  layer-1 activation: "
+2427:     f"{best['layer1_activation']}"
+2428: )
+2429: 
+2430: print(
+2431:     f"  layer-2 activation: "
+2432:     f"{best['layer2_activation']}"
+2433: )
+2434: 
+2435: print(
+2436:     f"  decoder orientation: "
+2437:     f"{best['decoder_orientation']}"
+2438: )
+2439: 
+2440: 
+2441: print(
+2442:     "\nSaved-score agreement:"
+2443: )
+2444: 
+2445: print(
+
+--- lines 2469-2481 ---
+2469: 
+2470: 
+2471: print(
+2472:     "\nFORWARD REPRODUCTION:"
+2473: )
+2474: 
+2475: print(
+2476:     "PASS"
+2477:     if
+2478:     FORWARD_REPRODUCTION_PASS
+2479:     else
+2480:     "FAIL"
+2481: )
+
+--- lines 2494-2508 ---
+2494: )
+2495: 
+2496: print(
+2497:     FORWARD_RECOVERY_OUT
+2498: )
+2499: 
+2500: 
+2501: print(
+2502:     "\nNEXT:"
+2503: )
+2504: 
+2505: if FORWARD_REPRODUCTION_PASS:
+2506: 
+2507:     print(
+2508:         "Freeze this exact E4 implementation and "
+
+--- lines 2513-2518 ---
+2513: 
+2514:     print(
+2515:         "Do NOT retrain E4 yet. "
+2516:         "Inspect the ranked forward variants and "
+2517:         "recover the remaining graph/activation convention."
+2518:     )

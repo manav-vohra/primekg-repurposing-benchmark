@@ -1,0 +1,283 @@
+{
+  "gate": "PHASE_2_GATE_4",
+  "scope": "E1_WEIGHTED_GENE_COSINE exact score/applicability/metric reproduction only",
+  "expert_id": "E1_WEIGHTED_GENE_COSINE",
+  "expert_version": "1.0",
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+  "evaluator_version": "1.1_tiesafe",
+  "historical_source_reference": "Cell 14 / source/authoritative/E1_authoritative.py",
+  "historical_source_sha256": "b4dc0191fc66b6f0f3927c40bd4cc375ba20ce6e99e82e085bdb5684ed1f0900",
+  "clean_implementation_commit": null,
+  "clean_implementation_commit_state": "UNAVAILABLE_NOT_GIT_CHECKOUT",
+  "input_primekg_sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69",
+  "candidate_count": 7957,
+  "disease_count": 738,
+  "applicable_count": 504,
+  "abstention_count": 234,
+  "historical_score_archive": {
+    "artifact_id": "external/p1_e1_weighted_gene_cosine_scores.npz",
+    "observed_sha256": "77857ea09a9031611a98cbfc4aa902c665aeb64edf9bcc2b8f789498d1f3b02f",
+    "observed_size": 912904,
+    "hash_classification": "RECOVERY_TIME_OBSERVED",
+    "historical_hash_verified": false,
+    "schema_arrays": [
+      "scores",
+      "disease_ids",
+      "drug_ids"
+    ]
+  },
+  "score_equivalence": {
+    "shape": [
+      738,
+      7957
+    ],
+    "dtype_clean": "float32",
+    "dtype_historical": "float32",
+    "scores_compared": 5872266,
+    "candidate_axis_identity": true,
+    "disease_axis_identity": true,
+    "max_absolute_difference": 0.0,
+    "mean_absolute_difference": 0.0,
+    "unequal_value_count": 0,
+    "nan_difference_count": 0,
+    "bitwise_identical": true
+  },
+  "evaluator_equivalence": {
+    "disease_rows": 738,
+    "applicable_count_clean": 504,
+    "applicable_count_frozen": 504,
+    "applicability_agreement_count": 738,
+    "applicability_exact": true,
+    "max_absolute_difference_by_metric": {
+      "MRR": 0.0,
+      "first_hit_rank": 0.0,
+      "first_contra_rank": 0.0,
+      "Recall@10": 0.0,
+      "Hit@10": 2.42861286636753e-16,
+      "Contra@10": 0.0,
+      "ContraRate@10": 0.0,
+      "Recall@50": 0.0,
+      "Hit@50": 6.002143226879753e-16,
+      "Contra@50": 0.0,
+      "ContraRate@50": 0.0,
+      "Recall@100": 0.0,
+      "Hit@100": 1.2420620087993939e-15,
+      "Contra@100": 0.0,
+      "ContraRate@100": 0.0,
+      "primary_utility": 0.0
+    },
+    "max_absolute_disease_level_difference": 1.2420620087993939e-15,
+    "first_mismatches": [
+      {
+        "disease_id": "11381",
+        "field": "Hit@100",
+        "frozen": 0.0022877469760664067,
+        "clean": 0.002287746976066485,
+        "difference": 7.806255641895632e-17
+      },
+      {
+        "disease_id": "11438",
+        "field": "Hit@10",
+        "frozen": 0.037838643776541045,
+        "clean": 0.037838643776541,
+        "difference": 4.163336342344337e-17
+      },
+      {
+        "disease_id": "11438",
+        "field": "Hit@50",
+        "frozen": 0.18985384940356265,
+        "clean": 0.18985384940356298,
+        "difference": 3.3306690738754696e-16
+      },
+      {
+        "disease_id": "11438",
+        "field": "Hit@100",
+        "frozen": 0.3473605196891485,
+        "clean": 0.34736051968914905,
+        "difference": 5.551115123125783e-16
+      },
+      {
+        "disease_id": "1209",
+        "field": "Hit@10",
+        "frozen": 0.0060206786850565625,
+        "clean": 0.006020678685056402,
+        "difference": 1.6046192152785466e-16
+      },
+      {
+        "disease_id": "1209",
+        "field": "Hit@50",
+        "frozen": 0.035672936291923675,
+        "clean": 0.035672936291923696,
+        "difference": 2.0816681711721685e-17
+      },
+      {
+        "disease_id": "1209",
+        "field": "Hit@100",
+        "frozen": 0.07169819259596184,
+        "clean": 0.07169819259596177,
+        "difference": 6.938893903907228e-17
+      },
+      {
+        "disease_id": "14143_11531_14693_13186_8104_12371_14691_13379_12690_32786_12547_32839_33669_18997",
+        "field": "Hit@50",
+        "frozen": 0.0015166832762392307,
+        "clean": 0.0015166832762393279,
+        "difference": 9.71445146547012e-17
+      },
+      {
+        "disease_id": "14143_11531_14693_13186_8104_12371_14691_13379_12690_32786_12547_32839_33669_18997",
+        "field": "Hit@100",
+        "frozen": 0.02034601645378205,
+        "clean": 0.020346016453781757,
+        "difference": 2.949029909160572e-16
+      },
+      {
+        "disease_id": "15254",
+        "field": "Hit@100",
+        "frozen": 0.011745269643925556,
+        "clean": 0.011745269643925416,
+        "difference": 1.4051260155412137e-16
+      },
+      {
+        "disease_id": "15447",
+        "field": "Hit@50",
+        "frozen": 0.008677013862353982,
+        "clean": 0.008677013862354088,
+        "difference": 1.0581813203458523e-16
+      },
+      {
+        "disease_id": "15447",
+        "field": "Hit@100",
+        "frozen": 0.02736661882141779,
+        "clean": 0.027366618821417665,
+        "difference": 1.249000902703301e-16
+      },
+      {
+        "disease_id": "17145",
+        "field": "Hit@100",
+        "frozen": 0.0022877469760664067,
+        "clean": 0.002287746976066485,
+        "difference": 7.806255641895632e-17
+      },
+      {
+        "disease_id": "17600",
+        "field": "Hit@50",
+        "frozen": 0.013545521565322691,
+        "clean": 0.013545521565322627,
+        "difference": 6.418476861114186e-17
+      },
+      {
+        "disease_id": "17600",
+        "field": "Hit@100",
+        "frozen": 0.03826591463010193,
+        "clean": 0.038265914630101316,
+        "difference": 6.106226635438361e-16
+      },
+      {
+        "disease_id": "18626",
+        "field": "Hit@10",
+        "frozen": 0.003518026565165291,
+        "clean": 0.003518026565165533,
+        "difference": 2.419939248987646e-16
+      },
+      {
+        "disease_id": "18626",
+        "field": "Hit@50",
+        "frozen": 0.023443301605719384,
+        "clean": 0.023443301605719502,
+        "difference": 1.1796119636642288e-16
+      },
+      {
+        "disease_id": "18626",
+        "field": "Hit@100",
+        "frozen": 0.04792792886969559,
+        "clean": 0.04792792886969499,
+        "difference": 5.967448757360216e-16
+      },
+      {
+        "disease_id": "19338",
+        "field": "Hit@50",
+        "frozen": 0.0400787230190383,
+        "clean": 0.040078723019038476,
+        "difference": 1.734723475976807e-16
+      },
+      {
+        "disease_id": "19338",
+        "field": "Hit@100",
+        "frozen": 0.09337403021520216,
+        "clean": 0.09337403021520263,
+        "difference": 4.718447854656915e-16
+      }
+    ],
+    "macro_recall50_clean": 0.0438814176465906,
+    "macro_recall50_frozen": 0.0438814176465906,
+    "macro_recall50_absolute_difference": 0.0,
+    "historical_archive_gate3_status": "PASS",
+    "historical_archive_gate3_max_absolute_difference": 1.2420620087993939e-15,
+    "evaluator_configuration_gate1_status": "PARTIAL"
+  },
+  "determinism": {
+    "repeated_score_computation_bitwise_identical": true,
+    "stochastic": false,
+    "scientific_seed_required": false
+  },
+  "overall_status": "PASS",
+  "clean_implementation_file_sha256": {
+    "src/primekg_repurposing/experts/e1_gene_similarity.py": "e64812c3be0d6b91c4794181ad45457577e08e2aa41d2a70fcd1dc5b4680aeaa",
+    "src/primekg_repurposing/gate4.py": "084c1adb92ca237f0d9b22dbed7a3c13e0149cad455e28288f9be3c1910a5e4a",
+    "src/primekg_repurposing/score_archive.py": "83d867437a851e7496084e15b55e7bb9facec0a7a53a51dca51613a06891933e"
+  },
+  "input_primekg_size": 981751236,
+  "information_contract": {
+    "relations_consumed": [
+      "disease_protein",
+      "drug_protein"
+    ],
+    "therapeutic_labels_consumed": false,
+    "disease_ontology_consumed": false,
+    "reciprocal_duplicates": "canonical pair set",
+    "drug_degree_scope": "frozen candidate drugs only",
+    "disease_degree_scope": "all PrimeKG diseases",
+    "profile_values": "binary",
+    "score_dtype": "float32",
+    "applicability_rule": "disease_gene_count > 0 and positive_candidate_count > 0"
+  },
+  "profile_counts": {
+    "relations_used": [
+      "disease_protein",
+      "drug_protein"
+    ],
+    "uses_therapeutic_labels": false,
+    "gene_feature_count": 7460,
+    "drug_gene_pairs": 25468,
+    "primary_disease_gene_pairs": 36332,
+    "all_disease_gene_pairs_for_degree": 80411,
+    "score_dtype": "float32",
+    "runtime_seconds": {
+      "graph_extraction": 8.114710500027286,
+      "profile_preparation": 0.06357369999750517,
+      "first_score_matrix": 0.16104579999228008,
+      "repeat_score_matrix": 0.15625840000575408,
+      "total": 8.495588400022825
+    }
+  },
+  "generated_score_archive": {
+    "logical_path": "artifacts/generated/e1/p1_e1_weighted_gene_cosine_scores_clean.npz",
+    "sha256": "207975d33ecd80c4f3c56366399aabddc6cce47ba76958befa8dbbc7b2e39c0e",
+    "size": 919802
+  },
+  "numeric_acceptance": {
+    "score_requirement": "all stored float32 values exactly equal",
+    "metric_tolerance": 2e-15,
+    "metric_tolerance_basis": "CSV decimal round-trip of frozen Cell-16 metrics; score and macro comparisons remain exact"
+  },
+  "test_verification": {
+    "framework": "unittest",
+    "tests_run": 106,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "full_local_gate4_tests": 4,
+    "status": "PASS"
+  }
+}

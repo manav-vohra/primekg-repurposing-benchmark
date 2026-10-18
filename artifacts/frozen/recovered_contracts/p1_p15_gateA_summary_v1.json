@@ -1,0 +1,21 @@
+{
+  "status": "P1_5_GATE_A_ORACLE_HEADROOM_CHARACTERIZED",
+  "SBS": "E2",
+  "SBS_R50": 0.6292107026825576,
+  "VBS_R50": 0.681351211065284,
+  "raw_oracle_gap": 0.052140508382726325,
+  "fixed_E2_mean_warm_cost_sec": 0.0004192809295392908,
+  "fixed_E2_mean_warm_cost_ms": 0.4192809295392908,
+  "cheapest_lambda0_VBS_cascade_default": "E2",
+  "cheapest_lambda0_VBS_cascade_cost_ms": 0.5569753299457996,
+  "cheapest_lambda0_VBS_cascade_cost_multiple_E2": 1.328406065493626,
+  "best_supported_gain_within_1x_E2_cost": 6.661338147750939e-16,
+  "best_supported_gain_within_1_25x_E2_cost": 0.05069416325814047,
+  "best_supported_gain_within_1_5x_E2_cost": 0.052140508382726325,
+  "best_supported_gain_within_2x_E2_cost": 0.052140508382726325,
+  "interpretation_required_before_gate_B": true,
+  "gate_B_started": false,
+  "new_training": false,
+  "new_selector": false,
+  "frozen_P1_modified": false
+}

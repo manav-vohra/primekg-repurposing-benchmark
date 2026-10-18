@@ -1,0 +1,55 @@
+{
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+  "evaluator_version": "1.1_tiesafe",
+  "status": "FROZEN_FOR_EXPERT_MATRIX",
+  "candidate_universe": 7957,
+  "k_values": [
+    10,
+    50,
+    100
+  ],
+  "primary_utility": "Recall@50",
+  "tie_semantics": {
+    "definition": "Exact-score ties are evaluated as the expected metric under a uniform random permutation of candidates within each tie.",
+    "arbitrary_candidate_id_tiebreak_used_for_metrics": false,
+    "score_support_threshold": null,
+    "zero_scores_removed": false,
+    "negative_scores_removed": false
+  },
+  "abstention_semantics": {
+    "explicit_abstention_receives_utility_zero": true,
+    "all_zero_scores_do_not_automatically_imply_abstention": "Applicability is declared by the expert contract, not inferred by the evaluator."
+  },
+  "primary_metrics": [
+    "Recall@10",
+    "Recall@50",
+    "Recall@100",
+    "Hit@10",
+    "Hit@50",
+    "Hit@100",
+    "MRR",
+    "first_hit_rank"
+  ],
+  "safety_metrics": [
+    "Contra@10",
+    "Contra@50",
+    "Contra@100",
+    "ContraRate@10",
+    "ContraRate@50",
+    "ContraRate@100",
+    "first_contra_rank"
+  ],
+  "ignored_before_metric_evaluation": [
+    "AMBIGUOUS_INDICATION",
+    "CONFLICTING_NONINDICATION",
+    "OFFLABEL_ONLY"
+  ],
+  "important_semantics": {
+    "unobserved_are_true_negatives": false,
+    "contraindications_are_generic_negatives": false,
+    "hit_at_k_is_expected_probability_under_ties": true,
+    "contra_at_k_is_expected_count_under_ties": true,
+    "first_hit_rank_is_expected_rank_under_ties": true,
+    "mrr_is_expected_reciprocal_rank_under_ties": true
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+  "evaluator_version": "1.1_tiesafe",
+  "expert_id": "E4_RGCN_LINK_PREDICTION",
+  "expert_version": "1.0",
+  "expert_family": "neural_relational_message_passing",
+  "seed": 0,
+  "stochastic": true,
+  "corpus_manifest_sha256": "36e7d2f620b25056bb5564d589e4a396c2a7fe591600c6af2cd122127145ceb8",
+  "encoder": {
+    "layers": 2,
+    "hidden_dimension": 64,
+    "basis_count": 4,
+    "dropout": 0.1,
+    "aggregation": "relation-specific mean"
+  },
+  "decoder": "asymmetric_bilinear_clean_indication",
+  "training": {
+    "epochs_per_fold": 60,
+    "learning_rate": 0.001,
+    "negatives_per_positive": 16,
+    "negative_semantics": "contrastive candidate-drug corruptions; not biological true negatives",
+    "gradient_clip": 5.0,
+    "target_buffer_therapeutic_labels_hidden": true
+  },
+  "applicable_diseases": 736,
+  "abstentions": 2,
+  "macro_recall50": 0.26732620252612416,
+  "total_seed0_runtime_sec": 129.5936951637268,
+  "fold_training_runtime_sec": {
+    "0": 15.797099590301514,
+    "1": 15.57994794845581,
+    "2": 15.692572832107544,
+    "3": 15.688323974609375,
+    "4": 15.590238809585571,
+    "5": 15.771560907363892,
+    "6": 15.685322046279907,
+    "7": 15.575735330581665
+  },
+  "preliminary_oracle": {
+    "prior_expected_VBS": 0.6581969976913684,
+    "VBS_with_E4_seed0": 0.6812477078024596,
+    "E4_seed0_incremental_gain": 0.023050710111091166,
+    "E4_seed0_strict_wins": 54,
+    "status": "exploratory_until_multiseed"
+  }
+}

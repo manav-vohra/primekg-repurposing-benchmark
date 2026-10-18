@@ -1,0 +1,43 @@
+{
+  "status": "P1_5_COST_TIMING_REPORTING_PACKAGE_FROZEN",
+  "primary_cost_regime": "WARM_MARGINAL_QUERY",
+  "primary_cost_metric": "score_plus_rank_wall_median_sec",
+  "expert_median_ms": {
+    "E1": 0.3081645,
+    "E2": 0.43459175,
+    "E3": 0.97609075,
+    "E4": 0.90532075
+  },
+  "E3_E4_explicit_hardware": "NVIDIA A100-SXM4-40GB",
+  "E1_E2_explicit_hardware": null,
+  "gateA": {
+    "full_cohort_effective_E2_ms": 0.4192809295392953,
+    "lambda0_cascade_ms": 0.5569753299457995,
+    "lambda0_multiple_effective_E2": 1.3284060654936114
+  },
+  "gateB": {
+    "population_n": 712,
+    "E2_per_query_ms": 0.43459175,
+    "tight_budget_multiple": 1.25,
+    "tight_budget_ms": 0.5432396875,
+    "primary_budget_multiple": 1.5,
+    "primary_budget_ms": 0.651887625,
+    "S0_base_ms": 0.5039926980337078,
+    "S0_multiple_E2": 1.1596922813967543,
+    "S0_tight_feasible": true,
+    "S0_primary_feasible": true,
+    "S1_base_ms": 0.7272704768258427,
+    "S1_multiple_E2": 1.6734567023553546,
+    "S1_tight_feasible": false,
+    "S1_primary_feasible": false,
+    "S1_routing_fit": false
+  },
+  "interpretation": "Warm-serving computational-latency resource proxy; hardware- and implementation-dependent; not a universal economic or dollar-cost estimate.",
+  "new_timing": false,
+  "new_model_load": false,
+  "new_training": false,
+  "new_outcome_analysis": false,
+  "META_TEST_opened": false,
+  "P1_5_reopened": false,
+  "frozen_P1_modified": false
+}

@@ -1,0 +1,50 @@
+{
+  "status": "P1_5_GATE_B_DEVELOPMENT_EVALUATED",
+  "primary_probe": "P0_E2_POSTCOMPUTE",
+  "primary_model": "DIRECT_RIDGE",
+  "population": "META_DEV_E2_APPLICABLE",
+  "n": 570,
+  "P1_status": "COST_INFEASIBLE_PRETARGET_NOT_FITTED",
+  "primary_macro_R50": 0.6446471972691317,
+  "E2_macro_R50": 0.6446471972691317,
+  "primary_gain_vs_E2": 0.0,
+  "bootstrap_95CI": [
+    0.0,
+    0.0
+  ],
+  "primary_mean_cost_sec": 0.000503992698033708,
+  "primary_cost_multiple_E2": 1.1596922813967545,
+  "switch_count": 0,
+  "action_counts": {
+    "E1": 0,
+    "E3": 0,
+    "E4": 0
+  },
+  "beneficial_switches": 0,
+  "harmful_switches": 0,
+  "total_switch_gain": 0.0,
+  "nonnegative_outer_folds": 5,
+  "max_single_fold_share_positive_gain": null,
+  "matched_random_mean_gain": 0.0,
+  "matched_random_p95_gain": 0.0,
+  "criteria": {
+    "mean_R50_gt_E2": false,
+    "paired_bootstrap_95CI_lower_gt_zero": false,
+    "mean_cost_le_1_50x_E2": true,
+    "at_least_3_of_5_outer_folds_nonnegative": true,
+    "no_single_fold_gt_50pct_positive_gain": false,
+    "at_least_5_escalations": false,
+    "total_switch_utility_positive": false,
+    "beats_95pct_matched_random_escalation": false
+  },
+  "formal_pass": false,
+  "formal_verdict": "FAIL_STOP_P1_5_LEARNED_ROUTING",
+  "META_TEST_opened": false,
+  "META_TEST_outcomes_used": false,
+  "HGB_fitted": false,
+  "P1_probe_fitted": false,
+  "frozen_P1_modified": false,
+  "execution_addendum_sha256": "3036020f3ba65a4ea58663bf3601e4c8ed9840a18ab72e2c554e9d368ebec66f",
+  "prediction_sha256": "cb8bf475fb800e71780b49901af3be7fc81817616e3437d6dd8e4a4e3502c162",
+  "next": "If formal_pass=True, interpret once and freeze one-shot META_TEST execution before opening it. If formal_pass=False, STOP P1.5 learned routing and never inspect META_TEST outcomes."
+}

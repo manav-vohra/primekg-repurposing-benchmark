@@ -1,0 +1,3 @@
+benchmark_id,evaluator_version,expert_id,seed,disease_id,status,applicable,primary_utility
+P1_TRACK_A_PRIMEKG_V0_FIXTURE,1.1_tiesafe,E1_FIXTURE,0,X,OK,True,0.5
+P1_TRACK_A_PRIMEKG_V0_FIXTURE,1.1_tiesafe,E1_FIXTURE,0,Y,OK,True,0.3

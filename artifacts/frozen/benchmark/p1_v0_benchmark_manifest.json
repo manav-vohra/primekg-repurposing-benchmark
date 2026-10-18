@@ -1,0 +1,117 @@
+{
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+  "benchmark_version": "0.0",
+  "status": "FROZEN",
+  "track": "A_controlled_information_parity",
+  "graph": {
+    "dataset": "PrimeKG",
+    "canonical_file": "/content/drive/MyDrive/P1/PrimeKG/kg.csv",
+    "directed_edge_records": 8100498,
+    "drug_nodes": 7957,
+    "disease_nodes": 17080,
+    "gene_protein_nodes": 27610
+  },
+  "task": {
+    "name": "disease_cold_start_indication_ranking",
+    "primary_scientific_unit": "disease",
+    "candidate_universe": "all_PrimeKG_DrugBank_drug_nodes",
+    "candidate_count": 7957,
+    "disease_eligibility": "at_least_3_CLEAN_INDICATION_pairs",
+    "primary_disease_count": 738,
+    "primary_clean_truth_pairs": 8368
+  },
+  "label_policy": {
+    "primary_positive": "CLEAN_INDICATION",
+    "ignored_primary_roles": [
+      "AMBIGUOUS_INDICATION",
+      "CONFLICTING_NONINDICATION",
+      "OFFLABEL_ONLY"
+    ],
+    "rankable_not_true_negative": [
+      "CONTRAINDICATION_ONLY",
+      "UNOBSERVED"
+    ],
+    "primary_cohort_role_counts": {
+      "CONTRAINDICATION_ONLY": 13558,
+      "CLEAN_INDICATION": 8368,
+      "OFFLABEL_ONLY": 1504,
+      "AMBIGUOUS_INDICATION": 136,
+      "CONFLICTING_NONINDICATION": 18
+    },
+    "unobserved_semantics": "UNOBSERVED means unlabeled, not true negative."
+  },
+  "oof_protocol": {
+    "k": 8,
+    "seed": 42,
+    "target_assignment": "deterministic stratified disease-level OOF",
+    "quarantine_rule": "For every evaluation disease, hide all therapeutic relations for the target disease and all direct disease_disease ontology neighbors that possess any indication annotation.",
+    "preserved_information": "All non-therapeutic PrimeKG evidence remains available.",
+    "direct_ontology_leakage": 0
+  },
+  "primary_metrics": [
+    "Recall@K",
+    "Hit@K",
+    "MRR",
+    "first_hit_rank"
+  ],
+  "safety_metrics": [
+    "Contraindication@K",
+    "contraindication_intrusion_rate"
+  ],
+  "secondary_diagnostics": [
+    "AUPRC",
+    "AUROC"
+  ],
+  "important_metric_semantics": {
+    "unobserved_are_not_negatives": true,
+    "contraindications_are_not_generic_negatives": true,
+    "macro_average_over_diseases": true
+  },
+  "artifacts": {
+    "primekg_kg_csv": {
+      "path": "/content/drive/MyDrive/P1/PrimeKG/kg.csv",
+      "bytes": 981751236,
+      "sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69"
+    },
+    "candidate_drugs": {
+      "path": "/content/drive/MyDrive/P1/PrimeKG/p1_v0_candidate_drugs.csv",
+      "bytes": 404924,
+      "sha256": "dfe7275c60b6b75b2a8fa45c017c7675e3e438d6b59722f91517ff78862c2776"
+    },
+    "primary_diseases": {
+      "path": "/content/drive/MyDrive/P1/PrimeKG/p1_v0_primary_diseases.csv",
+      "bytes": 45899,
+      "sha256": "722eec938337a73e7867d384af509d3302bf27d133b665238b76b91ec50d7932"
+    },
+    "primary_eval_roles": {
+      "path": "/content/drive/MyDrive/P1/PrimeKG/p1_v0_primary_eval_roles.csv",
+      "bytes": 1454075,
+      "sha256": "c51481941ea30b861e538678dbd4df78fddafeedd91a77ece2de40c157255564"
+    },
+    "primary_truth": {
+      "path": "/content/drive/MyDrive/P1/PrimeKG/p1_v0_primary_truth.csv",
+      "bytes": 442709,
+      "sha256": "e17dc6f289f2d467a693d9941f18caf38a36ef11d870f7fc1ebec71953a25b45"
+    },
+    "quarantine_manifest": {
+      "path": "/content/drive/MyDrive/P1/PrimeKG/p1_v0_k8_quarantine_manifest.csv",
+      "bytes": 40018,
+      "sha256": "d5aaaaac34cc78b7a38084c374d9c340a002de638aafd85ae650ad7d2d71a1d8"
+    },
+    "fold_summary": {
+      "path": "/content/drive/MyDrive/P1/PrimeKG/p1_v0_fold_summary.csv",
+      "bytes": 733,
+      "sha256": "d50d830b87aebdc81731437de6204cca25e442054dca27d687a6feadfe462912"
+    },
+    "metric_policy": {
+      "path": "/content/drive/MyDrive/P1/PrimeKG/p1_primary_metric_policy.json",
+      "bytes": 739,
+      "sha256": "e394ff95f71347c539193ad59159c1f74ce3c647f8254b00e688c12fd0c6f3af"
+    }
+  },
+  "software_environment": {
+    "python": "3.13.15",
+    "pandas": "2.2.3",
+    "numpy": "2.1.3"
+  }
+}

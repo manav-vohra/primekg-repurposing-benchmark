@@ -1,0 +1,5 @@
+{
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0_FIXTURE",
+  "task": {"candidate_count": 2, "primary_disease_count": 2, "primary_clean_truth_pairs": 3},
+  "oof_protocol": {"k": 2, "seed": 42}
+}

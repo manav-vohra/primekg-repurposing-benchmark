@@ -1,0 +1,9 @@
+fold,target_diseases,hidden_diseases_total,legal_clean_indication_pairs,hidden_clean_indication_pairs,expected_legal_pairs,delta,direct_hidden_label_leaks
+0,93,202,6856,2321,6856,0,0
+1,93,218,6828,2349,6828,0,0
+2,92,175,6990,2187,6990,0,0
+3,92,210,7119,2058,7119,0,0
+4,92,202,6871,2306,6871,0,0
+5,92,191,7183,1994,7183,0,0
+6,92,212,7091,2086,7091,0,0
+7,92,238,6827,2350,6827,0,0

@@ -1,0 +1,56 @@
+# Local runtime, transfer, and reconstruction scratch
+/work/
+*.b64
+*.part
+*.tmp
+*.log
+
+# Python caches, build products, and local environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Raw, external, recovered, and regenerated scientific artifacts
+kg.csv
+artifacts/frozen/raw/
+artifacts/frozen/external/
+artifacts/generated/
+/artifacts/recovered/external/
+**/p1_e3_*_scores*.npz
+**/p1_e4_*_scores*.npz
+
+# Pretrained models and checkpoints
+checkpoints/
+models/checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.h5
+
+# Download containers and machine/editor files
+*.zip
+*.tar
+*.tar.gz
+*.7z
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*~

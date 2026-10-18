@@ -1,0 +1,5 @@
+expert,controlled_warm_marginal_timing_required,controlled_cold_invocation_timing_required,existing_runtime_context_available,existing_potential_inference_column,accepted_primary_gateA_cost_yet,reason
+E1,True,True,True,False,False,"Gate-A requires a controlled, same-environment marginal inference benchmark with explicit warm-up and synchronization."
+E2,True,True,True,False,False,"Gate-A requires a controlled, same-environment marginal inference benchmark with explicit warm-up and synchronization."
+E3,True,True,True,False,False,"Gate-A requires a controlled, same-environment marginal inference benchmark with explicit warm-up and synchronization."
+E4,True,True,True,True,False,"Gate-A requires a controlled, same-environment marginal inference benchmark with explicit warm-up and synchronization."

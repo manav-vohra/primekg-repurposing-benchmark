@@ -1,0 +1,16 @@
+{
+  "reconciliation_date": "2026-10-05",
+  "status": "FINAL_PROVENANCE_TRUTH_BEFORE_PHASE2",
+  "historical_sources_modified": false,
+  "clean_implementation_started": false,
+  "raw_to_benchmark_historical_source_complete": true,
+  "tie_safe_evaluator_source_complete": true,
+  "large_external_artifact_state": "FOUND_EXTERNAL_NOT_BUNDLED",
+  "model_reproducibility": {
+    "E1": {"source": true, "input": true, "training": "NOT_APPLICABLE", "output": true, "bitwise": "NOT_ESTABLISHED", "scientific_equivalent_expected": true},
+    "E2": {"source": true, "input": true, "training": "NOT_APPLICABLE", "output": true, "bitwise": "NOT_ESTABLISHED", "scientific_equivalent_expected": true},
+    "E3": {"source": true, "input": true, "training": true, "output": true, "bitwise": false, "scientific_equivalent_expected": true},
+    "E4": {"source": true, "input": true, "training": true, "output": true, "bitwise": false, "scientific_equivalent_expected": true}
+  },
+  "first_phase2_gate": "Artifact/provenance loader and validator only: classify notebook representations, verify exact kg.csv and all available hashes/schemas/axes/counts, register external objects, and emit a closed validation report before scientific transformations."
+}

@@ -1,0 +1,224 @@
+{
+  "registry_version": "1.0-smoke",
+  "benchmark": {
+    "id": "P1_TRACK_A_PRIMEKG_V0_FIXTURE",
+    "candidate_count": 2,
+    "primary_disease_count": 2,
+    "primary_clean_truth_pairs": 3,
+    "folds": 2,
+    "split_seed": 42,
+    "evaluator_version": "1.1_tiesafe",
+    "masking_protocol": "CANONICAL_1HOP",
+    "e3_entities": 0,
+    "e3_relations": 0,
+    "fold_clean_counts": []
+  },
+  "data_root_default": "tests/fixtures/data",
+  "data_root_environment": "PRIMEKG_DATA_ROOT",
+  "axis_fingerprints": {
+    "candidates": {
+      "sha256": "30cdf95db02eb0443bf495cec851fd5f833f429c4240a411aa48c71c97eccb66",
+      "length": 2,
+      "origin": "derived_from_smoke_fixture"
+    },
+    "diseases": {
+      "sha256": "97b58cbf73a533b6ea22018721aca44d8c4b9b8a4ad998e1027de8d3bc5ef199",
+      "length": 2,
+      "origin": "derived_from_smoke_fixture"
+    }
+  },
+  "artifacts": [
+    {
+      "artifact_id": "benchmark/p1_v0_candidate_drugs.csv",
+      "filename": "p1_v0_candidate_drugs.csv",
+      "semantic_role": "smoke fixture",
+      "provenance_class": "GENERATED_DERIVED_ARTIFACT",
+      "expected_sha256": "09f65048e2934aac72293ff5d3031ed133d38b7082d77a1188ad2e40253aa09f",
+      "expected_size": 42,
+      "logical_path": "benchmark/p1_v0_candidate_drugs.csv",
+      "location": "bundled_local",
+      "producer": "test fixture",
+      "dependencies": [],
+      "required_for": [
+        "SMOKE"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "drug_id",
+          "drug_name"
+        ]
+      },
+      "expected_rows": 2,
+      "axis": {
+        "name": "candidates",
+        "column": "drug_id",
+        "expected_sha256": "30cdf95db02eb0443bf495cec851fd5f833f429c4240a411aa48c71c97eccb66",
+        "origin": "derived_from_smoke_fixture"
+      }
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_primary_diseases.csv",
+      "filename": "p1_v0_primary_diseases.csv",
+      "semantic_role": "smoke fixture",
+      "provenance_class": "GENERATED_DERIVED_ARTIFACT",
+      "expected_sha256": "8557c35068b90a6517c31c258be24305ddf2e016068f4d41c8037c4ca4fe6e52",
+      "expected_size": 28,
+      "logical_path": "benchmark/p1_v0_primary_diseases.csv",
+      "location": "bundled_local",
+      "producer": "test fixture",
+      "dependencies": [],
+      "required_for": [
+        "SMOKE"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "disease_id",
+          "oof_fold"
+        ]
+      },
+      "expected_rows": 2,
+      "axis": {
+        "name": "diseases",
+        "column": "disease_id",
+        "expected_sha256": "97b58cbf73a533b6ea22018721aca44d8c4b9b8a4ad998e1027de8d3bc5ef199",
+        "origin": "derived_from_smoke_fixture"
+      }
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_primary_truth.csv",
+      "filename": "p1_v0_primary_truth.csv",
+      "semantic_role": "smoke fixture",
+      "provenance_class": "GENERATED_DERIVED_ARTIFACT",
+      "expected_sha256": "65221992036443bfb11227b4ea68c5a4db5ece8e69d4262d85818898c4096044",
+      "expected_size": 101,
+      "logical_path": "benchmark/p1_v0_primary_truth.csv",
+      "location": "bundled_local",
+      "producer": "test fixture",
+      "dependencies": [],
+      "required_for": [
+        "SMOKE"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "disease_id",
+          "drug_id",
+          "evaluation_role"
+        ]
+      },
+      "expected_rows": 3
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_benchmark_manifest.json",
+      "filename": "p1_v0_benchmark_manifest.json",
+      "semantic_role": "smoke fixture",
+      "provenance_class": "GENERATED_DERIVED_ARTIFACT",
+      "expected_sha256": "46de1b994d11aaf6840a8c771c9869fae3e6dbfdced01f3158dccf946d4e0827",
+      "expected_size": 188,
+      "logical_path": "benchmark/p1_v0_benchmark_manifest.json",
+      "location": "bundled_local",
+      "producer": "test fixture",
+      "dependencies": [],
+      "required_for": [
+        "SMOKE"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0_FIXTURE",
+        "oof_protocol.k": 2,
+        "oof_protocol.seed": 42
+      }
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+      "filename": "p1_v0_evaluator_config_v1_1_tiesafe.json",
+      "semantic_role": "smoke fixture",
+      "provenance_class": "GENERATED_DERIVED_ARTIFACT",
+      "expected_sha256": "bbaf54d4b268d6ebe8de1c7fe6866c5c32e09b295cbc7281cb2f9b9fd856751f",
+      "expected_size": 83,
+      "logical_path": "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+      "location": "bundled_local",
+      "producer": "test fixture",
+      "dependencies": [],
+      "required_for": [
+        "SMOKE"
+      ],
+      "schema": {
+        "type": "json"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0_FIXTURE",
+        "evaluator_version": "1.1_tiesafe"
+      }
+    },
+    {
+      "artifact_id": "reference_results/expert_matrix.csv",
+      "filename": "expert_matrix.csv",
+      "semantic_role": "smoke fixture",
+      "provenance_class": "GENERATED_DERIVED_ARTIFACT",
+      "expected_sha256": "06145cda2c0605d16a4c8d5eb6b0f5a53d0cc6d51fb8f150ef941fccd5b19b0c",
+      "expected_size": 229,
+      "logical_path": "reference_results/expert_matrix.csv",
+      "location": "bundled_local",
+      "producer": "test fixture",
+      "dependencies": [],
+      "required_for": [
+        "SMOKE"
+      ],
+      "schema": {
+        "type": "csv",
+        "required_columns": [
+          "benchmark_id",
+          "evaluator_version",
+          "expert_id",
+          "seed",
+          "disease_id",
+          "status",
+          "applicable",
+          "primary_utility"
+        ]
+      },
+      "expected_rows": 2,
+      "disease_axis": {
+        "column": "disease_id",
+        "expected_axis": "diseases"
+      },
+      "metadata_equals": {
+        "benchmark_id": "P1_TRACK_A_PRIMEKG_V0_FIXTURE",
+        "evaluator_version": "1.1_tiesafe",
+        "expert_id": "E1_FIXTURE",
+        "seed": "0"
+      }
+    },
+    {
+      "artifact_id": "unknown.bin",
+      "filename": "unknown.bin",
+      "semantic_role": "smoke fixture",
+      "provenance_class": "GENERATED_DERIVED_ARTIFACT",
+      "expected_sha256": null,
+      "expected_size": 21,
+      "logical_path": "unknown.bin",
+      "location": "bundled_local",
+      "producer": "test fixture",
+      "dependencies": [],
+      "required_for": []
+    },
+    {
+      "artifact_id": "external/checkpoint.pt",
+      "filename": "checkpoint.pt",
+      "semantic_role": "external fixture",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED",
+      "expected_sha256": null,
+      "expected_size": null,
+      "logical_path": "external/checkpoint.pt",
+      "location": "external_not_bundled",
+      "producer": "test fixture",
+      "dependencies": [],
+      "required_for": []
+    }
+  ]
+}

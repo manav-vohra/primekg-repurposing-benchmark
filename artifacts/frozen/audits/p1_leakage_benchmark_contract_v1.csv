@@ -1,0 +1,8 @@
+property,value,verification
+Benchmark ID,P1_TRACK_A_PRIMEKG_V0,P1_V0_EXPERIMENTAL_CONSTITUTION.md
+Candidate universe,"7,957 fixed PrimeKG DrugBank drug nodes",p1_v0_benchmark_manifest.json
+Primary CLEAN truth,"8,368 disease-drug pairs",p1_v0_benchmark_manifest.json
+OOF unit,disease-level deterministic K8,p1_v0_benchmark_manifest.json
+Canonical quarantine,hide all therapeutic relations for target disease and direct disease_disease neighbors with indication annotation,p1_v0_benchmark_manifest.json
+Direct ontology leakage audit,0,p1_v0_benchmark_manifest.json
+Candidate eligibility principle,"representation failure affects expert applicability, not candidate membership",P1_V0_EXPERIMENTAL_CONSTITUTION.md

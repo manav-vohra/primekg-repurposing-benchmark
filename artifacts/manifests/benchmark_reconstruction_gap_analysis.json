@@ -1,0 +1,48 @@
+{
+  "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+  "phase2_reconciliation": {
+    "active_overall_status": "HISTORICAL_RECONSTRUCTION_SOURCE_COMPLETE",
+    "historical_chain": "kg.csv -> census/canonical pairs -> roles/CLEAN -> candidates/cohort/truth/eval roles -> K8 folds/quarantine -> benchmark freeze",
+    "reconstruction_executed": false,
+    "prerequisite": "retrieve kg.csv with SHA-256 0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69",
+    "revised_artifacts": [
+      {"artifact": "kg.csv", "classification": ["EXTERNAL_INPUT_SURVIVES", "HISTORICAL_SOURCE_RECOVERED", "EXACT_RECONSTRUCTION_TEST_POSSIBLE"], "remaining_gap": "licensing/durable acquisition"},
+      {"artifact": "census and canonical therapeutic pairs", "classification": ["HISTORICAL_SOURCE_RECOVERED", "EXACT_RECONSTRUCTION_TEST_POSSIBLE"]},
+      {"artifact": "roles, candidates, cohort, truth, eval roles", "classification": ["HISTORICAL_SOURCE_RECOVERED", "FROZEN_OUTPUT_SURVIVES", "EXACT_RECONSTRUCTION_TEST_POSSIBLE"]},
+      {"artifact": "K8 folds, quarantine, benchmark manifest", "classification": ["HISTORICAL_SOURCE_RECOVERED", "FROZEN_OUTPUT_SURVIVES", "EXACT_RECONSTRUCTION_TEST_POSSIBLE"]},
+      {"artifact": "tie-safe evaluator", "classification": ["HISTORICAL_SOURCE_RECOVERED", "FROZEN_OUTPUT_SURVIVES", "EXACT_RECONSTRUCTION_TEST_POSSIBLE"]},
+      {"artifact": "p1_primary_metric_policy.json", "classification": ["RECOVERED_FROZEN_CONTRACT"], "sha256_prefix": "e394ff"},
+      {"artifact": "E3 corpus Cell 19", "classification": ["HISTORICAL_SOURCE_WITH_DIAGNOSED_DEFECT"]},
+      {"artifact": "E3 corpus Cell 19A", "classification": ["HISTORICAL_FORENSIC_RECONCILIATION"]},
+      {"artifact": "E3 corpus Cell 19B", "classification": ["HISTORICAL_CORRECTIVE_SOURCE_RECOVERED", "EXACT_RECONSTRUCTION_TEST_POSSIBLE"]},
+      {"artifact": "p1_e3_complex_fold_label_manifest.csv", "classification": ["RECOVERED_FROZEN_CONTRACT"], "sha256": "f612dee4afbdfa2654f41e31b2f8610cdbf45b60a6f39631ecdf89f46043aa71"},
+      {"artifact": "E3/E4 large checkpoints and scores", "classification": ["FOUND_EXTERNAL_NOT_BUNDLED"], "remaining_gap": "retrieve and independently hash"}
+    ]
+  },
+  "overall_from_scratch_status": "NOT_CURRENTLY_POSSIBLE",
+  "reason": "Frozen artifacts and expert sources survive, but benchmark-construction and E3 corpus-construction code is missing. Presence plus hash verification is not independent reconstruction.",
+  "artifacts": [
+    {"artifact": "kg.csv", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "external Drive ID and SHA-256 recorded; not bundled", "missing_dependency": "snapshot acquisition/versioning source and redistribution decision"},
+    {"artifact": "therapeutic_pair_evaluation_roles.csv", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "bundled", "missing_dependency": "role-classification logic"},
+    {"artifact": "p1_v0_candidate_drugs.csv", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "bundled and hash-verified", "missing_dependency": "candidate construction source"},
+    {"artifact": "p1_v0_primary_diseases.csv", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "bundled and hash-verified", "missing_dependency": "eligibility, naming, ordering, and fold-assignment source"},
+    {"artifact": "p1_v0_primary_truth.csv", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "bundled and hash-verified", "missing_dependency": "derivation source from role table/cohort"},
+    {"artifact": "p1_v0_primary_eval_roles.csv", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "bundled and hash-verified", "missing_dependency": "derivation source from role table/cohort"},
+    {"artifact": "p1_v0_k8_quarantine_manifest.csv", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "bundled and hash-verified", "missing_dependency": "stratification and direct-neighbor buffer construction source"},
+    {"artifact": "p1_v0_fold_summary.csv", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "bundled and hash-verified", "missing_dependency": "summary producer"},
+    {"artifact": "p1_v0_evaluator_config_v1_1_tiesafe.json", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "bundled", "missing_dependency": "config-producing source; evaluator logic exists duplicated in expert code"},
+    {"artifact": "p1_primary_metric_policy.json", "classification": "MISSING", "availability": "hash and size only in benchmark manifest", "missing_dependency": "artifact itself and producer"},
+    {"artifact": "p1_e3_complex_entities.csv", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "bundled", "missing_dependency": "Cell 19/19B source"},
+    {"artifact": "p1_e3_complex_relations.csv", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "bundled", "missing_dependency": "Cell 19/19B source"},
+    {"artifact": "p1_e3_complex_base_nonther_triples.npz", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "external Drive ID plus SHA-256", "missing_dependency": "binary artifact locally and Cell 19/19B source"},
+    {"artifact": "p1_e3_complex_clean_indication_triples.npz", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "external Drive ID plus SHA-256", "missing_dependency": "binary artifact locally and Cell 19/19B source"},
+    {"artifact": "p1_e3_complex_fold_label_manifest.csv", "classification": "MISSING", "availability": "SHA-256 only in corpus manifest", "missing_dependency": "artifact itself and Cell 19/19B source"},
+    {"artifact": "p1_e3_complex_corpus_manifest.json", "classification": "FROZEN_ARTIFACT_ONLY", "availability": "bundled", "missing_dependency": "Cell 19/19B source"},
+    {"artifact": "E1 reference matrix", "classification": "AUTHORITATIVELY_REBUILDABLE", "availability": "source, upstream frozen inputs except external kg.csv, and reference matrix survive", "missing_dependency": "external kg.csv must be retrieved and verified"},
+    {"artifact": "E2 reference matrix", "classification": "AUTHORITATIVELY_REBUILDABLE", "availability": "source, upstream frozen inputs except external kg.csv, and reference matrix survive", "missing_dependency": "external kg.csv must be retrieved and verified"},
+    {"artifact": "E3 seed matrices", "classification": "AUTHORITATIVELY_REBUILDABLE", "availability": "authoritative training source and reference matrices survive", "missing_dependency": "two external encoded corpora; exact environment not locked"},
+    {"artifact": "E4 seed matrices", "classification": "AUTHORITATIVELY_REBUILDABLE", "availability": "authoritative training source and reference matrices survive", "missing_dependency": "two external encoded corpora; exact environment not locked; original forward raw-logit reproduction unresolved"},
+    {"artifact": "canonical E4 reimplementation", "classification": "REBUILDABLE_WITH_RECOVERED_LOGIC", "availability": "fidelity audit reports PASS at utility-level gate", "missing_dependency": "actual canonical-reimplementation source is not bundled, and historical E4 remains canonical"},
+    {"artifact": "routing/actionability analyses", "classification": "UNCERTAIN", "availability": "named in audit tables and interpretation only", "missing_dependency": "source and most data/results absent"}
+  ]
+}
