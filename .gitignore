@@ -22,6 +22,9 @@ env/
 .env
 .env.*
 !.env.example
+.envrc
+.direnv/
+.python-version
 
 # Raw, external, recovered, and regenerated scientific artifacts
 kg.csv
@@ -48,6 +51,8 @@ models/checkpoints/
 *.tar.gz
 *.7z
 .DS_Store
+__MACOSX/
+.AppleDouble
 Thumbs.db
 Desktop.ini
 .idea/
