@@ -14,6 +14,7 @@ full = ["numpy>=1.26"]
 reconstruct = ["numpy>=1.26", "pandas>=2.0"]
 evaluator = ["numpy>=1.26"]
 e2 = ["numpy>=1.26", "pandas>=2.0", "scipy>=1.11,<2"]
+e3 = ["numpy>=1.26", "pandas>=2.0", "scipy>=1.11,<2", "torch>=2.0"]
 
 [project.scripts]
 primekg-repurpose = "primekg_repurposing.cli:main"

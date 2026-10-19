@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "checks": {
+    "nontherapeutic_count": true,
+    "therapeutic_removed": true,
+    "entity_vocabulary_exact": true,
+    "relation_vocabulary_and_counts_exact": true
+  },
+  "input_sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69",
+  "input_size": 981751236,
+  "nontherapeutic_directed_triples": 8015236,
+  "therapeutic_rows_removed": 85262
+}

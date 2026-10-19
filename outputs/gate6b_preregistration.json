@@ -1,0 +1,180 @@
+{
+  "gate": "PHASE_2_GATE_6B",
+  "state": "FROZEN_BEFORE_TRAINING",
+  "expert_id": "E3_COMPLEX_KGE",
+  "implementation": {
+    "src/primekg_repurposing/experts/e3_complex.py": "d2dc4638a44578434ea54a105c5ffb6d934fba14e5919be13069a891489d7667",
+    "src/primekg_repurposing/gate6a.py": "89f8ce3970e95131a365c3bf4dbad4f3536f8fa3cd7e11cea62b8d6a62ceac02"
+  },
+  "historical_sources": {
+    "cell19": {
+      "class": "HISTORICAL_SOURCE_WITH_DIAGNOSED_DEFECT",
+      "sha256": "2b140c6482b7bd32a0c61354b0a005cb622bc255405f33a784ded122fd829012"
+    },
+    "cell19a": {
+      "class": "HISTORICAL_FORENSIC_RECONCILIATION",
+      "sha256": "5c0499aa4dc3a0e47652c7e57bc5d94e28fd194d48efbd02c9d643de6b6ad09d"
+    },
+    "cell19b": {
+      "class": "HISTORICAL_CORRECTIVE_SOURCE",
+      "sha256": "f2a2af19cbf5f84f88f9bb4d3b833a9f01892811e24140e92c0f0f480c874187"
+    },
+    "cell20": {
+      "class": "AUTHORITATIVE_HISTORICAL_SOURCE",
+      "sha256": "14712fef0cd629bda08dee271e15dde77175379281c0099f3b513a9540c1648c"
+    },
+    "cell21": {
+      "class": "AUTHORITATIVE_HISTORICAL_SUPPORT",
+      "sha256": "af61b4148f33029883e6e2acf425915c32091a0916259f1ad8e639662ba56224"
+    }
+  },
+  "corpus": {
+    "manifest_sha256": "36e7d2f620b25056bb5564d589e4a396c2a7fe591600c6af2cd122127145ceb8",
+    "base_sha256": "4b13562268f237b4217002279338a721e9c6b9c30fa178d29883066848fd733b",
+    "clean_sha256": "06573916aa538640949c4fceb79acb4455856aaf2038cd44df5c54675a30c0b3",
+    "entity_mapping_sha256": "4602c6e372d8db30463c5e5dae418632ce742de9255e305809c1d99829ca8fa3",
+    "relation_mapping_sha256": "591c5fe76d4122369574972525f6b5e82128d8e975264f6cfdce6178b223caba",
+    "fold_manifest_sha256": "f612dee4afbdfa2654f41e31b2f8610cdbf45b60a6f39631ecdf89f46043aa71"
+  },
+  "benchmark": {
+    "id": "P1_TRACK_A_PRIMEKG_V0",
+    "masking": "CANONICAL_1HOP",
+    "masking_implementation": "FrozenBenchmark.mask",
+    "evaluator": "1.1_tiesafe"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "model": {
+    "family": "ComplEx",
+    "dimension": 64,
+    "entities": 129307,
+    "relations": 28,
+    "dtype": "torch.float32",
+    "score": "sum(hr*rr*tr + hi*rr*ti + hr*ri*ti - hi*ri*tr)",
+    "normalization": null,
+    "explicit_regularization": null
+  },
+  "stage_a": {
+    "epochs": 2,
+    "batch_size": 131072,
+    "negatives_per_positive": 1,
+    "entity_optimizer": "SparseAdam",
+    "entity_lr": 0.01,
+    "relation_optimizer": "Adam",
+    "relation_lr": 0.01,
+    "loss": "mean(softplus(-positive)) + mean(softplus(negative))",
+    "corruption": "one endpoint, 50/50 head/tail, replacement from base-active same-type pool, original excluded when pool size > 1",
+    "relation_gradient_clip_norm": 5.0,
+    "entity_gradient_clipping": false
+  },
+  "stage_b": {
+    "epochs": 80,
+    "positive_batch_size": 2048,
+    "drug_head_corruptions_per_positive": 16,
+    "entity_optimizer": "SparseAdam",
+    "entity_lr": 0.002,
+    "relation_optimizer": "Adam",
+    "relation_lr": 0.01,
+    "loss": "mean(softplus(-positive)) + mean(softplus(negative))",
+    "corruption": "candidate drug head only; reject every legal CLEAN head for the same disease",
+    "negative_semantics": "optimization contrasts only; not biological negatives or benchmark labels",
+    "fold_rng_seed": "10000 + seed*100 + fold",
+    "early_stopping": false,
+    "validation_tuning": false,
+    "relation_gradient_clip_norm": 5.0
+  },
+  "stage_a_checkpoints": [
+    {
+      "seed": 0,
+      "sha256": "505a9929421c761222411eb83e1e7ce9ee27e84842561ab7a4f05b26f5fd2c88",
+      "hash_classification": "RECOVERY_TIME_OBSERVED",
+      "size": 66222433,
+      "connected_source_id": "1Ev_eMyAq-hQtvYgCAGIV0fkGw4UV_py7"
+    },
+    {
+      "seed": 1,
+      "sha256": "db6d19c0e9a901c9886655e48c4efc9ed50497b5edf79303a84d8c5fe683eb3b",
+      "hash_classification": "RECOVERY_TIME_OBSERVED",
+      "size": 66222433,
+      "connected_source_id": "1sQ9DO0Jpxj6NVleuKEqOw7NJrsl_VUJ3"
+    },
+    {
+      "seed": 2,
+      "sha256": "d0b0f43969b3fef3f333a185ed64d9d4909d6692f2b0efb0c43b01b218c295a1",
+      "hash_classification": "RECOVERY_TIME_OBSERVED",
+      "size": 66222433,
+      "connected_source_id": "1Oiqa6dUxzMdvUiRzyxmmj6Dj04TMHIYf"
+    }
+  ],
+  "axes": {
+    "candidate_count": 7957,
+    "candidate_order": "p1_v0_candidate_drugs.csv",
+    "disease_count": 738,
+    "disease_order": "p1_v0_primary_diseases.csv",
+    "orientation": "candidate drug head -> clean_indication -> primary disease tail",
+    "score_dtype": "float32"
+  },
+  "reference_score_archives": [
+    {
+      "seed": 0,
+      "sha256": "c85f1e68436e24d7da51cf5a6a0617abadcc858fea5a01492de9b2c8befc731c",
+      "hash_classification": "RECOVERY_TIME_OBSERVED",
+      "size": 20977038,
+      "connected_source_id": "1QN4KxE4L5H_nixEi0zEFHc37PjqOWj4p",
+      "macro_recall50": 0.2918345167963524
+    },
+    {
+      "seed": 1,
+      "sha256": "8f9835fbeb7d79c0944705aaaf50414b757d28fa8307a38a4aae9ed5ac774fe7",
+      "hash_classification": "RECOVERY_TIME_OBSERVED",
+      "size": 20858395,
+      "connected_source_id": "19vkBSKisMdcqmnQgkoc8g4q5VKQuT55M",
+      "macro_recall50": 0.30365612615190174
+    },
+    {
+      "seed": 2,
+      "sha256": "028c299a3356ef628365bcdb3a00f12e2ceb56a166aa0f01a4c5ca01641b1007",
+      "hash_classification": "RECOVERY_TIME_OBSERVED",
+      "size": 20929137,
+      "connected_source_id": "1hmbIzS6CtoEvJS4qyKmjV7ZDqWnKG6ev",
+      "macro_recall50": 0.31921361850047364
+    }
+  ],
+  "runtime_environment": {
+    "python": "3.12.14",
+    "implementation": "CPython",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scipy": "1.18.1",
+    "pytorch": {
+      "version": "2.14.1+cpu",
+      "cuda_available": false,
+      "cuda_version": null,
+      "backend": "CPU"
+    }
+  },
+  "comparison_fields": [
+    "score_shape",
+    "axis_identity",
+    "dtype",
+    "finite_count",
+    "unequal_value_count",
+    "max_absolute_difference",
+    "per_metric_max_absolute_difference",
+    "macro_recall50_absolute_difference"
+  ],
+  "pass_tolerance": null,
+  "pass_tolerance_policy": "No tolerance preregistered; report raw fidelity first and justify any scientific-equivalence tolerance from observed behavior/provenance.",
+  "explicit_non_actions": [
+    "no full Stage-A pretraining",
+    "no Stage-B training",
+    "no E4",
+    "no SBS/VBS/oracle/routing analysis",
+    "no seed selection",
+    "no raw-score averaging"
+  ]
+}

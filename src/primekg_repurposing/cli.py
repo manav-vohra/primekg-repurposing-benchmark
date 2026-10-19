@@ -48,8 +48,30 @@ def main(argv: list[str] | None = None) -> int:
     e2_command.add_argument("--historical-source", type=Path, help="hash-registered Cell-17 source")
     e2_command.add_argument("--generated-score", type=Path, help="separate clean generated score archive")
     e2_command.add_argument("--json-report", type=Path, help="structured Gate-5 equivalence report")
+    e3_command = subcommands.add_parser("prepare-e3", help="validate E3 Gate-6A inputs/checkpoints and freeze Gate-6B; never trains")
+    e3_command.add_argument("--raw-kg", type=Path, help="optional exact PrimeKG kg.csv for streaming corpus reconstruction")
+    e3_command.add_argument("--json-report", type=Path, help="Gate-6A report (default outputs/gate6a_e3_preparation.json)")
+    e3_command.add_argument("--preregistration", type=Path, help="Gate-6B preregistration (default outputs/gate6b_preregistration.json)")
     args = parser.parse_args(argv)
     root = Path(__file__).resolve().parents[2]
+    if args.command == "prepare-e3":
+        from .gate6a import prepare_gate6a, write_json
+
+        report_path = args.json_report or root / "outputs/gate6a_e3_preparation.json"
+        prereg_path = args.preregistration or root / "outputs/gate6b_preregistration.json"
+        report, prereg = prepare_gate6a(root, args.raw_kg)
+        write_json(report, report_path)
+        write_json(prereg, prereg_path)
+        print(f"Gate: {report['gate']}")
+        print(f"Corpus: {report['corpus']['status']}")
+        print(f"Raw reconstruction: {report['raw_reconstruction']['status']}")
+        for item in report["checkpoint_validation"]:
+            print(f"Seed {item['seed']} checkpoint: strict={item['strict_load']} probe_max_abs_diff={item['probe_max_abs_difference']}")
+        print(f"Score archives: {sum(x['status'] == 'PASS' for x in report['score_archives'])}/3 PASS")
+        print(f"Applicable: {report['applicability']['applicable']} / {report['applicability']['total']}")
+        print("Training launched: False")
+        print(f"Overall: {report['overall_status']}")
+        return 0 if report["overall_status"] == "PASS" else 1
     if args.command == "reproduce-e2":
         from .gate5 import reproduce_e2_gate5, write_report
 

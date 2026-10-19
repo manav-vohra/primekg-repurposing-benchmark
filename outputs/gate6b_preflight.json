@@ -1,0 +1,293 @@
+{
+  "gate": "PHASE_2_GATE_6B_PREFLIGHT",
+  "status": "BLOCKED_NO_SUITABLE_HARDWARE",
+  "full_gate6b_pass_claimed": false,
+  "full_training_started": false,
+  "pilot": {
+    "requested_seed": 0,
+    "requested_fold": 0,
+    "status": "NOT_STARTED",
+    "reason": "The active PyTorch build is CPU-only and reports no CUDA devices. The visible GTX 1660 SUPER had only 1205 MiB free of 6144 MiB at inspection. The frozen request prohibits a CPU pilot or protocol changes without explicit approval.",
+    "training_updates_completed": 0,
+    "scores_generated": 0,
+    "historical_scores_consumed_for_training": false,
+    "comparison": {
+      "status": "NOT_PERFORMED_NO_PILOT_OUTPUT",
+      "diseases_compared": 0,
+      "candidate_scores_compared": 0,
+      "absolute_score_differences": null,
+      "disease_recall50_differences": null,
+      "fold_macro_recall50": null,
+      "ranking_agreement": null,
+      "top50_overlap": null,
+      "per_disease_utility_correlation": null,
+      "applicability_agreement": null
+    },
+    "historical_seed0_fold0_reference": {
+      "disease_rows": 93,
+      "applicable": 92,
+      "abstain_no_nontherapeutic_context": 1,
+      "macro_recall50": 0.2998505423994268,
+      "final_training_loss": 0.020117944971492,
+      "fold_training_runtime_sec_on_historical_environment": 13.911118745803831
+    }
+  },
+  "git": {
+    "repository_root": "C:/Users/abort/Documents/Codex/2026-10-05/files-mentioned-by-the-user-primekg",
+    "branch": "main",
+    "head": "51bdf65e705b39eb223c95dd47d96d1700c4f67b",
+    "head_subject": "Checkpoint validated implementation through Phase 2 Gate 5",
+    "head_tag": "phase2-gate5",
+    "gate6a_state": "UNCOMMITTED",
+    "gate6a_uncommitted_files": [
+      "artifacts/registry.json",
+      "pyproject.toml",
+      "src/primekg_repurposing/cli.py",
+      "src/primekg_repurposing/experts/__init__.py",
+      "src/primekg_repurposing/experts/e3_complex.py",
+      "src/primekg_repurposing/gate6a.py",
+      "tests/test_e3_complex.py",
+      "outputs/gate6a_e3_preparation.json",
+      "outputs/gate6a_handoff.md",
+      "outputs/gate6a_raw_corpus_scan.json",
+      "outputs/gate6b_preregistration.json"
+    ],
+    "commit_created": false,
+    "commit_limitation": "The managed environment grants read-only access to .git. No repository-history change was attempted."
+  },
+  "preregistration": {
+    "path": "outputs/gate6b_preregistration.json",
+    "sha256": "fda5b5726babca1d53561562c27434b6e2bdbf8f0c74be06fbd695d2cc4d79a2",
+    "state": "FROZEN_BEFORE_TRAINING",
+    "integrity_status": "PASS",
+    "unchanged_gate6a_implementation": true,
+    "implementation_hash_checks": {
+      "src/primekg_repurposing/experts/e3_complex.py": {
+        "expected": "d2dc4638a44578434ea54a105c5ffb6d934fba14e5919be13069a891489d7667",
+        "observed": "d2dc4638a44578434ea54a105c5ffb6d934fba14e5919be13069a891489d7667",
+        "match": true
+      },
+      "src/primekg_repurposing/gate6a.py": {
+        "expected": "89f8ce3970e95131a365c3bf4dbad4f3536f8fa3cd7e11cea62b8d6a62ceac02",
+        "observed": "89f8ce3970e95131a365c3bf4dbad4f3536f8fa3cd7e11cea62b8d6a62ceac02",
+        "match": true
+      }
+    },
+    "historical_source_crosscheck": "PASS",
+    "historical_sources": {
+      "cell20_sha256": "14712fef0cd629bda08dee271e15dde77175379281c0099f3b513a9540c1648c",
+      "cell21_sha256": "af61b4148f33029883e6e2acf425915c32091a0916259f1ad8e639662ba56224"
+    },
+    "modified_for_preflight": false
+  },
+  "tests": {
+    "e3_focused": {
+      "passed": 29,
+      "failed": 0,
+      "skipped": 0,
+      "duration_sec": 5.91
+    },
+    "full_suite": {
+      "passed": 154,
+      "failed": 0,
+      "skipped": 10,
+      "duration_sec": 17.41
+    },
+    "skip_classification": {
+      "expected_environment_dependent": 10,
+      "unresolved_e3_coverage": 0,
+      "details": [
+        "4 E1 tests require completed full-local Gate-4 generated outputs",
+        "4 E2 tests require completed full-local Gate-5 generated outputs",
+        "1 evaluator test requires a real registry-indexed external score archive and is excluded from ordinary CI",
+        "1 reconstruction test requires the exact external raw PrimeKG CSV and is excluded from ordinary CI"
+      ]
+    },
+    "warnings": [
+      "Pytest could not write .pytest_cache under the managed filesystem; this does not affect test execution or scientific results."
+    ]
+  },
+  "hardware": {
+    "inspection_status": "COMPLETE_WITH_WMI_ACCESS_RESTRICTED",
+    "cpu": {
+      "model": "AMD Ryzen 7 3700X 8-Core Processor",
+      "physical_cores": 8,
+      "logical_processors": 16,
+      "pytorch_threads": 8,
+      "pytorch_interop_threads": 8
+    },
+    "memory": {
+      "total_physical_bytes": 17126633472,
+      "available_physical_bytes_at_inspection": 1584832512,
+      "total_physical_gib": 15.95,
+      "available_physical_gib_at_inspection": 1.48
+    },
+    "gpu": {
+      "model": "NVIDIA GeForce GTX 1660 SUPER",
+      "vram_total_mib": 6144,
+      "vram_used_mib_at_inspection": 4939,
+      "vram_free_mib_at_inspection": 1205,
+      "driver_version": "576.02",
+      "driver_reported_cuda_version": "12.9",
+      "display_driver_model": "WDDM",
+      "pytorch_visible_cuda_devices": 0
+    },
+    "pytorch": {
+      "version": "2.14.1+cpu",
+      "build_cuda": null,
+      "cuda_available": false,
+      "compatibility": "INCOMPATIBLE_WITH_REQUIRED_CUDA_EXECUTION"
+    },
+    "disk": {
+      "volume": "C:",
+      "free_bytes": 15848587264,
+      "free_gib": 14.76,
+      "capacity_assessment": "Sufficient for scores, logs, manifests, and optional per-fold checkpoints if retention is bounded; not the blocking resource."
+    },
+    "feasibility": {
+      "current_environment": "NOT_PRACTICAL_AND_NOT_AUTHORIZED_FOR_CANONICAL_TRAINING",
+      "blocking_reasons": [
+        "The installed PyTorch cannot use CUDA.",
+        "The visible GPU had only 1205 MiB free at inspection.",
+        "Only 1.48 GiB system RAM was available at inspection.",
+        "The request explicitly forbids 24 CPU jobs and requires stopping without a suitable GPU."
+      ]
+    }
+  },
+  "training_contract": {
+    "model": {
+      "family": "ComplEx",
+      "dimension": 64,
+      "entities": 129307,
+      "relations": 28,
+      "dtype": "float32",
+      "automatic_mixed_precision": false,
+      "score_equation": "sum(hr*rr*tr + hi*rr*ti + hr*ri*ti - hi*ri*tr)",
+      "normalization": null,
+      "explicit_regularization": null
+    },
+    "fold_initialization": "For each seed/fold, instantiate a fresh model, strict-load that seed's recovered Stage-A state, then construct fresh optimizers. Do not carry model or optimizer state between folds.",
+    "stage_a_checkpoint_sha256": {
+      "0": "505a9929421c761222411eb83e1e7ce9ee27e84842561ab7a4f05b26f5fd2c88",
+      "1": "db6d19c0e9a901c9886655e48c4efc9ed50497b5edf79303a84d8c5fe683eb3b",
+      "2": "d0b0f43969b3fef3f333a185ed64d9d4909d6692f2b0efb0c43b01b218c295a1"
+    },
+    "stage_b": {
+      "epochs": 80,
+      "positive_batch_size": 2048,
+      "drug_head_corruptions_per_positive": 16,
+      "entity_optimizer": "SparseAdam",
+      "entity_lr": 0.002,
+      "relation_optimizer": "Adam",
+      "relation_lr": 0.01,
+      "optimizer_defaults": "PyTorch defaults except supplied learning rates",
+      "loss": "mean(softplus(-positive)) + mean(softplus(negative))",
+      "relation_gradient_clip_norm": 5.0,
+      "entity_gradient_clipping": false,
+      "early_stopping": false,
+      "validation_tuning": false,
+      "fold_rng_seed": "10000 + seed*100 + fold",
+      "global_seed_placement": "Python random, NumPy, torch.manual_seed, torch.cuda.manual_seed_all; cudnn deterministic=True and benchmark=False",
+      "corruption": "candidate drug heads only; reject every legal CLEAN indication head for the same disease",
+      "negative_semantics": "optimization contrasts only; not biological negatives or benchmark labels"
+    },
+    "scoring": {
+      "orientation": "candidate drug head -> clean_indication -> primary disease tail",
+      "candidate_count": 7957,
+      "disease_count": 738,
+      "score_dtype": "float32",
+      "evaluator": "1.1_tiesafe"
+    },
+    "serialization": {
+      "stage_a": "torch.save payload with state_dict, seed, complex_dim, corpus_manifest_sha256, plus base_epochs for seed 0",
+      "scores": "np.savez_compressed with scores, disease_ids, drug_ids; canonical axes preserved",
+      "pilot_and_full_run_outputs": "must be written outside frozen references with SHA-256 sidecars/provenance; historical checkpoints remain read-only"
+    }
+  },
+  "input_validation": {
+    "status": "PASS",
+    "corpus": {
+      "base_nontherapeutic_sha256": "4b13562268f237b4217002279338a721e9c6b9c30fa178d29883066848fd733b",
+      "clean_indication_sha256": "06573916aa538640949c4fceb79acb4455856aaf2038cd44df5c54675a30c0b3",
+      "entity_mapping_sha256": "4602c6e372d8db30463c5e5dae418632ce742de9255e305809c1d99829ca8fa3",
+      "relation_mapping_sha256": "591c5fe76d4122369574972525f6b5e82128d8e975264f6cfdce6178b223caba",
+      "nontherapeutic_directed_triples": 8015236,
+      "therapeutic_relations_absent": true,
+      "long_id_rows_over_128": 25,
+      "maximum_disease_id_length": 523,
+      "long_id_truncation": false,
+      "duplicate_and_direction_semantics": "source order and duplicates preserved; no inverse relations or normalization"
+    },
+    "masking_api": "FrozenBenchmark.mask using CANONICAL_1HOP",
+    "folds": [
+      {"fold": 0, "targets": 93, "buffers": 109, "hidden_diseases": 202, "legal_clean": 6856, "hidden_clean": 2321, "target_leaks": 0, "buffer_leaks": 0, "updates": 320},
+      {"fold": 1, "targets": 93, "buffers": 125, "hidden_diseases": 218, "legal_clean": 6828, "hidden_clean": 2349, "target_leaks": 0, "buffer_leaks": 0, "updates": 320},
+      {"fold": 2, "targets": 92, "buffers": 83, "hidden_diseases": 175, "legal_clean": 6990, "hidden_clean": 2187, "target_leaks": 0, "buffer_leaks": 0, "updates": 320},
+      {"fold": 3, "targets": 92, "buffers": 118, "hidden_diseases": 210, "legal_clean": 7119, "hidden_clean": 2058, "target_leaks": 0, "buffer_leaks": 0, "updates": 320},
+      {"fold": 4, "targets": 92, "buffers": 110, "hidden_diseases": 202, "legal_clean": 6871, "hidden_clean": 2306, "target_leaks": 0, "buffer_leaks": 0, "updates": 320},
+      {"fold": 5, "targets": 92, "buffers": 99, "hidden_diseases": 191, "legal_clean": 7183, "hidden_clean": 1994, "target_leaks": 0, "buffer_leaks": 0, "updates": 320},
+      {"fold": 6, "targets": 92, "buffers": 120, "hidden_diseases": 212, "legal_clean": 7091, "hidden_clean": 2086, "target_leaks": 0, "buffer_leaks": 0, "updates": 320},
+      {"fold": 7, "targets": 92, "buffers": 146, "hidden_diseases": 238, "legal_clean": 6827, "hidden_clean": 2350, "target_leaks": 0, "buffer_leaks": 0, "updates": 320}
+    ]
+  },
+  "resource_model": {
+    "model_parameters": 16554880,
+    "model_weight_bytes_float32": 66219520,
+    "model_weight_mib": 63.15,
+    "entity_optimizer_dense_moment_upper_bound_bytes": 132410368,
+    "per_fold_updates": 320,
+    "fold0_positive_examples_over_80_epochs": 548480,
+    "fold0_corrupted_examples_over_80_epochs": 8775680,
+    "estimated_peak_gpu_memory": "Not measured. Static weights plus optimizer moments are about 190 MiB before sparse gradients, 16x-negative activations, framework workspace, and scoring buffers. Reserve at least 4 GiB free VRAM; 8+ GiB is recommended, while A100-class hardware best matches provenance.",
+    "historical_a100_fold_runtime_sec": {
+      "minimum": 13.436488151550291,
+      "maximum": 14.490495443344116,
+      "mean": 13.936144709587097
+    },
+    "historical_a100_sum_24_fold_runtime_sec": 334.46747303009033,
+    "current_hardware_runtime_estimate": "UNKNOWN; no CUDA-compatible pilot was authorized or run, so extrapolation would be unsupported."
+  },
+  "full_run_plan": {
+    "jobs": 24,
+    "seeds": [0, 1, 2],
+    "folds": [0, 1, 2, 3, 4, 5, 6, 7],
+    "required_compute": "A CUDA-visible PyTorch environment with at least 4 GiB free VRAM (8+ GiB recommended), sufficient host RAM, and preferably A100-class hardware for closer environmental fidelity.",
+    "execution_order": "Run the seed-0/fold-0 pilot first. Review its fidelity report. Only after approval, execute remaining jobs independently; never carry fold state.",
+    "output_layout": "work/gate6b/runs/seed-{seed}/fold-{fold}/ for logs, resolved contract, RNG/environment snapshot, scores, metrics, and hashes; aggregate only disease-level utilities after all seed runs are complete.",
+    "resume_policy": "Atomic per-fold completion marker written only after scores, metrics, and hashes validate. On interruption, discard the incomplete fold directory and restart that fold from the immutable Stage-A checkpoint. Do not resume optimizer state unless an explicitly validated canonical same-fold checkpoint mechanism is introduced before execution.",
+    "provenance": "Record source/preregistration/checkpoint/corpus hashes, command, timestamps, hardware, software, deterministic flags, RNG seeds, update count, complete loss trajectory, runtime, peak memory, output hashes, and warnings per fold.",
+    "comparisons": [
+      "seed-level exact archive schema/axis checks and macro Recall@50",
+      "paired disease-level Recall@50 differences",
+      "raw score absolute-difference summaries",
+      "ranking correlation and top-50 overlap per disease",
+      "applicability/status agreement",
+      "score distribution and numerical-finiteness diagnostics",
+      "measured uncertainty and provenance-aware interpretation without post hoc pass tolerances"
+    ],
+    "reference_seed_macro_recall50": {
+      "0": 0.2918345167963524,
+      "1": 0.30365612615190174,
+      "2": 0.31921361850047364
+    },
+    "reference_seed_average_macro_recall50": 0.30490142048290925,
+    "raw_score_aggregation_across_seeds": false
+  },
+  "uncertainties": [
+    "Historical Python, NumPy, pandas, PyTorch, CUDA, driver, and exact A100 SKU versions were not preserved.",
+    "The current GTX 1660 SUPER environment is not CUDA-visible to PyTorch and was heavily occupied at inspection.",
+    "No empirical peak-memory or runtime measurement exists for this current machine because the pilot was correctly not launched.",
+    "Gate-6A implementation and reports are not yet protected by a Git commit; repository-history writes are unavailable in this managed environment."
+  ],
+  "recommendation": {
+    "full_24_job_execution_justified_now": false,
+    "next_action": "Move or recreate the frozen repository state on a CUDA-capable environment, preferably A100-class; ensure at least 4 GiB free VRAM and adequate host RAM; install a CUDA-enabled PyTorch build compatible with the driver; re-run this preflight and then execute only seed 0/fold 0 for review.",
+    "do_not": [
+      "do not run the pilot on CPU",
+      "do not change batch size, dtype, model, corruption count, or epochs",
+      "do not launch the remaining 23 jobs",
+      "do not modify historical checkpoints, frozen references, or the preregistration",
+      "do not begin E4, aggregation, SBS/VBS, oracle analysis, or routing"
+    ]
+  }
+}
