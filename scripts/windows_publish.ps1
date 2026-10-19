@@ -2,7 +2,7 @@
 param(
     [string]$ExpectedOwner = "manav-vohra",
     [string]$RepositoryName = "primekg-repurposing-benchmark",
-    [string]$CommitMessage = "Add cross-device synchronization tooling"
+    [string]$CommitMessage = "Fix GitHub publication repository probe"
 )
 
 Set-StrictMode -Version Latest
@@ -26,6 +26,39 @@ function Capture-Native([string]$Program, [string[]]$Arguments) {
         Stop-Safely "$Program failed with exit code $LASTEXITCODE"
     }
     return ($output | Out-String).Trim()
+}
+
+function Invoke-NativeProbe([string]$Program, [string[]]$Arguments) {
+    # Windows PowerShell can promote redirected native stderr to an ErrorRecord
+    # when the caller uses Stop. Expected failures must therefore be captured
+    # under Continue so their exit code and HTTP status can be classified.
+    $PreviousErrorActionPreference = $ErrorActionPreference
+    try {
+        $ErrorActionPreference = "Continue"
+        $Output = & $Program @Arguments 2>&1
+        $ExitCode = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $PreviousErrorActionPreference
+    }
+
+    return [pscustomobject]@{
+        ExitCode = $ExitCode
+        Output = (($Output | ForEach-Object { $_.ToString() }) | Out-String).Trim()
+    }
+}
+
+function Get-GitHubHttpStatus([string]$Output) {
+    $Match = [regex]::Match($Output, '(?i)HTTP(?:/[0-9.]+)?\s+(?<status>[0-9]{3})')
+    if ($Match.Success) { return [int]$Match.Groups['status'].Value }
+    return $null
+}
+
+function Get-RepositoryProbeDisposition([object]$Result) {
+    if ($Result.ExitCode -eq 0) { return "Exists" }
+    $Status = Get-GitHubHttpStatus $Result.Output
+    if ($Status -eq 404) { return "Missing" }
+    if ($Status -eq 401 -or $Status -eq 403) { return "Unauthorized" }
+    return "Failure"
 }
 
 function Normalize-Remote([string]$Value) {
@@ -142,18 +175,28 @@ if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
     }
 }
 
-& gh auth status --hostname github.com *> $null
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "GitHub authentication is required. A normal browser/device flow will open." -ForegroundColor Yellow
+$LoginProbe = Invoke-NativeProbe "gh" @("api", "user", "--jq", ".login")
+$NeedsLogin = $LoginProbe.ExitCode -ne 0 -or $LoginProbe.Output -cne $ExpectedOwner
+if ($NeedsLogin) {
+    if ($LoginProbe.ExitCode -eq 0 -and $LoginProbe.Output) {
+        Write-Warning "GitHub CLI is authenticated as '$($LoginProbe.Output)', not '$ExpectedOwner'."
+    } else {
+        Write-Warning "GitHub CLI authentication is missing, invalid, or cannot access the API."
+    }
+    Write-Host "A normal GitHub browser/device login for $ExpectedOwner will open." -ForegroundColor Yellow
     Invoke-Native "gh" @("auth", "login", "--hostname", "github.com", "--git-protocol", "https", "--web", "--scopes", "repo")
 }
 Invoke-Native "gh" @("auth", "setup-git")
 
-$Login = Capture-Native "gh" @("api", "user", "--jq", ".login")
-$UserId = Capture-Native "gh" @("api", "user", "--jq", ".id")
-if ($Login -cne $ExpectedOwner) {
-    Stop-Safely "Authenticated GitHub account is '$Login', but this project is authorized only for '$ExpectedOwner'. Run 'gh auth login --hostname github.com --web' for the correct account, then rerun."
+$VerifiedLogin = Invoke-NativeProbe "gh" @("api", "user", "--jq", ".login")
+if ($VerifiedLogin.ExitCode -ne 0) {
+    Stop-Safely "GitHub authentication could not be verified after login: $($VerifiedLogin.Output)"
 }
+$Login = $VerifiedLogin.Output
+if ($Login -cne $ExpectedOwner) {
+    Stop-Safely "Authenticated GitHub account is '$Login', but this project is authorized only for '$ExpectedOwner'. Rerun and complete the browser login for the correct account."
+}
+$UserId = Capture-Native "gh" @("api", "user", "--jq", ".id")
 $Slug = "$Login/$RepositoryName"
 $ExpectedRemote = "https://github.com/$Slug"
 
@@ -183,24 +226,62 @@ if ($LASTEXITCODE -ne 0) {
     if ($LASTEXITCODE -ne 0) { Stop-Safely "Existing phase2-gate6a tag is not an ancestor of HEAD; refusing to move it." }
 }
 
-$RepoJson = & gh api "repos/$Slug" 2>$null
-$RepoExists = $LASTEXITCODE -eq 0
-if ($RepoExists) {
-    $Repo = $RepoJson | ConvertFrom-Json
-    if (-not $Repo.private) { Stop-Safely "Repository $Slug exists but is not private. Refusing to use it." }
-    if ([int64]$Repo.size -gt 0) {
-        $Adopt = Read-Host "Private repository $Slug already contains data. Type the exact slug to confirm it is this project"
-        if ($Adopt -cne $Slug) { Stop-Safely "Refusing to overwrite or adopt an unconfirmed existing repository." }
-    }
-} else {
-    Invoke-Native "gh" @("repo", "create", $Slug, "--private", "--description", "Reproducible PrimeKG repurposing benchmark migration and validation")
-}
-
-$Origin = (& git remote get-url origin 2>$null | Out-String).Trim()
-if ($Origin) {
+$RemoteNames = @((Capture-Native "git" @("remote")) -split "`r?`n" | Where-Object { $_ })
+$Origin = ""
+if ($RemoteNames -contains "origin") {
+    $Origin = Capture-Native "git" @("remote", "get-url", "origin")
     if ((Normalize-Remote $Origin) -ne (Normalize-Remote $ExpectedRemote)) {
         Stop-Safely "Existing origin points to '$Origin', not '$ExpectedRemote'. It was not changed."
     }
+}
+
+$RepoProbe = Invoke-NativeProbe "gh" @("api", "repos/$Slug")
+$RepoDisposition = Get-RepositoryProbeDisposition $RepoProbe
+$RepoCreated = $false
+if ($RepoDisposition -eq "Exists") {
+    try { $Repo = $RepoProbe.Output | ConvertFrom-Json }
+    catch { Stop-Safely "GitHub returned invalid repository metadata for $Slug." }
+} else {
+    $HttpStatus = Get-GitHubHttpStatus $RepoProbe.Output
+    if ($RepoDisposition -eq "Unauthorized") {
+        Stop-Safely "GitHub denied access while checking $Slug (HTTP $HttpStatus). Authentication or repository authorization must be corrected; the repository was not treated as absent."
+    }
+    if ($RepoDisposition -eq "Failure") {
+        Stop-Safely "Unable to determine whether $Slug exists. gh exited $($RepoProbe.ExitCode): $($RepoProbe.Output)"
+    }
+
+    # Recheck identity immediately before creating. A 404 is accepted as
+    # absence only for the expected authenticated owner.
+    $OwnerRecheck = Invoke-NativeProbe "gh" @("api", "user", "--jq", ".login")
+    if ($OwnerRecheck.ExitCode -ne 0 -or $OwnerRecheck.Output -cne $ExpectedOwner) {
+        Stop-Safely "Repository lookup returned 404, but authenticated ownership could not be reconfirmed as $ExpectedOwner. No repository was created."
+    }
+
+    Write-Host "Repository $Slug does not exist for the verified owner; creating it as PRIVATE." -ForegroundColor Cyan
+    $CreateProbe = Invoke-NativeProbe "gh" @("repo", "create", $Slug, "--private", "--description", "Reproducible PrimeKG repurposing benchmark migration and validation")
+    if ($CreateProbe.ExitCode -ne 0) {
+        Stop-Safely "Private repository creation failed. This can indicate insufficient authorization or an inaccessible existing repository; no remote was changed. gh output: $($CreateProbe.Output)"
+    }
+    $RepoCreated = $true
+    $RepoProbe = Invoke-NativeProbe "gh" @("api", "repos/$Slug")
+    if ($RepoProbe.ExitCode -ne 0) {
+        Stop-Safely "Repository creation returned success, but $Slug could not be verified: $($RepoProbe.Output)"
+    }
+    try { $Repo = $RepoProbe.Output | ConvertFrom-Json }
+    catch { Stop-Safely "GitHub returned invalid repository metadata after creating $Slug." }
+}
+
+if ($Repo.owner.login -cne $ExpectedOwner -or $Repo.full_name -cne $Slug) {
+    Stop-Safely "Repository identity mismatch: expected $Slug, received '$($Repo.full_name)' owned by '$($Repo.owner.login)'."
+}
+if (-not $Repo.private) { Stop-Safely "Repository $Slug exists but is not private. Refusing to use it." }
+if (-not $RepoCreated -and [int64]$Repo.size -gt 0 -and -not $Origin) {
+        $Adopt = Read-Host "Private repository $Slug already contains data. Type the exact slug to confirm it is this project"
+        if ($Adopt -cne $Slug) { Stop-Safely "Refusing to overwrite or adopt an unconfirmed existing repository." }
+}
+
+if ($Origin) {
+    Write-Host "Using verified origin $Origin."
 } else {
     Invoke-Native "git" @("remote", "add", "origin", "$ExpectedRemote.git")
 }
