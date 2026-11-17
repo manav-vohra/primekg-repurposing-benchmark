@@ -36,6 +36,15 @@ with zero failures. FULL_LOCAL cannot be claimed here. Raw data, corpora, checkp
 and score NPZs were not downloaded for this audit. Historical reports are evidence
 of prior runs, not new local reruns of those artifact-dependent experiments.
 
+Preflight byte-identity caveat: the committed LF preregistration hashes to
+`3d7affe5647e561a1eb421475468c9f9602161110dd9580b8512550be8cd2a59`, while the
+Windows preflight records `fda5b5726babca1d53561562c27434b6e2bdbf8f0c74be06fbd695d2cc4d79a2`.
+Converting only LF to CRLF exactly reproduces that recorded digest. The existing
+`.gitattributes` enforces LF for JSON; both implementation hashes still match the
+preregistration exactly. This session changed none of those files. A future training
+preflight must explicitly record this serialization boundary and both identities;
+do not silently replace the historical hash or claim current byte equality.
+
 ## Immediate CI repair
 
 Latest inspected main run [39190687932](https://github.com/manav-vohra/primekg-repurposing-benchmark/actions/runs/39190687932)
