@@ -1,0 +1,3899 @@
+{
+  "schema_version": "1.0",
+  "gate": "PHASE_2_GATE_6C_A",
+  "status": "BLOCKED_AUTHORITATIVE_PAPER_AND_MAIN_MERGE",
+  "authoritative_target": {
+    "title": "From Complementarity to Actionability: Observability and Cost-Aware Routing in Drug Repurposing.",
+    "venue": "NeurIPS 2026 AI4DD",
+    "version": "submitted camera-ready",
+    "local_path": null,
+    "sha256": null,
+    "confirmed": false
+  },
+  "paper_inventory_complete": false,
+  "paper_claims": [],
+  "paper_tables": [],
+  "paper_figures": [],
+  "paper_metrics": [],
+  "candidate_historical_claims": [
+    {
+      "candidate_claim_id": "HIST-BENCHMARK",
+      "claim": "738 diseases, 7957 candidates, 8368 primary CLEAN truth pairs; frozen graph identity",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_candidate_drugs.csv",
+        "benchmark/p1_v0_primary_diseases.csv",
+        "benchmark/p1_v0_primary_truth.csv"
+      ],
+      "historical_source_ids": [
+        "historical_cell/cell13_freeze_p1_track_a_v0_benchmark_19a1bc9bec09"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "BUNDLED_CONTRACT_VALIDATED",
+      "limitations": "Independent raw reconstruction is prior Gate-2B evidence; raw graph absent.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-MASK",
+      "claim": "8-fold seed-42 canonical one-hop therapeutic masking, retained nontherapeutic structure and scoped direct ontology leakage zero",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "benchmark/p1_v0_k8_quarantine_manifest.csv",
+        "benchmark/p1_v0_fold_summary.csv"
+      ],
+      "historical_source_ids": [
+        "historical_cell/cell12_oof_split_quarantine_design_audit_560df1ebebc0"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "FROZEN_SEMANTICS_VALIDATED",
+      "limitations": "Quarantine union is verified; raw-edge completeness is not re-enumerated here.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-EVALUATION",
+      "claim": "Macro disease utility Recall@50; expected uniform ordering within exact-score ties, explicit abstention zero; unobserved unlabeled",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "historical_source_ids": [
+        "historical_cell/cell16_freeze_tiesafe_evaluator_ca0d03b9999b"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "BUNDLED_CONTRACT_VALIDATED",
+      "limitations": "Scores not re-evaluated during this gate; no biological-negative or efficacy interpretation.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-E1",
+      "claim": "E1 canonical expert disease metrics and applicability; seeds represented by the frozen matrices",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv"
+      ],
+      "historical_source_ids": [
+        "source/authoritative/E1_authoritative.py"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "MATRIX_INPUTS_VALIDATED_CPU_REDUCTION_POSSIBLE",
+      "limitations": "No new macro or seed means computed. Metric CSVs have no drug score axis; external source/score objects absent. Preserve historical E4 lineage.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-E2",
+      "claim": "E2 canonical expert disease metrics and applicability; seeds represented by the frozen matrices",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv"
+      ],
+      "historical_source_ids": [
+        "source/authoritative/E2_authoritative.py"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "MATRIX_INPUTS_VALIDATED_CPU_REDUCTION_POSSIBLE",
+      "limitations": "No new macro or seed means computed. Metric CSVs have no drug score axis; external source/score objects absent. Preserve historical E4 lineage.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-E3",
+      "claim": "E3 canonical expert disease metrics and applicability; seeds represented by the frozen matrices",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv"
+      ],
+      "historical_source_ids": [
+        "source/authoritative/E3_authoritative.py",
+        "source/authoritative/E3_seed12_support.py"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "MATRIX_INPUTS_VALIDATED_CPU_REDUCTION_POSSIBLE",
+      "limitations": "No new macro or seed means computed. Metric CSVs have no drug score axis; external source/score objects absent. Preserve historical E4 lineage.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-E4",
+      "claim": "E4 canonical expert disease metrics and applicability; seeds represented by the frozen matrices",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv"
+      ],
+      "historical_source_ids": [
+        "source/authoritative/E4_training_seed0.py",
+        "source/authoritative/E4_training_seed12.py"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "MATRIX_INPUTS_VALIDATED_CPU_REDUCTION_POSSIBLE",
+      "limitations": "No new macro or seed means computed. Metric CSVs have no drug score axis; external source/score objects absent. Preserve historical E4 lineage.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-SEED-HANDLING",
+      "claim": "E1/E2 deterministic single experts; E3/E4 per-disease metric expectation over seeds 0/1/2",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv"
+      ],
+      "historical_source_ids": [
+        "source/authoritative/E3_seed12_support.py",
+        "source/authoritative/E4_training_seed12.py"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "MATRIX_INPUTS_VALIDATED_CPU_REDUCTION_POSSIBLE",
+      "limitations": "No favorable seed, raw-score averaging or utility aggregation performed.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-PORTFOLIO",
+      "claim": "SBS E2 0.6292107026825583; VBS 0.681351211065284; gap 0.05214050838272566",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv",
+        "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv",
+        "audits/p1_oracle_gap_uncertainty_v1.json"
+      ],
+      "historical_source_ids": [
+        "source/authoritative/E4_training_seed12.py"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "REPRODUCIBLE_FROM_VERIFIED_MATRICES_AFTER_REVIEW",
+      "limitations": "Numbers are frozen targets, not new calculations. Oracle CSV must be comparison-only.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-WINNERS",
+      "claim": "Frozen winner counts E1 39, E2 442, E3 38, E4 56, ties 163; two no-applicable diseases fixed zero",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv",
+        "audits/p1_oracle_gap_winner_counts_v1.csv",
+        "audits/p1_oracle_gap_uncertainty_v1.json"
+      ],
+      "historical_source_ids": [
+        "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "REPRODUCIBLE_FROM_VERIFIED_MATRICES_AFTER_REVIEW",
+      "limitations": "Exact winner tie tolerance and categories must be recovered before implementation; notebook not locally available.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-BOOTSTRAP",
+      "claim": "Paired disease bootstrap oracle-gap intervals; 10000 replicates full cohort and E2-applicable subset",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "audits/p1_oracle_gap_uncertainty_v1.json",
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv"
+      ],
+      "historical_source_ids": [
+        "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "CONDITIONAL_BOOTSTRAP_PRODUCER_RECOVERY",
+      "limitations": "Replicate count and historical CI targets survive; exact RNG seed/algorithm/resampling producer not independently checked here. No exact CI reproduction claim.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-CROSS-METRIC",
+      "claim": "Complementarity across ranking metrics",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv"
+      ],
+      "historical_source_ids": [
+        "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "METRIC_COLUMNS_AVAILABLE_CPU_ANALYSIS_AFTER_REVIEW",
+      "limitations": "Historical Cell 27 is recovered per reconciliation, but source bytes absent and paper metric/figure scope unconfirmed.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-UNIVERSE",
+      "claim": "Candidate-universe robustness U0/U1/U2",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "benchmark/P1_V0_FINAL_EMPIRICAL_INTERPRETATION.md"
+      ],
+      "historical_source_ids": [
+        "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "MISSING_VARIANT_INPUTS",
+      "limitations": "Canonical matrices cannot substitute for alternate-candidate evaluation; corrected Cell 36 and variant outputs must be recovered/hash-identified.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-PROTOCOL",
+      "claim": "Masking robustness TARGET_ONLY/CANONICAL_1HOP/STRICT_2HOP and material disease-level sensitivity",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "benchmark/P1_V0_FINAL_EMPIRICAL_INTERPRETATION.md"
+      ],
+      "historical_source_ids": [
+        "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "MISSING_VARIANT_INPUTS",
+      "limitations": "Cells 38/40 and E4 variant lineage not independently recovered here; only canonical masks executable in clean package.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-E4-FORENSIC",
+      "claim": "Historical raw-logit forward FAIL is distinct from fresh utility-fidelity PASS",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "audits/p1_protocol_e4_forward_reproduction_v1.json",
+        "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+        "audits/p1_protocol_e4_canonical_reimplementation_fidelity_v1.csv"
+      ],
+      "historical_source_ids": [
+        "source/authoritative/E4_authoritative.py"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "FROZEN_AUDIT_REPLAY_ONLY",
+      "limitations": "Fresh canonical reimplementation must not replace original E4 matrices; no checkpoint forward or training run performed.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-STATIC",
+      "claim": "Tested static features/selectors fail profitable routing; no safe switches",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "recovered_contracts/p1_static_routing_closure.json",
+        "recovered_contracts/p1_observability_result_summary.csv"
+      ],
+      "historical_source_ids": [
+        "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "FROZEN_CLOSURE_REPLAY_POSSIBLE_REFIT_CONDITIONAL",
+      "limitations": "Cells 27-34 source hash-addressed notebook only; full feature matrices, fitting inputs, predictions and nested split lineage not locally bundled. Not a claim that routing is impossible.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-GATE-A",
+      "claim": "Cost-aware oracle headroom and relative warm-cost envelope",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "recovered_contracts/p1_p15_gateA_constitution_v1.json",
+        "recovered_contracts/p1_p15_gateA_expected_utility_matrix_v1.csv",
+        "recovered_contracts/p1_p15_gateA_summary_v1.json",
+        "recovered_contracts/p1_p15_cost_timing_audit_v1.json"
+      ],
+      "historical_source_ids": [
+        "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "BUNDLED_UTILITY_AND_COST_EVIDENCE_ANALYSIS_POSSIBLE",
+      "limitations": "Gate-A scope differs from a deployable policy; tiny scalar round-trip differences vs P1 summary must be preserved, not silently normalized.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-GATE-B",
+      "claim": "P0 development gain 0, switches 0; FAIL_STOP; P1 cost-infeasible and not fitted; META_TEST unopened",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "recovered_contracts/p1_p15_gateB_constitution_v1.json",
+        "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+        "recovered_contracts/p1_p15_gateB_p0_action_predictability_v1.csv"
+      ],
+      "historical_source_ids": [
+        "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "FROZEN_STOP_EVIDENCE_REPLAY_POSSIBLE_REFIT_CONDITIONAL",
+      "limitations": "No new P1/HGB fit, threshold search or META_TEST membership/outcome read. Development population is 570, not full 738.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-COSTS",
+      "claim": "Historical warm-cost evidence and remeasurement requirements",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+        "recovered_contracts/p1_p15_existing_runtime_evidence_v1.csv",
+        "recovered_contracts/p1_p15_cost_remeasurement_requirements_v1.csv"
+      ],
+      "historical_source_ids": [
+        "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "FROZEN_EVIDENCE_REPLAY_ONLY",
+      "limitations": "E1/E2 timing hardware unknown; costs are hardware/context dependent and not prospective deployment measurements.",
+      "gate_executed": false
+    },
+    {
+      "candidate_claim_id": "HIST-SCOPE",
+      "claim": "No therapeutic efficacy, prospective/temporal generalization, universal routing-impossibility or exact winner-invariance claim",
+      "paper_occurrence": null,
+      "paper_membership": "UNCONFIRMED_NO_SUBMITTED_PAPER",
+      "evidence_artifact_ids": [
+        "benchmark/P1_V0_FINAL_EMPIRICAL_INTERPRETATION.md",
+        "recovered_contracts/p1_static_routing_closure.json"
+      ],
+      "historical_source_ids": [
+        "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb"
+      ],
+      "evaluation_artifact_ids": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "reproduction_readiness": "DOCUMENTED_SCOPE_ONLY",
+      "limitations": "Submitted paper wording must be checked before making a paper-coverage claim.",
+      "gate_executed": false
+    }
+  ],
+  "frozen_artifacts": [
+    {
+      "artifact_id": "audits/p1_leakage_benchmark_contract_v1.csv",
+      "path": "artifacts/frozen/audits/p1_leakage_benchmark_contract_v1.csv",
+      "expected_sha256": "4a2bc95529e5c9c865d1ae39acca2850667d8d25ec3120285b5e47063d19c966",
+      "observed_sha256": "4a2bc95529e5c9c865d1ae39acca2850667d8d25ec3120285b5e47063d19c966",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "audits/p1_leakage_information_contract_matrix_v1.csv",
+      "path": "artifacts/frozen/audits/p1_leakage_information_contract_matrix_v1.csv",
+      "expected_sha256": "4b06d13b50070b0ff4fb623e527fc2b7dbe53836cd39a727af2afcfedacee57b",
+      "observed_sha256": "4b06d13b50070b0ff4fb623e527fc2b7dbe53836cd39a727af2afcfedacee57b",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "audits/p1_leakage_provenance_artifact_integrity_v1.csv",
+      "path": "artifacts/frozen/audits/p1_leakage_provenance_artifact_integrity_v1.csv",
+      "expected_sha256": "26bbfa4702fd849c597c0c1234a610bc0074e7e6efab1718dbf8fdc839792f5a",
+      "observed_sha256": "26bbfa4702fd849c597c0c1234a610bc0074e7e6efab1718dbf8fdc839792f5a",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "path": "artifacts/frozen/audits/p1_oracle_gap_uncertainty_v1.json",
+      "expected_sha256": "bb762c3c6d55403269013b5e3cb597ec6e00f84228aae525f0e5c2772a84ba6a",
+      "observed_sha256": "bb762c3c6d55403269013b5e3cb597ec6e00f84228aae525f0e5c2772a84ba6a",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_winner_counts_v1.csv",
+      "path": "artifacts/frozen/audits/p1_oracle_gap_winner_counts_v1.csv",
+      "expected_sha256": "5a4356348120516af0d40898cef3b820ed5e01f366c3ab46c13525063c6fa424",
+      "observed_sha256": "5a4356348120516af0d40898cef3b820ed5e01f366c3ab46c13525063c6fa424",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_fidelity_v1.csv",
+      "path": "artifacts/frozen/audits/p1_protocol_e4_canonical_reimplementation_fidelity_v1.csv",
+      "expected_sha256": "abd65da200c67eb3ee5de918a87b11f727b86067655f0afa101bc91197b07c96",
+      "observed_sha256": "abd65da200c67eb3ee5de918a87b11f727b86067655f0afa101bc91197b07c96",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "path": "artifacts/frozen/audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "expected_sha256": "ba1a23d9f851cb03edfb4e2ff77367621b67702102ffa0fd647d5854ec7e921f",
+      "observed_sha256": "ba1a23d9f851cb03edfb4e2ff77367621b67702102ffa0fd647d5854ec7e921f",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_seed_summary_v1.csv",
+      "path": "artifacts/frozen/audits/p1_protocol_e4_canonical_reimplementation_seed_summary_v1.csv",
+      "expected_sha256": "9e250e0f97d7b5770efed2f7502490698b4e4eed08b505d94492b68a50d3370e",
+      "observed_sha256": "9e250e0f97d7b5770efed2f7502490698b4e4eed08b505d94492b68a50d3370e",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "path": "artifacts/frozen/audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "expected_sha256": "5fc02dd78a183602d900a828a593868e30027c3067d65789a130d11c7bd5775e",
+      "observed_sha256": "5fc02dd78a183602d900a828a593868e30027c3067d65789a130d11c7bd5775e",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "benchmark/P1_V0_EXPERIMENTAL_CONSTITUTION.md",
+      "path": "artifacts/frozen/benchmark/P1_V0_EXPERIMENTAL_CONSTITUTION.md",
+      "expected_sha256": "fd95d713039b6439ae7de30ab8d119e212797bbca8259b93b480b64e7295e022",
+      "observed_sha256": "fd95d713039b6439ae7de30ab8d119e212797bbca8259b93b480b64e7295e022",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/P1_V0_FINAL_EMPIRICAL_INTERPRETATION.md",
+      "path": "artifacts/frozen/benchmark/P1_V0_FINAL_EMPIRICAL_INTERPRETATION.md",
+      "expected_sha256": "e19061b45253f44944ebe06e47c03ed8edb0bb50132e9d3391575819b20d5af9",
+      "observed_sha256": "e19061b45253f44944ebe06e47c03ed8edb0bb50132e9d3391575819b20d5af9",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_e3_complex_corpus_manifest.json",
+      "path": "artifacts/frozen/benchmark/p1_e3_complex_corpus_manifest.json",
+      "expected_sha256": "36e7d2f620b25056bb5564d589e4a396c2a7fe591600c6af2cd122127145ceb8",
+      "observed_sha256": "36e7d2f620b25056bb5564d589e4a396c2a7fe591600c6af2cd122127145ceb8",
+      "hash_match": true,
+      "producer": "Cell 19B",
+      "dependencies": [
+        "benchmark/p1_e3_complex_entities.csv",
+        "benchmark/p1_e3_complex_relations.csv",
+        "recovered_contracts/p1_e3_complex_fold_label_manifest.csv",
+        "external/p1_e3_complex_base_nonther_triples.npz",
+        "external/p1_e3_complex_clean_indication_triples.npz"
+      ],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_e3_complex_entities.csv",
+      "path": "artifacts/frozen/benchmark/p1_e3_complex_entities.csv",
+      "expected_sha256": "4602c6e372d8db30463c5e5dae418632ce742de9255e305809c1d99829ca8fa3",
+      "observed_sha256": "4602c6e372d8db30463c5e5dae418632ce742de9255e305809c1d99829ca8fa3",
+      "hash_match": true,
+      "producer": "Cell 19B",
+      "dependencies": [
+        "raw/kg.csv"
+      ],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_e3_complex_relations.csv",
+      "path": "artifacts/frozen/benchmark/p1_e3_complex_relations.csv",
+      "expected_sha256": "591c5fe76d4122369574972525f6b5e82128d8e975264f6cfdce6178b223caba",
+      "observed_sha256": "591c5fe76d4122369574972525f6b5e82128d8e975264f6cfdce6178b223caba",
+      "hash_match": true,
+      "producer": "Cell 19B",
+      "dependencies": [
+        "raw/kg.csv"
+      ],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_p15_execution_blueprint_v1.txt",
+      "path": "artifacts/frozen/benchmark/p1_p15_execution_blueprint_v1.txt",
+      "expected_sha256": "83670a56f0544ac2f92eb28972353be435058a2f84d1dbdb1358716632b5631e",
+      "observed_sha256": "83670a56f0544ac2f92eb28972353be435058a2f84d1dbdb1358716632b5631e",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_benchmark_manifest.json",
+      "path": "artifacts/frozen/benchmark/p1_v0_benchmark_manifest.json",
+      "expected_sha256": "86b9f4f65fcc981eec8a188779d884e852815da01d9ce9b6a6733868d8a38f53",
+      "observed_sha256": "86b9f4f65fcc981eec8a188779d884e852815da01d9ce9b6a6733868d8a38f53",
+      "hash_match": true,
+      "producer": "Cell 13",
+      "dependencies": [
+        "benchmark/p1_v0_candidate_drugs.csv",
+        "benchmark/p1_v0_primary_diseases.csv",
+        "benchmark/p1_v0_primary_truth.csv",
+        "benchmark/p1_v0_primary_eval_roles.csv",
+        "benchmark/p1_v0_k8_quarantine_manifest.csv",
+        "benchmark/p1_v0_fold_summary.csv"
+      ],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_candidate_drugs.csv",
+      "path": "artifacts/frozen/benchmark/p1_v0_candidate_drugs.csv",
+      "expected_sha256": "dfe7275c60b6b75b2a8fa45c017c7675e3e438d6b59722f91517ff78862c2776",
+      "observed_sha256": "dfe7275c60b6b75b2a8fa45c017c7675e3e438d6b59722f91517ff78862c2776",
+      "hash_match": true,
+      "producer": "Cell 9",
+      "dependencies": [],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+      "path": "artifacts/frozen/benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+      "expected_sha256": "13b255e6679dfa8cd2a8af1f00d7905f72503c2e0f6de57968da0d964aa6fe08",
+      "observed_sha256": "13b255e6679dfa8cd2a8af1f00d7905f72503c2e0f6de57968da0d964aa6fe08",
+      "hash_match": true,
+      "producer": "Cell 16",
+      "dependencies": [
+        "benchmark/p1_v0_benchmark_manifest.json",
+        "recovered_contracts/p1_primary_metric_policy.json"
+      ],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_fold_summary.csv",
+      "path": "artifacts/frozen/benchmark/p1_v0_fold_summary.csv",
+      "expected_sha256": "d50d830b87aebdc81731437de6204cca25e442054dca27d687a6feadfe462912",
+      "observed_sha256": "d50d830b87aebdc81731437de6204cca25e442054dca27d687a6feadfe462912",
+      "hash_match": true,
+      "producer": "Cell 12",
+      "dependencies": [
+        "benchmark/p1_v0_k8_quarantine_manifest.csv"
+      ],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_k8_quarantine_manifest.csv",
+      "path": "artifacts/frozen/benchmark/p1_v0_k8_quarantine_manifest.csv",
+      "expected_sha256": "d5aaaaac34cc78b7a38084c374d9c340a002de638aafd85ae650ad7d2d71a1d8",
+      "observed_sha256": "d5aaaaac34cc78b7a38084c374d9c340a002de638aafd85ae650ad7d2d71a1d8",
+      "hash_match": true,
+      "producer": "Cell 12",
+      "dependencies": [
+        "benchmark/p1_v0_primary_diseases.csv"
+      ],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_primary_diseases.csv",
+      "path": "artifacts/frozen/benchmark/p1_v0_primary_diseases.csv",
+      "expected_sha256": "722eec938337a73e7867d384af509d3302bf27d133b665238b76b91ec50d7932",
+      "observed_sha256": "722eec938337a73e7867d384af509d3302bf27d133b665238b76b91ec50d7932",
+      "hash_match": true,
+      "producer": "Cell 13",
+      "dependencies": [],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_primary_eval_roles.csv",
+      "path": "artifacts/frozen/benchmark/p1_v0_primary_eval_roles.csv",
+      "expected_sha256": "c51481941ea30b861e538678dbd4df78fddafeedd91a77ece2de40c157255564",
+      "observed_sha256": "c51481941ea30b861e538678dbd4df78fddafeedd91a77ece2de40c157255564",
+      "hash_match": true,
+      "producer": "Cell 13",
+      "dependencies": [
+        "benchmark/p1_v0_primary_diseases.csv",
+        "benchmark/therapeutic_pair_evaluation_roles.csv"
+      ],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/p1_v0_primary_truth.csv",
+      "path": "artifacts/frozen/benchmark/p1_v0_primary_truth.csv",
+      "expected_sha256": "e17dc6f289f2d467a693d9941f18caf38a36ef11d870f7fc1ebec71953a25b45",
+      "observed_sha256": "e17dc6f289f2d467a693d9941f18caf38a36ef11d870f7fc1ebec71953a25b45",
+      "hash_match": true,
+      "producer": "Cell 13",
+      "dependencies": [
+        "benchmark/p1_v0_primary_diseases.csv",
+        "benchmark/therapeutic_pair_evaluation_roles.csv"
+      ],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/primekg_graph_census.json",
+      "path": "artifacts/frozen/benchmark/primekg_graph_census.json",
+      "expected_sha256": "66e1b413015ac32d008f2e5c61c2337a74b1d4068a79ea1b41f52b0e8bd8c96b",
+      "observed_sha256": "66e1b413015ac32d008f2e5c61c2337a74b1d4068a79ea1b41f52b0e8bd8c96b",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "benchmark/therapeutic_pair_evaluation_roles.csv",
+      "path": "artifacts/frozen/benchmark/therapeutic_pair_evaluation_roles.csv",
+      "expected_sha256": "380d24772a1b6e3039335a9ad3dec3de134d7bf3a9a0478ecb95f56fe4c3f5ea",
+      "observed_sha256": "380d24772a1b6e3039335a9ad3dec3de134d7bf3a9a0478ecb95f56fe4c3f5ea",
+      "hash_match": true,
+      "producer": "Cell 11",
+      "dependencies": [],
+      "provenance_class": "FROZEN_BENCHMARK_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_e3_complex_fold_label_manifest.csv",
+      "path": "artifacts/frozen/recovered_contracts/p1_e3_complex_fold_label_manifest.csv",
+      "expected_sha256": "f612dee4afbdfa2654f41e31b2f8610cdbf45b60a6f39631ecdf89f46043aa71",
+      "observed_sha256": "f612dee4afbdfa2654f41e31b2f8610cdbf45b60a6f39631ecdf89f46043aa71",
+      "hash_match": true,
+      "producer": "Cell 19B",
+      "dependencies": [
+        "benchmark/p1_v0_k8_quarantine_manifest.csv",
+        "benchmark/therapeutic_pair_evaluation_roles.csv"
+      ],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_e4_rgcn_seed0_metadata.json",
+      "path": "artifacts/frozen/recovered_contracts/p1_e4_rgcn_seed0_metadata.json",
+      "expected_sha256": "aa58e6f73a3e671fb5d79d444c857380af33a7b0e254a902efc86dacde45eca1",
+      "observed_sha256": "aa58e6f73a3e671fb5d79d444c857380af33a7b0e254a902efc86dacde45eca1",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_e4_rgcn_seed1_metadata.json",
+      "path": "artifacts/frozen/recovered_contracts/p1_e4_rgcn_seed1_metadata.json",
+      "expected_sha256": "347996002a033ea7cbcb62559ad7b8d86b0642bcf6943fd0d30008bf82b33880",
+      "observed_sha256": "347996002a033ea7cbcb62559ad7b8d86b0642bcf6943fd0d30008bf82b33880",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_e4_rgcn_seed2_metadata.json",
+      "path": "artifacts/frozen/recovered_contracts/p1_e4_rgcn_seed2_metadata.json",
+      "expected_sha256": "453f8691a00731e7b52d9a933371aac70e8cc15d6c3d7d4f7744bef8a24edfa8",
+      "observed_sha256": "453f8691a00731e7b52d9a933371aac70e8cc15d6c3d7d4f7744bef8a24edfa8",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv",
+        "benchmark/p1_e3_complex_corpus_manifest.json"
+      ],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_observability_result_summary.csv",
+      "path": "artifacts/frozen/recovered_contracts/p1_observability_result_summary.csv",
+      "expected_sha256": "f58e53bb2d8d9dcd024e14178f57ff30bd52d861ad171a82e40a02f63e039eee",
+      "observed_sha256": "f58e53bb2d8d9dcd024e14178f57ff30bd52d861ad171a82e40a02f63e039eee",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_remeasurement_requirements_v1.csv",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_cost_remeasurement_requirements_v1.csv",
+      "expected_sha256": "1f694a0d79018eaf8f590b48f4800ba4f936d8d74c3bc0dcb293a6d2af53a736",
+      "observed_sha256": "1f694a0d79018eaf8f590b48f4800ba4f936d8d74c3bc0dcb293a6d2af53a736",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "expected_sha256": "c45e75d054bc9e8eec74c36749e5f0bb9a6140d49fb678a1a5493332beccb52a",
+      "observed_sha256": "c45e75d054bc9e8eec74c36749e5f0bb9a6140d49fb678a1a5493332beccb52a",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_existing_runtime_evidence_v1.csv",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_existing_runtime_evidence_v1.csv",
+      "expected_sha256": "fda7b8865074414630d40e39ff4f878aee7baa56228113296af4d15dc7dcd64f",
+      "observed_sha256": "fda7b8865074414630d40e39ff4f878aee7baa56228113296af4d15dc7dcd64f",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_constitution_v1.json",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateA_constitution_v1.json",
+      "expected_sha256": "503a68768e305ae8b7b5e7e04cb6e9f1c91f6eda6af1fc46276924cd830c57fe",
+      "observed_sha256": "503a68768e305ae8b7b5e7e04cb6e9f1c91f6eda6af1fc46276924cd830c57fe",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_expected_utility_matrix_v1.csv",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateA_expected_utility_matrix_v1.csv",
+      "expected_sha256": "79e5e044cc0087973f2dbf889898552237171a816b487b103525fe0d5f6f96eb",
+      "observed_sha256": "79e5e044cc0087973f2dbf889898552237171a816b487b103525fe0d5f6f96eb",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "expected_sha256": "2b01570ffd6da4c741942d08c4ed124cd48f92c1d02dc5da625078d41d2fe4fe",
+      "observed_sha256": "2b01570ffd6da4c741942d08c4ed124cd48f92c1d02dc5da625078d41d2fe4fe",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_constitution_v1.json",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateB_constitution_v1.json",
+      "expected_sha256": "feb6d6b34b06ebfbfec1a77a1d7b7f8ff31c5c1ceaa18149307d8ead3924253f",
+      "observed_sha256": "feb6d6b34b06ebfbfec1a77a1d7b7f8ff31c5c1ceaa18149307d8ead3924253f",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "expected_sha256": "46b40eccee5245cca10704dc4f7ea6b40281ed421a9896eedf72b73d12fbacc9",
+      "observed_sha256": "46b40eccee5245cca10704dc4f7ea6b40281ed421a9896eedf72b73d12fbacc9",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_p0_action_predictability_v1.csv",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateB_p0_action_predictability_v1.csv",
+      "expected_sha256": "6bbd4bc3a73974f71e9438bbb396ce23de67479f00da91c2880d646c3d99a12d",
+      "observed_sha256": "6bbd4bc3a73974f71e9438bbb396ce23de67479f00da91c2880d646c3d99a12d",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_primary_metric_policy.json",
+      "path": "artifacts/frozen/recovered_contracts/p1_primary_metric_policy.json",
+      "expected_sha256": "e394ff95f71347c539193ad59159c1f74ce3c647f8254b00e688c12fd0c6f3af",
+      "observed_sha256": "e394ff95f71347c539193ad59159c1f74ce3c647f8254b00e688c12fd0c6f3af",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "path": "artifacts/frozen/recovered_contracts/p1_static_routing_closure.json",
+      "expected_sha256": "46581036bf8ae98212474d298c20947e2b6d5ca8f1f4908be23d539458c8cfcc",
+      "observed_sha256": "46581036bf8ae98212474d298c20947e2b6d5ca8f1f4908be23d539458c8cfcc",
+      "hash_match": true,
+      "producer": "historical P1 notebook",
+      "dependencies": [],
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "reference_results/p1_e1_e2_e3_e4_expected_oracle.csv",
+      "path": "artifacts/frozen/reference_results/p1_e1_e2_e3_e4_expected_oracle.csv",
+      "expected_sha256": "40385a848f91799aff64776c9834a4f050ddd32e3fce3e186f4f94e9362d51fb",
+      "observed_sha256": "40385a848f91799aff64776c9834a4f050ddd32e3fce3e186f4f94e9362d51fb",
+      "hash_match": true,
+      "producer": "Cell 25",
+      "dependencies": [
+        "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+        "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+        "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+        "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv"
+      ],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+      "path": "artifacts/frozen/reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+      "expected_sha256": "3d008a1d12cf00b43356b7b81d5e92fd1bf998b9d77a7718a50a8404b5e32acd",
+      "observed_sha256": "3d008a1d12cf00b43356b7b81d5e92fd1bf998b9d77a7718a50a8404b5e32acd",
+      "hash_match": true,
+      "producer": "Cell 14 / Cell 16",
+      "dependencies": [
+        "raw/kg.csv",
+        "benchmark/p1_v0_candidate_drugs.csv",
+        "benchmark/p1_v0_primary_diseases.csv",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json"
+      ],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+      "path": "artifacts/frozen/reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+      "expected_sha256": "5a9165046780af6979aef0e41d7266db806900738d83a3eb24579fdfb141cbcf",
+      "observed_sha256": "5a9165046780af6979aef0e41d7266db806900738d83a3eb24579fdfb141cbcf",
+      "hash_match": true,
+      "producer": "Cell 17",
+      "dependencies": [
+        "raw/kg.csv",
+        "benchmark/p1_v0_candidate_drugs.csv",
+        "benchmark/p1_v0_primary_diseases.csv",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "benchmark/p1_v0_k8_quarantine_manifest.csv",
+        "benchmark/therapeutic_pair_evaluation_roles.csv"
+      ],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+      "path": "artifacts/frozen/reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+      "expected_sha256": "9fd3f3138e659ce5928b28406e52161fc3cedfc4b4352e2462227ddd47425e36",
+      "observed_sha256": "9fd3f3138e659ce5928b28406e52161fc3cedfc4b4352e2462227ddd47425e36",
+      "hash_match": true,
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e3_complex_seed0_scores.npz"
+      ],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+      "path": "artifacts/frozen/reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+      "expected_sha256": "33bd8180345dfd08f92ec33d06efcc08d8ecb0514051fb92948fc30e11aafe2e",
+      "observed_sha256": "33bd8180345dfd08f92ec33d06efcc08d8ecb0514051fb92948fc30e11aafe2e",
+      "hash_match": true,
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e3_complex_seed1_scores.npz"
+      ],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+      "path": "artifacts/frozen/reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+      "expected_sha256": "a113c98f95a26fd96ed713355c877723308f03d504c1ea001fdde779600312f8",
+      "observed_sha256": "a113c98f95a26fd96ed713355c877723308f03d504c1ea001fdde779600312f8",
+      "hash_match": true,
+      "producer": "Cells 20-21",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e3_complex_seed2_scores.npz"
+      ],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+      "path": "artifacts/frozen/reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+      "expected_sha256": "a006c394fb676b0c1625e4dc60d71bc095f01af6acc9ccc8501ff0eaa9c8eb6d",
+      "observed_sha256": "a006c394fb676b0c1625e4dc60d71bc095f01af6acc9ccc8501ff0eaa9c8eb6d",
+      "hash_match": true,
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e4_rgcn_seed0_scores.npz"
+      ],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+      "path": "artifacts/frozen/reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+      "expected_sha256": "ce87a944241ad6290ed6545ef119ac4416a5c0bd8d063074f0913bd8a3a6dfe6",
+      "observed_sha256": "ce87a944241ad6290ed6545ef119ac4416a5c0bd8d063074f0913bd8a3a6dfe6",
+      "hash_match": true,
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e4_rgcn_seed1_scores.npz"
+      ],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    },
+    {
+      "artifact_id": "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv",
+      "path": "artifacts/frozen/reference_results/p1_e4_rgcn_seed2_expert_matrix.csv",
+      "expected_sha256": "4203b835aefe746ba9300ee06d45ce4b59c1d9a684331633e736aa797a1e01af",
+      "observed_sha256": "4203b835aefe746ba9300ee06d45ce4b59c1d9a684331633e736aa797a1e01af",
+      "hash_match": true,
+      "producer": "Cells 24-25",
+      "dependencies": [
+        "benchmark/p1_e3_complex_corpus_manifest.json",
+        "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+        "external/p1_e4_rgcn_seed2_scores.npz"
+      ],
+      "provenance_class": "FROZEN_REFERENCE_RESULT"
+    }
+  ],
+  "historical_sources": {
+    "historical_cell/cell02_primekg_graph_census_1950d94ac298": {
+      "registry_expected_sha256": "1950d94ac298f18e95060efebb59415ee037f579f7a4f0324f51d00b0b70b0f6",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell03_therapeutic_edge_label_audit_fae778030239": {
+      "registry_expected_sha256": "fae7780302390fd4ca7147cef2f44a294cc3a6ab103d81cae41e7ccfc3170b31",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell04_txgnn_vs_p1_label_pool_audit_7e7f45e01511": {
+      "registry_expected_sha256": "7e7f45e01511c81b6753f9aa6f8411bddacffd9ad2e3478904844dc6c336335f",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell05_zero_shot_connectivity_audit_2fbb0f4b38db": {
+      "registry_expected_sha256": "2fbb0f4b38db8470343ef7b51fab981c7ac7a5c8b86f1dd405cdee8599a7aecb",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell06_ontology_shortcut_audit_f2be621d3375": {
+      "registry_expected_sha256": "f2be621d337586629320539827b3f1ca8879e8c2845e54223bca98d62a80d2a7",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell07_ontology_family_structure_audit_7beea6efbe31": {
+      "registry_expected_sha256": "7beea6efbe31286eaa2d784a3f525e24dfd21aa395f763c584f8670f17fb7ee5",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell08_local_quarantine_feasibility_40b94197b1b2": {
+      "registry_expected_sha256": "40b94197b1b276c11a6ca42ceb489fae79ca7cb36672c657bd9e50cdf2e1b1cf",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell09_drug_candidate_universe_audit_f0b3d7c00869": {
+      "registry_expected_sha256": "f0b3d7c008690fe76841980bcca5ea4bb5aeb4ed627a61441995e3ac61ee3713",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell10_candidate_universe_label_policy_sensitivity_898de8b1aed2": {
+      "registry_expected_sha256": "898de8b1aed2f6ec4c79baffd73e6ef5bc2e36c274c3efdcd2e3154894ad9436",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell11_primary_evaluation_label_role_audit_ff040fc33dd9": {
+      "registry_expected_sha256": "ff040fc33dd9fa5c3fa3915330ea08bf792290751ed610ca0dbed5ea8de6fdce",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell12_oof_split_quarantine_design_audit_560df1ebebc0": {
+      "registry_expected_sha256": "560df1ebebc01dc5a06c21761fb73b6498b88b97601a4a476ea78b4d4509bfe8",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell13_freeze_p1_track_a_v0_benchmark_19a1bc9bec09": {
+      "registry_expected_sha256": "19a1bc9bec09868df63e1e155190db0d544132b20b671893f9bc507423f0c5f5",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell16_freeze_tiesafe_evaluator_ca0d03b9999b": {
+      "registry_expected_sha256": "ca0d03b9999ba81129b1aba1f87b5cab34da954579d68a4c6f91376289c97ae3",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell19A_e3_corpus_provenance_reconciliation_5c0499aa4dc3": {
+      "registry_expected_sha256": "5c0499aa4dc3a0e47652c7e57bc5d94e28fd194d48efbd02c9d643de6b6ad09d",
+      "classification": "HISTORICAL_FORENSIC_RECONCILIATION",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell19B_e3_corpus_truncation_repair_and_freeze_f2a2af19cbf5": {
+      "registry_expected_sha256": "f2a2af19cbf5f84f88f9bb4d3b833a9f01892811e24140e92c0f0f480c874187",
+      "classification": "HISTORICAL_CORRECTIVE_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "historical_cell/cell19_e3_corpus_construction_initial_2b140c6482b7": {
+      "registry_expected_sha256": "2b140c6482b7bd32a0c61354b0a005cb622bc255405f33a784ded122fd829012",
+      "classification": "HISTORICAL_SOURCE_WITH_DIAGNOSED_DEFECT",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "notebook/P1_Benchmark_Feasibility_PRE_RECOVERY_RECONSTRUCTED.ipynb": {
+      "registry_expected_sha256": "11c535824da41595a87afb9e0cc95d85b3305d855e6ed818118d6d9aebae3091",
+      "classification": "RECONSTRUCTED_HISTORICAL_SNAPSHOT",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb": {
+      "registry_expected_sha256": "704d8ea1cef1dae7cdd058462e73f89eac60355d0f4e6b1b0d41500560b2a200",
+      "classification": "RECOVERED_HISTORICAL_ARTIFACT",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "source/authoritative/E1_authoritative.py": {
+      "registry_expected_sha256": "b4dc0191fc66b6f0f3927c40bd4cc375ba20ce6e99e82e085bdb5684ed1f0900",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "source/authoritative/E2_authoritative.py": {
+      "registry_expected_sha256": "96607e0eacc774e9f788499bf3481a3e34bb557906eaaf68cd4586dd1c01fe2f",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "source/authoritative/E3_authoritative.py": {
+      "registry_expected_sha256": "14712fef0cd629bda08dee271e15dde77175379281c0099f3b513a9540c1648c",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "source/authoritative/E3_seed12_support.py": {
+      "registry_expected_sha256": "af61b4148f33029883e6e2acf425915c32091a0916259f1ad8e639662ba56224",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "source/authoritative/E4_authoritative.py": {
+      "registry_expected_sha256": "a476b743fe8d813c73e2acedb9cf1c9c09459411fe0914776e02db731a0965cc",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "source/authoritative/E4_training_seed0.py": {
+      "registry_expected_sha256": "d6f8b3b38f681c0bb453d8a5fc295d5f01ef8b45e3293ec1d1e255807cc11680",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    },
+    "source/authoritative/E4_training_seed12.py": {
+      "registry_expected_sha256": "46975170f3751cca81db631080469b277ddbb22d85de2d62439bbb1129cb3d3f",
+      "classification": "HISTORICAL_SOURCE",
+      "location": "source_archive_entry",
+      "locally_available": false,
+      "content_verified_in_this_audit": false,
+      "authority": "Registry/manifests; source bytes absent in this clone"
+    }
+  },
+  "registered_nonlocal_inputs": [
+    {
+      "artifact_id": "external/p1_e1_e2_e3_expected_oracle.csv",
+      "expected_sha256": null,
+      "location": "unlocated_historical_output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e1_e2_preliminary_oracle.csv",
+      "expected_sha256": null,
+      "location": "unlocated_historical_output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e1_weighted_gene_cosine_scores.npz",
+      "expected_sha256": null,
+      "location": "bundled_recovered",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e2_disease_profile_label_transfer_scores.npz",
+      "expected_sha256": null,
+      "location": "bundled_recovered",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_base_nonther_triples.npz",
+      "expected_sha256": "4b13562268f237b4217002279338a721e9c6b9c30fa178d29883066848fd733b",
+      "location": "external_not_bundled",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_clean_indication_triples.npz",
+      "expected_sha256": "06573916aa538640949c4fceb79acb4455856aaf2038cd44df5c54675a30c0b3",
+      "location": "external_not_bundled",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_expected_utility.csv",
+      "expected_sha256": null,
+      "location": "unlocated_historical_output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed0_base_pretrain.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed0_scores.npz",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed0_training_log.csv",
+      "expected_sha256": null,
+      "location": "unlocated_historical_output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed1_base_pretrain.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed1_scores.npz",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed1_training_log.csv",
+      "expected_sha256": null,
+      "location": "unlocated_historical_output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed2_base_pretrain.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed2_scores.npz",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED"
+    },
+    {
+      "artifact_id": "external/p1_e3_complex_seed2_training_log.csv",
+      "expected_sha256": null,
+      "location": "unlocated_historical_output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_expected_utility.csv",
+      "expected_sha256": null,
+      "location": "unlocated_historical_output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold0.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold1.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold2.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold3.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold4.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold5.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold6.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_fold7.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_scores.npz",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed0_training_log.csv",
+      "expected_sha256": null,
+      "location": "unlocated_historical_output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold0.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold1.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold2.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold3.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold4.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold5.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold6.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_fold7.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_scores.npz",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed1_training_log.csv",
+      "expected_sha256": null,
+      "location": "unlocated_historical_output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold0.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold1.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold2.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold3.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold4.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold5.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold6.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_fold7.pt",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FROZEN_MODEL_ARTIFACT"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_scores.npz",
+      "expected_sha256": null,
+      "location": "external_not_bundled",
+      "provenance_class": "FOUND_EXTERNAL_NOT_BUNDLED"
+    },
+    {
+      "artifact_id": "external/p1_e4_rgcn_seed2_training_log.csv",
+      "expected_sha256": null,
+      "location": "unlocated_historical_output",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "historical_cell/cell02_primekg_graph_census_1950d94ac298",
+      "expected_sha256": "1950d94ac298f18e95060efebb59415ee037f579f7a4f0324f51d00b0b70b0f6",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell03_therapeutic_edge_label_audit_fae778030239",
+      "expected_sha256": "fae7780302390fd4ca7147cef2f44a294cc3a6ab103d81cae41e7ccfc3170b31",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell04_txgnn_vs_p1_label_pool_audit_7e7f45e01511",
+      "expected_sha256": "7e7f45e01511c81b6753f9aa6f8411bddacffd9ad2e3478904844dc6c336335f",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell05_zero_shot_connectivity_audit_2fbb0f4b38db",
+      "expected_sha256": "2fbb0f4b38db8470343ef7b51fab981c7ac7a5c8b86f1dd405cdee8599a7aecb",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell06_ontology_shortcut_audit_f2be621d3375",
+      "expected_sha256": "f2be621d337586629320539827b3f1ca8879e8c2845e54223bca98d62a80d2a7",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell07_ontology_family_structure_audit_7beea6efbe31",
+      "expected_sha256": "7beea6efbe31286eaa2d784a3f525e24dfd21aa395f763c584f8670f17fb7ee5",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell08_local_quarantine_feasibility_40b94197b1b2",
+      "expected_sha256": "40b94197b1b276c11a6ca42ceb489fae79ca7cb36672c657bd9e50cdf2e1b1cf",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell09_drug_candidate_universe_audit_f0b3d7c00869",
+      "expected_sha256": "f0b3d7c008690fe76841980bcca5ea4bb5aeb4ed627a61441995e3ac61ee3713",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell10_candidate_universe_label_policy_sensitivity_898de8b1aed2",
+      "expected_sha256": "898de8b1aed2f6ec4c79baffd73e6ef5bc2e36c274c3efdcd2e3154894ad9436",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell11_primary_evaluation_label_role_audit_ff040fc33dd9",
+      "expected_sha256": "ff040fc33dd9fa5c3fa3915330ea08bf792290751ed610ca0dbed5ea8de6fdce",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell12_oof_split_quarantine_design_audit_560df1ebebc0",
+      "expected_sha256": "560df1ebebc01dc5a06c21761fb73b6498b88b97601a4a476ea78b4d4509bfe8",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell13_freeze_p1_track_a_v0_benchmark_19a1bc9bec09",
+      "expected_sha256": "19a1bc9bec09868df63e1e155190db0d544132b20b671893f9bc507423f0c5f5",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell16_freeze_tiesafe_evaluator_ca0d03b9999b",
+      "expected_sha256": "ca0d03b9999ba81129b1aba1f87b5cab34da954579d68a4c6f91376289c97ae3",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell19A_e3_corpus_provenance_reconciliation_5c0499aa4dc3",
+      "expected_sha256": "5c0499aa4dc3a0e47652c7e57bc5d94e28fd194d48efbd02c9d643de6b6ad09d",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_FORENSIC_RECONCILIATION"
+    },
+    {
+      "artifact_id": "historical_cell/cell19B_e3_corpus_truncation_repair_and_freeze_f2a2af19cbf5",
+      "expected_sha256": "f2a2af19cbf5f84f88f9bb4d3b833a9f01892811e24140e92c0f0f480c874187",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_CORRECTIVE_SOURCE"
+    },
+    {
+      "artifact_id": "historical_cell/cell19_e3_corpus_construction_initial_2b140c6482b7",
+      "expected_sha256": "2b140c6482b7bd32a0c61354b0a005cb622bc255405f33a784ded122fd829012",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE_WITH_DIAGNOSED_DEFECT"
+    },
+    {
+      "artifact_id": "notebook/P1_Benchmark_Feasibility_PRE_RECOVERY_RECONSTRUCTED.ipynb",
+      "expected_sha256": "11c535824da41595a87afb9e0cc95d85b3305d855e6ed818118d6d9aebae3091",
+      "location": "source_archive_entry",
+      "provenance_class": "RECONSTRUCTED_HISTORICAL_SNAPSHOT"
+    },
+    {
+      "artifact_id": "notebook/P1_Benchmark_Feasibility_RECOVERED_CURRENT.ipynb",
+      "expected_sha256": "704d8ea1cef1dae7cdd058462e73f89eac60355d0f4e6b1b0d41500560b2a200",
+      "location": "source_archive_entry",
+      "provenance_class": "RECOVERED_HISTORICAL_ARTIFACT"
+    },
+    {
+      "artifact_id": "raw/kg.csv",
+      "expected_sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69",
+      "location": "external_not_bundled",
+      "provenance_class": "RAW_EXTERNAL_INPUT"
+    },
+    {
+      "artifact_id": "source/authoritative/E1_authoritative.py",
+      "expected_sha256": "b4dc0191fc66b6f0f3927c40bd4cc375ba20ce6e99e82e085bdb5684ed1f0900",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "source/authoritative/E2_authoritative.py",
+      "expected_sha256": "96607e0eacc774e9f788499bf3481a3e34bb557906eaaf68cd4586dd1c01fe2f",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "source/authoritative/E3_authoritative.py",
+      "expected_sha256": "14712fef0cd629bda08dee271e15dde77175379281c0099f3b513a9540c1648c",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "source/authoritative/E3_seed12_support.py",
+      "expected_sha256": "af61b4148f33029883e6e2acf425915c32091a0916259f1ad8e639662ba56224",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "source/authoritative/E4_authoritative.py",
+      "expected_sha256": "a476b743fe8d813c73e2acedb9cf1c9c09459411fe0914776e02db731a0965cc",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "source/authoritative/E4_training_seed0.py",
+      "expected_sha256": "d6f8b3b38f681c0bb453d8a5fc295d5f01ef8b45e3293ec1d1e255807cc11680",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    },
+    {
+      "artifact_id": "source/authoritative/E4_training_seed12.py",
+      "expected_sha256": "46975170f3751cca81db631080469b277ddbb22d85de2d62439bbb1129cb3d3f",
+      "location": "source_archive_entry",
+      "provenance_class": "HISTORICAL_SOURCE"
+    }
+  ],
+  "stored_scalar_targets": [
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/status",
+      "value": "P1_ORACLE_GAP_UNCERTAINTY_FROZEN",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/frozen_full_cohort_semantics",
+      "value": "FIXED_ZERO_ALL_EXPERTS",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/population_n",
+      "value": 738,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/no_applicable_expert_n",
+      "value": 2,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/applicability_counts/E1",
+      "value": 504,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/applicability_counts/E2",
+      "value": 712,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/applicability_counts/E3",
+      "value": 736,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/applicability_counts/E4",
+      "value": 736,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/SBS",
+      "value": "E2",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/SBS_R50",
+      "value": 0.6292107026825583,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/VBS_R50",
+      "value": 0.681351211065284,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/oracle_gap",
+      "value": 0.05214050838272566,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/relative_gap_vs_E2",
+      "value": 0.08286653129139628,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/paired_bootstrap/reps",
+      "value": 10000,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/paired_bootstrap/full_738_CI/0",
+      "value": 0.040873353304364146,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/paired_bootstrap/full_738_CI/1",
+      "value": 0.06424715370226272,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/paired_bootstrap/E2_applicable_712_CI/0",
+      "value": 0.030531448636360755,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/paired_bootstrap/E2_applicable_712_CI/1",
+      "value": 0.05097190434045231,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/winner_counts/E1",
+      "value": 39,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/winner_counts/E2",
+      "value": 442,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/winner_counts/E3",
+      "value": 38,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/winner_counts/E4",
+      "value": 56,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/winner_counts/TIE",
+      "value": 163,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/E2_applicable_n",
+      "value": 712,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/E2_unavailable_n",
+      "value": 26,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/E2_applicable_gap",
+      "value": 0.040321348593792654,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/E2_applicable_share_full_gap",
+      "value": 0.7460766011703898,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/median_E2_regret",
+      "value": 0.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/p90_E2_regret",
+      "value": 0.16314332452497826,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/fraction_E2_regret_gt_zero",
+      "value": 0.1842818428184282,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/fraction_E2_regret_ge_0_05",
+      "value": 0.14634146341463414,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/fraction_E2_regret_ge_0_10",
+      "value": 0.12059620596205962,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/median_best_second_fixed_margin",
+      "value": 0.1803412756652733,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/applicable_only_margin_n",
+      "value": 736,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/META_TEST_membership_loaded",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/new_model_fit",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/new_experiment",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_oracle_gap_uncertainty_v1.json",
+      "json_pointer": "/frozen_P1_modified",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/benchmark_id",
+      "value": "P1_TRACK_A_PRIMEKG_V0",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/experiment",
+      "value": "E4_CANONICAL_REIMPLEMENTATION_FIDELITY",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/status",
+      "value": "PASS",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/original_E4_remains_canonical_benchmark_result",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/raw_logit_forensic_status",
+      "value": "FAIL",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/serialization_boundary_localized",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fresh_training_execution_preregistered",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/canonical_protocol_only",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/noncanonical_protocol_training_performed",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/hyperparameter_tuning",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/0/seed",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/0/macro_R50",
+      "value": 0.26830768995930504,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/0/applicable_diseases",
+      "value": 736,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/0/mean_fold_runtime_sec",
+      "value": 26.230428904294968,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/0/mean_final_loss",
+      "value": 0.4476872608065605,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/1/seed",
+      "value": 1,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/1/macro_R50",
+      "value": 0.26800985161176594,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/1/applicable_diseases",
+      "value": 736,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/1/mean_fold_runtime_sec",
+      "value": 26.203387886285782,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/1/mean_final_loss",
+      "value": 0.4471731446683407,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/2/seed",
+      "value": 2,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/2/macro_R50",
+      "value": 0.2676016264129515,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/2/applicable_diseases",
+      "value": 736,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/2/mean_fold_runtime_sec",
+      "value": 26.189782470464706,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/seed_summary/2/mean_final_loss",
+      "value": 0.4457765743136406,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/original_expected_E4_R50",
+      "value": 0.26966441994567186,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/fresh_expected_E4_R50",
+      "value": 0.2679730559946742,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/macro_delta",
+      "value": -0.0016913639509976708,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/macro_abs_delta",
+      "value": 0.0016913639509976708,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/expected_disease_utility_spearman",
+      "value": 0.9926185859891448,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/spearman_p",
+      "value": 0.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/fresh_seed_macro_std",
+      "value": 0.00028942111297117744,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/prior_E1_E2_E3_VBS",
+      "value": 0.6581969976913684,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/original_four_expert_VBS",
+      "value": 0.681351211065284,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/fresh_four_expert_VBS",
+      "value": 0.6813704823796629,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/four_expert_VBS_delta",
+      "value": 1.9271314378954685e-05,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/fresh_E4_incremental_oracle_gain",
+      "value": 0.0231734846882945,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/original_strict_E4_wins",
+      "value": 56,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/fresh_strict_E4_wins",
+      "value": 58,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/E4_strict_win_set_jaccard",
+      "value": 0.9322033898305084,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/fidelity/fidelity_pass",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/gate/expected_macro_abs_delta_max",
+      "value": 0.02,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/gate/expected_disease_utility_spearman_min",
+      "value": 0.8,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/gate/incremental_oracle_gain_min",
+      "value": 0.01,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/gate/four_expert_VBS_abs_delta_max",
+      "value": 0.015,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/gate/seed_macro_std_max",
+      "value": 0.02,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/criteria/expected_macro_abs_delta",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/criteria/expected_disease_utility_spearman",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/criteria/incremental_oracle_gain",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/criteria/four_expert_VBS_abs_delta",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/criteria/seed_macro_std",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/total_runtime_sec",
+      "value": 646.3402190208435,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "json_pointer": "/next",
+      "value": "If PASS: use this exact fresh-training implementation unchanged for all three frozen E4 protocol variants. If FAIL: do not tune or rescue E4; record E4 protocol robustness as unresolved under the recoverable training implementation.",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/benchmark_id",
+      "value": "P1_TRACK_A_PRIMEKG_V0",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/experiment",
+      "value": "E4_FORWARD_REPRODUCTION",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/status",
+      "value": "FAIL",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/reference_seed",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/reference_fold",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/reference_checkpoint",
+      "value": "p1_e4_rgcn_seed0_fold0.pt",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/saved_score_artifact",
+      "value": "p1_e4_rgcn_seed0_scores.npz",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/fold0_diseases",
+      "value": 93,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/candidate_count",
+      "value": 7957,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping_mode",
+      "value": "relation_table_order_excluding_clean_indication",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/0",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/1",
+      "value": 1,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/2",
+      "value": 2,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/3",
+      "value": 3,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/4",
+      "value": 4,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/5",
+      "value": 5,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/6",
+      "value": 6,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/8",
+      "value": 7,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/9",
+      "value": 8,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/10",
+      "value": 9,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/11",
+      "value": 10,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/12",
+      "value": 11,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/13",
+      "value": 12,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/14",
+      "value": 13,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/15",
+      "value": 14,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/16",
+      "value": 15,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/17",
+      "value": 16,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/18",
+      "value": 17,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/19",
+      "value": 18,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/20",
+      "value": 19,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/21",
+      "value": 20,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/22",
+      "value": 21,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/23",
+      "value": 22,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/24",
+      "value": 23,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/25",
+      "value": 24,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/26",
+      "value": 25,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/relation_mapping/27",
+      "value": 26,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/graph_aggregation",
+      "value": "incoming relation-specific mean",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/variant_id",
+      "value": 4,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/relation_transform",
+      "value": "RIGHT",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/layer1_activation",
+      "value": "RELU",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/layer2_activation",
+      "value": "NONE",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/decoder_orientation",
+      "value": "DRUG_M_DISEASE",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/mean_abs_error",
+      "value": 0.0002270696211583591,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/max_abs_error",
+      "value": 0.0019693374633789062,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/rmse",
+      "value": 0.00030393358986593284,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/pearson",
+      "value": 0.9999999935322766,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/mean_top50_set_overlap",
+      "value": 1.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/exact_top50_rows",
+      "value": 93,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/fold0_diseases",
+      "value": 93,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/best_variant/encoder_runtime_sec",
+      "value": 0.009677648544311523,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/variant_id",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/relation_transform",
+      "value": "RIGHT",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/layer1_activation",
+      "value": "NONE",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/layer2_activation",
+      "value": "NONE",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/decoder_orientation",
+      "value": "DRUG_M_DISEASE",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/mean_abs_error",
+      "value": 0.7403104848696596,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/max_abs_error",
+      "value": 3.4705398082733154,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/rmse",
+      "value": 0.8570613500239662,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/pearson",
+      "value": 0.9928733733044625,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/mean_top50_set_overlap",
+      "value": 0.7864516129032258,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/exact_top50_rows",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/fold0_diseases",
+      "value": 93,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/second_best_variant/encoder_runtime_sec",
+      "value": 0.010180473327636719,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/pass_criteria/mean_abs_error_max",
+      "value": 0.0001,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/pass_criteria/max_abs_error_max",
+      "value": 0.005,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/pass_criteria/pearson_min",
+      "value": 0.999999,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/pass_criteria/mean_top50_set_overlap_min",
+      "value": 0.999,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/pass_criteria/exact_top50_rows_min",
+      "value": 90,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/criterion_results/mean_abs_error",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/criterion_results/max_abs_error",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/criterion_results/pearson",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/criterion_results/top50_overlap",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/criterion_results/exact_top50_rows",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/variant_preregistration",
+      "value": "p1_protocol_e4_forward_variant_preregistration_v1.json",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/variant_results",
+      "value": "p1_protocol_e4_forward_variant_results_v1.csv",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/protocol_training_performed",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "json_pointer": "/next",
+      "value": "If PASS, freeze recovered E4 forward semantics and use that exact implementation for paired protocol-specific E4 retraining. If FAIL, continue forensic recovery; do not train protocol variants.",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/status",
+      "value": "P1_5_COST_TIMING_REPORTING_PACKAGE_FROZEN",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/primary_cost_regime",
+      "value": "WARM_MARGINAL_QUERY",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/primary_cost_metric",
+      "value": "score_plus_rank_wall_median_sec",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/expert_median_ms/E1",
+      "value": 0.3081645,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/expert_median_ms/E2",
+      "value": 0.43459175,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/expert_median_ms/E3",
+      "value": 0.97609075,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/expert_median_ms/E4",
+      "value": 0.90532075,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/E3_E4_explicit_hardware",
+      "value": "NVIDIA A100-SXM4-40GB",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/E1_E2_explicit_hardware",
+      "value": null,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateA/full_cohort_effective_E2_ms",
+      "value": 0.4192809295392953,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateA/lambda0_cascade_ms",
+      "value": 0.5569753299457995,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateA/lambda0_multiple_effective_E2",
+      "value": 1.3284060654936114,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/population_n",
+      "value": 712,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/E2_per_query_ms",
+      "value": 0.43459175,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/tight_budget_multiple",
+      "value": 1.25,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/tight_budget_ms",
+      "value": 0.5432396875,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/primary_budget_multiple",
+      "value": 1.5,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/primary_budget_ms",
+      "value": 0.651887625,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/S0_base_ms",
+      "value": 0.5039926980337078,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/S0_multiple_E2",
+      "value": 1.1596922813967543,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/S0_tight_feasible",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/S0_primary_feasible",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/S1_base_ms",
+      "value": 0.7272704768258427,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/S1_multiple_E2",
+      "value": 1.6734567023553546,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/S1_tight_feasible",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/S1_primary_feasible",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/gateB/S1_routing_fit",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/interpretation",
+      "value": "Warm-serving computational-latency resource proxy; hardware- and implementation-dependent; not a universal economic or dollar-cost estimate.",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/new_timing",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/new_model_load",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/new_training",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/new_outcome_analysis",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/META_TEST_opened",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/P1_5_reopened",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "json_pointer": "/frozen_P1_modified",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/status",
+      "value": "P1_5_GATE_A_ORACLE_HEADROOM_CHARACTERIZED",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/SBS",
+      "value": "E2",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/SBS_R50",
+      "value": 0.6292107026825576,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/VBS_R50",
+      "value": 0.681351211065284,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/raw_oracle_gap",
+      "value": 0.052140508382726325,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/fixed_E2_mean_warm_cost_sec",
+      "value": 0.0004192809295392908,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/fixed_E2_mean_warm_cost_ms",
+      "value": 0.4192809295392908,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/cheapest_lambda0_VBS_cascade_default",
+      "value": "E2",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/cheapest_lambda0_VBS_cascade_cost_ms",
+      "value": 0.5569753299457996,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/cheapest_lambda0_VBS_cascade_cost_multiple_E2",
+      "value": 1.328406065493626,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/best_supported_gain_within_1x_E2_cost",
+      "value": 6.661338147750939e-16,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/best_supported_gain_within_1_25x_E2_cost",
+      "value": 0.05069416325814047,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/best_supported_gain_within_1_5x_E2_cost",
+      "value": 0.052140508382726325,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/best_supported_gain_within_2x_E2_cost",
+      "value": 0.052140508382726325,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/interpretation_required_before_gate_B",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/gate_B_started",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/new_training",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/new_selector",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "json_pointer": "/frozen_P1_modified",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/status",
+      "value": "P1_5_GATE_B_DEVELOPMENT_EVALUATED",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/primary_probe",
+      "value": "P0_E2_POSTCOMPUTE",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/primary_model",
+      "value": "DIRECT_RIDGE",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/population",
+      "value": "META_DEV_E2_APPLICABLE",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/n",
+      "value": 570,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/P1_status",
+      "value": "COST_INFEASIBLE_PRETARGET_NOT_FITTED",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/primary_macro_R50",
+      "value": 0.6446471972691317,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/E2_macro_R50",
+      "value": 0.6446471972691317,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/primary_gain_vs_E2",
+      "value": 0.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/bootstrap_95CI/0",
+      "value": 0.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/bootstrap_95CI/1",
+      "value": 0.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/primary_mean_cost_sec",
+      "value": 0.000503992698033708,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/primary_cost_multiple_E2",
+      "value": 1.1596922813967545,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/switch_count",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/action_counts/E1",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/action_counts/E3",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/action_counts/E4",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/beneficial_switches",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/harmful_switches",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/total_switch_gain",
+      "value": 0.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/nonnegative_outer_folds",
+      "value": 5,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/max_single_fold_share_positive_gain",
+      "value": null,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/matched_random_mean_gain",
+      "value": 0.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/matched_random_p95_gain",
+      "value": 0.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/criteria/mean_R50_gt_E2",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/criteria/paired_bootstrap_95CI_lower_gt_zero",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/criteria/mean_cost_le_1_50x_E2",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/criteria/at_least_3_of_5_outer_folds_nonnegative",
+      "value": true,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/criteria/no_single_fold_gt_50pct_positive_gain",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/criteria/at_least_5_escalations",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/criteria/total_switch_utility_positive",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/criteria/beats_95pct_matched_random_escalation",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/formal_pass",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/formal_verdict",
+      "value": "FAIL_STOP_P1_5_LEARNED_ROUTING",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/META_TEST_opened",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/META_TEST_outcomes_used",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/HGB_fitted",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/P1_probe_fitted",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/frozen_P1_modified",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/execution_addendum_sha256",
+      "value": "3036020f3ba65a4ea58663bf3601e4c8ed9840a18ab72e2c554e9d368ebec66f",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/prediction_sha256",
+      "value": "cb8bf475fb800e71780b49901af3be7fc81817616e3437d6dd8e4a4e3502c162",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "json_pointer": "/next",
+      "value": "If formal_pass=True, interpret once and freeze one-shot META_TEST execution before opening it. If formal_pass=False, STOP P1.5 learned routing and never inspect META_TEST outcomes.",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/benchmark_id",
+      "value": "P1_TRACK_A_PRIMEKG_V0",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/status",
+      "value": "STATIC_ROUTING_DEVELOPMENT_CLOSED",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/primary_metric",
+      "value": "expected tie-safe Recall@50",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/portfolio/0",
+      "value": "E1",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/portfolio/1",
+      "value": "E2",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/portfolio/2",
+      "value": "E3",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/portfolio/3",
+      "value": "E4",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/SBS_expert",
+      "value": "E2",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/SBS",
+      "value": 0.6292107026825583,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/VBS",
+      "value": 0.681351211065284,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/oracle_gap",
+      "value": 0.05214050838272566,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v1/predictor_count",
+      "value": 41,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v1/absolute_argmax_result",
+      "value": "FAIL",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v1/absolute_ridge_gain_vs_SBS",
+      "value": -0.0028768207072048,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v1/absolute_hgb_gain_vs_SBS",
+      "value": -0.0049108244458665,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v1/conservative_delta_result",
+      "value": "FAIL",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v1/conservative_delta_gain_vs_SBS",
+      "value": 0.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v1/conservative_delta_switches",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v2/predictor_count",
+      "value": 68,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v2/new_predictor_count",
+      "value": 27,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v2/matrix_sha256",
+      "value": "2f189dd61deacfd1176fb24cc56f55390f3b66c8691de55246e06fcdb999ce3f",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v2/single_preregistered_gate",
+      "value": "FAIL",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v2/safe_gain_vs_SBS",
+      "value": 0.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v2/oracle_gap_recovered",
+      "value": 0.0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v2/switches",
+      "value": 0,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/scientific_result",
+      "value": "The retained expert portfolio exhibits a substantial disease-conditional oracle opportunity, but neither preregistered low-cost static feature state supported reliable profitable deviation from the globally best expert E2 under the tested nested routing policies.",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/supported_claim",
+      "value": "Stable expert complementarity does not imply cheaply recoverable expert applicability under this leakage-resistant disease-cold-start benchmark.",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/unsupported_claims/0",
+      "value": "routing is impossible",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/unsupported_claims/1",
+      "value": "graph features never predict model performance",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/unsupported_claims/2",
+      "value": "expert applicability regions do not exist",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/unsupported_claims/3",
+      "value": "richer representations cannot work",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/unsupported_claims/4",
+      "value": "costed probing cannot work",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/feature_v3_allowed",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/additional_static_router_search_allowed",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/final_meta_heldout_router_test_required",
+      "value": false,
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/reason_no_final_router_test",
+      "value": "No preregistered development policy cleared the routing gate.",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    },
+    {
+      "artifact_id": "recovered_contracts/p1_static_routing_closure.json",
+      "json_pointer": "/optional_followup_not_part_of_static_P1",
+      "value": "P1.5 costed probing / landmarking to test whether additional low-cost computation makes expert applicability observable.",
+      "interpretation": "FROZEN_STORED_VALUE_NOT_RECOMPUTED",
+      "paper_membership": "UNCONFIRMED"
+    }
+  ],
+  "evaluation_config_artifact_ids": [
+    "benchmark/p1_v0_benchmark_manifest.json",
+    "benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+    "recovered_contracts/p1_primary_metric_policy.json"
+  ],
+  "seed_handling": {
+    "E1": [
+      0
+    ],
+    "E2": [
+      0
+    ],
+    "E3": [
+      0,
+      1,
+      2
+    ],
+    "E4": [
+      0,
+      1,
+      2
+    ],
+    "future_aggregation": "per-disease metric mean; never raw score averaging or seed selection",
+    "aggregation_executed": false
+  },
+  "required_before_pass": [
+    "Verified main contains reviewed CI repair and main Actions passes",
+    "Exact submitted paper bytes and SHA-256 or authoritative revision identity",
+    "Page/section/table/figure/caption-level complete inventory, including appendix and negative claims",
+    "Each paper claim maps to evidence or explicit unresolved status",
+    "Owner reviews complete inventory before Gate 8A-A implementation"
+  ],
+  "preservation": {
+    "historical_artifacts_modified": false,
+    "scientific_implementations_modified": false,
+    "training_started": false,
+    "downstream_implementation_started": false,
+    "META_TEST_opened": false,
+    "visibility_changed": false
+  },
+  "notes": [
+    "This is a provisional historical evidence ledger, not an exhaustive camera-ready claim inventory.",
+    "Historical table/figure pack found in Drive is not promoted to submitted-paper authority.",
+    "An expected hash in a registry is not a fresh local source-byte verification or redistribution permission."
+  ],
+  "repository_observation": {
+    "observed_main_sha": "1f528f1100314a992e6b305eeb64400474e60290",
+    "main_ci": "FAILURE",
+    "main_run_id": 39190687932,
+    "pr1_state": "OPEN",
+    "pr1_merged": false,
+    "pr1_head_sha": "1f5a78a6f90ff8b4f5d81a3d4dd013fccafb7ec5",
+    "pr1_ci": "SUCCESS",
+    "pr1_run_id": 44117485875,
+    "audit_base": "PR1_HEAD_NOT_MERGED_MAIN",
+    "visibility": "public",
+    "visibility_changed": false
+  },
+  "validation_evidence": {
+    "input_contract_report": "outputs/gate6c_input_validation.json",
+    "redistribution_report": "outputs/gate6c_redistribution_audit.json",
+    "local_tests": {
+      "passed": 159,
+      "skipped": 16,
+      "subtests_passed": 2
+    },
+    "gate_status": "BLOCKED_NOT_PASS"
+  }
+}

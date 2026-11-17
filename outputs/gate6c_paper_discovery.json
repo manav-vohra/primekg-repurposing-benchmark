@@ -1,0 +1,153 @@
+{
+  "status": "AUTHORITATIVE_PAPER_NOT_LOCATED",
+  "authority_confirmed": false,
+  "queries": [
+    "Complementarity",
+    "AI4DD",
+    "repurposing",
+    "Observability",
+    "name contains NeurIPS/camera/Complementarity/Actionability",
+    "name contains paper/manuscript/submission/AI4DD"
+  ],
+  "repository_pdf_tex_docx_matches": [],
+  "historical_pack_readme": {
+    "url": "https://drive.google.com/file/d/1pASVsA1MzQgd2DX1PbmX3MSkSWp8ma5G/view",
+    "observation": "Describes suggested manuscript tables, not an authoritative submitted paper."
+  },
+  "historical_table_pack": [
+    {
+      "title": "README_TABLES.md",
+      "url": "https://drive.google.com/file/d/1pASVsA1MzQgd2DX1PbmX3MSkSWp8ma5G/view?usp=drivesdk",
+      "id": "1pASVsA1MzQgd2DX1PbmX3MSkSWp8ma5G",
+      "mime_type": "text/markdown",
+      "bytes": "1410",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "TableS1_Cross_Protocol_Specialization.md",
+      "url": "https://drive.google.com/file/d/1oeTyB5VX2YZ8F6t7Lpuk5kP302sI2MBh/view?usp=drivesdk",
+      "id": "1oeTyB5VX2YZ8F6t7Lpuk5kP302sI2MBh",
+      "mime_type": "text/markdown",
+      "bytes": "1215",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "Table5_Canonical_Implementation_Fidelity.md",
+      "url": "https://drive.google.com/file/d/1hZPxnRj4bnHsxgh-Xlf9DKAYkZJG9-d7/view?usp=drivesdk",
+      "id": "1hZPxnRj4bnHsxgh-Xlf9DKAYkZJG9-d7",
+      "mime_type": "text/markdown",
+      "bytes": "602",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "Table4_Claim_Status_and_Scope.md",
+      "url": "https://drive.google.com/file/d/1HawyJ_3GtwBumU5d3Uar0TYl07cmBSG7/view?usp=drivesdk",
+      "id": "1HawyJ_3GtwBumU5d3Uar0TYl07cmBSG7",
+      "mime_type": "text/markdown",
+      "bytes": "2309",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "Table3_Protocol_Portfolio_Results.md",
+      "url": "https://drive.google.com/file/d/1S3sMaptdouxD02LHpszXhAhzZNNx5fVs/view?usp=drivesdk",
+      "id": "1S3sMaptdouxD02LHpszXhAhzZNNx5fVs",
+      "mime_type": "text/markdown",
+      "bytes": "1136",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "Table2_H2_Robustness_Summary.md",
+      "url": "https://drive.google.com/file/d/10EyBqNjKYpnuvetO7TOn2I4kme3SQn_7/view?usp=drivesdk",
+      "id": "10EyBqNjKYpnuvetO7TOn2I4kme3SQn_7",
+      "mime_type": "text/markdown",
+      "bytes": "2125",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "Table1_Benchmark_and_Canonical_Portfolio.md",
+      "url": "https://drive.google.com/file/d/1usFtSKbcS7qjHjY6eZ4OOCiOYI2rUXcq/view?usp=drivesdk",
+      "id": "1usFtSKbcS7qjHjY6eZ4OOCiOYI2rUXcq",
+      "mime_type": "text/markdown",
+      "bytes": "1317",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "TableS1_Cross_Protocol_Specialization.csv",
+      "url": "https://drive.google.com/file/d/1qn5doyfmF_TFOmTex2fdR9fSqCU26v8z/view?usp=drivesdk",
+      "id": "1qn5doyfmF_TFOmTex2fdR9fSqCU26v8z",
+      "mime_type": "text/csv",
+      "bytes": "432",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "Table5_Canonical_Implementation_Fidelity.csv",
+      "url": "https://drive.google.com/file/d/1jBPQ6NQy14Po0BVg6eM1tLXOiIwROjt0/view?usp=drivesdk",
+      "id": "1jBPQ6NQy14Po0BVg6eM1tLXOiIwROjt0",
+      "mime_type": "text/csv",
+      "bytes": "229",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "Table4_Claim_Status_and_Scope.csv",
+      "url": "https://drive.google.com/file/d/1m0rIKBAy4n-IMpgMJvwad-psDAYE3Lz6/view?usp=drivesdk",
+      "id": "1m0rIKBAy4n-IMpgMJvwad-psDAYE3Lz6",
+      "mime_type": "text/csv",
+      "bytes": "1175",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "Table3_Protocol_Portfolio_Results.csv",
+      "url": "https://drive.google.com/file/d/1Fo5EyCcE43SQnjtQ74Wc_h-27QNKsOxu/view?usp=drivesdk",
+      "id": "1Fo5EyCcE43SQnjtQ74Wc_h-27QNKsOxu",
+      "mime_type": "text/csv",
+      "bytes": "462",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "Table2_H2_Robustness_Summary.csv",
+      "url": "https://drive.google.com/file/d/1FBtmLsUAFMaCyMb37rC03CJWmoDq0MJx/view?usp=drivesdk",
+      "id": "1FBtmLsUAFMaCyMb37rC03CJWmoDq0MJx",
+      "mime_type": "text/csv",
+      "bytes": "953",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    },
+    {
+      "title": "Table1_Benchmark_and_Canonical_Portfolio.csv",
+      "url": "https://drive.google.com/file/d/1pNPDWzrf_0qICDzrxjQV95LYN4YXzbCF/view?usp=drivesdk",
+      "id": "1pNPDWzrf_0qICDzrxjQV95LYN4YXzbCF",
+      "mime_type": "text/csv",
+      "bytes": "701",
+      "paper_membership": "UNCONFIRMED",
+      "sha256": null
+    }
+  ],
+  "historical_figure_pack": {
+    "folder_url": "https://drive.google.com/drive/folders/16okSTFTIItXleLlQpSJBywPrXnNWiDf0",
+    "groups": [
+      "Figure1_Canonical_Expert_Performance",
+      "Figure2_Metric_Robustness",
+      "Figure3_Protocol_Performance",
+      "Figure4_Protocol_Winner_Composition"
+    ],
+    "formats": [
+      "png",
+      "pdf",
+      "svg"
+    ],
+    "paper_membership": "UNCONFIRMED",
+    "raw_files_downloaded": false
+  },
+  "needed": "Exact submitted camera-ready PDF/LaTeX bytes or authoritative accessible revision link; owner confirmation if version ambiguous."
+}

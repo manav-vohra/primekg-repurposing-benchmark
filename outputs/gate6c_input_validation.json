@@ -1,0 +1,489 @@
+{
+  "gate": "PHASE_2_GATE_6C_A_INPUT_VALIDATION",
+  "status": "PASS",
+  "scope": "Input contracts only; no portfolio means, SBS/VBS, bootstrap, routing, or training executed",
+  "registry_sha256": "f50cdfdfe5415207e99d6028bfbb0b95e2e8103b889cc8aec62e4ec9ad26700c",
+  "gate1_summary": {
+    "FOUND_AND_VERIFIED": 50,
+    "REGISTERED_EXTERNAL_NOT_LOCAL": 73
+  },
+  "gate1_overall": "PARTIAL",
+  "candidate_axis": {
+    "count": 7957,
+    "sha256": "99cb3d5768ca203306737926c30a2890c326a6c286815b0013662ec0e86a0d63",
+    "status": "PASS"
+  },
+  "disease_axis": {
+    "count": 738,
+    "sha256": "04aec4bee6cf0168346d9261d3dcf303692a0a92fd9eb6da75ab94bc4c660a73",
+    "status": "PASS"
+  },
+  "evaluation_contract": {
+    "configuration": {
+      "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+      "evaluator_version": "1.1_tiesafe",
+      "status": "FROZEN_FOR_EXPERT_MATRIX",
+      "candidate_universe": 7957,
+      "k_values": [
+        10,
+        50,
+        100
+      ],
+      "primary_utility": "Recall@50",
+      "tie_semantics": {
+        "definition": "Exact-score ties are evaluated as the expected metric under a uniform random permutation of candidates within each tie.",
+        "arbitrary_candidate_id_tiebreak_used_for_metrics": false,
+        "score_support_threshold": null,
+        "zero_scores_removed": false,
+        "negative_scores_removed": false
+      },
+      "abstention_semantics": {
+        "explicit_abstention_receives_utility_zero": true,
+        "all_zero_scores_do_not_automatically_imply_abstention": "Applicability is declared by the expert contract, not inferred by the evaluator."
+      },
+      "primary_metrics": [
+        "Recall@10",
+        "Recall@50",
+        "Recall@100",
+        "Hit@10",
+        "Hit@50",
+        "Hit@100",
+        "MRR",
+        "first_hit_rank"
+      ],
+      "safety_metrics": [
+        "Contra@10",
+        "Contra@50",
+        "Contra@100",
+        "ContraRate@10",
+        "ContraRate@50",
+        "ContraRate@100",
+        "first_contra_rank"
+      ],
+      "ignored_before_metric_evaluation": [
+        "AMBIGUOUS_INDICATION",
+        "CONFLICTING_NONINDICATION",
+        "OFFLABEL_ONLY"
+      ],
+      "important_semantics": {
+        "unobserved_are_true_negatives": false,
+        "contraindications_are_generic_negatives": false,
+        "hit_at_k_is_expected_probability_under_ties": true,
+        "contra_at_k_is_expected_count_under_ties": true,
+        "first_hit_rank_is_expected_rank_under_ties": true,
+        "mrr_is_expected_reciprocal_rank_under_ties": true
+      }
+    },
+    "metric_policy": {
+      "candidate_universe": "all_7957_primekg_drugbank_drugs",
+      "primary_positive": "CLEAN_INDICATION",
+      "ignored_primary_roles": [
+        "AMBIGUOUS_INDICATION",
+        "OFFLABEL_ONLY",
+        "CONFLICTING_NONINDICATION"
+      ],
+      "scored_but_not_true_negative_roles": [
+        "CONTRAINDICATION_ONLY",
+        "UNOBSERVED"
+      ],
+      "primary_metrics": [
+        "Recall@K",
+        "Hit@K",
+        "MRR",
+        "first_hit_rank"
+      ],
+      "safety_metric_family": [
+        "Contraindication@K",
+        "contraindication_intrusion_rate"
+      ],
+      "secondary_diagnostic_metrics": [
+        "AUPRC",
+        "AUROC"
+      ],
+      "important_note": "Unobserved pairs are unlabeled, not true negatives. Contraindications remain rankable candidates but are tracked separately as explicit safety evidence."
+    },
+    "gate1_overall": "PARTIAL"
+  },
+  "benchmark_semantics": {
+    "benchmark_id": "P1_TRACK_A_PRIMEKG_V0",
+    "protocol_id": "CANONICAL_1HOP",
+    "fold_count": 8,
+    "unknown_pair_semantics": "UNKNOWN_UNLABELED",
+    "nontherapeutic_graph_evidence_loaded": false,
+    "nontherapeutic_structure_contract_preserved": true,
+    "tested_direct_ontology_leakage_paths": 910,
+    "tested_path_unit": "unique (fold, buffered direct-neighbor disease) exposure; individual ontology edges unavailable in frozen tables",
+    "surviving_direct_ontology_leakage_paths": 0,
+    "folds": [
+      {
+        "fold": 0,
+        "status": "PASS",
+        "target_count": 93,
+        "buffer_count": 109,
+        "hidden_disease_count": 202,
+        "legal_clean_training_count": 6856,
+        "hidden_clean_count": 2321,
+        "legal_therapeutic_count": 36610,
+        "excluded_target_clean_count": 1112,
+        "excluded_buffer_clean_count": 1209,
+        "all_remaining_legal_clean_retained": true,
+        "all_hidden_therapeutic_excluded": true,
+        "target_order_preserved": true,
+        "buffer_order_preserved": true,
+        "target_therapeutic_leaks": 0,
+        "buffer_therapeutic_leaks": 0,
+        "tested_direct_ontology_leakage_paths": 109,
+        "tested_path_unit": "unique (fold, buffered direct-neighbor disease) exposure; target-neighbor edges collapsed",
+        "surviving_direct_ontology_leakage_paths": 0,
+        "nontherapeutic_structure_preserved": true,
+        "nontherapeutic_directed_triples_preserved": 8015236,
+        "failures": []
+      },
+      {
+        "fold": 1,
+        "status": "PASS",
+        "target_count": 93,
+        "buffer_count": 125,
+        "hidden_disease_count": 218,
+        "legal_clean_training_count": 6828,
+        "hidden_clean_count": 2349,
+        "legal_therapeutic_count": 35224,
+        "excluded_target_clean_count": 981,
+        "excluded_buffer_clean_count": 1368,
+        "all_remaining_legal_clean_retained": true,
+        "all_hidden_therapeutic_excluded": true,
+        "target_order_preserved": true,
+        "buffer_order_preserved": true,
+        "target_therapeutic_leaks": 0,
+        "buffer_therapeutic_leaks": 0,
+        "tested_direct_ontology_leakage_paths": 125,
+        "tested_path_unit": "unique (fold, buffered direct-neighbor disease) exposure; target-neighbor edges collapsed",
+        "surviving_direct_ontology_leakage_paths": 0,
+        "nontherapeutic_structure_preserved": true,
+        "nontherapeutic_directed_triples_preserved": 8015236,
+        "failures": []
+      },
+      {
+        "fold": 2,
+        "status": "PASS",
+        "target_count": 92,
+        "buffer_count": 83,
+        "hidden_disease_count": 175,
+        "legal_clean_training_count": 6990,
+        "hidden_clean_count": 2187,
+        "legal_therapeutic_count": 35438,
+        "excluded_target_clean_count": 1062,
+        "excluded_buffer_clean_count": 1125,
+        "all_remaining_legal_clean_retained": true,
+        "all_hidden_therapeutic_excluded": true,
+        "target_order_preserved": true,
+        "buffer_order_preserved": true,
+        "target_therapeutic_leaks": 0,
+        "buffer_therapeutic_leaks": 0,
+        "tested_direct_ontology_leakage_paths": 83,
+        "tested_path_unit": "unique (fold, buffered direct-neighbor disease) exposure; target-neighbor edges collapsed",
+        "surviving_direct_ontology_leakage_paths": 0,
+        "nontherapeutic_structure_preserved": true,
+        "nontherapeutic_directed_triples_preserved": 8015236,
+        "failures": []
+      },
+      {
+        "fold": 3,
+        "status": "PASS",
+        "target_count": 92,
+        "buffer_count": 118,
+        "hidden_disease_count": 210,
+        "legal_clean_training_count": 7119,
+        "hidden_clean_count": 2058,
+        "legal_therapeutic_count": 36402,
+        "excluded_target_clean_count": 947,
+        "excluded_buffer_clean_count": 1111,
+        "all_remaining_legal_clean_retained": true,
+        "all_hidden_therapeutic_excluded": true,
+        "target_order_preserved": true,
+        "buffer_order_preserved": true,
+        "target_therapeutic_leaks": 0,
+        "buffer_therapeutic_leaks": 0,
+        "tested_direct_ontology_leakage_paths": 118,
+        "tested_path_unit": "unique (fold, buffered direct-neighbor disease) exposure; target-neighbor edges collapsed",
+        "surviving_direct_ontology_leakage_paths": 0,
+        "nontherapeutic_structure_preserved": true,
+        "nontherapeutic_directed_triples_preserved": 8015236,
+        "failures": []
+      },
+      {
+        "fold": 4,
+        "status": "PASS",
+        "target_count": 92,
+        "buffer_count": 110,
+        "hidden_disease_count": 202,
+        "legal_clean_training_count": 6871,
+        "hidden_clean_count": 2306,
+        "legal_therapeutic_count": 34844,
+        "excluded_target_clean_count": 1042,
+        "excluded_buffer_clean_count": 1264,
+        "all_remaining_legal_clean_retained": true,
+        "all_hidden_therapeutic_excluded": true,
+        "target_order_preserved": true,
+        "buffer_order_preserved": true,
+        "target_therapeutic_leaks": 0,
+        "buffer_therapeutic_leaks": 0,
+        "tested_direct_ontology_leakage_paths": 110,
+        "tested_path_unit": "unique (fold, buffered direct-neighbor disease) exposure; target-neighbor edges collapsed",
+        "surviving_direct_ontology_leakage_paths": 0,
+        "nontherapeutic_structure_preserved": true,
+        "nontherapeutic_directed_triples_preserved": 8015236,
+        "failures": []
+      },
+      {
+        "fold": 5,
+        "status": "PASS",
+        "target_count": 92,
+        "buffer_count": 99,
+        "hidden_disease_count": 191,
+        "legal_clean_training_count": 7183,
+        "hidden_clean_count": 1994,
+        "legal_therapeutic_count": 36914,
+        "excluded_target_clean_count": 1161,
+        "excluded_buffer_clean_count": 833,
+        "all_remaining_legal_clean_retained": true,
+        "all_hidden_therapeutic_excluded": true,
+        "target_order_preserved": true,
+        "buffer_order_preserved": true,
+        "target_therapeutic_leaks": 0,
+        "buffer_therapeutic_leaks": 0,
+        "tested_direct_ontology_leakage_paths": 99,
+        "tested_path_unit": "unique (fold, buffered direct-neighbor disease) exposure; target-neighbor edges collapsed",
+        "surviving_direct_ontology_leakage_paths": 0,
+        "nontherapeutic_structure_preserved": true,
+        "nontherapeutic_directed_triples_preserved": 8015236,
+        "failures": []
+      },
+      {
+        "fold": 6,
+        "status": "PASS",
+        "target_count": 92,
+        "buffer_count": 120,
+        "hidden_disease_count": 212,
+        "legal_clean_training_count": 7091,
+        "hidden_clean_count": 2086,
+        "legal_therapeutic_count": 36557,
+        "excluded_target_clean_count": 969,
+        "excluded_buffer_clean_count": 1117,
+        "all_remaining_legal_clean_retained": true,
+        "all_hidden_therapeutic_excluded": true,
+        "target_order_preserved": true,
+        "buffer_order_preserved": true,
+        "target_therapeutic_leaks": 0,
+        "buffer_therapeutic_leaks": 0,
+        "tested_direct_ontology_leakage_paths": 120,
+        "tested_path_unit": "unique (fold, buffered direct-neighbor disease) exposure; target-neighbor edges collapsed",
+        "surviving_direct_ontology_leakage_paths": 0,
+        "nontherapeutic_structure_preserved": true,
+        "nontherapeutic_directed_triples_preserved": 8015236,
+        "failures": []
+      },
+      {
+        "fold": 7,
+        "status": "PASS",
+        "target_count": 92,
+        "buffer_count": 146,
+        "hidden_disease_count": 238,
+        "legal_clean_training_count": 6827,
+        "hidden_clean_count": 2350,
+        "legal_therapeutic_count": 33016,
+        "excluded_target_clean_count": 1094,
+        "excluded_buffer_clean_count": 1256,
+        "all_remaining_legal_clean_retained": true,
+        "all_hidden_therapeutic_excluded": true,
+        "target_order_preserved": true,
+        "buffer_order_preserved": true,
+        "target_therapeutic_leaks": 0,
+        "buffer_therapeutic_leaks": 0,
+        "tested_direct_ontology_leakage_paths": 146,
+        "tested_path_unit": "unique (fold, buffered direct-neighbor disease) exposure; target-neighbor edges collapsed",
+        "surviving_direct_ontology_leakage_paths": 0,
+        "nontherapeutic_structure_preserved": true,
+        "nontherapeutic_directed_triples_preserved": 8015236,
+        "failures": []
+      }
+    ],
+    "status": "PASS",
+    "failures": [],
+    "limitations": [
+      "The frozen quarantine stores a union of direct neighbors per fold. Without the raw graph, individual target-neighbor edges and completeness of that union cannot be independently enumerated."
+    ]
+  },
+  "matrices": [
+    {
+      "artifact_id": "reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+      "sha256": "3d008a1d12cf00b43356b7b81d5e92fd1bf998b9d77a7718a50a8404b5e32acd",
+      "hash_classification": "FROZEN_REGISTRY_REFERENCE",
+      "expert_id": "E1_WEIGHTED_GENE_COSINE",
+      "seed": 0,
+      "rows": 738,
+      "disease_axis": "PASS",
+      "folds": "PASS",
+      "metadata": "PASS",
+      "role_counts_where_present": "PASS",
+      "status_counts": {
+        "OK": 504,
+        "ABSTAIN_NO_DIRECT_GENE_PATH": 234
+      },
+      "abstention_metrics": "PASS",
+      "matrix_candidate_axis": "NOT_STORED_IN_METRIC_CSV"
+    },
+    {
+      "artifact_id": "reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+      "sha256": "5a9165046780af6979aef0e41d7266db806900738d83a3eb24579fdfb141cbcf",
+      "hash_classification": "FROZEN_REGISTRY_REFERENCE",
+      "expert_id": "E2_DISEASE_PROFILE_LABEL_TRANSFER",
+      "seed": 0,
+      "rows": 738,
+      "disease_axis": "PASS",
+      "folds": "PASS",
+      "metadata": "PASS",
+      "role_counts_where_present": "PASS",
+      "status_counts": {
+        "OK": 712,
+        "ABSTAIN_NO_SIMILAR_TRAINING_DISEASE": 24,
+        "ABSTAIN_NO_NONTHERAPEUTIC_PROFILE": 2
+      },
+      "abstention_metrics": "PASS",
+      "matrix_candidate_axis": "NOT_STORED_IN_METRIC_CSV"
+    },
+    {
+      "artifact_id": "reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+      "sha256": "9fd3f3138e659ce5928b28406e52161fc3cedfc4b4352e2462227ddd47425e36",
+      "hash_classification": "FROZEN_REGISTRY_REFERENCE",
+      "expert_id": "E3_COMPLEX_KGE",
+      "seed": 0,
+      "rows": 738,
+      "disease_axis": "PASS",
+      "folds": "PASS",
+      "metadata": "PASS",
+      "role_counts_where_present": "PASS",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "abstention_metrics": "PASS",
+      "matrix_candidate_axis": "NOT_STORED_IN_METRIC_CSV"
+    },
+    {
+      "artifact_id": "reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+      "sha256": "33bd8180345dfd08f92ec33d06efcc08d8ecb0514051fb92948fc30e11aafe2e",
+      "hash_classification": "FROZEN_REGISTRY_REFERENCE",
+      "expert_id": "E3_COMPLEX_KGE",
+      "seed": 1,
+      "rows": 738,
+      "disease_axis": "PASS",
+      "folds": "PASS",
+      "metadata": "PASS",
+      "role_counts_where_present": "PASS",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "abstention_metrics": "PASS",
+      "matrix_candidate_axis": "NOT_STORED_IN_METRIC_CSV"
+    },
+    {
+      "artifact_id": "reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+      "sha256": "a113c98f95a26fd96ed713355c877723308f03d504c1ea001fdde779600312f8",
+      "hash_classification": "FROZEN_REGISTRY_REFERENCE",
+      "expert_id": "E3_COMPLEX_KGE",
+      "seed": 2,
+      "rows": 738,
+      "disease_axis": "PASS",
+      "folds": "PASS",
+      "metadata": "PASS",
+      "role_counts_where_present": "PASS",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "abstention_metrics": "PASS",
+      "matrix_candidate_axis": "NOT_STORED_IN_METRIC_CSV"
+    },
+    {
+      "artifact_id": "reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+      "sha256": "a006c394fb676b0c1625e4dc60d71bc095f01af6acc9ccc8501ff0eaa9c8eb6d",
+      "hash_classification": "FROZEN_REGISTRY_REFERENCE",
+      "expert_id": "E4_RGCN_LINK_PREDICTION",
+      "seed": 0,
+      "rows": 738,
+      "disease_axis": "PASS",
+      "folds": "PASS",
+      "metadata": "PASS",
+      "role_counts_where_present": "PASS",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "abstention_metrics": "PASS",
+      "matrix_candidate_axis": "NOT_STORED_IN_METRIC_CSV"
+    },
+    {
+      "artifact_id": "reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+      "sha256": "ce87a944241ad6290ed6545ef119ac4416a5c0bd8d063074f0913bd8a3a6dfe6",
+      "hash_classification": "FROZEN_REGISTRY_REFERENCE",
+      "expert_id": "E4_RGCN_LINK_PREDICTION",
+      "seed": 1,
+      "rows": 738,
+      "disease_axis": "PASS",
+      "folds": "PASS",
+      "metadata": "PASS",
+      "role_counts_where_present": "PASS",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "abstention_metrics": "PASS",
+      "matrix_candidate_axis": "NOT_STORED_IN_METRIC_CSV"
+    },
+    {
+      "artifact_id": "reference_results/p1_e4_rgcn_seed2_expert_matrix.csv",
+      "sha256": "4203b835aefe746ba9300ee06d45ce4b59c1d9a684331633e736aa797a1e01af",
+      "hash_classification": "FROZEN_REGISTRY_REFERENCE",
+      "expert_id": "E4_RGCN_LINK_PREDICTION",
+      "seed": 2,
+      "rows": 738,
+      "disease_axis": "PASS",
+      "folds": "PASS",
+      "metadata": "PASS",
+      "role_counts_where_present": "PASS",
+      "status_counts": {
+        "OK": 736,
+        "ABSTAIN_NO_NONTHERAPEUTIC_KG_CONTEXT": 2
+      },
+      "abstention_metrics": "PASS",
+      "matrix_candidate_axis": "NOT_STORED_IN_METRIC_CSV"
+    }
+  ],
+  "seed_sets": {
+    "E1": [
+      0
+    ],
+    "E2": [
+      0
+    ],
+    "E3": [
+      0,
+      1,
+      2
+    ],
+    "E4": [
+      0,
+      1,
+      2
+    ]
+  },
+  "seed_aggregation_executed": false,
+  "no_applicable_expert_count": 2,
+  "limitations": [
+    "Metric CSVs do not contain the ordered drug score axis; exact NPZ axis verification is historical Gate-3/4/5/6A evidence, not a fresh score-file check.",
+    "Statuses are validated against frozen metadata; biological applicability causation is not independently re-derived without raw inputs.",
+    "Raw graph completeness/leakage re-enumeration is not possible from frozen quarantine alone."
+  ]
+}

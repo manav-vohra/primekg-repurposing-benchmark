@@ -1,5 +1,23 @@
 # PrimeKG project current state
 
+## Active review checkpoint — 2026-11-17
+
+The currently authorized task is **Gate 6C-A historical input and submitted-paper
+claim reconciliation**, superseding the earlier next-training instructions below.
+The input-contract audit passes; the complete gate is blocked pending the exact
+submitted camera-ready paper and resolution of PR #1's merge/main-CI discrepancy.
+See `outputs/gate6c_handoff.md`, `outputs/gate6c_claim_artifact_manifest.json`, and
+`docs/GATE6C_REDISTRIBUTION_REVIEW.md`. The claim ledger is provisional historical
+evidence, not a completed paper inventory. Do not begin aggregation, downstream
+scientific implementation, or E3/E4 training before the complete inventory is reviewed.
+
+GitHub metadata reports the repository as public; visibility was not changed.
+Redistribution clearance remains unresolved, including already tracked derived
+tables. Any visibility change requires owner authorization.
+
+The sections below retain the prior milestone/training checkpoint and limitations;
+their older next-task instructions are paused by this active review checkpoint.
+
 ## Validated milestones
 
 | Milestone | Status |
