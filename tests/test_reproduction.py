@@ -21,6 +21,9 @@ def test_one_command_exports_supported_tables_and_explicit_limitations(tmp_path)
     assert report['status']=='PASS' and not report['complete_paper_reproduction']
     assert not report['training_started'] and not report['META_TEST_read']
     assert report['unsupported_claim_count']>0
+    robustness=json.loads((out/'robustness_historical.json').read_text())
+    assert all(x['family']=='PAIRED_PROTOCOL_COMPARABLE' for x in robustness['observations'] if x['metric_id'].startswith('R.protocol.'))
+    assert all(x['family']=='ORIGINAL_CANONICAL' for x in robustness['observations'] if x['metric_id'].startswith('J.'))
     for name in ('table1.csv','table2.csv','table3.csv','table4_historical.csv','table5.csv','figure1_historical.svg','figure1_historical.pdf','figure1_historical.png','output_manifest.json','robustness_historical.json'):
         assert (out/name).stat().st_size>0
     with (out/'table3.csv').open(newline='') as f:

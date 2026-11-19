@@ -143,6 +143,8 @@ def reproduce(root, output):
     core_checks=compare_core(portfolio,core,frozen)
     cost=gate_a(portfolio,registry,frozen);cost_checks=compare_gate_a(cost,registry,frozen)
     evidence=downstream_evidence(registry,frozen)
+    for item in evidence.values():
+        item['family']='ORIGINAL_CANONICAL'
     reference=validate(registry,frozen,'REFERENCE')
     benchmark=load_frozen_benchmark(registry,frozen,reference)
     paper_exports(output,core,cost,evidence,manifest,benchmark)
@@ -160,7 +162,8 @@ def reproduce(root, output):
     ]
     write_json(output/'core_results.json',core);write_json(output/'gate_a.json',cost);write_json(output/'historical_evidence.json',evidence)
     write_json(output/'unsupported_results.json',unsupported)
-    write_json(output/'robustness_historical.json',{'evidence_class':3,'note':'Selected observed historical scalars from the pinned claim manifest; no variant scores or models rerun.','observations':[m for m in manifest['paper_metrics'] if m['metric_id'].startswith(('J.','R.U1','R.U2','R.protocol.','F.E2_no_ontology'))],'source_hashes':manifest['external_evidence_observations']})
+    historical_robustness=[{**m,'family':'PAIRED_PROTOCOL_COMPARABLE' if m['metric_id'].startswith('R.protocol.') else 'E2_ONTOLOGY_ABLATION' if m['metric_id']=='F.E2_no_ontology' else 'ORIGINAL_CANONICAL'} for m in manifest['paper_metrics'] if m['metric_id'].startswith(('J.','R.U1','R.U2','R.protocol.','F.E2_no_ontology'))]
+    write_json(output/'robustness_historical.json',{'evidence_class':3,'note':'Selected observed historical scalars from the pinned claim manifest; no variant scores or models rerun. Families are tagged per observation.','observations':historical_robustness,'source_hashes':manifest['external_evidence_observations']})
     # Generated disease-level outputs are kept in the user-selected output root, not Git.
     write_table(output,'disease_utilities',[{'disease_id':d,**{e:float(portfolio.values[i,j,METRICS.index('Recall@50')]) for j,e in enumerate(EXPERTS)},**{e+'_applicable':bool(portfolio.applicable[i,j]) for j,e in enumerate(EXPERTS)},'VBS':float(vbs[i]),'winner':winners[i],'evidence_class':2} for i,d in enumerate(portfolio.disease_ids)], decimals=None, markdown=False)
     result={'status':'PASS' if all(c['status']=='PASS' for c in (core_checks,cost_checks,export_checks)) else 'FAIL',
