@@ -4,16 +4,20 @@
 
 The currently authorized task is **Gate 6C-A historical input and submitted-paper
 claim reconciliation**, superseding the earlier next-training instructions below.
-The input-contract audit passes; the complete gate is blocked pending access to the
-exact submitted camera-ready paper. The owner reports attaching it, but no file,
-attachment reference, or connected document is accessible in this session.
+Gate 6C-A now **PASSES for complete paper inventory and provenance accounting**, with
+explicit unresolved claims and discrepancies. The exact owner-supplied 10-page
+camera-ready PDF has SHA-256
+`ab7e80b1d82046c7c26886710a4fb5f53884534d289d787185c1ee7fc0faff87`.
+The ledger accounts for 238 claim records, 180 quantitative entries, five tables,
+one figure and every scientific text block. This is not a full reproduction or
+redistribution-clearance PASS.
 PR #1 was merged with authorization as `4550df2`; its main CI run `44488462196`
 passed. Commit `326f963` is preserved, and updated main was merged into the audit
 branch without rebasing, overwriting, or discarding work.
 See `outputs/gate6c_handoff.md`, `outputs/gate6c_claim_artifact_manifest.json`, and
-`docs/GATE6C_REDISTRIBUTION_REVIEW.md`. The claim ledger is provisional historical
-evidence, not a completed paper inventory. Do not begin aggregation, downstream
-scientific implementation, or E3/E4 training before the complete inventory is reviewed.
+`docs/GATE6C_REDISTRIBUTION_REVIEW.md`. PR #2 remains draft and unmerged for review.
+Do not begin Gate 8A-A, downstream scientific implementation, or E3/E4 training
+until the completed inventory has been reviewed and the next gate authorized.
 
 GitHub metadata reports the repository as public; visibility was not changed.
 Redistribution clearance remains unresolved, including already tracked derived
@@ -34,6 +38,7 @@ their older next-task instructions are paused by this active review checkpoint.
 | Phase 2 Gate 5 — E2 reproduction | PASS |
 | Phase 2 Gate 6A — E3 corpus/protocol/checkpoints | PASS |
 | Phase 2 Gate 6B preflight | BLOCKED_NO_SUITABLE_HARDWARE |
+| Phase 2 Gate 6C-A — complete paper inventory/provenance accounting | PASS_WITH_EXPLICIT_UNRESOLVED_ITEMS; REVIEW_PENDING |
 
 E1 and E2 reproduce their historical raw score matrices bitwise exactly. E3's corrected Cell-19B corpus and all three recovered Stage-A checkpoints are compatible with the clean ComplEx implementation; independent clean-versus-historical score probes are bitwise equal with maximum absolute difference `0.0`.
 

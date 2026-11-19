@@ -27,5 +27,6 @@
   "main_is_ancestor": true,
   "scientific_src_and_artifacts_unchanged_from_main": true,
   "synchronization": "Normal merge; no reset, overwrite, rebase, force push or discarded commit.",
-  "paper_available": false
+  "paper_available": true,
+  "paper_sha256": "ab7e80b1d82046c7c26886710a4fb5f53884534d289d787185c1ee7fc0faff87"
 }
