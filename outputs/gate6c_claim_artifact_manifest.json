@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "gate": "PHASE_2_GATE_6C_A",
-  "status": "BLOCKED_AUTHORITATIVE_PAPER_AND_MAIN_MERGE",
+  "status": "BLOCKED_AUTHORITATIVE_PAPER",
   "authoritative_target": {
     "title": "From Complementarity to Actionability: Observability and Cost-Aware Routing in Drug Repurposing.",
     "venue": "NeurIPS 2026 AI4DD",
@@ -3854,7 +3854,6 @@
     "aggregation_executed": false
   },
   "required_before_pass": [
-    "Verified main contains reviewed CI repair and main Actions passes",
     "Exact submitted paper bytes and SHA-256 or authoritative revision identity",
     "Page/section/table/figure/caption-level complete inventory, including appendix and negative claims",
     "Each paper claim maps to evidence or explicit unresolved status",
@@ -3871,18 +3870,25 @@
   "notes": [
     "This is a provisional historical evidence ledger, not an exhaustive camera-ready claim inventory.",
     "Historical table/figure pack found in Drive is not promoted to submitted-paper authority.",
-    "An expected hash in a registry is not a fresh local source-byte verification or redistribution permission."
+    "An expected hash in a registry is not a fresh local source-byte verification or redistribution permission.",
+    "2026-11-19: owner authorized PR #1 merge; reviewed scope/head and final checks unchanged; merged and main CI passed. Reported paper attachment is still not accessible to the agent; exact paper inventory remains blocked."
   ],
   "repository_observation": {
-    "observed_main_sha": "1f528f1100314a992e6b305eeb64400474e60290",
-    "main_ci": "FAILURE",
-    "main_run_id": 39190687932,
-    "pr1_state": "OPEN",
-    "pr1_merged": false,
+    "observed_on": "2026-11-19",
+    "observed_main_sha": "4550df2e2043681fadf4d0be5914d35df5d33701",
+    "main_ci": "SUCCESS",
+    "main_run_id": 44488462196,
+    "main_run_url": "https://github.com/manav-vohra/primekg-repurposing-benchmark/actions/runs/44488462196",
+    "pr1_state": "CLOSED",
+    "pr1_merged": true,
     "pr1_head_sha": "1f5a78a6f90ff8b4f5d81a3d4dd013fccafb7ec5",
     "pr1_ci": "SUCCESS",
     "pr1_run_id": 44117485875,
-    "audit_base": "PR1_HEAD_NOT_MERGED_MAIN",
+    "merge_method": "merge",
+    "merge_main_commit": "4550df2e2043681fadf4d0be5914d35df5d33701",
+    "preserved_audit_commit": "326f963",
+    "audit_sync_merge_commit": "6a00fc0",
+    "audit_base": "UPDATED_MAIN_MERGED_WITHOUT_REWRITE",
     "visibility": "public",
     "visibility_changed": false
   },
@@ -3892,8 +3898,33 @@
     "local_tests": {
       "passed": 159,
       "skipped": 16,
-      "subtests_passed": 2
+      "subtests_passed": 2,
+      "last_run_on": "2026-11-19"
     },
-    "gate_status": "BLOCKED_NOT_PASS"
-  }
+    "gate_status": "BLOCKED_NOT_PASS",
+    "repository_verification": "outputs/gate6c_repository_verification.json",
+    "reference_validation": {
+      "verified": 50,
+      "nonlocal": 73,
+      "failures": 0,
+      "benchmark_semantics": "PASS",
+      "overall": "PARTIAL_EXPECTED_EXTERNAL_INPUTS"
+    }
+  },
+  "prior_repository_observations": [
+    {
+      "observed_on": "2026-11-17",
+      "observed_main_sha": "1f528f1100314a992e6b305eeb64400474e60290",
+      "main_ci": "FAILURE",
+      "main_run_id": 39190687932,
+      "pr1_state": "OPEN",
+      "pr1_merged": false,
+      "pr1_head_sha": "1f5a78a6f90ff8b4f5d81a3d4dd013fccafb7ec5",
+      "pr1_ci": "SUCCESS",
+      "pr1_run_id": 44117485875,
+      "audit_base": "PR1_HEAD_NOT_MERGED_MAIN",
+      "visibility": "public",
+      "visibility_changed": false
+    }
+  ]
 }

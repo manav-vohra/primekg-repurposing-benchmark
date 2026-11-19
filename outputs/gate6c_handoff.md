@@ -1,11 +1,28 @@
 # Phase 2 Gate 6C-A handoff — historical input and paper-claim reconciliation
 
-Date: 2026-11-17. **Status: BLOCKED_AUTHORITATIVE_PAPER_AND_MAIN_MERGE.**
+Updated: 2026-11-19. **Status: BLOCKED_AUTHORITATIVE_PAPER.**
 The input-contract sub-audit passes. The paper inventory is not complete, and
 full Gate 6C-A PASS is not claimed. No downstream scientific implementation or
 training was started.
 
-## Repository and CI reconciliation
+## Current synchronization and CI — 2026-11-19
+
+The owner authorized merging PR #1 conditional on unchanged scope and green final
+checks. Its exact reviewed head `1f5a78a6` and four-file scope were unchanged;
+both final push/PR checks passed. It was merged using a normal merge commit,
+`4550df2e2043681fadf4d0be5914d35df5d33701`. Main Actions run
+`44488462196` PASSED. The audit branch merged updated main in `6a00fc0`;
+`326f963` and main are both ancestors. No force push, reset, rebase or discard
+was used. `src/` and `artifacts/` are unchanged from main. See
+`outputs/gate6c_repository_verification.json` for the current observation.
+
+The owner identifies an attached camera-ready paper as authoritative. No attachment
+reference, PDF/LaTeX/Word file, or connected document is available to this session.
+An accessible link was requested. The previous historical table pack is not used
+as a substitute. Paper claim/table/figure/metric arrays remain explicitly incomplete;
+full Gate 6C-A PASS cannot be claimed until the exact bytes can be inventoried.
+
+## Prior repository and CI observation — 2026-11-17 (superseded)
 
 Contrary to the stated merged status, GitHub reads and a fresh fetch showed PR #1
 OPEN, `merged=false`, with head `1f5a78a6f90ff8b4f5d81a3d4dd013fccafb7ec5`.
@@ -41,7 +58,11 @@ Safest proposed remediation: owner-approved temporary privacy, immutable private
 preservation, field-level rights review, then a reviewed code/data distribution
 split if needed. Merely deleting a file in a new commit does not remove prior
 public exposure. No visibility change, deletion or history rewrite was performed.
-No audit output or external source content was pushed publicly.
+As of the original 2026-11-17 audit, no audit output or external source content
+had been pushed publicly. The owner authorized a normal review workflow on
+2026-11-19; only audit metadata, reports, validation scripts and synthetic tests
+are proposed for that workflow. No paper, external source pack or row-level
+scientific reference data was added.
 
 ## Authoritative paper: missing prerequisite
 
@@ -119,7 +140,8 @@ training contract or altering any frozen hash.
 
 ## Exact proposed next scope — Gate 8A-A, only after inventory review
 
-Prerequisites: resolve PR #1/main CI; obtain/hash the submitted paper; complete
+PR #1/main CI is resolved as recorded above. Remaining prerequisites: obtain/hash
+the submitted paper; complete
 page/section/table/figure/caption-to-evidence mapping; explicitly classify unresolved
 claims; owner review of the full Gate-6C-A inventory. No aggregation code has begun.
 

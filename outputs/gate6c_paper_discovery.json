@@ -149,5 +149,15 @@
     "paper_membership": "UNCONFIRMED",
     "raw_files_downloaded": false
   },
-  "needed": "Exact submitted camera-ready PDF/LaTeX bytes or authoritative accessible revision link; owner confirmation if version ambiguous."
+  "needed": "Exact submitted camera-ready PDF/LaTeX bytes or authoritative accessible revision link; owner confirmation if version ambiguous.",
+  "current_observation": {
+    "date": "2026-11-19",
+    "owner_identified_exact_attachment_as_authoritative": true,
+    "attachment_exposed_in_tool_context": false,
+    "local_pdf_tex_docx_files_found": false,
+    "connected_document_sessions": 0,
+    "paper_bytes_hash": null,
+    "old_historical_pack_used_as_substitute": false,
+    "requested": "Accessible link to exact submitted PDF/LaTeX; no source version inferred."
+  }
 }

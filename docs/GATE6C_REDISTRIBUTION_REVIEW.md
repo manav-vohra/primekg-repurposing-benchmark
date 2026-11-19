@@ -72,7 +72,11 @@ this is not a full sensitive-content or remote-fork audit.
    original code must not purport to relicense upstream data. Public release
    clearance remains unresolved until these decisions are reviewed.
 
-No external table packs, paper PDFs, restricted data, notebooks, checkpoints or
+As of the original 2026-11-17 snapshot, no external table packs, paper PDFs, restricted data, notebooks, checkpoints or
 archives were copied into the repository during this session. Local new reports
 contain filenames/hashes, derived validation counts, and already tracked frozen
-summary values; nothing from this audit was pushed to public GitHub.
+summary values; nothing from that audit had yet been pushed to public GitHub.
+On 2026-11-19 the owner authorized submitting Gate-6C-A deliverables through normal
+review. The proposed review files contain only audit metadata, reports, scripts
+and synthetic tests, with no newly copied restricted row-level artifacts or paper.
+Visibility and redistribution clearance remain unchanged.

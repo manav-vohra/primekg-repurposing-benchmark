@@ -1,11 +1,15 @@
 # PrimeKG project current state
 
-## Active review checkpoint — 2026-11-17
+## Active review checkpoint — 2026-11-19
 
 The currently authorized task is **Gate 6C-A historical input and submitted-paper
 claim reconciliation**, superseding the earlier next-training instructions below.
-The input-contract audit passes; the complete gate is blocked pending the exact
-submitted camera-ready paper and resolution of PR #1's merge/main-CI discrepancy.
+The input-contract audit passes; the complete gate is blocked pending access to the
+exact submitted camera-ready paper. The owner reports attaching it, but no file,
+attachment reference, or connected document is accessible in this session.
+PR #1 was merged with authorization as `4550df2`; its main CI run `44488462196`
+passed. Commit `326f963` is preserved, and updated main was merged into the audit
+branch without rebasing, overwriting, or discarding work.
 See `outputs/gate6c_handoff.md`, `outputs/gate6c_claim_artifact_manifest.json`, and
 `docs/GATE6C_REDISTRIBUTION_REVIEW.md`. The claim ledger is provisional historical
 evidence, not a completed paper inventory. Do not begin aggregation, downstream
