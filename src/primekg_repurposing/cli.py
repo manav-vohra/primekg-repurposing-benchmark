@@ -13,6 +13,9 @@ from .provenance import validate
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="primekg-repurpose")
     subcommands = parser.add_subparsers(dest="command", required=True)
+    reproduction = subcommands.add_parser("reproduce", help="CPU-only supported paper results with explicit evidence classes")
+    reproduction.add_argument("--repository-root", type=Path, help="checkout containing artifacts/ and the claim manifest")
+    reproduction.add_argument("--output", type=Path, default=Path("work/reproduction"), help="generated outputs, separate from reference inputs")
     command = subcommands.add_parser("validate", help="validate frozen artifacts and provenance")
     command.add_argument("--tier", choices=("smoke", "reference", "full-local"), default="reference")
     command.add_argument("--data-root", type=Path, help="artifact root; takes priority over PRIMEKG_DATA_ROOT")
@@ -54,6 +57,19 @@ def main(argv: list[str] | None = None) -> int:
     e3_command.add_argument("--preregistration", type=Path, help="Gate-6B preregistration (default outputs/gate6b_preregistration.json)")
     args = parser.parse_args(argv)
     root = Path(__file__).resolve().parents[2]
+    if args.command == "reproduce":
+        from .reproduction import reproduce
+        repository = args.repository_root or (root if (root / "artifacts/registry.json").is_file() else Path.cwd())
+        try:
+            report = reproduce(repository, args.output)
+        except (OSError, ValueError, KeyError, ImportError) as exc:
+            print(f"Reproduction failed: {exc}")
+            return 1
+        print(f"Supported reproduction: {report['status']}")
+        print(f"Outputs: {args.output.resolve()}")
+        print("Classes 1/2 are computed; class 3 is historical replay; class 4 remains unsupported.")
+        print("Complete independent paper/model reproduction: False; see equivalence_report.json and LIMITATIONS.md")
+        return 0 if report["status"] == "PASS" else 1
     if args.command == "prepare-e3":
         from .gate6a import prepare_gate6a, write_json
 
