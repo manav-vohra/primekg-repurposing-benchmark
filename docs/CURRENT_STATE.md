@@ -1,6 +1,19 @@
 # PrimeKG project current state
 
-## Active review checkpoint — 2026-11-19
+## Active priority — CPU historical-result reproduction
+
+The owner authorized the CPU release package after Gate 6C-A. Milestone A now
+implements verified seed expectations, SBS/VBS, utility-level winner ties and the
+source-confirmed paired bootstrap. Milestone B recomputes Gate A cost bounds and
+labels static/Gate B evidence as historical replay. Milestone C adds the one-command
+CLI, paper exports, equivalence checks and a clean analysis-only CI job.
+See [README.md](../README.md) for the supported tier, evidence classes, commands
+and limitations. These changes are submitted as focused, stacked review PRs;
+they do not authorize merging earlier PRs or changing visibility. Licensing and
+redistribution clearance remains separate. No expert retraining or sealed test
+access is part of this priority.
+
+## Historical Gate 6C-A review checkpoint — 2026-11-19
 
 The currently authorized task is **Gate 6C-A historical input and submitted-paper
 claim reconciliation**, superseding the earlier next-training instructions below.
@@ -16,8 +29,8 @@ passed. Commit `326f963` is preserved, and updated main was merged into the audi
 branch without rebasing, overwriting, or discarding work.
 See `outputs/gate6c_handoff.md`, `outputs/gate6c_claim_artifact_manifest.json`, and
 `docs/GATE6C_REDISTRIBUTION_REVIEW.md`. PR #2 remains draft and unmerged for review.
-Do not begin Gate 8A-A, downstream scientific implementation, or E3/E4 training
-until the completed inventory has been reviewed and the next gate authorized.
+The previous pause on aggregation was superseded by the owner's explicit CPU
+reproduction priority. E3/E4 training remains outside the authorized scope.
 
 GitHub metadata reports the repository as public; visibility was not changed.
 Redistribution clearance remains unresolved, including already tracked derived
