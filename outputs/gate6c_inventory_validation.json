@@ -1,0 +1,43 @@
+{
+  "gate": "PHASE_2_GATE_6C_A",
+  "decision": "PASS",
+  "scope": "Inventory coverage and provenance accounting; unresolved claims retained, not validated as scientific truth",
+  "paper_sha256": "ab7e80b1d82046c7c26886710a4fb5f53884534d289d787185c1ee7fc0faff87",
+  "pages": 10,
+  "coverage_units": 134,
+  "scientific_units": 82,
+  "claims": 238,
+  "metrics": 180,
+  "tables": 5,
+  "figures": 1,
+  "claim_status_counts": {
+    "SUPPORTED_HISTORICAL_EVIDENCE": 201,
+    "CONTEXT_OR_DEFINITION": 2,
+    "SCOPE_OR_INTERPRETATION": 3,
+    "SUPPORTED_FROZEN_CONTRACT": 11,
+    "UNRESOLVED": 18,
+    "EXPLICITLY_UNRESOLVED_IN_PAPER": 1,
+    "DISCREPANCY": 1,
+    "PUBLIC_RELEASE_COMMITMENT_NOT_COMPLETION_CLAIM": 1
+  },
+  "external_raw_objects_verified_this_run": 21,
+  "paper_bytes_verified_this_run": true,
+  "scientific_reproduction_complete": false,
+  "gate8_started": false,
+  "pdf_page_and_block_hashes_verified": true,
+  "all_primary_pdf_content_units_verified": true,
+  "tests": {
+    "passed": 171,
+    "skipped": 16,
+    "subtests_passed": 2
+  },
+  "preservation": {
+    "scientific_src_changed": false,
+    "frozen_artifacts_changed": false,
+    "historical_gate1_to_6b_outputs_changed": false,
+    "gate8_started": false,
+    "gpu_training_started": false,
+    "visibility_changed": false,
+    "PR2_merged": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "observed_on": "2026-11-19",
+  "observed_main_sha": "4550df2e2043681fadf4d0be5914d35df5d33701",
+  "main_ci": "SUCCESS",
+  "main_run_id": 44488462196,
+  "main_run_url": "https://github.com/manav-vohra/primekg-repurposing-benchmark/actions/runs/44488462196",
+  "pr1_state": "CLOSED",
+  "pr1_merged": true,
+  "pr1_head_sha": "1f5a78a6f90ff8b4f5d81a3d4dd013fccafb7ec5",
+  "pr1_ci": "SUCCESS",
+  "pr1_run_id": 44117485875,
+  "merge_method": "merge",
+  "merge_main_commit": "4550df2e2043681fadf4d0be5914d35df5d33701",
+  "preserved_audit_commit": "326f963",
+  "audit_sync_merge_commit": "6a00fc0",
+  "audit_base": "UPDATED_MAIN_MERGED_WITHOUT_REWRITE",
+  "visibility": "public",
+  "visibility_changed": false,
+  "reviewed_scope_files": [
+    ".github/workflows/gate1-validation.yml",
+    "pyproject.toml",
+    "tests/test_e3_complex.py",
+    "docs/COMPLETION_ROADMAP.md"
+  ],
+  "reviewed_head_unchanged": true,
+  "preserved_commit_is_ancestor": true,
+  "main_is_ancestor": true,
+  "scientific_src_and_artifacts_unchanged_from_main": true,
+  "synchronization": "Normal merge; no reset, overwrite, rebase, force push or discarded commit.",
+  "paper_available": true,
+  "paper_sha256": "ab7e80b1d82046c7c26886710a4fb5f53884534d289d787185c1ee7fc0faff87"
+}

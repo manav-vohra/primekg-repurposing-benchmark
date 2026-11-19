@@ -1,0 +1,2399 @@
+{
+  "audit": "GATE_6C_A_TRACKED_REDISTRIBUTION",
+  "scope": "Current tracked tree; not Git history, external archives or a legal opinion",
+  "tracked_tree": "f7056568c43fd3c37d0e2cc60141ae34b0c5c554",
+  "tracked_file_count": 133,
+  "observed_main_sha": "1f528f1100314a992e6b305eeb64400474e60290",
+  "observed_main_file_count": 132,
+  "license_files": [],
+  "risk_flag_counts": {
+    "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE": 74,
+    "DERIVED_CONTRACT_OR_SUMMARY": 33,
+    "MACHINE_SPECIFIC_PROVENANCE_PATHS": 8,
+    "MULTISOURCE_GRAPH_ENTITY_MAPPING": 1,
+    "DRUGBANK_IDENTIFIER_CONTENT": 6,
+    "GRAPH_DERIVED_IDENTIFIERS_OR_LABELS": 6,
+    "DISEASE_LEVEL_DERIVED_RESULTS": 10,
+    "EXTERNAL_ARTIFACT_LOCATORS_REVIEW_ACCESS": 4
+  },
+  "records": [
+    {
+      "observed_main_sha256": "3a19d37366d908439d323edcf3ab6ac7d083bdd88bd2e0ec578bb8e1b45cf3a2",
+      "path": ".gitattributes",
+      "tracked_on_observed_main": true,
+      "bytes": 354,
+      "sha256": "3a19d37366d908439d323edcf3ab6ac7d083bdd88bd2e0ec578bb8e1b45cf3a2",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "fd8ded1e33a9e2b7e893c8ca6f0d43a189c118b1c165e1e5ccdf2ab8201d0d8f",
+      "path": ".github/workflows/gate1-validation.yml",
+      "tracked_on_observed_main": true,
+      "bytes": 740,
+      "sha256": "fc22956476e9605b0b9997166c9f3757051824c48dfbd4cdd3180bc7f14e9110",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "916f315a9b823385c5dbcbf4a4d94e2338c368201427eacd2456621e87923e2c",
+      "path": ".gitignore",
+      "tracked_on_observed_main": true,
+      "bytes": 815,
+      "sha256": "916f315a9b823385c5dbcbf4a4d94e2338c368201427eacd2456621e87923e2c",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "4a2bc95529e5c9c865d1ae39acca2850667d8d25ec3120285b5e47063d19c966",
+      "path": "artifacts/frozen/audits/p1_leakage_benchmark_contract_v1.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 710,
+      "sha256": "4a2bc95529e5c9c865d1ae39acca2850667d8d25ec3120285b5e47063d19c966",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "property",
+        "value",
+        "verification"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "4b06d13b50070b0ff4fb623e527fc2b7dbe53836cd39a727af2afcfedacee57b",
+      "path": "artifacts/frozen/audits/p1_leakage_information_contract_matrix_v1.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 5897,
+      "sha256": "4b06d13b50070b0ff4fb623e527fc2b7dbe53836cd39a727af2afcfedacee57b",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "component",
+        "stage",
+        "allowed_information",
+        "prohibited_information",
+        "leakage_control",
+        "verification_artifact",
+        "verified_status",
+        "claim_scope"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "26bbfa4702fd849c597c0c1234a610bc0074e7e6efab1718dbf8fdc839792f5a",
+      "path": "artifacts/frozen/audits/p1_leakage_provenance_artifact_integrity_v1.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 2770,
+      "sha256": "26bbfa4702fd849c597c0c1234a610bc0074e7e6efab1718dbf8fdc839792f5a",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "artifact_role",
+        "filename",
+        "bytes",
+        "sha256"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "bb762c3c6d55403269013b5e3cb597ec6e00f84228aae525f0e5c2772a84ba6a",
+      "path": "artifacts/frozen/audits/p1_oracle_gap_uncertainty_v1.json",
+      "tracked_on_observed_main": true,
+      "bytes": 1328,
+      "sha256": "bb762c3c6d55403269013b5e3cb597ec6e00f84228aae525f0e5c2772a84ba6a",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "5a4356348120516af0d40898cef3b820ed5e01f366c3ab46c13525063c6fa424",
+      "path": "artifacts/frozen/audits/p1_oracle_gap_winner_counts_v1.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 152,
+      "sha256": "5a4356348120516af0d40898cef3b820ed5e01f366c3ab46c13525063c6fa424",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "winner",
+        "n",
+        "fraction"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "abd65da200c67eb3ee5de918a87b11f727b86067655f0afa101bc91197b07c96",
+      "path": "artifacts/frozen/audits/p1_protocol_e4_canonical_reimplementation_fidelity_v1.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 605,
+      "sha256": "abd65da200c67eb3ee5de918a87b11f727b86067655f0afa101bc91197b07c96",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "original_expected_E4_R50",
+        "fresh_expected_E4_R50",
+        "macro_delta",
+        "macro_abs_delta",
+        "expected_disease_utility_spearman",
+        "spearman_p",
+        "fresh_seed_macro_std",
+        "prior_E1_E2_E3_VBS",
+        "original_four_expert_VBS",
+        "fresh_four_expert_VBS",
+        "four_expert_VBS_delta",
+        "fresh_E4_incremental_oracle_gain",
+        "original_strict_E4_wins",
+        "fresh_strict_E4_wins",
+        "E4_strict_win_set_jaccard",
+        "fidelity_pass"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "ba1a23d9f851cb03edfb4e2ff77367621b67702102ffa0fd647d5854ec7e921f",
+      "path": "artifacts/frozen/audits/p1_protocol_e4_canonical_reimplementation_result_v1.json",
+      "tracked_on_observed_main": true,
+      "bytes": 2531,
+      "sha256": "ba1a23d9f851cb03edfb4e2ff77367621b67702102ffa0fd647d5854ec7e921f",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "9e250e0f97d7b5770efed2f7502490698b4e4eed08b505d94492b68a50d3370e",
+      "path": "artifacts/frozen/audits/p1_protocol_e4_canonical_reimplementation_seed_summary_v1.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 264,
+      "sha256": "9e250e0f97d7b5770efed2f7502490698b4e4eed08b505d94492b68a50d3370e",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "seed",
+        "macro_R50",
+        "applicable_diseases",
+        "mean_fold_runtime_sec",
+        "mean_final_loss"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "5fc02dd78a183602d900a828a593868e30027c3067d65789a130d11c7bd5775e",
+      "path": "artifacts/frozen/audits/p1_protocol_e4_forward_reproduction_v1.json",
+      "tracked_on_observed_main": true,
+      "bytes": 2589,
+      "sha256": "5fc02dd78a183602d900a828a593868e30027c3067d65789a130d11c7bd5775e",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "fd95d713039b6439ae7de30ab8d119e212797bbca8259b93b480b64e7295e022",
+      "path": "artifacts/frozen/benchmark/P1_V0_EXPERIMENTAL_CONSTITUTION.md",
+      "tracked_on_observed_main": true,
+      "bytes": 3640,
+      "sha256": "fd95d713039b6439ae7de30ab8d119e212797bbca8259b93b480b64e7295e022",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY",
+        "MACHINE_SPECIFIC_PROVENANCE_PATHS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "e19061b45253f44944ebe06e47c03ed8edb0bb50132e9d3391575819b20d5af9",
+      "path": "artifacts/frozen/benchmark/P1_V0_FINAL_EMPIRICAL_INTERPRETATION.md",
+      "tracked_on_observed_main": true,
+      "bytes": 2114,
+      "sha256": "e19061b45253f44944ebe06e47c03ed8edb0bb50132e9d3391575819b20d5af9",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "36e7d2f620b25056bb5564d589e4a396c2a7fe591600c6af2cd122127145ceb8",
+      "path": "artifacts/frozen/benchmark/p1_e3_complex_corpus_manifest.json",
+      "tracked_on_observed_main": true,
+      "bytes": 2211,
+      "sha256": "36e7d2f620b25056bb5564d589e4a396c2a7fe591600c6af2cd122127145ceb8",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "4602c6e372d8db30463c5e5dae418632ce742de9255e305809c1d99829ca8fa3",
+      "path": "artifacts/frozen/benchmark/p1_e3_complex_entities.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 6178950,
+      "sha256": "4602c6e372d8db30463c5e5dae418632ce742de9255e305809c1d99829ca8fa3",
+      "risk_flags": [
+        "MULTISOURCE_GRAPH_ENTITY_MAPPING",
+        "DRUGBANK_IDENTIFIER_CONTENT"
+      ],
+      "unique_drugbank_identifiers": 7957,
+      "csv_columns": [
+        "entity_index",
+        "entity_key",
+        "entity_type",
+        "entity_id"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "591c5fe76d4122369574972525f6b5e82128d8e975264f6cfdce6178b223caba",
+      "path": "artifacts/frozen/benchmark/p1_e3_complex_relations.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 797,
+      "sha256": "591c5fe76d4122369574972525f6b5e82128d8e975264f6cfdce6178b223caba",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "relation_index",
+        "relation_name",
+        "base_nontherapeutic_row_count"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "83670a56f0544ac2f92eb28972353be435058a2f84d1dbdb1358716632b5631e",
+      "path": "artifacts/frozen/benchmark/p1_p15_execution_blueprint_v1.txt",
+      "tracked_on_observed_main": true,
+      "bytes": 85241,
+      "sha256": "83670a56f0544ac2f92eb28972353be435058a2f84d1dbdb1358716632b5631e",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY",
+        "MACHINE_SPECIFIC_PROVENANCE_PATHS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "86b9f4f65fcc981eec8a188779d884e852815da01d9ce9b6a6733868d8a38f53",
+      "path": "artifacts/frozen/benchmark/p1_v0_benchmark_manifest.json",
+      "tracked_on_observed_main": true,
+      "bytes": 3984,
+      "sha256": "86b9f4f65fcc981eec8a188779d884e852815da01d9ce9b6a6733868d8a38f53",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY",
+        "MACHINE_SPECIFIC_PROVENANCE_PATHS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "dfe7275c60b6b75b2a8fa45c017c7675e3e438d6b59722f91517ff78862c2776",
+      "path": "artifacts/frozen/benchmark/p1_v0_candidate_drugs.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 404924,
+      "sha256": "dfe7275c60b6b75b2a8fa45c017c7675e3e438d6b59722f91517ff78862c2776",
+      "risk_flags": [
+        "GRAPH_DERIVED_IDENTIFIERS_OR_LABELS",
+        "DRUGBANK_IDENTIFIER_CONTENT"
+      ],
+      "unique_drugbank_identifiers": 7957,
+      "csv_columns": [
+        "drug_id",
+        "drug_name",
+        "has_nontherapeutic_evidence",
+        "gene_protein_neighbor_count",
+        "effect_phenotype_neighbor_count",
+        "has_drug_drug_evidence"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "13b255e6679dfa8cd2a8af1f00d7905f72503c2e0f6de57968da0d964aa6fe08",
+      "path": "artifacts/frozen/benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+      "tracked_on_observed_main": true,
+      "bytes": 1602,
+      "sha256": "13b255e6679dfa8cd2a8af1f00d7905f72503c2e0f6de57968da0d964aa6fe08",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "d50d830b87aebdc81731437de6204cca25e442054dca27d687a6feadfe462912",
+      "path": "artifacts/frozen/benchmark/p1_v0_fold_summary.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 733,
+      "sha256": "d50d830b87aebdc81731437de6204cca25e442054dca27d687a6feadfe462912",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "fold",
+        "target_diseases",
+        "buffer_diseases",
+        "hidden_diseases_total",
+        "clean_training_pairs_remaining",
+        "clean_training_fraction_remaining",
+        "therapeutic_training_pairs_remaining",
+        "therapeutic_training_fraction_remaining",
+        "direct_ontology_leaks"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "d5aaaaac34cc78b7a38084c374d9c340a002de638aafd85ae650ad7d2d71a1d8",
+      "path": "artifacts/frozen/benchmark/p1_v0_k8_quarantine_manifest.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 40018,
+      "sha256": "d5aaaaac34cc78b7a38084c374d9c340a002de638aafd85ae650ad7d2d71a1d8",
+      "risk_flags": [
+        "GRAPH_DERIVED_IDENTIFIERS_OR_LABELS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "fold",
+        "disease_id",
+        "role",
+        "hide_all_therapeutic_relations"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "722eec938337a73e7867d384af509d3302bf27d133b665238b76b91ec50d7932",
+      "path": "artifacts/frozen/benchmark/p1_v0_primary_diseases.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 45899,
+      "sha256": "722eec938337a73e7867d384af509d3302bf27d133b665238b76b91ec50d7932",
+      "risk_flags": [
+        "GRAPH_DERIVED_IDENTIFIERS_OR_LABELS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "disease_id",
+        "CLEAN_INDICATION",
+        "AMBIGUOUS_INDICATION",
+        "CONTRAINDICATION_ONLY",
+        "OFFLABEL_ONLY",
+        "CONFLICTING_NONINDICATION",
+        "disease_name",
+        "observed_therapeutic_pairs",
+        "unobserved_candidates",
+        "primary_ignore_count",
+        "primary_scored_candidate_count",
+        "oof_fold"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "c51481941ea30b861e538678dbd4df78fddafeedd91a77ece2de40c157255564",
+      "path": "artifacts/frozen/benchmark/p1_v0_primary_eval_roles.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 1454075,
+      "sha256": "c51481941ea30b861e538678dbd4df78fddafeedd91a77ece2de40c157255564",
+      "risk_flags": [
+        "GRAPH_DERIVED_IDENTIFIERS_OR_LABELS",
+        "DRUGBANK_IDENTIFIER_CONTENT"
+      ],
+      "unique_drugbank_identifiers": 1959,
+      "csv_columns": [
+        "drug_id",
+        "disease_id",
+        "labels",
+        "evaluation_role"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "e17dc6f289f2d467a693d9941f18caf38a36ef11d870f7fc1ebec71953a25b45",
+      "path": "artifacts/frozen/benchmark/p1_v0_primary_truth.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 442709,
+      "sha256": "e17dc6f289f2d467a693d9941f18caf38a36ef11d870f7fc1ebec71953a25b45",
+      "risk_flags": [
+        "GRAPH_DERIVED_IDENTIFIERS_OR_LABELS",
+        "DRUGBANK_IDENTIFIER_CONTENT"
+      ],
+      "unique_drugbank_identifiers": 1681,
+      "csv_columns": [
+        "disease_id",
+        "drug_id",
+        "labels",
+        "evaluation_role"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "66e1b413015ac32d008f2e5c61c2337a74b1d4068a79ea1b41f52b0e8bd8c96b",
+      "path": "artifacts/frozen/benchmark/primekg_graph_census.json",
+      "tracked_on_observed_main": true,
+      "bytes": 2094,
+      "sha256": "66e1b413015ac32d008f2e5c61c2337a74b1d4068a79ea1b41f52b0e8bd8c96b",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY",
+        "MACHINE_SPECIFIC_PROVENANCE_PATHS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "380d24772a1b6e3039335a9ad3dec3de134d7bf3a9a0478ecb95f56fe4c3f5ea",
+      "path": "artifacts/frozen/benchmark/therapeutic_pair_evaluation_roles.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 2612320,
+      "sha256": "380d24772a1b6e3039335a9ad3dec3de134d7bf3a9a0478ecb95f56fe4c3f5ea",
+      "risk_flags": [
+        "GRAPH_DERIVED_IDENTIFIERS_OR_LABELS",
+        "DRUGBANK_IDENTIFIER_CONTENT"
+      ],
+      "unique_drugbank_identifiers": 2074,
+      "csv_columns": [
+        "drug_id",
+        "disease_id",
+        "labels",
+        "evaluation_role"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "f612dee4afbdfa2654f41e31b2f8610cdbf45b60a6f39631ecdf89f46043aa71",
+      "path": "artifacts/frozen/recovered_contracts/p1_e3_complex_fold_label_manifest.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 379,
+      "sha256": "f612dee4afbdfa2654f41e31b2f8610cdbf45b60a6f39631ecdf89f46043aa71",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "fold",
+        "target_diseases",
+        "hidden_diseases_total",
+        "legal_clean_indication_pairs",
+        "hidden_clean_indication_pairs",
+        "expected_legal_pairs",
+        "delta",
+        "direct_hidden_label_leaks"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "aa58e6f73a3e671fb5d79d444c857380af33a7b0e254a902efc86dacde45eca1",
+      "path": "artifacts/frozen/recovered_contracts/p1_e4_rgcn_seed0_metadata.json",
+      "tracked_on_observed_main": true,
+      "bytes": 1490,
+      "sha256": "aa58e6f73a3e671fb5d79d444c857380af33a7b0e254a902efc86dacde45eca1",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "347996002a033ea7cbcb62559ad7b8d86b0642bcf6943fd0d30008bf82b33880",
+      "path": "artifacts/frozen/recovered_contracts/p1_e4_rgcn_seed1_metadata.json",
+      "tracked_on_observed_main": true,
+      "bytes": 788,
+      "sha256": "347996002a033ea7cbcb62559ad7b8d86b0642bcf6943fd0d30008bf82b33880",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "453f8691a00731e7b52d9a933371aac70e8cc15d6c3d7d4f7744bef8a24edfa8",
+      "path": "artifacts/frozen/recovered_contracts/p1_e4_rgcn_seed2_metadata.json",
+      "tracked_on_observed_main": true,
+      "bytes": 788,
+      "sha256": "453f8691a00731e7b52d9a933371aac70e8cc15d6c3d7d4f7744bef8a24edfa8",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "f58e53bb2d8d9dcd024e14178f57ff30bd52d861ad171a82e40a02f63e039eee",
+      "path": "artifacts/frozen/recovered_contracts/p1_observability_result_summary.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 623,
+      "sha256": "f58e53bb2d8d9dcd024e14178f57ff30bd52d861ad171a82e40a02f63e039eee",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "stage",
+        "state",
+        "policy",
+        "macro_R50",
+        "gain_vs_SBS",
+        "oracle_gap_recovered",
+        "status"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "1f694a0d79018eaf8f590b48f4800ba4f936d8d74c3bc0dcb293a6d2af53a736",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_cost_remeasurement_requirements_v1.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 804,
+      "sha256": "1f694a0d79018eaf8f590b48f4800ba4f936d8d74c3bc0dcb293a6d2af53a736",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "expert",
+        "controlled_warm_marginal_timing_required",
+        "controlled_cold_invocation_timing_required",
+        "existing_runtime_context_available",
+        "existing_potential_inference_column",
+        "accepted_primary_gateA_cost_yet",
+        "reason"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "c45e75d054bc9e8eec74c36749e5f0bb9a6140d49fb678a1a5493332beccb52a",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_cost_timing_audit_v1.json",
+      "tracked_on_observed_main": true,
+      "bytes": 1446,
+      "sha256": "c45e75d054bc9e8eec74c36749e5f0bb9a6140d49fb678a1a5493332beccb52a",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "fda7b8865074414630d40e39ff4f878aee7baa56228113296af4d15dc7dcd64f",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_existing_runtime_evidence_v1.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 3092,
+      "sha256": "fda7b8865074414630d40e39ff4f878aee7baa56228113296af4d15dc7dcd64f",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "expert",
+        "source_file",
+        "runtime_column",
+        "classification",
+        "n_rows",
+        "n_unique",
+        "min",
+        "median",
+        "max"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "503a68768e305ae8b7b5e7e04cb6e9f1c91f6eda6af1fc46276924cd830c57fe",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateA_constitution_v1.json",
+      "tracked_on_observed_main": true,
+      "bytes": 1505,
+      "sha256": "503a68768e305ae8b7b5e7e04cb6e9f1c91f6eda6af1fc46276924cd830c57fe",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "79e5e044cc0087973f2dbf889898552237171a816b487b103525fe0d5f6f96eb",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateA_expected_utility_matrix_v1.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 53340,
+      "sha256": "79e5e044cc0087973f2dbf889898552237171a816b487b103525fe0d5f6f96eb",
+      "risk_flags": [
+        "DISEASE_LEVEL_DERIVED_RESULTS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "disease_id",
+        "E1_R50",
+        "E2_R50",
+        "E3_expected_R50",
+        "E4_expected_R50",
+        "E1_applicable",
+        "E2_applicable",
+        "E3_applicable",
+        "E4_applicable"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "2b01570ffd6da4c741942d08c4ed124cd48f92c1d02dc5da625078d41d2fe4fe",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateA_summary_v1.json",
+      "tracked_on_observed_main": true,
+      "bytes": 891,
+      "sha256": "2b01570ffd6da4c741942d08c4ed124cd48f92c1d02dc5da625078d41d2fe4fe",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "feb6d6b34b06ebfbfec1a77a1d7b7f8ff31c5c1ceaa18149307d8ead3924253f",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateB_constitution_v1.json",
+      "tracked_on_observed_main": true,
+      "bytes": 8990,
+      "sha256": "feb6d6b34b06ebfbfec1a77a1d7b7f8ff31c5c1ceaa18149307d8ead3924253f",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "46b40eccee5245cca10704dc4f7ea6b40281ed421a9896eedf72b73d12fbacc9",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateB_development_gate_v1.json",
+      "tracked_on_observed_main": true,
+      "bytes": 1783,
+      "sha256": "46b40eccee5245cca10704dc4f7ea6b40281ed421a9896eedf72b73d12fbacc9",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "6bbd4bc3a73974f71e9438bbb396ce23de67479f00da91c2880d646c3d99a12d",
+      "path": "artifacts/frozen/recovered_contracts/p1_p15_gateB_p0_action_predictability_v1.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 310,
+      "sha256": "6bbd4bc3a73974f71e9438bbb396ce23de67479f00da91c2880d646c3d99a12d",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "action",
+        "applicable_n",
+        "OOF_spearman",
+        "OOF_MAE",
+        "OOF_RMSE",
+        "selected_escalations",
+        "selected_positive_delta_precision"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "e394ff95f71347c539193ad59159c1f74ce3c647f8254b00e688c12fd0c6f3af",
+      "path": "artifacts/frozen/recovered_contracts/p1_primary_metric_policy.json",
+      "tracked_on_observed_main": true,
+      "bytes": 739,
+      "sha256": "e394ff95f71347c539193ad59159c1f74ce3c647f8254b00e688c12fd0c6f3af",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "46581036bf8ae98212474d298c20947e2b6d5ca8f1f4908be23d539458c8cfcc",
+      "path": "artifacts/frozen/recovered_contracts/p1_static_routing_closure.json",
+      "tracked_on_observed_main": true,
+      "bytes": 2029,
+      "sha256": "46581036bf8ae98212474d298c20947e2b6d5ca8f1f4908be23d539458c8cfcc",
+      "risk_flags": [
+        "DERIVED_CONTRACT_OR_SUMMARY"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "40385a848f91799aff64776c9834a4f050ddd32e3fce3e186f4f94e9362d51fb",
+      "path": "artifacts/frozen/reference_results/p1_e1_e2_e3_e4_expected_oracle.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 95790,
+      "sha256": "40385a848f91799aff64776c9834a4f050ddd32e3fce3e186f4f94e9362d51fb",
+      "risk_flags": [
+        "DISEASE_LEVEL_DERIVED_RESULTS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "disease_id",
+        "E1_expected_R50",
+        "E2_expected_R50",
+        "E3_expected_R50",
+        "seed0_R50",
+        "seed1_R50",
+        "seed2_R50",
+        "E4_expected_R50",
+        "E4_seed_std_R50",
+        "E4_seed_range_R50",
+        "prior_VBS",
+        "VBS_with_E4",
+        "E4_expected_advantage",
+        "E4_seed_win_count_vs_prior_best"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "3d008a1d12cf00b43356b7b81d5e92fd1bf998b9d77a7718a50a8404b5e32acd",
+      "path": "artifacts/frozen/reference_results/p1_e1_expert_matrix_v1_1_tiesafe.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 433464,
+      "sha256": "3d008a1d12cf00b43356b7b81d5e92fd1bf998b9d77a7718a50a8404b5e32acd",
+      "risk_flags": [
+        "DISEASE_LEVEL_DERIVED_RESULTS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "benchmark_id",
+        "expert_id",
+        "expert_version",
+        "expert_family",
+        "seed",
+        "deterministic",
+        "protocol",
+        "fold",
+        "disease_id",
+        "disease_name",
+        "uncertainty_available",
+        "uncertainty_semantics",
+        "primary_utility_name",
+        "status",
+        "applicable",
+        "disease_gene_count",
+        "nonzero_candidate_count",
+        "candidate_score_coverage",
+        "n_clean_positives",
+        "n_ignored_candidates",
+        "n_contraindications",
+        "n_scored_candidates",
+        "legacy_MRR",
+        "legacy_first_hit_rank",
+        "legacy_first_contra_rank",
+        "legacy_Recall@10",
+        "legacy_Hit@10",
+        "legacy_Contra@10",
+        "legacy_ContraRate@10",
+        "legacy_Recall@50",
+        "legacy_Hit@50",
+        "legacy_Contra@50",
+        "legacy_ContraRate@50",
+        "legacy_Recall@100",
+        "legacy_Hit@100",
+        "legacy_Contra@100",
+        "legacy_ContraRate@100",
+        "legacy_primary_utility",
+        "shared_graph_extract_runtime_sec",
+        "shared_score_runtime_sec",
+        "evaluation_runtime_sec",
+        "total_runtime_sec",
+        "amortized_runtime_sec_per_disease",
+        "MRR",
+        "first_hit_rank",
+        "first_contra_rank",
+        "Recall@10",
+        "Hit@10",
+        "Contra@10",
+        "ContraRate@10",
+        "Recall@50",
+        "Hit@50",
+        "Contra@50",
+        "ContraRate@50",
+        "Recall@100",
+        "Hit@100",
+        "Contra@100",
+        "ContraRate@100",
+        "evaluator_version",
+        "tie_policy",
+        "primary_utility"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "5a9165046780af6979aef0e41d7266db806900738d83a3eb24579fdfb141cbcf",
+      "path": "artifacts/frozen/reference_results/p1_e2_expert_matrix_v1_1_tiesafe.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 361795,
+      "sha256": "5a9165046780af6979aef0e41d7266db806900738d83a3eb24579fdfb141cbcf",
+      "risk_flags": [
+        "DISEASE_LEVEL_DERIVED_RESULTS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "benchmark_id",
+        "evaluator_version",
+        "expert_id",
+        "expert_version",
+        "expert_family",
+        "seed",
+        "deterministic",
+        "protocol",
+        "fold",
+        "disease_id",
+        "disease_name",
+        "status",
+        "applicable",
+        "disease_feature_count",
+        "similar_training_disease_count",
+        "similarity_mass",
+        "nonzero_candidate_count",
+        "candidate_score_coverage",
+        "n_clean_positives",
+        "n_ignored_candidates",
+        "n_contraindications",
+        "n_scored_candidates",
+        "uncertainty_available",
+        "uncertainty_semantics",
+        "primary_utility_name",
+        "MRR",
+        "first_hit_rank",
+        "first_contra_rank",
+        "Recall@10",
+        "Hit@10",
+        "Contra@10",
+        "ContraRate@10",
+        "Recall@50",
+        "Hit@50",
+        "Contra@50",
+        "ContraRate@50",
+        "Recall@100",
+        "Hit@100",
+        "Contra@100",
+        "ContraRate@100",
+        "primary_utility",
+        "shared_graph_extract_runtime_sec",
+        "shared_similarity_runtime_sec",
+        "shared_score_runtime_sec",
+        "evaluation_runtime_sec",
+        "total_runtime_sec",
+        "amortized_runtime_sec_per_disease"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "9fd3f3138e659ce5928b28406e52161fc3cedfc4b4352e2462227ddd47425e36",
+      "path": "artifacts/frozen/reference_results/p1_e3_complex_seed0_expert_matrix.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 386265,
+      "sha256": "9fd3f3138e659ce5928b28406e52161fc3cedfc4b4352e2462227ddd47425e36",
+      "risk_flags": [
+        "DISEASE_LEVEL_DERIVED_RESULTS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "benchmark_id",
+        "evaluator_version",
+        "expert_id",
+        "expert_version",
+        "expert_family",
+        "seed",
+        "deterministic",
+        "protocol",
+        "fold",
+        "disease_id",
+        "disease_name",
+        "status",
+        "applicable",
+        "has_nontherapeutic_kg_context",
+        "score_std",
+        "score_range",
+        "n_clean_positives",
+        "n_ignored_candidates",
+        "n_contraindications",
+        "n_scored_candidates",
+        "training_clean_pairs_fold",
+        "fold_training_runtime_sec",
+        "fold_final_training_loss",
+        "uncertainty_available",
+        "uncertainty_semantics",
+        "primary_utility_name",
+        "MRR",
+        "first_hit_rank",
+        "first_contra_rank",
+        "Recall@10",
+        "Hit@10",
+        "Contra@10",
+        "ContraRate@10",
+        "Recall@50",
+        "Hit@50",
+        "Contra@50",
+        "ContraRate@50",
+        "Recall@100",
+        "Hit@100",
+        "Contra@100",
+        "ContraRate@100",
+        "primary_utility",
+        "shared_base_pretrain_runtime_sec",
+        "total_seed0_training_runtime_sec",
+        "evaluation_runtime_sec",
+        "amortized_runtime_sec_per_disease"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "33bd8180345dfd08f92ec33d06efcc08d8ecb0514051fb92948fc30e11aafe2e",
+      "path": "artifacts/frozen/reference_results/p1_e3_complex_seed1_expert_matrix.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 211430,
+      "sha256": "33bd8180345dfd08f92ec33d06efcc08d8ecb0514051fb92948fc30e11aafe2e",
+      "risk_flags": [
+        "DISEASE_LEVEL_DERIVED_RESULTS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "benchmark_id",
+        "evaluator_version",
+        "expert_id",
+        "expert_version",
+        "expert_family",
+        "seed",
+        "fold",
+        "disease_id",
+        "disease_name",
+        "status",
+        "applicable",
+        "training_clean_pairs_fold",
+        "fold_training_runtime_sec",
+        "fold_final_training_loss",
+        "primary_utility_name",
+        "MRR",
+        "first_hit_rank",
+        "first_contra_rank",
+        "Recall@10",
+        "Hit@10",
+        "Contra@10",
+        "ContraRate@10",
+        "Recall@50",
+        "Hit@50",
+        "Contra@50",
+        "ContraRate@50",
+        "Recall@100",
+        "Hit@100",
+        "Contra@100",
+        "ContraRate@100",
+        "primary_utility"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "a113c98f95a26fd96ed713355c877723308f03d504c1ea001fdde779600312f8",
+      "path": "artifacts/frozen/reference_results/p1_e3_complex_seed2_expert_matrix.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 209883,
+      "sha256": "a113c98f95a26fd96ed713355c877723308f03d504c1ea001fdde779600312f8",
+      "risk_flags": [
+        "DISEASE_LEVEL_DERIVED_RESULTS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "benchmark_id",
+        "evaluator_version",
+        "expert_id",
+        "expert_version",
+        "expert_family",
+        "seed",
+        "fold",
+        "disease_id",
+        "disease_name",
+        "status",
+        "applicable",
+        "training_clean_pairs_fold",
+        "fold_training_runtime_sec",
+        "fold_final_training_loss",
+        "primary_utility_name",
+        "MRR",
+        "first_hit_rank",
+        "first_contra_rank",
+        "Recall@10",
+        "Hit@10",
+        "Contra@10",
+        "ContraRate@10",
+        "Recall@50",
+        "Hit@50",
+        "Contra@50",
+        "ContraRate@50",
+        "Recall@100",
+        "Hit@100",
+        "Contra@100",
+        "ContraRate@100",
+        "primary_utility"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "a006c394fb676b0c1625e4dc60d71bc095f01af6acc9ccc8501ff0eaa9c8eb6d",
+      "path": "artifacts/frozen/reference_results/p1_e4_rgcn_seed0_expert_matrix.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 245668,
+      "sha256": "a006c394fb676b0c1625e4dc60d71bc095f01af6acc9ccc8501ff0eaa9c8eb6d",
+      "risk_flags": [
+        "DISEASE_LEVEL_DERIVED_RESULTS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "benchmark_id",
+        "evaluator_version",
+        "expert_id",
+        "expert_version",
+        "expert_family",
+        "seed",
+        "fold",
+        "disease_id",
+        "disease_name",
+        "status",
+        "applicable",
+        "nontherapeutic_degree",
+        "training_clean_pairs_fold",
+        "fold_training_runtime_sec",
+        "fold_inference_runtime_sec",
+        "fold_final_loss",
+        "score_std",
+        "primary_utility_name",
+        "MRR",
+        "first_hit_rank",
+        "first_contra_rank",
+        "Recall@10",
+        "Hit@10",
+        "Contra@10",
+        "ContraRate@10",
+        "Recall@50",
+        "Hit@50",
+        "Contra@50",
+        "ContraRate@50",
+        "Recall@100",
+        "Hit@100",
+        "Contra@100",
+        "ContraRate@100",
+        "primary_utility"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "ce87a944241ad6290ed6545ef119ac4416a5c0bd8d063074f0913bd8a3a6dfe6",
+      "path": "artifacts/frozen/reference_results/p1_e4_rgcn_seed1_expert_matrix.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 185058,
+      "sha256": "ce87a944241ad6290ed6545ef119ac4416a5c0bd8d063074f0913bd8a3a6dfe6",
+      "risk_flags": [
+        "DISEASE_LEVEL_DERIVED_RESULTS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "benchmark_id",
+        "evaluator_version",
+        "expert_id",
+        "expert_version",
+        "expert_family",
+        "seed",
+        "fold",
+        "disease_id",
+        "disease_name",
+        "status",
+        "applicable",
+        "nontherapeutic_degree",
+        "primary_utility_name",
+        "MRR",
+        "first_hit_rank",
+        "first_contra_rank",
+        "Recall@10",
+        "Hit@10",
+        "Contra@10",
+        "ContraRate@10",
+        "Recall@50",
+        "Hit@50",
+        "Contra@50",
+        "ContraRate@50",
+        "Recall@100",
+        "Hit@100",
+        "Contra@100",
+        "ContraRate@100",
+        "primary_utility"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "4203b835aefe746ba9300ee06d45ce4b59c1d9a684331633e736aa797a1e01af",
+      "path": "artifacts/frozen/reference_results/p1_e4_rgcn_seed2_expert_matrix.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 184842,
+      "sha256": "4203b835aefe746ba9300ee06d45ce4b59c1d9a684331633e736aa797a1e01af",
+      "risk_flags": [
+        "DISEASE_LEVEL_DERIVED_RESULTS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "benchmark_id",
+        "evaluator_version",
+        "expert_id",
+        "expert_version",
+        "expert_family",
+        "seed",
+        "fold",
+        "disease_id",
+        "disease_name",
+        "status",
+        "applicable",
+        "nontherapeutic_degree",
+        "primary_utility_name",
+        "MRR",
+        "first_hit_rank",
+        "first_contra_rank",
+        "Recall@10",
+        "Hit@10",
+        "Contra@10",
+        "ContraRate@10",
+        "Recall@50",
+        "Hit@50",
+        "Contra@50",
+        "ContraRate@50",
+        "Recall@100",
+        "Hit@100",
+        "Contra@100",
+        "ContraRate@100",
+        "primary_utility"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "f03c980e8c103cdc256c9ad9ef992f5b1765be8803302a00fd52c48bcec07010",
+      "path": "artifacts/manifests/artifact_dependency_dag.json",
+      "tracked_on_observed_main": true,
+      "bytes": 11741,
+      "sha256": "f03c980e8c103cdc256c9ad9ef992f5b1765be8803302a00fd52c48bcec07010",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "66a3317592cb83c92827a8f50c86068d8965caca94ee4923f797ff1a9b09e8ab",
+      "path": "artifacts/manifests/authoritative_source_manifest.json",
+      "tracked_on_observed_main": true,
+      "bytes": 28223,
+      "sha256": "66a3317592cb83c92827a8f50c86068d8965caca94ee4923f797ff1a9b09e8ab",
+      "risk_flags": [
+        "EXTERNAL_ARTIFACT_LOCATORS_REVIEW_ACCESS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "5e5b8a050d895695e54c830d509cde2477192105f240f5e071fdd00d7bb81cf7",
+      "path": "artifacts/manifests/benchmark_reconstruction_gap_analysis.json",
+      "tracked_on_observed_main": true,
+      "bytes": 7241,
+      "sha256": "5e5b8a050d895695e54c830d509cde2477192105f240f5e071fdd00d7bb81cf7",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "31e93b181da7f387e5c56e908e49ed1103d10edccb2a58eb10a042fbf76f8969",
+      "path": "artifacts/manifests/phase1_reconciliation.json",
+      "tracked_on_observed_main": true,
+      "bytes": 1234,
+      "sha256": "31e93b181da7f387e5c56e908e49ed1103d10edccb2a58eb10a042fbf76f8969",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "d8e71a89f673e4159f4f0f8930cbd8769a8a9feb81546928f7b68ecccda2e395",
+      "path": "artifacts/manifests/scientific_invariant_registry.json",
+      "tracked_on_observed_main": true,
+      "bytes": 6711,
+      "sha256": "d8e71a89f673e4159f4f0f8930cbd8769a8a9feb81546928f7b68ecccda2e395",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "f50cdfdfe5415207e99d6028bfbb0b95e2e8103b889cc8aec62e4ec9ad26700c",
+      "path": "artifacts/registry.json",
+      "tracked_on_observed_main": true,
+      "bytes": 121712,
+      "sha256": "f50cdfdfe5415207e99d6028bfbb0b95e2e8103b889cc8aec62e4ec9ad26700c",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": null,
+      "path": "docs/COMPLETION_ROADMAP.md",
+      "tracked_on_observed_main": false,
+      "bytes": 14011,
+      "sha256": "65a6cc2c0ab1f78c829adb4ff27d16f400392b37e0f20ede75f5bd0308cc8e07",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "41e74ddfbab6d1d6116a358c5d88d727b50b12c2a99dbde67634585a19567f9f",
+      "path": "docs/CROSS_DEVICE_SETUP.md",
+      "tracked_on_observed_main": true,
+      "bytes": 3270,
+      "sha256": "41e74ddfbab6d1d6116a358c5d88d727b50b12c2a99dbde67634585a19567f9f",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "b84ae2ecbc8ed6ab3289199cfe6fd4779bc4d15ce4af8c5d1f05bc771f1e3ef1",
+      "path": "docs/CURRENT_STATE.md",
+      "tracked_on_observed_main": true,
+      "bytes": 3213,
+      "sha256": "b84ae2ecbc8ed6ab3289199cfe6fd4779bc4d15ce4af8c5d1f05bc771f1e3ef1",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "4bea65b86541ba0767b255e84317cd9fae6b9d98fc38ed8817186855b59d48db",
+      "path": "docs/gate1_artifact_validation.md",
+      "tracked_on_observed_main": true,
+      "bytes": 4854,
+      "sha256": "4bea65b86541ba0767b255e84317cd9fae6b9d98fc38ed8817186855b59d48db",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "789ce28cfc3e1ad55e1705cae0bd5d55987bc3d35f6645e7788f4a67e57eb964",
+      "path": "docs/gate2a_frozen_fold_semantics.md",
+      "tracked_on_observed_main": true,
+      "bytes": 4072,
+      "sha256": "789ce28cfc3e1ad55e1705cae0bd5d55987bc3d35f6645e7788f4a67e57eb964",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "b1872ebc961d016a375b68579d6fc229dba24fa0264fe465c2d7c4e6d2d0468f",
+      "path": "docs/gate2b_raw_reconstruction.md",
+      "tracked_on_observed_main": true,
+      "bytes": 5130,
+      "sha256": "b1872ebc961d016a375b68579d6fc229dba24fa0264fe465c2d7c4e6d2d0468f",
+      "risk_flags": [
+        "MACHINE_SPECIFIC_PROVENANCE_PATHS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "d851bc56d115c82f5041fdd69b30f055fe10a838d4a4e27fa4e8a979728ecb96",
+      "path": "docs/gate3_tiesafe_evaluator.md",
+      "tracked_on_observed_main": true,
+      "bytes": 5652,
+      "sha256": "d851bc56d115c82f5041fdd69b30f055fe10a838d4a4e27fa4e8a979728ecb96",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "4855e890c2fb6307320b279afc8ab6cbb7e19821e6be4f178efb1264bf2ac4d1",
+      "path": "docs/migration/authoritative_source_manifest.md",
+      "tracked_on_observed_main": true,
+      "bytes": 3909,
+      "sha256": "4855e890c2fb6307320b279afc8ab6cbb7e19821e6be4f178efb1264bf2ac4d1",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "35b0cf31a2adcd739131b33ad6f67b955e01ef5b78642ae478315547639961a2",
+      "path": "docs/migration/benchmark_reconstruction_gap_analysis.md",
+      "tracked_on_observed_main": true,
+      "bytes": 3992,
+      "sha256": "35b0cf31a2adcd739131b33ad6f67b955e01ef5b78642ae478315547639961a2",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "62a2ee0f605fe0da4be076a7b95c59d1c19a92c9f8b8c7bcf4fc0de3120ba64d",
+      "path": "docs/migration/clean_repository_design.md",
+      "tracked_on_observed_main": true,
+      "bytes": 3836,
+      "sha256": "62a2ee0f605fe0da4be076a7b95c59d1c19a92c9f8b8c7bcf4fc0de3120ba64d",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "5619fecccda2c4c0bc167d67b56f2b8a9b2247ad196319369cf74450087493ec",
+      "path": "docs/migration/dependency_dag.md",
+      "tracked_on_observed_main": true,
+      "bytes": 3133,
+      "sha256": "5619fecccda2c4c0bc167d67b56f2b8a9b2247ad196319369cf74450087493ec",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "a9353a49902e056dc2fea4bcbe8b128342c904dfb3f312bf6c98fd2c401eb98b",
+      "path": "docs/migration/duplicated_logic_inventory.md",
+      "tracked_on_observed_main": true,
+      "bytes": 3569,
+      "sha256": "a9353a49902e056dc2fea4bcbe8b128342c904dfb3f312bf6c98fd2c401eb98b",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "5bf6acf7e2ae99624c699953ac971cd9ee8bfd65ea3b988c5393ceb83f80bfb8",
+      "path": "docs/migration/environment_audit.md",
+      "tracked_on_observed_main": true,
+      "bytes": 3919,
+      "sha256": "5bf6acf7e2ae99624c699953ac971cd9ee8bfd65ea3b988c5393ceb83f80bfb8",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "02391fcd4ca47799f4284f1dc027ed95049947007f55293be98dc4dd3de0bdf1",
+      "path": "docs/migration/migration_plan.md",
+      "tracked_on_observed_main": true,
+      "bytes": 8872,
+      "sha256": "02391fcd4ca47799f4284f1dc027ed95049947007f55293be98dc4dd3de0bdf1",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "e0f090cb8ae048d9e2b6c137844be5e059ad1056f36dd4574108ae3c97f7f5ae",
+      "path": "docs/migration/phase1_reconciliation.md",
+      "tracked_on_observed_main": true,
+      "bytes": 20285,
+      "sha256": "e0f090cb8ae048d9e2b6c137844be5e059ad1056f36dd4574108ae3c97f7f5ae",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "c8891e463b22cf90b83e200624ea43081f85abc70dcc9fad61944fb7cf39f1f4",
+      "path": "docs/migration/public_release_risk_audit.md",
+      "tracked_on_observed_main": true,
+      "bytes": 4210,
+      "sha256": "c8891e463b22cf90b83e200624ea43081f85abc70dcc9fad61944fb7cf39f1f4",
+      "risk_flags": [
+        "MACHINE_SPECIFIC_PROVENANCE_PATHS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "f498fb95ab8c86f59871aa602241bb464b83dec032f8582eda7d85cd04629053",
+      "path": "docs/migration/reproducibility_tiers.md",
+      "tracked_on_observed_main": true,
+      "bytes": 2649,
+      "sha256": "f498fb95ab8c86f59871aa602241bb464b83dec032f8582eda7d85cd04629053",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "80c61c55e38b86373b445ab9aa46354525c760bf0e4b3efa002fa7febed8618f",
+      "path": "docs/migration/scientific_invariant_registry.md",
+      "tracked_on_observed_main": true,
+      "bytes": 2146,
+      "sha256": "80c61c55e38b86373b445ab9aa46354525c760bf0e4b3efa002fa7febed8618f",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "02872a24c66456f99022d135741eeb135104acbcfc5682eefcfd18c222e3605c",
+      "path": "outputs/gate1_full_local_validation.json",
+      "tracked_on_observed_main": true,
+      "bytes": 126154,
+      "sha256": "02872a24c66456f99022d135741eeb135104acbcfc5682eefcfd18c222e3605c",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "433439e70d920e50aa00d0d341c2323ba21bff969de8a567071fd7dcfe55b397",
+      "path": "outputs/gate1_handoff.md",
+      "tracked_on_observed_main": true,
+      "bytes": 4123,
+      "sha256": "433439e70d920e50aa00d0d341c2323ba21bff969de8a567071fd7dcfe55b397",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "9f97c297a144fa51400e711b2d2f922c53d626d90fdab102b9b2526d9907d155",
+      "path": "outputs/gate1_reference_validation.json",
+      "tracked_on_observed_main": true,
+      "bytes": 120127,
+      "sha256": "9f97c297a144fa51400e711b2d2f922c53d626d90fdab102b9b2526d9907d155",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "4a82f97e970c8776d6d8d00a056f05812a1017907d826af5adc1415d330670ed",
+      "path": "outputs/gate1_smoke_validation.json",
+      "tracked_on_observed_main": true,
+      "bytes": 7571,
+      "sha256": "4a82f97e970c8776d6d8d00a056f05812a1017907d826af5adc1415d330670ed",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "3bb7c432aee69eaab64b820235d52ef1c4393a9940e84c816700145356b8dd8c",
+      "path": "outputs/gate2a_benchmark_semantics.json",
+      "tracked_on_observed_main": true,
+      "bytes": 167994,
+      "sha256": "3bb7c432aee69eaab64b820235d52ef1c4393a9940e84c816700145356b8dd8c",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "221769aad69fed2a9538635a7d64d6fc4ebc3480f4ad6146d898288f986e77f2",
+      "path": "outputs/gate2a_handoff.md",
+      "tracked_on_observed_main": true,
+      "bytes": 4298,
+      "sha256": "221769aad69fed2a9538635a7d64d6fc4ebc3480f4ad6146d898288f986e77f2",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "f9ead8192c70d78b48172bca6496add4c6799cb046d693a7b0c3eaa1eac11c27",
+      "path": "outputs/gate2b_handoff.md",
+      "tracked_on_observed_main": true,
+      "bytes": 5856,
+      "sha256": "f9ead8192c70d78b48172bca6496add4c6799cb046d693a7b0c3eaa1eac11c27",
+      "risk_flags": [
+        "MACHINE_SPECIFIC_PROVENANCE_PATHS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "4521752a3041289f27f17e757104505244118b2dcd89d4c58cf63abce8cf8285",
+      "path": "outputs/gate2b_reconstruction.json",
+      "tracked_on_observed_main": true,
+      "bytes": 14407,
+      "sha256": "4521752a3041289f27f17e757104505244118b2dcd89d4c58cf63abce8cf8285",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "56e883411bd97727a8b38166424c78c1c28518e67000156154979e2b7ece02d6",
+      "path": "outputs/gate3_evaluator_equivalence.json",
+      "tracked_on_observed_main": true,
+      "bytes": 11941,
+      "sha256": "56e883411bd97727a8b38166424c78c1c28518e67000156154979e2b7ece02d6",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "068066cfe2431b7d17031e93d9553c708e401acde35c503bfacbcba647bdd681",
+      "path": "outputs/gate3_handoff.md",
+      "tracked_on_observed_main": true,
+      "bytes": 6494,
+      "sha256": "068066cfe2431b7d17031e93d9553c708e401acde35c503bfacbcba647bdd681",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "5708630ca60c05535e0ed459e2ad0bbd839a0956eed31e434c8c28a9cb46ba2f",
+      "path": "outputs/gate4_e1_equivalence.json",
+      "tracked_on_observed_main": true,
+      "bytes": 9178,
+      "sha256": "5708630ca60c05535e0ed459e2ad0bbd839a0956eed31e434c8c28a9cb46ba2f",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "f4cd7ecccc4517274fa610a9ca2e14ae5e58c9b2a7bb6580388bef36a59f6af1",
+      "path": "outputs/gate4_handoff.md",
+      "tracked_on_observed_main": true,
+      "bytes": 5024,
+      "sha256": "f4cd7ecccc4517274fa610a9ca2e14ae5e58c9b2a7bb6580388bef36a59f6af1",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "913ac26c32c37e03cdc14b191837bc32a648c1dd3aa70165e777993063a174ff",
+      "path": "outputs/gate5_e2_equivalence.json",
+      "tracked_on_observed_main": true,
+      "bytes": 10643,
+      "sha256": "913ac26c32c37e03cdc14b191837bc32a648c1dd3aa70165e777993063a174ff",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "6a150f63fd71f26111b598aa39da7940382beecbdeed7469faf268a9decf9c52",
+      "path": "outputs/gate5_handoff.md",
+      "tracked_on_observed_main": true,
+      "bytes": 8657,
+      "sha256": "6a150f63fd71f26111b598aa39da7940382beecbdeed7469faf268a9decf9c52",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "e031703efaaa8893dbe95ca3616df75204468e0055b332d85e36dd6f187135b5",
+      "path": "outputs/gate6a_e3_preparation.json",
+      "tracked_on_observed_main": true,
+      "bytes": 13929,
+      "sha256": "e031703efaaa8893dbe95ca3616df75204468e0055b332d85e36dd6f187135b5",
+      "risk_flags": [
+        "EXTERNAL_ARTIFACT_LOCATORS_REVIEW_ACCESS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "5bc22cacd1374cffc73535a882ceb35ba6ad1dee1b7558f857c4f0f3ec0d0601",
+      "path": "outputs/gate6a_handoff.md",
+      "tracked_on_observed_main": true,
+      "bytes": 5541,
+      "sha256": "5bc22cacd1374cffc73535a882ceb35ba6ad1dee1b7558f857c4f0f3ec0d0601",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "ab3dc621dad372ce36ccf167f51527f94f330c5f6cf111460af1ea54a3407ea9",
+      "path": "outputs/gate6a_raw_corpus_scan.json",
+      "tracked_on_observed_main": true,
+      "bytes": 391,
+      "sha256": "ab3dc621dad372ce36ccf167f51527f94f330c5f6cf111460af1ea54a3407ea9",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "735365158c15584ca391d83228adb8115284e8fbb0804a390f1a24a1f6c15157",
+      "path": "outputs/gate6b_preflight.json",
+      "tracked_on_observed_main": true,
+      "bytes": 15139,
+      "sha256": "735365158c15584ca391d83228adb8115284e8fbb0804a390f1a24a1f6c15157",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "8a05652f7bda5180e31b99e0157151e366661f29057f7dd9f52003c48aedde7b",
+      "path": "outputs/gate6b_preflight_handoff.md",
+      "tracked_on_observed_main": true,
+      "bytes": 6156,
+      "sha256": "8a05652f7bda5180e31b99e0157151e366661f29057f7dd9f52003c48aedde7b",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "3d7affe5647e561a1eb421475468c9f9602161110dd9580b8512550be8cd2a59",
+      "path": "outputs/gate6b_preregistration.json",
+      "tracked_on_observed_main": true,
+      "bytes": 6404,
+      "sha256": "3d7affe5647e561a1eb421475468c9f9602161110dd9580b8512550be8cd2a59",
+      "risk_flags": [
+        "EXTERNAL_ARTIFACT_LOCATORS_REVIEW_ACCESS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "6f2cf77fa9364ec1e4f7305345824e4a67f1c1da21ae0831efb603bc74acbe65",
+      "path": "outputs/phase1_reconciliation_handoff.md",
+      "tracked_on_observed_main": true,
+      "bytes": 1245,
+      "sha256": "6f2cf77fa9364ec1e4f7305345824e4a67f1c1da21ae0831efb603bc74acbe65",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "d6d0649f7476549066d3fb7b362c9dfef75663416ae9a52a9e55109c449596eb",
+      "path": "pyproject.toml",
+      "tracked_on_observed_main": true,
+      "bytes": 672,
+      "sha256": "414751b952e1fc975c028ba3211bc602c8763c268328a5227b0428cdd380979f",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "d5bdf76669a149708e7f3e86438b788e9d4926de57d1f3a76aa8c0426171fabe",
+      "path": "scripts/mac_setup.sh",
+      "tracked_on_observed_main": true,
+      "bytes": 2982,
+      "sha256": "d5bdf76669a149708e7f3e86438b788e9d4926de57d1f3a76aa8c0426171fabe",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "09461fd78b11ac1b1c12ae2088c6d42bde66e754d4ad075afc615296575d125d",
+      "path": "scripts/mac_sync.sh",
+      "tracked_on_observed_main": true,
+      "bytes": 967,
+      "sha256": "09461fd78b11ac1b1c12ae2088c6d42bde66e754d4ad075afc615296575d125d",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "130a467dad78efd6c55f966fa0959fb5887dd79b337f0029504ed3b69a3b272b",
+      "path": "scripts/windows_publish.ps1",
+      "tracked_on_observed_main": true,
+      "bytes": 14692,
+      "sha256": "a5ba736080f5a988f4f0852c78ff0c82061bf17becefb1a167101f4b41a3f3ae",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "9e63f48714fc30289c2cae8304d7152cbd6de36559e3c4eed8ec084f00c4d55d",
+      "path": "scripts/windows_sync.ps1",
+      "tracked_on_observed_main": true,
+      "bytes": 1314,
+      "sha256": "c280683cec16d2d9a29b9e90ae7d42c96583d5b0d4e8d8c1d5fc3f1851a5ab3d",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "dfa059743bc6271db4b8e11168263f4f95ed9288484f42916c4e8688d0c866fe",
+      "path": "src/primekg_repurposing/__init__.py",
+      "tracked_on_observed_main": true,
+      "bytes": 216,
+      "sha256": "dfa059743bc6271db4b8e11168263f4f95ed9288484f42916c4e8688d0c866fe",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "path": "src/primekg_repurposing/__main__.py",
+      "tracked_on_observed_main": true,
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "af8391e84a404a7a8dfdaee2f8e03fdfd501c70ad97adcf9ce5cf9e5f1d881a2",
+      "path": "src/primekg_repurposing/benchmark.py",
+      "tracked_on_observed_main": true,
+      "bytes": 19267,
+      "sha256": "af8391e84a404a7a8dfdaee2f8e03fdfd501c70ad97adcf9ce5cf9e5f1d881a2",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "2563ddbb153dead9152370a81d83a6e90f4ce1e042da647da9637a6948c3a884",
+      "path": "src/primekg_repurposing/cli.py",
+      "tracked_on_observed_main": true,
+      "bytes": 19093,
+      "sha256": "2563ddbb153dead9152370a81d83a6e90f4ce1e042da647da9637a6948c3a884",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "5de8a2cf7a0a6ed09772f2d93a7ae41db7800f228ac8e4181634fbe256d37554",
+      "path": "src/primekg_repurposing/evaluation.py",
+      "tracked_on_observed_main": true,
+      "bytes": 19458,
+      "sha256": "5de8a2cf7a0a6ed09772f2d93a7ae41db7800f228ac8e4181634fbe256d37554",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "369dc83535b927219c8ae130a63f6b4040de9cc1dd0651320891b7baf2402408",
+      "path": "src/primekg_repurposing/experts/__init__.py",
+      "tracked_on_observed_main": true,
+      "bytes": 275,
+      "sha256": "369dc83535b927219c8ae130a63f6b4040de9cc1dd0651320891b7baf2402408",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "e64812c3be0d6b91c4794181ad45457577e08e2aa41d2a70fcd1dc5b4680aeaa",
+      "path": "src/primekg_repurposing/experts/e1_gene_similarity.py",
+      "tracked_on_observed_main": true,
+      "bytes": 16668,
+      "sha256": "e64812c3be0d6b91c4794181ad45457577e08e2aa41d2a70fcd1dc5b4680aeaa",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "c269dc04ed1446fe145fea1fc8aa774fa63caaa0cacef2f1b2cb7e37c1a4ae5c",
+      "path": "src/primekg_repurposing/experts/e2_disease_transfer.py",
+      "tracked_on_observed_main": true,
+      "bytes": 16646,
+      "sha256": "c269dc04ed1446fe145fea1fc8aa774fa63caaa0cacef2f1b2cb7e37c1a4ae5c",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "d2dc4638a44578434ea54a105c5ffb6d934fba14e5919be13069a891489d7667",
+      "path": "src/primekg_repurposing/experts/e3_complex.py",
+      "tracked_on_observed_main": true,
+      "bytes": 13761,
+      "sha256": "d2dc4638a44578434ea54a105c5ffb6d934fba14e5919be13069a891489d7667",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "084c1adb92ca237f0d9b22dbed7a3c13e0149cad455e28288f9be3c1910a5e4a",
+      "path": "src/primekg_repurposing/gate4.py",
+      "tracked_on_observed_main": true,
+      "bytes": 9365,
+      "sha256": "084c1adb92ca237f0d9b22dbed7a3c13e0149cad455e28288f9be3c1910a5e4a",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "1a8dc0efe6ad3dfe6b20c0fdcea518400e998fde4155364cf7b99a0409916edb",
+      "path": "src/primekg_repurposing/gate5.py",
+      "tracked_on_observed_main": true,
+      "bytes": 13222,
+      "sha256": "1a8dc0efe6ad3dfe6b20c0fdcea518400e998fde4155364cf7b99a0409916edb",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "89f8ce3970e95131a365c3bf4dbad4f3536f8fa3cd7e11cea62b8d6a62ceac02",
+      "path": "src/primekg_repurposing/gate6a.py",
+      "tracked_on_observed_main": true,
+      "bytes": 11096,
+      "sha256": "89f8ce3970e95131a365c3bf4dbad4f3536f8fa3cd7e11cea62b8d6a62ceac02",
+      "risk_flags": [
+        "EXTERNAL_ARTIFACT_LOCATORS_REVIEW_ACCESS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "222b799859ae88c3455ac4cd1f59006d174e64cf4390a49a0d96220d7d41ace7",
+      "path": "src/primekg_repurposing/provenance.py",
+      "tracked_on_observed_main": true,
+      "bytes": 27826,
+      "sha256": "222b799859ae88c3455ac4cd1f59006d174e64cf4390a49a0d96220d7d41ace7",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "ebdb4c7b83432f07a9404fc7d971f1de28f9473554a0718ab3db260cd3f46438",
+      "path": "src/primekg_repurposing/reconstruction.py",
+      "tracked_on_observed_main": true,
+      "bytes": 28771,
+      "sha256": "ebdb4c7b83432f07a9404fc7d971f1de28f9473554a0718ab3db260cd3f46438",
+      "risk_flags": [
+        "MACHINE_SPECIFIC_PROVENANCE_PATHS"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "83d867437a851e7496084e15b55e7bb9facec0a7a53a51dca51613a06891933e",
+      "path": "src/primekg_repurposing/score_archive.py",
+      "tracked_on_observed_main": true,
+      "bytes": 3813,
+      "sha256": "83d867437a851e7496084e15b55e7bb9facec0a7a53a51dca51613a06891933e",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "46de1b994d11aaf6840a8c771c9869fae3e6dbfdced01f3158dccf946d4e0827",
+      "path": "tests/fixtures/data/benchmark/p1_v0_benchmark_manifest.json",
+      "tracked_on_observed_main": true,
+      "bytes": 188,
+      "sha256": "46de1b994d11aaf6840a8c771c9869fae3e6dbfdced01f3158dccf946d4e0827",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "09f65048e2934aac72293ff5d3031ed133d38b7082d77a1188ad2e40253aa09f",
+      "path": "tests/fixtures/data/benchmark/p1_v0_candidate_drugs.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 42,
+      "sha256": "09f65048e2934aac72293ff5d3031ed133d38b7082d77a1188ad2e40253aa09f",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "drug_id",
+        "drug_name"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "bbaf54d4b268d6ebe8de1c7fe6866c5c32e09b295cbc7281cb2f9b9fd856751f",
+      "path": "tests/fixtures/data/benchmark/p1_v0_evaluator_config_v1_1_tiesafe.json",
+      "tracked_on_observed_main": true,
+      "bytes": 83,
+      "sha256": "bbaf54d4b268d6ebe8de1c7fe6866c5c32e09b295cbc7281cb2f9b9fd856751f",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "8557c35068b90a6517c31c258be24305ddf2e016068f4d41c8037c4ca4fe6e52",
+      "path": "tests/fixtures/data/benchmark/p1_v0_primary_diseases.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 28,
+      "sha256": "8557c35068b90a6517c31c258be24305ddf2e016068f4d41c8037c4ca4fe6e52",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "disease_id",
+        "oof_fold"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "65221992036443bfb11227b4ea68c5a4db5ece8e69d4262d85818898c4096044",
+      "path": "tests/fixtures/data/benchmark/p1_v0_primary_truth.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 101,
+      "sha256": "65221992036443bfb11227b4ea68c5a4db5ece8e69d4262d85818898c4096044",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "disease_id",
+        "drug_id",
+        "evaluation_role"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "06145cda2c0605d16a4c8d5eb6b0f5a53d0cc6d51fb8f150ef941fccd5b19b0c",
+      "path": "tests/fixtures/data/reference_results/expert_matrix.csv",
+      "tracked_on_observed_main": true,
+      "bytes": 229,
+      "sha256": "06145cda2c0605d16a4c8d5eb6b0f5a53d0cc6d51fb8f150ef941fccd5b19b0c",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [
+        "benchmark_id",
+        "evaluator_version",
+        "expert_id",
+        "seed",
+        "disease_id",
+        "status",
+        "applicable",
+        "primary_utility"
+      ],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "62894d976f8f9e3dd30f7e041071cb21b920aae7e2a9611997c641bd0fdfcf2a",
+      "path": "tests/fixtures/data/unknown.bin",
+      "tracked_on_observed_main": true,
+      "bytes": 21,
+      "sha256": "62894d976f8f9e3dd30f7e041071cb21b920aae7e2a9611997c641bd0fdfcf2a",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "fb6d5149860e84c267fa4f99f4135efbcbf7389e8364679a21abef0cd072b09c",
+      "path": "tests/fixtures/registry.json",
+      "tracked_on_observed_main": true,
+      "bytes": 6948,
+      "sha256": "fb6d5149860e84c267fa4f99f4135efbcbf7389e8364679a21abef0cd072b09c",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "327edee1420d285365fc19686e98b472fb8d9d21793ddcc9161727cb8a6aab8e",
+      "path": "tests/test_benchmark_semantics.py",
+      "tracked_on_observed_main": true,
+      "bytes": 10549,
+      "sha256": "327edee1420d285365fc19686e98b472fb8d9d21793ddcc9161727cb8a6aab8e",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "50d80e76db8e96e27cf74ad03f50c14434729e0b74ba5300347f94f53dbdf012",
+      "path": "tests/test_e1_gene_similarity.py",
+      "tracked_on_observed_main": true,
+      "bytes": 8657,
+      "sha256": "50d80e76db8e96e27cf74ad03f50c14434729e0b74ba5300347f94f53dbdf012",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "3431cb53125c0334042fffe3defe73cfa33392464fcf427511953bef8ecdfd98",
+      "path": "tests/test_e2_disease_transfer.py",
+      "tracked_on_observed_main": true,
+      "bytes": 12130,
+      "sha256": "3431cb53125c0334042fffe3defe73cfa33392464fcf427511953bef8ecdfd98",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "7133b61f83f4d54264a71f9ff8af3ed53a220e526b928c8fb9a870a0756ef105",
+      "path": "tests/test_e3_complex.py",
+      "tracked_on_observed_main": true,
+      "bytes": 6950,
+      "sha256": "622e490035ce61067d23678c7718e8ab67d3af77c10d1aac385cfc51f0e354e9",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "3cdbed85d33c4f04713222977086fe9dc1524740523182e7a3319aa52d080fe3",
+      "path": "tests/test_evaluation.py",
+      "tracked_on_observed_main": true,
+      "bytes": 11825,
+      "sha256": "3cdbed85d33c4f04713222977086fe9dc1524740523182e7a3319aa52d080fe3",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "c5e8a50d54c0b5354fc6fa38858940cb795c02102e01b488a4ea7281dd5394bf",
+      "path": "tests/test_provenance.py",
+      "tracked_on_observed_main": true,
+      "bytes": 8880,
+      "sha256": "c5e8a50d54c0b5354fc6fa38858940cb795c02102e01b488a4ea7281dd5394bf",
+      "risk_flags": [
+        "CODE_DOCUMENTATION_OR_SYNTHETIC_FIXTURE"
+      ],
+      "unique_drugbank_identifiers": 0,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    },
+    {
+      "observed_main_sha256": "5ddb12bfa3761eedba39d33c0a190aaa75a64007621ae7ae49a9286e1e53893a",
+      "path": "tests/test_reconstruction.py",
+      "tracked_on_observed_main": true,
+      "bytes": 12438,
+      "sha256": "5ddb12bfa3761eedba39d33c0a190aaa75a64007621ae7ae49a9286e1e53893a",
+      "risk_flags": [
+        "DRUGBANK_IDENTIFIER_CONTENT"
+      ],
+      "unique_drugbank_identifiers": 1,
+      "csv_columns": [],
+      "redistribution_clearance": "NOT_ESTABLISHED",
+      "raw_content_republished": false
+    }
+  ]
+}
